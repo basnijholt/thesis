@@ -1,0 +1,10 @@
+image: jbweston/tex
+
+job:
+  script:
+    - make clean
+    - make
+
+  artifacts:
+    paths:
+    - dissertation.pdf
