@@ -1,52 +1,30 @@
 \documentclass{dissertation}
 \usepackage{microtype}
-\usepackage{ dsfont }
+\usepackage{dsfont}
 
 \usepackage[caption=false]{subfig}
 
 % Common definiton of often used mathematical expressions and symbols
 \usepackage[load=physical,load=abbr]{siunitx}
-%\usepackage{bm} % bold math
 \usepackage{bbm}
 \usepackage[version=4]{mhchem}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
 
 \usepackage{xfrac}
 \usepackage{upgreek}
 \usepackage{pifont}
-
-\newcommand{\cmark}{\ding{51}}
-\newcommand{\xmark}{\ding{55}}
 
 % A comment command to keep track of the narrative.
 % Uncomment the second line below to see the paragraph meanings.
 \newcommand{\co}[2]{#2}
 %\renewcommand{\co}{\paragraph}
 
-\def\e{\varepsilon}
-\newtheorem{lemma}{Lemma}
-\DeclareMathOperator{\Tr}{Tr}
-\newcommand{\avg}[1]{\langle#1\rangle}
-
-\newcommand{\ket}[1]{\left| #1 \right\rangle}
-\newcommand{\bra}[1]{\left\langle #1 \right|}
-\newcommand{\braket}[2]{\left\langle #1 \right| \left. #2 \right\rangle}
-\newcommand{\pars}[1]{\left( #1 \right)}
-\newcommand{\brac}[1]{\left\{ #1 \right\}}
-\newcommand{\br}{\mathbf{r}}
-\newcommand{\bR}{\mathbf{R}}
-\newcommand{\bk}{\mathbf{k}}
-\newcommand{\bM}{\mathbf{M}}
-\newcommand{\bp}{\mathbf{p}}
-\newcommand{\cH}{\mathcal{H}}
-\newcommand{\cK}{\mathcal{K}}
-\newcommand{\cP}{\mathcal{P}}
-\newcommand{\cT}{\mathcal{T}}
-\newcommand{\cC}{\mathcal{C}}
-\newcommand{\id}{\mathbbm{1}}
-
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 \begin{document}
-%{\fontfamily{qag}\selectfont
 
 %% Specify the title and author of the thesis. This information will be used on
 %% the title page (in title/title.tex) and in the metadata of the final PDF.
@@ -75,7 +53,6 @@
 \include{chapter_zigzag/zigzag}
 \include{chapter_weakantilocalization/weakantilocalization}
 \include{chapter_shortjunction/shortjunction}
-%}
 
 
 %% Turn off thumb indices for unnumbered chapters.
