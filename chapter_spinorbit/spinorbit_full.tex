@@ -1,0 +1,1038 @@
+\documentclass[prl,twocolumn,superscriptaddress,nobibnotes,citeautoscript,graphicx,amsmath,amssymb]{revtex4-1}
+\usepackage{graphicx}         % Include figure files
+\usepackage{bm}               % bold math
+\usepackage{siunitx}
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\definecolor{goodblue}{rgb}{0.0,0.0,0.6}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{xfrac}
+\usepackage{placeins}
+\hypersetup{
+    colorlinks   = true, %Colors links instead of ugly boxes
+    urlcolor     = darkblue, %Color for external hyperlinks
+    linkcolor    = darkblue, %Color of internal links
+    citecolor   = darkblue %Color of citations
+}
+
+\begin{document}
+%TC:ignore
+\title{Spin-Orbit Protection of Induced Superconductivity in Majorana Nanowires} 
+
+\author{Jouri D.S. Bommer}
+\altaffiliation{Correspondence to \href{mailto:JouriBommer@gmail.com}{JouriBommer@gmail.com} and/or \href{mailto:HaoZhangDelft@gmail.com}{HaoZhangDelft@gmail.com} }
+\affiliation{QuTech, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+
+\author{Hao Zhang\footnotemark[1]}
+\altaffiliation{Correspondence to \href{mailto:JouriBommer@gmail.com}{JouriBommer@gmail.com} and/or \href{mailto:HaoZhangDelft@gmail.com}{HaoZhangDelft@gmail.com} }
+\affiliation{QuTech, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{State Key Laboratory of Low Dimensional Quantum Physics, Department of Physics, Tsinghua University, Beijing 100084, China}
+%\altaffiliation{Present address: Department of Physics, Tsinghua University, Beijing 100084, China}
+
+\author{\"Onder~G\"ul}
+\altaffiliation{Present address: Department of Physics, Harvard University, Cambridge, MA 02138, USA}
+\affiliation{QuTech, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+
+\author{Bas Nijholt}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+
+\author{Michael Wimmer}
+\affiliation{QuTech, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+
+\author{Filipp N. Rybakov}
+\affiliation{Department of Physics, KTH-Royal Institute of Technology, SE-10691 Stockholm, Sweden}
+
+\author{Julien Garaud}
+\affiliation{Laboratoire de Math\'{e}matiques et Physique Th\'{e}orique CNRS/UMR 7350, Institut Denis Poisson FR2964, Universit\'{e} de Tours, Parc de Grandmont, 37200 Tours, France}
+
+\author{Donjan Rodic}
+\affiliation{Institut f\"{u}r Theoretische Physik, ETH Z\"{u}rich, 8093 Z\"{u}rich, Switzerland}
+
+\author{Egor Babaev}
+\affiliation{Department of Physics, KTH-Royal Institute of Technology, SE-10691 Stockholm, Sweden}
+
+\author{Matthias Troyer}
+\affiliation{Institut f\"{u}r Theoretische Physik, ETH Z\"{u}rich, 8093 Z\"{u}rich, Switzerland}
+\affiliation{Microsoft Quantum, Redmond, WA 98052, USA}
+
+\author{Diana Car}
+\affiliation{Department of Applied Physics, Eindhoven University of Technology, 5600 MB Eindhoven, The Netherlands}
+
+\author{S\'ebastien R. Plissard}
+\altaffiliation{Present address: CNRS-Laboratoire d'Analyse et d'Architecture des Syst\`emes (LAAS), Universit\'e de Toulouse, 7 avenue du colonel Roche, F-31400 Toulouse, France}
+\affiliation{Department of Applied Physics, Eindhoven University of Technology, 5600 MB Eindhoven, The Netherlands}
+
+\author{Erik P.A.M. Bakkers}
+\affiliation{QuTech, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Department of Applied Physics, Eindhoven University of Technology, 5600 MB Eindhoven, The Netherlands}
+
+\author{Kenji Watanabe}
+\affiliation{Advanced Materials Laboratory, National Institute for Materials Science, 1-1 Namiki, Tsukuba, 305-0044, Japan}
+
+\author{Takashi Taniguchi}
+\affiliation{Advanced Materials Laboratory, National Institute for Materials Science, 1-1 Namiki, Tsukuba, 305-0044, Japan}
+
+\author{Leo P. Kouwenhoven}
+\affiliation{QuTech, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Kavli Institute of Nanoscience, Delft University of Technology, 2600 GA Delft, The Netherlands}
+\affiliation{Microsoft Station Q Delft, 2600 GA Delft, The Netherlands}
+
+\date{\today}
+
+\begin{abstract}
+Spin-orbit interaction (SOI) plays a key role in creating Majorana zero modes in semiconductor nanowires proximity coupled to a superconductor. We track the evolution of the induced superconducting gap in InSb nanowires coupled to a NbTiN superconductor in a large range of magnetic field strengths and orientations. Based on realistic simulations of our devices, we reveal SOI with a strength of 0.15--0.35 eV\AA. Our approach identifies the direction of the spin-orbit field, which is strongly affected by the superconductor geometry and electrostatic gates.
+\end{abstract}
+
+\pacs{}% insert suggested PACS numbers in braces on next line
+
+\maketitle %\maketitle must follow title, authors, abstract and \pacs
+
+%TC:endignore
+Spin-orbit interaction (SOI) is a relativistic effect that results from electrons moving (orbit) in an electric field ($E$) experiencing a magnetic field ($B_{\mathrm{SO}}$) in their moving reference frame that couples to the electron's magnetic moment (spin). SOI is an essential ingredient of various realizations of topological superconductors, which host Majorana zero modes, the building blocks of topological quantum computation \cite{Kitaev2001,Fu2008,Nayak2008}. The prime platform for topological quantum computation is based on a semiconductor nanowire coupled to a superconductor, where the proximity effect opens a superconducting energy gap in the density of states of the nanowire \cite{Lutchyn2010,Oreg2010}. In general, a magnetic field suppresses superconductivity by closing the superconducting gap due to Zeeman and orbital effects \cite{Nijholt2016}. If the nanowire has strong SOI, suppression of the superconducting gap is counteracted and a sufficiently large Zeeman energy drives the system into a topological superconducting phase, with Majorana zero modes localized at the wire ends \cite{Lutchyn2010,Oreg2010}. The main experimental effort in the last few years has focused on detecting these Majorana zero modes as a zero-bias peak in the tunneling conductance \cite{Mourik2012,Albrecht2016,Deng2016,BalMaj,QZBP,LutchynReview,AguadoReview}. However, SOI, the mechanism providing the topological protection, has been challenging to detect directly in Majorana nanowires. 
+\\ \indent
+The electric field that gives rise to SOI in our system mainly results from structural inversion asymmetry of the confinement potential (Rashba SOI), which depends on the work function difference at the interface between the nanowire and the superconductor and on voltages applied to nearby electrostatic gates \cite{Vuik2016,Antipov2018,Woods2018,Mikkelsen2018}. The Rashba SOI in nanowires has been investigated extensively by measuring spin-orbit related quantum effects: level repulsion of quantum dot levels \cite{Fasth2007,NadjPerge2012}, and of Andreev states \cite{DeMoor2018,Deng2016}, weak antilocalization in long \mbox{diffusive} wires \cite{Hansen2005,VanWeperen2015}, and a helical liquid signature in short quasiballistic wires \cite{JakobHelical}.
+However, the SOI strength relevant to the topological protection is affected by the \mbox{presence} of the superconductor, necessitating direct observation of SOI in Majorana nanowires. Here, we reveal SOI in an InSb nanowire coupled to a NbTiN superconductor through the dependence of the superconducting gap on the magnetic field, both strength and orientation. We find that the geometry of the superconductor on the nanowire strongly modifies the direction of the spin-orbit field, which is further tunable by electrostatic gating, in line with the expected modifications of the electric field due to work function difference and electrostatic screening at the nanowire-superconductor interface.
+\\ \indent
+Figure 1(a) shows the device image. An InSb nanowire (blue) is covered by a NbTi/NbTiN superconducting contact (purple) and a Cr/Au normal metal contact (yellow). The barrier gate underneath the uncovered wire (red) can deplete the nanowire, locally creating a tunnel barrier. The tunneling differential conductance ($dI/dV$) resolves the induced superconducting gap, by sweeping the bias voltage ($V$) across the tunnel barrier [Fig. 1(b)]. The dashed arrow indicates the induced gap of 0.65 meV. In this device, we have recently shown ballistic transport and Majorana signatures \cite{BalMaj}.
+\begin{figure}
+\includegraphics[width=\columnwidth]{Fig1.pdf}
+\caption{\label{fig1}
+    (a) False-color scanning electron micrograph of Majorana nanowire device $A$. An InSb nanowire (blue) is contacted by a normal metal contact ($N$, yellow) and a NbTiN superconducting contact ($S$, purple). The additional contact (gray) is kept floating. The nanowire is isolated from the barrier gate (red) and the super gate (green) by $\sim$ 30 nm thick boron nitride. (b) Differential conductance $dI/dV$ as a function of bias voltage $V$ and barrier gate voltage $V_{\mathrm{barrier}}$ at $B$ $=$ 0 T. (c) Schematic of the nanowire device and definition of the axes. (d) Band diagram of a Majorana nanowire at an externally applied magnetic field $B$ perpendicular to the spin-orbit field $B_{\mathrm{SO}}$. The arrows indicate the total magnetic field $B_T$ $=$ $B$ + $B_{\mathrm{SO}}$ along which the spin eigenstates are directed. At $k$ $=$ 0 the spin always aligns with $B$. At increasing $k$, $B_{\mathrm{SO}}$ increases, tilting the spin more towards $B_{\mathrm{SO}}$. (e) $dI/dV$ as a function of $V$ at $B$ along $x$, $y$, $z$ (left, middle, right) for super gate voltage $V_{\mathrm{SG}}$ $=$ 0 V. The white dashed lines indicate a fit to the gap closing corresponding to $\alpha$ $=$ 0.15 $\pm$ 0.05 eV\AA. (f) Horizontal line cuts of (e) at $B$ indicated by the colored arrows in (e).
+}
+\end{figure}
+\\ \indent
+The magnetic field ($B$) dependence of the induced gap of device $A$, with $B$ along three different directions, is shown in Fig. 1(e). The coordinate system is illustrated in Fig. 1(c). The $x$ axis is along the nanowire, parallel to the electron momentum ($k$). The $z$ axis is perpendicular to the substrate and coincides with the electric field ($E$) direction due to the spatial symmetry of the device and the bottom gate. Since the Rashba spin-orbit field ($B_{\mathrm{SO}}$ $\propto$ $E$ $\times$ $k$) is perpendicular to both $k$ and $E$, it points along the $y$ axis. When $B$ is aligned with $x$ or $z$ [left and right panels in Fig. 1(e)], both perpendicular to $B_{\mathrm{SO}}$, the gap closes \mbox{slowly} (at around 0.6 T), followed by the emergence of a zero-bias peak possibly characteristic of a Majorana zero mode when $B$ is along the nanowire, although we emphasize that a conjecture of Majorana zero modes is not essential for the purposes of this Letter. On the contrary, when $B$ is aligned with the $y$ axis (middle panel), parallel to $B_{\mathrm{SO}}$, the gap closes much faster (at around 0.25 T). Figure 1f shows the line cuts at $|B|$ $=$ 0.25 T along the three axes: for $B$ $\perp$ $B_{\mathrm{SO}}$, the gap is almost the same as when $B$ $=$ 0 T, while the gap is closed for $B$ $\parallel$ $B_{\mathrm{SO}}$. This observation matches the predictions of the Majorana nanowire model, as illustrated in Fig. 1(d): when $B$ $\perp$ $B_{\mathrm{SO}}$, SOI counteracts the Zeeman-induced gap closing by rotating the spin eigenstate towards $B_{\mathrm{SO}}$, which reduces the component of the Zeeman field along the direction of the spin eigenstate. In contrast, when $B$ $\parallel$ $B_{\mathrm{SO}}$, the spin eigenstate is always parallel to $B$, which prevents spin-orbit protection and results in a fast gap closing \cite{Osca2014,Rex2014}. This pronounced anisotropy of the gap closing with respect to different $B$ directions is universally observed in over ten devices (four shown in this Letter) for all gate settings 
+\footnote{See Supplemental Material, which includes Refs. 
+ \cite{Car2014,Flohr2011,Suyatin2007,HardGap,Liu2017,Danon2017,Hofstader1976,Gropp1996,Du1999,Prada2012,Pientka2012,Stanescu2012}, for experimental details, theoretical details, and additional experimental data}, which is a direct consequence of SOI in Majorana nanowires.
+\nocite{Car2014,Flohr2011,Suyatin2007,HardGap,Liu2017,Danon2017,Hofstader1976,Gropp1996,Du1999,Prada2012,Pientka2012,Stanescu2012}
+\\ \indent
+Before we discuss the SOI in more detail, we rule out alternative mechanisms for the anisotropy which can originate in the bulk superconductor, or the InSb nanowire. First, an anisotropic magnetic field-induced closing of the bulk superconducting gap is excluded for the fields we apply, which are far below the critical field of NbTiN ($>$9 T) \cite{DavidOneMin}. We note that this is different from aluminium films \cite{Chang2015,Deng2016,Gazibegovic2017,QZBP}, where a small magnetic field ($<$0.3 T) perpendicular to the film completely suppresses superconductivity, making them unsuitable to reveal SOI from an anisotropic gap closing. Next, we consider Meissner screening currents in NbTiN that can cause deviations in the magnetic field in the nanowire. Our Ginzburg-Landau simulations show that the field corrections due to Meissner screening are negligible \cite{Note1}, since the dimensions of the NbTiN film ($<$1 $\mu$m) are comparable to the penetration depth ($\sim$290 nm). The simulations also show that vortex formation is most favorable along the $z$ axis \cite{Note1}, which implies that the observed anisotropic gap closing is not caused by gap suppression due to vortices near the nanowire \cite{Takei2013}, since we do not observe the fastest gap closing along $z$ [Fig. 1(f)]. Finally, in the InSb nanowire, the Zeeman $g$ factor can become anisotropic due to quantum confinement \cite{NadjPerge2012,Pryor2006,Qu2016}. However, our nanowire geometry leads to confinement in both the $y$ and $z$ directions, implying similar gap closing along $y$ and $z$, inconsistent with our observations [Fig. 1(e)].
+\\ \indent
+Having excluded the above mechanisms, we are now left with three effects: spin splitting of the electron \mbox{states} in magnetic fields with the Land\'e $g$ factor (Zeeman eff\mbox{ect)}, the orbital effect of the magnetic field representing the Lorentz force acting on traveling electrons, and SOI. To investigate the role of these effects, we use a theoretical three-dimensional Majorana nanowire model defined by the Hamiltonian \cite{Lutchyn2010,Oreg2010,Nijholt2016}:
+\begin{equation*}
+\begin{split}
+H = &\left(\frac{\mathbf{p}^2}{2m^*}-\mu+V(y,z)\right) \tau_z + \frac{\alpha}{\hbar} \boldsymbol{\sigma} \cdot \mathbf{(\hat{E}\times p)} \tau_z\\
+&+ \frac{1}{2}g\mu_B\mathbf{B\cdot}\boldsymbol{\sigma}+\Delta_0 \tau_x
+\end{split}
+\end{equation*}
+Here, the first term represents the kinetic and potential energy, with $\mu$ the chemical potential measured from the middle of the helical gap and $V(y,z)$ $=$ $\frac{\Delta V_G}{R}[0,y,z]$ $\cdot$ $\mathbf{\hat{E}}$ is the electrostatic potential in the wire, whose magnitude is parametrized by $\Delta V_G$, with $\mathbf{\hat{E}}$ the direction of the electric field and $R$ the wire radius. The orbital effect enters the Hamiltonian via the vector potential $\mathbf{A}$ in the canonical momentum: $\mathbf{p}$ $=$ $-i\hbar \nabla$ $+$ $e\mathbf{A}$. Here, $e$ is the electron charge, $\hbar$ is Plank's constant, and $m^*$ $=$ 0.015 $m_e$ is the effective mass with $m_e$ the electron mass. The second term represents Rashba SOI characterized by a SOI strength $\alpha$, which we set to 0.2 eV\AA\ to find qualitative agreement with the measurements. The third term is the Zeeman term, with an isotropic $g$ factor set to 50 and $\mu_B$ is the Bohr magneton. The last term accounts for the superconducting proximity effect, which we implement in the weak coupling approximation \cite{Nijholt2016}. The Pauli matrices $\tau$ and $\sigma$ act in the particle-hole and spin space respectively. We perform numerical simulations of this Hamiltonian on a 3D lattice in a realistic nanowire geometry using the \textsc{kwant} code \cite{Groth2014}. We note that recent theory work shows that the anisotropy is unaffected by additional factors such as the wire length, temperature, and strong coupling to the superconductor \cite{Liu2019}. Additional details are provided in the Supplemental Material \cite{Note1}.
+\begin{figure}
+\includegraphics[width=\columnwidth]{Fig2.pdf}
+\caption{\label{fig2}
+    (a) Numerical simulations of $dI/dV$ as a function of $V$ and $B$, including the Zeeman and the orbital (Lorentz) effect of the magnetic field. (b) Same as (a), but including Zeeman and SOI instead of the orbital effect, reproducing the anisotropy in Fig. 1(e). (c) Same as (b), but including the Zeeman, SOI and orbital effect. The parameters used in (a)-(c) are $\mu$ $=$ 5.6 meV and $\Delta V_G$ $=$ -8 meV.
+}
+\end{figure}
+\\ \indent
+We identify which effects explain the observed anisotropic gap closing behavior by including them separately in our simulations. Figure 2(a) shows the magnetic field dependence of the gap without SOI (setting $\alpha$ $=$ 0 in the Hamiltonian). In contrast to Fig. 1(e) the gap closes around 0.3 T for all three directions, reflecting the dominant contribution of the Zeeman effect. In Fig. 2(b), we turn on the SOI, and turn off the orbital effect by setting the magnetic vector potential $\mathbf{A}$ $=$ 0, which qualitatively reproduces the anisotropic behavior between the $y$ axis and the $x$ and $z$-axes. We have explored other combinations of parameters and find that the experimental results of Fig. 1(e) can only be reproduced by including SOI. We note that adding the orbital effect in Fig. 2(c) shifts the gap closing to a field almost twice as small for $B$ $\parallel$ $y$, which explains why we observe a gap closing for $B$ $\parallel$ $y$ at around 0.25 T, far below 0.45 T, the critical field expected when only the Zeeman effect with $g$ $=$ 50 suppresses the gap. By fitting the curvature of the gap closing \cite{VanHeck,Pan2018} along $x$ [white dashed line in Fig. 1(e)] we estimate a range of the SOI strength $\alpha$ of 0.15 -- 0.35 eV\AA\ from devices $A$-$D$ (for fitting details and fits to additional devices, see Supplemental Material \cite{Note1}). This SOI strength is in \mbox{agreement} with the values extracted from level repulsion of Andreev states \cite{Stanescu2013,DeMoor2018} in an additional device $E$ \cite{Note1}. \mbox{Since} $\alpha$ depends on the electric field in the wire, we expect the observed variation in the SOI strength of devices to be caused by differences in the applied gate voltages and wire diameter. Recently, the level repulsion of Andreev states in InSb nanowires covered with epitaxial aluminium has shown a SOI strength of approximately 0.1 eV\AA \cite{DeMoor2018}, slightly lower than we find for NbTiN covered nanowires, most likely due to strong coupling to the aluminium superconductor, leading to stronger renormalization of the InSb material parameters \cite{Stanescu2011,Cole2015,Antipov2018,Woods2018,Mikkelsen2018,Reeg2018}.
+\begin{figure}
+\includegraphics[width=\columnwidth]{Fig3.pdf}
+\caption{\label{fig3}
+    (a) Measured $dI/dV$ as a function of $V$ upon rotation of $B$ at 0.3 T over angles $\Theta$ between $z$ and $y$ in device $B$ (see Fig. S5 \cite{Note1} for the same behavior in device $A$). The voltage $V_{\mathrm{SG}}$ on the super gate (see insets) is varied in the three panels.
+    (b) Simulated $dI/dV$ as a function of $\Theta$ and $V$ at 0.25 T. The top panel includes the Zeeman effect and SOI. The middle and bottom panels additionally include the orbital effect at two values of the potential difference $\Delta V_G$ between the top and middle of the wire. 
+    (c) Horizontal line cuts of (a) averaged over $|V|$ $<$ 0.2 V at $V_{\mathrm{SG}}$ $=$ -3,  2.25, and 3.75 V (black, orange, blue). Dashed lines indicate the $z$ axis ($\Theta$ $=$ \ang{0}). (d) Vertical line cuts of (a) at $\Theta$ $=$ \ang{0} (left) and $\Theta$ $=$ \ang{90} (right).
+}
+\end{figure}
+\\ \indent
+To resolve the direction of the spin-orbit field, we fix the $B$ amplitude and continuously rotate the $B$ direction, parametrized by the angle $\Theta$ in the $zy$ plane [inset Fig. 3(a)]. Figure 3(a) shows the dependence of the gap on $\Theta$, where we adjust the electric field strength in the nanowire with a voltage $V_{\mathrm{SG}}$ on the super gate (SG) underneath the superconductor [green in Fig. 1(a)]. We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and find $\Theta_{\mathrm{max}}$ $=$ 3 $\pm$ \ang{2} ($z$ axis) for all $V_{\mathrm{SG}}$ and in multiple devices (Fig. 3 and Fig. S5 \cite{Note1}) (error due to uncertainty in the extraction procedure). This is illustrated in Fig. 3(c), which shows horizontal line cuts for subgap bias. The largest gap for a given $B$ amplitude is expected for $B$ $\perp$ $B_{\mathrm{SO}}$, indicating that $B_{\mathrm{SO}}$ $\parallel$ $y$, in agreement with the $E$-field direction dictated by the device geometry.
+
+\begin{figure}[b]
+\includegraphics[width=\columnwidth]{Fig4.pdf}
+\caption{\label{fig4}
+    (a) Tilted view electron micrograph of Majorana nanowire device $E$, which is partially covered with NbTiN. In this device, the electric field $E$ (and the associated spin-orbit field $B_{\mathrm{SO}}$) can rotate away from the $z$ axis ($y$ axis), as illustrated in the inset. (b) Measured $dI/dV$ as a function of $V$ and angle $\Theta$ in the $zy$ plane at $|B|$ $=$ 75 mT and $V_{\mathrm{SG}}$ $=$ 5.6 V, with a horizontal line cut averaged over $|V|$ $<$ 0.25 mV in the lower panel. The gap is maximum at $\Theta_{\mathrm{max}}$ $=$ \ang{32} as indicated by the dashed line. (c) Same as (b), but at $V_{\mathrm{SG}}$ $=$ -1.9 V and $|B|$ $=$ 0.15 T. $\Theta_{\mathrm{max}}$ is gate tuned to \ang{22}. (d)-(f) Simulated $dI/dV$ at 0.25 T at various $\Delta V_G$ (see inset) with the superconductor rotated to the side by \ang{45} and including the Zeeman effect, SOI, and the orbital effect. The illustrations in the insets indicate the direction of $E$, which is rotated by \ang{45} from $z$ in (d).
+}
+\end{figure}
+
+Now, we check whether the orbital effect changes $\Theta_{\mathrm{max}}$. The simulations in Fig. 3(b) show the effect of magnetic field rotation on the gap with $B_{\mathrm{SO}}$ $\parallel$ $y$, confirming that $\Theta_{\mathrm{max}}$ is, indeed, always given by the direction perpendicular to $B_{\mathrm{SO}}$, i.e. $\Theta_{\mathrm{max}}$ $=$ \ang{0}. Comparing the top panel (without the orbital effect) with the middle panel (with the orbital effect), we conclude that the orbital effect does not affect $\Theta_{\mathrm{max}}$. This conclusion also holds when we vary the potential difference $\Delta V_G$ between the middle and outer of the wire (corresponding to $V_{\mathrm{SG}}$) in the middle panel and bottom panel. We note that, at $\Delta V_G$ $=$ 2 meV (bottom panel) the wave function is moved towards the bottom of the nanowire, which increases the strength of the orbital effect by breaking the reflection symmetry about the $z$ axis, as evidenced by the longer angle range over which the gap is closed compared to $\Delta V_G$ $=$ -4 meV (middle panel). Experimentally, we also observe this in Fig. 3(a), with line cuts in Fig. 3(c), where the gap is closed over a significantly longer angle range with increasing $V_{\mathrm{SG}}$. We note that we use small values of $\Delta V_G$ in the simulations, because we expect a weak gate response due to effective electrostatic screening by the superconductor, which covers five of the six nanowire facets \cite{BalSc}.
+\\ \indent
+Finally, we turn to a second type of device in which the superconducting film only partially covers the nanowire facets [Fig. 4(a)]. This partial superconductor coverage can modify the orientation of $B_{\mathrm{SO}}$ by changing the associated electric field direction \cite{Vuik2016}, as sketched in the inset of Fig. 4(a). The electric field in the wire has two main origins. The first one originates from the work function difference between the superconductor and nanowire, which leads to charge redistribution. The resulting electric field is expected to rotate away from the $z$ axis due to the partial superconductor coverage which breaks the spatial symmetry. In Fig. 4(b) we rotate $B$ in the $zy$ plane, perpendicular to the nanowire axis, and find that $\Theta_{\mathrm{max}}$ is, indeed, no longer at zero, but at 32 $\pm$ \ang{2}. The second contribution to the electric field arises from the applied $V_{\mathrm{SG}}$ and the electrostatic screening due to the grounded superconductor. Changing $V_{\mathrm{SG}}$ should, therefore, rotate the electric field for partial coverage. Indeed, we find that $\Theta_{\mathrm{max}}$ shifts by \ang{10} by adjusting $V_{\mathrm{SG}}$ by 7.5 V [Fig. 4(c)]. Field rotation at intermediate $V_{\mathrm{SG}}$ and magnetic field sweeps confirming the change of $\Theta_{\mathrm{max}}$ are shown in the Supplemental Material \cite{Note1}. Our theory simulations confirm that $\Theta_{\mathrm{max}}$ is still given by the direction orthogonal to $B_{\mathrm{SO}}$ when the electric field is not necessarily along a \mbox{spatial} symmetry axis of the partially covered device [Fig. 4(d) and 4(e)]. While the orbital effect does not change $\Theta_{\mathrm{max}}$ [Fig. 4(e) and 4(f)], it can induce asymmetry in the energy spectrum around $\Theta_{\mathrm{max}}$ resulting from wave function asymmetry when the electric field is not along the mirror plane of the device [Fig. 4(b) and Fig. 4(e)]. The significance of the orbital effect in our devices underlines the importance of including it in realistic simulations of Majorana nanowires.
+\\ \indent
+In conclusion, the observed gap closing anisotropy for different magnetic field orientations demonstrates SOI in our Majorana nanowires, a necessary condition to create Majorana zero modes. Our experiments reveal that SOI is strongly affected by the work function difference at the nanowire-superconductor interface and the geometry of the superconductor, while electrostatic gating provides tunability of SOI.
+
+%TC:ignore
+\begin{acknowledgments}
+We thank O.W.B. Benningshof, A. Geresdi, S. Goswami, M.W.A. de Moor, M. Quintero-P\'{e}rez and P. Ro\.{z}ek for valuable feedback and assistance. This work has been supported by the Netherlands Organization for Scientific Research (NWO), Foundation for Fundamental Research on Matter (FOM), European Research Council (ERC) and Microsoft Corporation Station Q. The work of F.N.R. and E.B. was supported by the Swedish Research Council Grant No. 642-2013-7837 and by G\"{o}ran Gustafsson Foundation for Research in Natural Sciences and Medicine.
+
+J.D.S.B., H.Z. and \"{O}.G. contributed equally to this work.
+\end{acknowledgments}
+
+%\bibliography{References}
+\begin{thebibliography}{53}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Kitaev}(2001)}]{Kitaev2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~Y.}\ \bibnamefont
+  {Kitaev}},\ }\bibfield  {title} {\bibinfo {title} {Unpaired {Majorana}
+  fermions in quantum wires},\ }\href
+  {http://stacks.iop.org/1063-7869/44/i=10S/a=S29} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Usp.}\ }\textbf {\bibinfo {volume} {44}},\
+  \bibinfo {pages} {131} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fu}\ and\ \citenamefont {Kane}(2008)}]{Fu2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Fu}}\ and\ \bibinfo {author} {\bibfnamefont {C.~L.}\ \bibnamefont {Kane}},\
+  }\bibfield  {title} {\bibinfo {title} {Superconducting proximity effect and
+  {Majorana} fermions at the surface of a topological insulator},\ }\href
+  {https://link.aps.org/doi/10.1103/PhysRevLett.100.096407} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {100}},\ \bibinfo {pages} {096407} (\bibinfo {year}
+  {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nayak}\ \emph {et~al.}(2008)\citenamefont {Nayak},
+  \citenamefont {Simon}, \citenamefont {Stern}, \citenamefont {Freedman},\ and\
+  \citenamefont {Das~Sarma}}]{Nayak2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Nayak}}, \bibinfo {author} {\bibfnamefont {S.~H.}\ \bibnamefont {Simon}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Stern}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Freedman}},\ and\ \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Non-Abelian anyons and topological quantum
+  computation}},\ }\href {https://link.aps.org/doi/10.1103/RevModPhys.80.1083}
+  {\bibfield  {journal} {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf
+  {\bibinfo {volume} {80}},\ \bibinfo {pages} {1083} (\bibinfo {year}
+  {2008})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lutchyn}\ \emph {et~al.}(2010)\citenamefont
+  {Lutchyn}, \citenamefont {Sau},\ and\ \citenamefont
+  {Das~Sarma}}]{Lutchyn2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {Lutchyn}}, \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont {Sau}},\
+  and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\
+  }\bibfield  {title} {\bibinfo {title} {{Majorana} fermions and a topological
+  phase transition in semiconductor-superconductor heterostructures},\ }\href
+  {https://link.aps.org/doi/10.1103/PhysRevLett.105.077001} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {105}},\ \bibinfo {pages} {077001} (\bibinfo {year}
+  {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Oreg}\ \emph {et~al.}(2010)\citenamefont {Oreg},
+  \citenamefont {Refael},\ and\ \citenamefont {von Oppen}}]{Oreg2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Oreg}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Refael}},\ and\
+  \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {von Oppen}},\ }\bibfield
+  {title} {\bibinfo {title} {Helical liquids and {Majorana} bound states in
+  quantum wires},\ }\href
+  {https://link.aps.org/doi/10.1103/PhysRevLett.105.177002} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {105}},\ \bibinfo {pages} {177002} (\bibinfo {year}
+  {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nijholt}\ and\ \citenamefont
+  {Akhmerov}(2016)}]{Nijholt2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Nijholt}}\ and\ \bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont
+  {Akhmerov}},\ }\bibfield  {title} {\bibinfo {title} {Orbital effect of
+  magnetic field on the {Majorana} phase diagram},\ }\href
+  {https://link.aps.org/doi/10.1103/PhysRevB.93.235434} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {93}},\
+  \bibinfo {pages} {235434} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Mourik}\ \emph {et~al.}(2012)\citenamefont {Mourik},
+  \citenamefont {Zuo}, \citenamefont {Frolov}, \citenamefont {Plissard},
+  \citenamefont {Bakkers},\ and\ \citenamefont {Kouwenhoven}}]{Mourik2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Mourik}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Zuo}},
+  \bibinfo {author} {\bibfnamefont {S.~M.}\ \bibnamefont {Frolov}}, \bibinfo
+  {author} {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}}, \bibinfo {author}
+  {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}},\ and\ \bibinfo
+  {author} {\bibfnamefont {L.~P.}\ \bibnamefont {Kouwenhoven}},\ }\bibfield
+  {title} {\bibinfo {title} {Signatures of {Majorana} fermions in hybrid
+  superconductor-semiconductor nanowire devices},\ }\href
+  {https://doi.org/10.1126/science.1222360} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {336}},\ \bibinfo {pages}
+  {1003} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Albrecht}\ \emph {et~al.}(2016)\citenamefont
+  {Albrecht}, \citenamefont {Higginbotham}, \citenamefont {Madsen},
+  \citenamefont {Kuemmeth}, \citenamefont {Jespersen}, \citenamefont
+  {Nyg\r{a}rd}, \citenamefont {Krogstrup},\ and\ \citenamefont
+  {Marcus}}]{Albrecht2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~M.}\ \bibnamefont
+  {Albrecht}}, \bibinfo {author} {\bibfnamefont {A.~P.}\ \bibnamefont
+  {Higginbotham}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Madsen}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Kuemmeth}},
+  \bibinfo {author} {\bibfnamefont {T.~S.}\ \bibnamefont {Jespersen}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {Nyg\r{a}rd}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Krogstrup}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.~M.}\ \bibnamefont {Marcus}},\ }\bibfield  {title}
+  {\bibinfo {title} {Exponential protection of zero modes in {Majorana}
+  islands},\ }\href {https://doi.org/10.1038/nature17162} {\bibfield  {journal}
+  {\bibinfo  {journal} {Nature}\ }\textbf {\bibinfo {volume} {531}},\ \bibinfo
+  {pages} {206} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Deng}\ \emph {et~al.}(2016)\citenamefont {Deng},
+  \citenamefont {Vaitiek\.{e}nas}, \citenamefont {Hansen}, \citenamefont
+  {Danon}, \citenamefont {Leijnse}, \citenamefont {Flensberg}, \citenamefont
+  {Nyg\r{a}rd}, \citenamefont {Krogstrup},\ and\ \citenamefont
+  {Marcus}}]{Deng2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~T.}\ \bibnamefont
+  {Deng}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Vaitiek\.{e}nas}}, \bibinfo {author} {\bibfnamefont {E.~B.}\ \bibnamefont
+  {Hansen}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Danon}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Leijnse}}, \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Flensberg}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Nyg\r{a}rd}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Krogstrup}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.~M.}\ \bibnamefont {Marcus}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Majorana} bound state in a coupled quantum-dot
+  hybrid-nanowire system},\ }\href {https://doi.org/10.1126/science.aaf3961}
+  {\bibfield  {journal} {\bibinfo  {journal} {Science}\ }\textbf {\bibinfo
+  {volume} {354}},\ \bibinfo {pages} {1557} (\bibinfo {year}
+  {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {G\"{u}l}\ \emph {et~al.}(2018)\citenamefont
+  {G\"{u}l}, \citenamefont {Zhang}, \citenamefont {Bommer}, \citenamefont
+  {De~Moor}, \citenamefont {Car}, \citenamefont {Plissard}, \citenamefont
+  {Bakkers}, \citenamefont {Geresdi}, \citenamefont {Watanabe}, \citenamefont
+  {Taniguchi},\ and\ \citenamefont {Kouwenhoven}}]{BalMaj}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {{\"{O}}.}~\bibnamefont
+  {G\"{u}l}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Zhang}},
+  \bibinfo {author} {\bibfnamefont {J.~D.~S.}\ \bibnamefont {Bommer}}, \bibinfo
+  {author} {\bibfnamefont {M.~W.~A.}\ \bibnamefont {De~Moor}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Car}}, \bibinfo {author}
+  {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}}, \bibinfo {author}
+  {\bibfnamefont {E.}~\bibnamefont {Bakkers}}, \bibinfo {author} {\bibfnamefont
+  {A.}~\bibnamefont {Geresdi}}, \bibinfo {author} {\bibfnamefont
+  {K.}~\bibnamefont {Watanabe}}, \bibinfo {author} {\bibfnamefont
+  {T.}~\bibnamefont {Taniguchi}},\ and\ \bibinfo {author} {\bibfnamefont
+  {L.~P.}\ \bibnamefont {Kouwenhoven}},\ }\bibfield  {title} {\bibinfo {title}
+  {Ballistic {Majorana} nanowire devices},\ }\href
+  {https://doi.org/10.1038/s41565-017-0032-8} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Nanotech.}\ }\textbf {\bibinfo {volume} {13}},\ \bibinfo
+  {pages} {192} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ \emph {et~al.}(2018)\citenamefont {Zhang},
+  \citenamefont {Liu}, \citenamefont {Gazibegovic}, \citenamefont {Xu},
+  \citenamefont {Logan}, \citenamefont {Wang}, \citenamefont {van Loo},
+  \citenamefont {Bommer}, \citenamefont {De~Moor}, \citenamefont {Car},
+  \citenamefont {Op~het Veld}, \citenamefont {van Veldhoven}, \citenamefont
+  {Koelling}, \citenamefont {Verheijen}, \citenamefont {Pendharkar},
+  \citenamefont {Pennachio}, \citenamefont {Shojaei}, \citenamefont {Lee},
+  \citenamefont {Palmstr{\o}m}, \citenamefont {Bakkers}, \citenamefont
+  {Sarma},\ and\ \citenamefont {Kouwenhoven}}]{QZBP}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Zhang}}, \bibinfo {author} {\bibfnamefont {C.-X.}\ \bibnamefont {Liu}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Gazibegovic}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Xu}}, \bibinfo {author}
+  {\bibfnamefont {J.~A.}\ \bibnamefont {Logan}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont
+  {N.}~\bibnamefont {van Loo}}, \bibinfo {author} {\bibfnamefont {J.~D.~S.}\
+  \bibnamefont {Bommer}}, \bibinfo {author} {\bibfnamefont {M.~W.~A.}\
+  \bibnamefont {De~Moor}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Car}}, \bibinfo {author} {\bibfnamefont {R.~L.~M.}\ \bibnamefont {Op~het
+  Veld}}, \bibinfo {author} {\bibfnamefont {P.~J.}\ \bibnamefont {van
+  Veldhoven}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Koelling}},
+  \bibinfo {author} {\bibfnamefont {M.~A.}\ \bibnamefont {Verheijen}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Pendharkar}}, \bibinfo {author}
+  {\bibfnamefont {D.~J.}\ \bibnamefont {Pennachio}}, \bibinfo {author}
+  {\bibfnamefont {B.}~\bibnamefont {Shojaei}}, \bibinfo {author} {\bibfnamefont
+  {J.~S.}\ \bibnamefont {Lee}}, \bibinfo {author} {\bibfnamefont {C.~J.}\
+  \bibnamefont {Palmstr{\o}m}}, \bibinfo {author} {\bibfnamefont {E.~P. A.~M.}\
+  \bibnamefont {Bakkers}}, \bibinfo {author} {\bibfnamefont {S.~D.}\
+  \bibnamefont {Sarma}},\ and\ \bibinfo {author} {\bibfnamefont {L.~P.}\
+  \bibnamefont {Kouwenhoven}},\ }\bibfield  {title} {\bibinfo {title}
+  {Quantized {Majorana} conductance},\ }\href
+  {https://doi.org/10.1038/nature26142} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {556}},\ \bibinfo {pages}
+  {74} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lutchyn}\ \emph {et~al.}(2018)\citenamefont
+  {Lutchyn}, \citenamefont {Bakkers}, \citenamefont {Kouwenhoven},
+  \citenamefont {Krogstrup}, \citenamefont {Marcus},\ and\ \citenamefont
+  {Oreg}}]{LutchynReview}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {Lutchyn}}, \bibinfo {author} {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont
+  {Bakkers}}, \bibinfo {author} {\bibfnamefont {L.~P.}\ \bibnamefont
+  {Kouwenhoven}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Krogstrup}}, \bibinfo {author} {\bibfnamefont {C.~M.}\ \bibnamefont
+  {Marcus}},\ and\ \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont {Oreg}},\
+  }\bibfield  {title} {\bibinfo {title} {{Majorana} zero modes in
+  superconductor{-}semiconductor heterostructures},\ }\href
+  {https://doi.org/10.1038/s41578-018-0003-1} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Rev. Mater.}\ }\textbf {\bibinfo {volume} {3}},\ \bibinfo
+  {pages} {52} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Aguado}(2017)}]{AguadoReview}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Aguado}},\ }\bibfield  {title} {\bibinfo {title} {Majorana quasiparticles in
+  condensed matter},\ }\href {https://doi.org/10.1393/ncr/i2017-10141-9}
+  {\bibfield  {journal} {\bibinfo  {journal} {Riv. Nuovo Cimento}\ }\textbf
+  {\bibinfo {volume} {40}},\ \bibinfo {pages} {523} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Vuik}\ \emph {et~al.}(2016)\citenamefont {Vuik},
+  \citenamefont {Eeltink}, \citenamefont {Akhmerov},\ and\ \citenamefont
+  {Wimmer}}]{Vuik2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Vuik}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Eeltink}},
+  \bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont {Akhmerov}},\ and\
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Wimmer}},\ }\bibfield
+  {title} {\bibinfo {title} {Effects of the electrostatic environment on the
+  {Majorana} nanowire devices},\ }\href
+  {http://stacks.iop.org/1367-2630/18/i=3/a=033013} {\bibfield  {journal}
+  {\bibinfo  {journal} {New J. Phys.}\ }\textbf {\bibinfo {volume} {18}},\
+  \bibinfo {pages} {033013} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Antipov}\ \emph {et~al.}(2018)\citenamefont
+  {Antipov}, \citenamefont {Bargerbos}, \citenamefont {Winkler}, \citenamefont
+  {Bauer}, \citenamefont {Rossi},\ and\ \citenamefont {Lutchyn}}]{Antipov2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~E.}\ \bibnamefont
+  {Antipov}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Bargerbos}},
+  \bibinfo {author} {\bibfnamefont {G.~W.}\ \bibnamefont {Winkler}}, \bibinfo
+  {author} {\bibfnamefont {B.}~\bibnamefont {Bauer}}, \bibinfo {author}
+  {\bibfnamefont {E.}~\bibnamefont {Rossi}},\ and\ \bibinfo {author}
+  {\bibfnamefont {R.~M.}\ \bibnamefont {Lutchyn}},\ }\bibfield  {title}
+  {\bibinfo {title} {Effects of gate-induced electric fields on semiconductor
+  majorana nanowires},\ }\href {https://doi.org/10.1103/PhysRevX.8.031041}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. X}\ }\textbf {\bibinfo
+  {volume} {8}},\ \bibinfo {pages} {031041} (\bibinfo {year}
+  {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Woods}\ \emph {et~al.}(2018)\citenamefont {Woods},
+  \citenamefont {Stanescu},\ and\ \citenamefont {Das~Sarma}}]{Woods2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.~D.}\ \bibnamefont
+  {Woods}}, \bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
+  {Stanescu}},\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Das~Sarma}},\ }\bibfield  {title} {\bibinfo {title} {Effective theory
+  approach to the {Schr\"odinger-Poisson} problem in semiconductor {Majorana}
+  devices},\ }\href {https://doi.org/10.1103/PhysRevB.98.035428} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {98}},\ \bibinfo {pages} {035428} (\bibinfo {year} {2018})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Mikkelsen}\ \emph {et~al.}(2018)\citenamefont
+  {Mikkelsen}, \citenamefont {Kotetes}, \citenamefont {Krogstrup},\ and\
+  \citenamefont {Flensberg}}]{Mikkelsen2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~E.~G.}\
+  \bibnamefont {Mikkelsen}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Kotetes}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Krogstrup}},\
+  and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Flensberg}},\
+  }\bibfield  {title} {\bibinfo {title} {Hybridization at
+  superconductor-semiconductor interfaces},\ }\href
+  {https://doi.org/10.1103/PhysRevX.8.031040} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. X}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo {pages}
+  {031040} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fasth}\ \emph {et~al.}(2007)\citenamefont {Fasth},
+  \citenamefont {Fuhrer}, \citenamefont {Samuelson}, \citenamefont {Golovach},\
+  and\ \citenamefont {Loss}}]{Fasth2007}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Fasth}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Fuhrer}},
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Samuelson}}, \bibinfo
+  {author} {\bibfnamefont {V.~N.}\ \bibnamefont {Golovach}},\ and\ \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Loss}},\ }\bibfield  {title}
+  {\bibinfo {title} {Direct measurement of the spin-orbit interaction in a
+  two-electron {InAs} nanowire quantum dot},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.98.266801} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {98}},\
+  \bibinfo {pages} {266801} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Nadj-Perge}\ \emph {et~al.}(2012)\citenamefont
+  {Nadj-Perge}, \citenamefont {Pribiag}, \citenamefont {van~den Berg},
+  \citenamefont {Zuo}, \citenamefont {Plissard}, \citenamefont {Bakkers},
+  \citenamefont {Frolov},\ and\ \citenamefont {Kouwenhoven}}]{NadjPerge2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Nadj-Perge}}, \bibinfo {author} {\bibfnamefont {V.~S.}\ \bibnamefont
+  {Pribiag}}, \bibinfo {author} {\bibfnamefont {J.~W.~G.}\ \bibnamefont
+  {van~den Berg}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Zuo}},
+  \bibinfo {author} {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}}, \bibinfo
+  {author} {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}}, \bibinfo
+  {author} {\bibfnamefont {S.~M.}\ \bibnamefont {Frolov}},\ and\ \bibinfo
+  {author} {\bibfnamefont {L.~P.}\ \bibnamefont {Kouwenhoven}},\ }\bibfield
+  {title} {\bibinfo {title} {Spectroscopy of spin-orbit quantum bits in indium
+  antimonide nanowires},\ }\href
+  {https://link.aps.org/doi/10.1103/PhysRevLett.108.166801} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {108}},\ \bibinfo {pages} {166801} (\bibinfo {year}
+  {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {de~Moor}\ \emph {et~al.}(2018)\citenamefont
+  {de~Moor}, \citenamefont {Bommer}, \citenamefont {Xu}, \citenamefont
+  {Winkler}, \citenamefont {Antipov}, \citenamefont {Bargerbos}, \citenamefont
+  {Wang}, \citenamefont {van Loo}, \citenamefont {het Veld}, \citenamefont
+  {Gazibegovic}, \citenamefont {Car}, \citenamefont {Logan}, \citenamefont
+  {Pendharkar}, \citenamefont {Lee}, \citenamefont {Bakkers}, \citenamefont
+  {Palmstr{\o}m}, \citenamefont {Lutchyn}, \citenamefont {Kouwenhoven},\ and\
+  \citenamefont {Zhang}}]{DeMoor2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~W.~A.}\
+  \bibnamefont {de~Moor}}, \bibinfo {author} {\bibfnamefont {J.~D.~S.}\
+  \bibnamefont {Bommer}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Xu}}, \bibinfo {author} {\bibfnamefont {G.~W.}\ \bibnamefont {Winkler}},
+  \bibinfo {author} {\bibfnamefont {A.~E.}\ \bibnamefont {Antipov}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Bargerbos}}, \bibinfo {author}
+  {\bibfnamefont {G.}~\bibnamefont {Wang}}, \bibinfo {author} {\bibfnamefont
+  {N.}~\bibnamefont {van Loo}}, \bibinfo {author} {\bibfnamefont {R.~L. M.~O.}\
+  \bibnamefont {het Veld}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Gazibegovic}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Car}},
+  \bibinfo {author} {\bibfnamefont {J.~A.}\ \bibnamefont {Logan}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Pendharkar}}, \bibinfo {author}
+  {\bibfnamefont {J.~S.}\ \bibnamefont {Lee}}, \bibinfo {author} {\bibfnamefont
+  {E.~P. A.~M.}\ \bibnamefont {Bakkers}}, \bibinfo {author} {\bibfnamefont
+  {C.~J.}\ \bibnamefont {Palmstr{\o}m}}, \bibinfo {author} {\bibfnamefont
+  {R.~M.}\ \bibnamefont {Lutchyn}}, \bibinfo {author} {\bibfnamefont {L.~P.}\
+  \bibnamefont {Kouwenhoven}},\ and\ \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Zhang}},\ }\bibfield  {title} {\bibinfo {title} {Electric
+  field tunable superconductor-semiconductor coupling in majorana nanowires},\
+  }\href {http://stacks.iop.org/1367-2630/20/i=10/a=103049} {\bibfield
+  {journal} {\bibinfo  {journal} {New J. of Phys.}\ }\textbf {\bibinfo {volume}
+  {20}},\ \bibinfo {pages} {103049} (\bibinfo {year} {2018})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Hansen}\ \emph {et~al.}(2005)\citenamefont {Hansen},
+  \citenamefont {Bj\"ork}, \citenamefont {Fasth}, \citenamefont {Thelander},\
+  and\ \citenamefont {Samuelson}}]{Hansen2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~E.}\ \bibnamefont
+  {Hansen}}, \bibinfo {author} {\bibfnamefont {M.~T.}\ \bibnamefont {Bj\"ork}},
+  \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Fasth}}, \bibinfo
+  {author} {\bibfnamefont {C.}~\bibnamefont {Thelander}},\ and\ \bibinfo
+  {author} {\bibfnamefont {L.}~\bibnamefont {Samuelson}},\ }\bibfield  {title}
+  {\bibinfo {title} {Spin relaxation in {InAs} nanowires studied by tunable
+  weak antilocalization},\ }\href {https://doi.org/10.1103/PhysRevB.71.205328}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo
+  {volume} {71}},\ \bibinfo {pages} {205328} (\bibinfo {year}
+  {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {van Weperen}\ \emph {et~al.}(2015)\citenamefont {van
+  Weperen}, \citenamefont {Tarasinski}, \citenamefont {Eeltink}, \citenamefont
+  {Pribiag}, \citenamefont {Plissard}, \citenamefont {Bakkers}, \citenamefont
+  {Kouwenhoven},\ and\ \citenamefont {Wimmer}}]{VanWeperen2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont {van
+  Weperen}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Tarasinski}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Eeltink}}, \bibinfo
+  {author} {\bibfnamefont {V.~S.}\ \bibnamefont {Pribiag}}, \bibinfo {author}
+  {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}}, \bibinfo {author}
+  {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}}, \bibinfo {author}
+  {\bibfnamefont {L.~P.}\ \bibnamefont {Kouwenhoven}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Wimmer}},\ }\bibfield  {title} {\bibinfo
+  {title} {Spin-orbit interaction in {InSb} nanowires},\ }\href
+  {https://doi.org/10.1103/PhysRevB.91.201413} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {91}},\ \bibinfo
+  {pages} {201413} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kammhuber}\ \emph {et~al.}(2017)\citenamefont
+  {Kammhuber}, \citenamefont {Cassidy}, \citenamefont {Pei}, \citenamefont
+  {Nowak}, \citenamefont {Vuik}, \citenamefont {G\"{u}l}, \citenamefont {Car},
+  \citenamefont {Plissard}, \citenamefont {Bakkers}, \citenamefont {Wimmer},\
+  and\ \citenamefont {Kouwenhoven}}]{JakobHelical}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Kammhuber}}, \bibinfo {author} {\bibfnamefont {M.~C.}\ \bibnamefont
+  {Cassidy}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Pei}},
+  \bibinfo {author} {\bibfnamefont {M.~P.}\ \bibnamefont {Nowak}}, \bibinfo
+  {author} {\bibfnamefont {A.}~\bibnamefont {Vuik}}, \bibinfo {author}
+  {\bibfnamefont {O.}~\bibnamefont {G\"{u}l}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Car}}, \bibinfo {author} {\bibfnamefont {S.~R.}\
+  \bibnamefont {Plissard}}, \bibinfo {author} {\bibfnamefont {E.~P. A.~M.}\
+  \bibnamefont {Bakkers}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Wimmer}},\ and\ \bibinfo {author} {\bibfnamefont {L.~P.}\ \bibnamefont
+  {Kouwenhoven}},\ }\bibfield  {title} {\bibinfo {title} {Conductance through a
+  helical state in an indium antimonide nanowire},\ }\href
+  {https://doi.org/10.1038/s41467-017-00315-y} {\bibfield  {journal} {\bibinfo
+  {journal} {Nat. Commun.}\ }\textbf {\bibinfo {volume} {8}},\ \bibinfo {pages}
+  {478} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Osca}\ \emph {et~al.}(2014)\citenamefont {Osca},
+  \citenamefont {Ruiz},\ and\ \citenamefont {Serra}}]{Osca2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Osca}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Ruiz}},\ and\
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Serra}},\ }\bibfield
+  {title} {\bibinfo {title} {Effects of tilting the magnetic field in
+  one-dimensional {Majorana} nanowires},\ }\href
+  {https://doi.org/10.1103/PhysRevB.89.245405} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {89}},\ \bibinfo
+  {pages} {245405} (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Rex}\ and\ \citenamefont {Sudb\o}(2014)}]{Rex2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Rex}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Sudb\o}},\
+  }\bibfield  {title} {\bibinfo {title} {Tilting of the magnetic field in
+  {Majorana} nanowires: Critical angle and zero-energy differential
+  conductance},\ }\href {https://doi.org/10.1103/PhysRevB.90.115429} {\bibfield
+   {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {90}},\ \bibinfo {pages} {115429} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{Note1()}]{Note1}%
+  \BibitemOpen
+  \bibinfo {note} {See Supplemental Material, which includes Refs. \cite
+  {Car2014,Flohr2011,Suyatin2007,HardGap,Liu2017,Danon2017,Hofstader1976,Gropp1996,Du1999,Prada2012,Pientka2012,Stanescu2012},
+  for experimental details, theoretical details, and additional experimental
+  data}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Car}\ \emph {et~al.}(2014)\citenamefont {Car},
+  \citenamefont {Wang}, \citenamefont {Verheijen}, \citenamefont {Bakkers},\
+  and\ \citenamefont {Plissard}}]{Car2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Car}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Wang}}, \bibinfo
+  {author} {\bibfnamefont {M.~A.}\ \bibnamefont {Verheijen}}, \bibinfo {author}
+  {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}},\ and\ \bibinfo
+  {author} {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}},\ }\bibfield
+  {title} {\bibinfo {title} {Rationally designed single-crystalline nanowire
+  networks},\ }\href {https://doi.org/10.1002/adma.201400924} {\bibfield
+  {journal} {\bibinfo  {journal} {Adv. Mater.}\ }\textbf {\bibinfo {volume}
+  {26}},\ \bibinfo {pages} {4875} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Fl\"{o}hr}\ \emph {et~al.}(2011)\citenamefont
+  {Fl\"{o}hr}, \citenamefont {Liebmann}, \citenamefont {Sladek}, \citenamefont
+  {G\"{u}nel}, \citenamefont {Frielinghaus}, \citenamefont {Haas},
+  \citenamefont {Meyer}, \citenamefont {Hardtdegen}, \citenamefont
+  {Sch\"{a}pers}, \citenamefont {Gr\"{u}tzmacher},\ and\ \citenamefont
+  {Morgenstern}}]{Flohr2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.}~\bibnamefont
+  {Fl\"{o}hr}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Liebmann}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Sladek}}, \bibinfo
+  {author} {\bibfnamefont {H.~Y.}\ \bibnamefont {G\"{u}nel}}, \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {Frielinghaus}}, \bibinfo {author}
+  {\bibfnamefont {F.}~\bibnamefont {Haas}}, \bibinfo {author} {\bibfnamefont
+  {C.}~\bibnamefont {Meyer}}, \bibinfo {author} {\bibfnamefont
+  {H.}~\bibnamefont {Hardtdegen}}, \bibinfo {author} {\bibfnamefont
+  {T.}~\bibnamefont {Sch\"{a}pers}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Gr\"{u}tzmacher}},\ and\ \bibinfo {author} {\bibfnamefont
+  {M.}~\bibnamefont {Morgenstern}},\ }\bibfield  {title} {\bibinfo {title}
+  {Manipulating {InAs} nanowires with submicrometer precision},\ }\href
+  {https://doi.org/10.1063/1.3657135} {\bibfield  {journal} {\bibinfo
+  {journal} {Rev. Sci. Instrum.}\ }\textbf {\bibinfo {volume} {82}},\ \bibinfo
+  {pages} {113705} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Suyatin}\ \emph {et~al.}(2007)\citenamefont
+  {Suyatin}, \citenamefont {Thelander}, \citenamefont {Bj\"{o}rk},
+  \citenamefont {Maximov},\ and\ \citenamefont {Samuelson}}]{Suyatin2007}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~B.}\ \bibnamefont
+  {Suyatin}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Thelander}},
+  \bibinfo {author} {\bibfnamefont {M.~T.}\ \bibnamefont {Bj\"{o}rk}}, \bibinfo
+  {author} {\bibfnamefont {I.}~\bibnamefont {Maximov}},\ and\ \bibinfo {author}
+  {\bibfnamefont {L.}~\bibnamefont {Samuelson}},\ }\bibfield  {title} {\bibinfo
+  {title} {Sulfur passivation for ohmic contact formation to {InAs}
+  nanowires},\ }\href {http://stacks.iop.org/0957-4484/18/i=10/a=105307}
+  {\bibfield  {journal} {\bibinfo  {journal} {Nanotechnology}\ }\textbf
+  {\bibinfo {volume} {18}},\ \bibinfo {pages} {105307} (\bibinfo {year}
+  {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {G\"{u}l}\ \emph {et~al.}(2017)\citenamefont
+  {G\"{u}l}, \citenamefont {Zhang}, \citenamefont {de~Vries}, \citenamefont
+  {van Veen}, \citenamefont {Zuo}, \citenamefont {Mourik}, \citenamefont
+  {Conesa-Boj}, \citenamefont {Nowak}, \citenamefont {van Woerkom},
+  \citenamefont {Quintero-P\'erez}, \citenamefont {Cassidy}, \citenamefont
+  {Geresdi}, \citenamefont {Koelling}, \citenamefont {Car}, \citenamefont
+  {Plissard}, \citenamefont {Bakkers},\ and\ \citenamefont
+  {Kouwenhoven}}]{HardGap}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
+  {G\"{u}l}}, \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Zhang}},
+  \bibinfo {author} {\bibfnamefont {F.~K.}\ \bibnamefont {de~Vries}}, \bibinfo
+  {author} {\bibfnamefont {J.}~\bibnamefont {van Veen}}, \bibinfo {author}
+  {\bibfnamefont {K.}~\bibnamefont {Zuo}}, \bibinfo {author} {\bibfnamefont
+  {V.}~\bibnamefont {Mourik}}, \bibinfo {author} {\bibfnamefont
+  {S.}~\bibnamefont {Conesa-Boj}}, \bibinfo {author} {\bibfnamefont {M.~P.}\
+  \bibnamefont {Nowak}}, \bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {van Woerkom}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Quintero-P\'erez}}, \bibinfo {author} {\bibfnamefont {M.~C.}\ \bibnamefont
+  {Cassidy}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Geresdi}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Koelling}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Car}}, \bibinfo {author}
+  {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}}, \bibinfo {author}
+  {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}},\ and\ \bibinfo
+  {author} {\bibfnamefont {L.~P.}\ \bibnamefont {Kouwenhoven}},\ }\bibfield
+  {title} {\bibinfo {title} {Hard superconducting gap in {InSb} nanowires},\
+  }\href {https://doi.org/10.1021/acs.nanolett.7b00540} {\bibfield  {journal}
+  {\bibinfo  {journal} {Nano Lett.}\ }\textbf {\bibinfo {volume} {17}},\
+  \bibinfo {pages} {2690} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2017)\citenamefont {Liu},
+  \citenamefont {Sau},\ and\ \citenamefont {Das~Sarma}}]{Liu2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.-X.}\ \bibnamefont
+  {Liu}}, \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont {Sau}},\ and\
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\ }\bibfield
+  {title} {\bibinfo {title} {Role of dissipation in realistic {Majorana}
+  nanowires},\ }\href {https://doi.org/10.1103/PhysRevB.95.054502} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {95}},\ \bibinfo {pages} {054502} (\bibinfo {year} {2017})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Danon}\ \emph {et~al.}(2017)\citenamefont {Danon},
+  \citenamefont {Hansen},\ and\ \citenamefont {Flensberg}}]{Danon2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Danon}}, \bibinfo {author} {\bibfnamefont {E.~B.}\ \bibnamefont {Hansen}},\
+  and\ \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Flensberg}},\
+  }\bibfield  {title} {\bibinfo {title} {Conductance spectroscopy on {Majorana}
+  wires and the inverse proximity effect},\ }\href
+  {https://doi.org/10.1103/PhysRevB.96.125420} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {96}},\ \bibinfo
+  {pages} {125420} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hofstadter}(1976)}]{Hofstader1976}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~R.}\ \bibnamefont
+  {Hofstadter}},\ }\bibfield  {title} {\bibinfo {title} {Energy levels and wave
+  functions of {Bloch} electrons in rational and irrational magnetic fields},\
+  }\href {https://doi.org/10.1103/PhysRevB.14.2239} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {14}},\
+  \bibinfo {pages} {2239} (\bibinfo {year} {1976})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gropp}\ \emph {et~al.}(1996)\citenamefont {Gropp},
+  \citenamefont {Kaper}, \citenamefont {Leaf}, \citenamefont {Levine},
+  \citenamefont {Palumbo},\ and\ \citenamefont {Vinokur}}]{Gropp1996}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~D.}\ \bibnamefont
+  {Gropp}}, \bibinfo {author} {\bibfnamefont {H.~G.}\ \bibnamefont {Kaper}},
+  \bibinfo {author} {\bibfnamefont {G.~K.}\ \bibnamefont {Leaf}}, \bibinfo
+  {author} {\bibfnamefont {D.~M.}\ \bibnamefont {Levine}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Palumbo}},\ and\ \bibinfo {author}
+  {\bibfnamefont {V.~M.}\ \bibnamefont {Vinokur}},\ }\bibfield  {title}
+  {\bibinfo {title} {Numerical simulation of vortex dynamics in type-{II}
+  superconductors},\ }\href
+  {https://doi.org/https://doi.org/10.1006/jcph.1996.0022} {\bibfield
+  {journal} {\bibinfo  {journal} {J. Comput. Phys.}\ }\textbf {\bibinfo
+  {volume} {123}},\ \bibinfo {pages} {254} (\bibinfo {year}
+  {1996})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Du}\ and\ \citenamefont {Wu}(1999)}]{Du1999}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Q.}~\bibnamefont
+  {Du}}\ and\ \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Wu}},\
+  }\bibfield  {title} {\bibinfo {title} {Numerical solution of the
+  three-dimensional {Ginzburg--Landau} models using artificial boundary},\
+  }\href {https://doi.org/10.1137/s0036142997330317} {\bibfield  {journal}
+  {\bibinfo  {journal} {SIAM J. Numer. Anal.}\ }\textbf {\bibinfo {volume}
+  {36}},\ \bibinfo {pages} {1482} (\bibinfo {year} {1999})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Prada}\ \emph {et~al.}(2012)\citenamefont {Prada},
+  \citenamefont {San-Jose},\ and\ \citenamefont {Aguado}}]{Prada2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Prada}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {San-Jose}},\
+  and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Aguado}},\
+  }\bibfield  {title} {\bibinfo {title} {Transport spectroscopy of {$NS$}
+  nanowire junctions with {Majorana} fermions},\ }\href
+  {https://doi.org/10.1103/PhysRevB.86.180503} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {86}},\ \bibinfo
+  {pages} {180503} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Pientka}\ \emph {et~al.}(2012)\citenamefont
+  {Pientka}, \citenamefont {Kells}, \citenamefont {Romito}, \citenamefont
+  {Brouwer},\ and\ \citenamefont {von Oppen}}]{Pientka2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Pientka}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Kells}},
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Romito}}, \bibinfo
+  {author} {\bibfnamefont {P.~W.}\ \bibnamefont {Brouwer}},\ and\ \bibinfo
+  {author} {\bibfnamefont {F.}~\bibnamefont {von Oppen}},\ }\bibfield  {title}
+  {\bibinfo {title} {Enhanced zero-bias {Majorana} peak in the differential
+  tunneling conductance of disordered multisubband quantum-wire/superconductor
+  junctions},\ }\href {https://doi.org/10.1103/PhysRevLett.109.227006}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {109}},\ \bibinfo {pages} {227006} (\bibinfo {year}
+  {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stanescu}\ \emph {et~al.}(2012)\citenamefont
+  {Stanescu}, \citenamefont {Tewari}, \citenamefont {Sau},\ and\ \citenamefont
+  {Das~Sarma}}]{Stanescu2012}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
+  {Stanescu}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Tewari}},
+  \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont {Sau}},\ and\ \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\ }\bibfield  {title}
+  {\bibinfo {title} {To close or not to close: The fate of the superconducting
+  gap across the topological quantum phase transition in {Majorana}-carrying
+  semiconductor nanowires},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.109.266402} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {109}},\
+  \bibinfo {pages} {266402} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Van~Woerkom}\ \emph {et~al.}(2015)\citenamefont
+  {Van~Woerkom}, \citenamefont {Geresdi},\ and\ \citenamefont
+  {Kouwenhoven}}]{DavidOneMin}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~J.}\ \bibnamefont
+  {Van~Woerkom}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Geresdi}},\ and\ \bibinfo {author} {\bibfnamefont {L.~P.}\ \bibnamefont
+  {Kouwenhoven}},\ }\bibfield  {title} {\bibinfo {title} {One minute parity
+  lifetime of a {NbTiN} {Cooper}-pair transistor},\ }\href
+  {https://doi.org/10.1038/nphys3342
+  https://www.nature.com/articles/nphys3342#supplementary-information}
+  {\bibfield  {journal} {\bibinfo  {journal} {Nat. Phys.}\ }\textbf {\bibinfo
+  {volume} {11}},\ \bibinfo {pages} {547} (\bibinfo {year} {2015})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Chang}\ \emph {et~al.}(2015)\citenamefont {Chang},
+  \citenamefont {Albrecht}, \citenamefont {Jespersen}, \citenamefont
+  {Kuemmeth}, \citenamefont {Krogstrup}, \citenamefont {Nyg\r{a}rd},\ and\
+  \citenamefont {Marcus}}]{Chang2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Chang}}, \bibinfo {author} {\bibfnamefont {S.~M.}\ \bibnamefont {Albrecht}},
+  \bibinfo {author} {\bibfnamefont {T.~S.}\ \bibnamefont {Jespersen}}, \bibinfo
+  {author} {\bibfnamefont {F.}~\bibnamefont {Kuemmeth}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Krogstrup}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Nyg\r{a}rd}},\ and\ \bibinfo {author}
+  {\bibfnamefont {C.~M.}\ \bibnamefont {Marcus}},\ }\bibfield  {title}
+  {\bibinfo {title} {Hard gap in epitaxial semiconductor-superconductor
+  nanowires},\ }\href {https://doi.org/10.1038/nnano.2014.306
+  https://www.nature.com/articles/nnano.2014.306#supplementary-information}
+  {\bibfield  {journal} {\bibinfo  {journal} {Nat. Nanotech.}\ }\textbf
+  {\bibinfo {volume} {10}},\ \bibinfo {pages} {232} (\bibinfo {year}
+  {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Gazibegovic}\ \emph {et~al.}(2017)\citenamefont
+  {Gazibegovic}, \citenamefont {Car}, \citenamefont {Zhang}, \citenamefont
+  {Balk}, \citenamefont {Logan}, \citenamefont {De~Moor}, \citenamefont
+  {Cassidy}, \citenamefont {Schmits}, \citenamefont {Xu}, \citenamefont {Wang},
+  \citenamefont {Krogstrup}, \citenamefont {Op~het Veld}, \citenamefont {Zuo},
+  \citenamefont {Vos}, \citenamefont {Shen}, \citenamefont {Bouman},
+  \citenamefont {Shojaei}, \citenamefont {Pennachio}, \citenamefont {Lee},
+  \citenamefont {van Veldhoven}, \citenamefont {Koelling}, \citenamefont
+  {Verheijen}, \citenamefont {Kouwenhoven}, \citenamefont {Palmstr{\o}m},\ and\
+  \citenamefont {Bakkers}}]{Gazibegovic2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Gazibegovic}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Car}},
+  \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Zhang}}, \bibinfo
+  {author} {\bibfnamefont {S.~C.}\ \bibnamefont {Balk}}, \bibinfo {author}
+  {\bibfnamefont {J.~A.}\ \bibnamefont {Logan}}, \bibinfo {author}
+  {\bibfnamefont {M.~W.~A.}\ \bibnamefont {De~Moor}}, \bibinfo {author}
+  {\bibfnamefont {M.~C.}\ \bibnamefont {Cassidy}}, \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {Schmits}}, \bibinfo {author} {\bibfnamefont
+  {D.}~\bibnamefont {Xu}}, \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Wang}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Krogstrup}},
+  \bibinfo {author} {\bibfnamefont {R.~L.~M.}\ \bibnamefont {Op~het Veld}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Zuo}}, \bibinfo {author}
+  {\bibfnamefont {Y.}~\bibnamefont {Vos}}, \bibinfo {author} {\bibfnamefont
+  {J.}~\bibnamefont {Shen}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Bouman}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Shojaei}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Pennachio}}, \bibinfo
+  {author} {\bibfnamefont {J.~S.}\ \bibnamefont {Lee}}, \bibinfo {author}
+  {\bibfnamefont {P.~J.}\ \bibnamefont {van Veldhoven}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Koelling}}, \bibinfo {author}
+  {\bibfnamefont {M.~A.}\ \bibnamefont {Verheijen}}, \bibinfo {author}
+  {\bibfnamefont {L.~P.}\ \bibnamefont {Kouwenhoven}}, \bibinfo {author}
+  {\bibfnamefont {C.~J.}\ \bibnamefont {Palmstr{\o}m}},\ and\ \bibinfo {author}
+  {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}},\ }\bibfield  {title}
+  {\bibinfo {title} {Epitaxy of advanced nanowire quantum devices},\ }\href
+  {https://doi.org/10.1038/nature23468} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {548}},\ \bibinfo {pages}
+  {434} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Takei}\ \emph {et~al.}(2013)\citenamefont {Takei},
+  \citenamefont {Fregoso}, \citenamefont {Hui}, \citenamefont {Lobos},\ and\
+  \citenamefont {Das~Sarma}}]{Takei2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Takei}}, \bibinfo {author} {\bibfnamefont {B.~M.}\ \bibnamefont {Fregoso}},
+  \bibinfo {author} {\bibfnamefont {H.-Y.}\ \bibnamefont {Hui}}, \bibinfo
+  {author} {\bibfnamefont {A.~M.}\ \bibnamefont {Lobos}},\ and\ \bibinfo
+  {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\ }\bibfield  {title}
+  {\bibinfo {title} {Soft superconducting gap in semiconductor {Majorana}
+  nanowires},\ }\href {https://doi.org/10.1103/PhysRevLett.110.186803}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {110}},\ \bibinfo {pages} {186803} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Pryor}\ and\ \citenamefont
+  {Flatt\'e}(2006)}]{Pryor2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~E.}\ \bibnamefont
+  {Pryor}}\ and\ \bibinfo {author} {\bibfnamefont {M.~E.}\ \bibnamefont
+  {Flatt\'e}},\ }\bibfield  {title} {\bibinfo {title} {Land\'e g factors and
+  orbital momentum quenching in semiconductor quantum dots},\ }\href
+  {https://link.aps.org/doi/10.1103/PhysRevLett.96.026804} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {96}},\ \bibinfo {pages} {026804} (\bibinfo {year}
+  {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Qu}\ \emph {et~al.}(2016)\citenamefont {Qu},
+  \citenamefont {van Veen}, \citenamefont {de~Vries}, \citenamefont {Beukman},
+  \citenamefont {Wimmer}, \citenamefont {Yi}, \citenamefont {Kiselev},
+  \citenamefont {Nguyen}, \citenamefont {Sokolich}, \citenamefont {Manfra},
+  \citenamefont {Nichele}, \citenamefont {Marcus},\ and\ \citenamefont
+  {Kouwenhoven}}]{Qu2016}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Qu}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {van Veen}},
+  \bibinfo {author} {\bibfnamefont {F.~K.}\ \bibnamefont {de~Vries}}, \bibinfo
+  {author} {\bibfnamefont {A.~J.~A.}\ \bibnamefont {Beukman}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Wimmer}}, \bibinfo {author}
+  {\bibfnamefont {W.}~\bibnamefont {Yi}}, \bibinfo {author} {\bibfnamefont
+  {A.~A.}\ \bibnamefont {Kiselev}}, \bibinfo {author} {\bibfnamefont {B.-M.}\
+  \bibnamefont {Nguyen}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Sokolich}}, \bibinfo {author} {\bibfnamefont {M.~J.}\ \bibnamefont
+  {Manfra}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Nichele}},
+  \bibinfo {author} {\bibfnamefont {C.~M.}\ \bibnamefont {Marcus}},\ and\
+  \bibinfo {author} {\bibfnamefont {L.~P.}\ \bibnamefont {Kouwenhoven}},\
+  }\bibfield  {title} {\bibinfo {title} {Quantized conductance and large
+  $g$-factor anisotropy in {InSb} quantum point contacts},\ }\href
+  {https://doi.org/10.1021/acs.nanolett.6b03297} {\bibfield  {journal}
+  {\bibinfo  {journal} {Nano Lett.}\ }\textbf {\bibinfo {volume} {16}},\
+  \bibinfo {pages} {7509} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Groth}\ \emph {et~al.}(2014)\citenamefont {Groth},
+  \citenamefont {Wimmer}, \citenamefont {Akhmerov},\ and\ \citenamefont
+  {Waintal}}]{Groth2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~W.}\ \bibnamefont
+  {Groth}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Wimmer}},
+  \bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont {Akhmerov}},\ and\
+  \bibinfo {author} {\bibfnamefont {X.}~\bibnamefont {Waintal}},\ }\bibfield
+  {title} {\bibinfo {title} {Kwant: a software package for quantum transport},\
+  }\href {http://stacks.iop.org/1367-2630/16/i=6/a=063065} {\bibfield
+  {journal} {\bibinfo  {journal} {New J. Phys.}\ }\textbf {\bibinfo {volume}
+  {16}},\ \bibinfo {pages} {063065} (\bibinfo {year} {2014})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Liu}\ \emph {et~al.}(2019)\citenamefont {Liu},
+  \citenamefont {Sau}, \citenamefont {Stanescu},\ and\ \citenamefont
+  {Das~Sarma}}]{Liu2019}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.-X.}\ \bibnamefont
+  {Liu}}, \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont {Sau}},
+  \bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont {Stanescu}},\ and\
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\ }\bibfield
+  {title} {\bibinfo {title} {Conductance smearing and anisotropic suppression
+  of induced superconductivity in a {Majorana} nanowire},\ }\href
+  {https://doi.org/10.1103/PhysRevB.99.024510} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {99}},\ \bibinfo
+  {pages} {024510} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {van Heck}\ \emph {et~al.}(2017)\citenamefont {van
+  Heck}, \citenamefont {V\"{a}yrynen},\ and\ \citenamefont
+  {Glazman}}]{VanHeck}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {van
+  Heck}}, \bibinfo {author} {\bibfnamefont {J.~I.}\ \bibnamefont
+  {V\"{a}yrynen}},\ and\ \bibinfo {author} {\bibfnamefont {L.~I.}\ \bibnamefont
+  {Glazman}},\ }\bibfield  {title} {\bibinfo {title} {Zeeman and spin-orbit
+  effects in the {Andreev} spectra of nanowire junctions},\ }\href
+  {https://doi.org/10.1103/PhysRevB.96.075404} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {96}},\ \bibinfo
+  {pages} {075404} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Pan}\ \emph {et~al.}(2019)\citenamefont {Pan},
+  \citenamefont {Sau}, \citenamefont {Stanescu},\ and\ \citenamefont
+  {Das~Sarma}}]{Pan2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Pan}}, \bibinfo {author} {\bibfnamefont {J.~D.}\ \bibnamefont {Sau}},
+  \bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont {Stanescu}},\ and\
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\ }\bibfield
+  {title} {\bibinfo {title} {Curvature of gap closing features and the
+  extraction of {Majorana} nanowire parameters},\ }\href
+  {https://doi.org/10.1103/PhysRevB.99.054507} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {99}},\ \bibinfo
+  {pages} {054507} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Stanescu}\ \emph {et~al.}(2013)\citenamefont
+  {Stanescu}, \citenamefont {Lutchyn},\ and\ \citenamefont
+  {Das~Sarma}}]{Stanescu2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
+  {Stanescu}}, \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {Lutchyn}},\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Das~Sarma}},\ }\bibfield  {title} {\bibinfo {title} {Dimensional crossover
+  in spin-orbit-coupled semiconductor nanowires with induced superconducting
+  pairing},\ }\href {https://doi.org/10.1103/PhysRevB.87.094518} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Rev. B}\ }\textbf {\bibinfo {volume}
+  {87}},\ \bibinfo {pages} {094518} (\bibinfo {year} {2013})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Stanescu}\ \emph {et~al.}(2011)\citenamefont
+  {Stanescu}, \citenamefont {Lutchyn},\ and\ \citenamefont
+  {Das~Sarma}}]{Stanescu2011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
+  {Stanescu}}, \bibinfo {author} {\bibfnamefont {R.~M.}\ \bibnamefont
+  {Lutchyn}},\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Das~Sarma}},\ }\bibfield  {title} {\bibinfo {title} {Majorana fermions in
+  semiconductor nanowires},\ }\href
+  {https://doi.org/10.1103/PhysRevB.84.144522} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {84}},\ \bibinfo
+  {pages} {144522} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cole}\ \emph {et~al.}(2015)\citenamefont {Cole},
+  \citenamefont {Das~Sarma},\ and\ \citenamefont {Stanescu}}]{Cole2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~S.}\ \bibnamefont
+  {Cole}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Das~Sarma}},\
+  and\ \bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont {Stanescu}},\
+  }\bibfield  {title} {\bibinfo {title} {Effects of large induced
+  superconducting gap on semiconductor {Majorana} nanowires},\ }\href
+  {https://doi.org/10.1103/PhysRevB.92.174511} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {92}},\ \bibinfo
+  {pages} {174511} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Reeg}\ \emph {et~al.}(2018)\citenamefont {Reeg},
+  \citenamefont {Loss},\ and\ \citenamefont {Klinovaja}}]{Reeg2018}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Reeg}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Loss}},\ and\
+  \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Klinovaja}},\ }\bibfield
+  {title} {\bibinfo {title} {Metallization of a {Rashba} wire by a
+  superconducting layer in the strong-proximity regime},\ }\href
+  {https://doi.org/10.1103/PhysRevB.97.165425} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {97}},\ \bibinfo
+  {pages} {165425} (\bibinfo {year} {2018})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zhang}\ \emph {et~al.}(2017)\citenamefont {Zhang},
+  \citenamefont {G\"{u}l}, \citenamefont {Conesa-Boj}, \citenamefont {Nowak},
+  \citenamefont {Wimmer}, \citenamefont {Zuo}, \citenamefont {Mourik},
+  \citenamefont {de~Vries}, \citenamefont {van Veen}, \citenamefont {De~Moor},
+  \citenamefont {Bommer}, \citenamefont {van Woerkom}, \citenamefont {Car},
+  \citenamefont {Plissard}, \citenamefont {Bakkers}, \citenamefont
+  {Quintero-P\'erez}, \citenamefont {Cassidy}, \citenamefont {Koelling},
+  \citenamefont {Goswami}, \citenamefont {Watanabe}, \citenamefont
+  {Taniguchi},\ and\ \citenamefont {Kouwenhoven}}]{BalSc}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Zhang}}, \bibinfo {author} {\bibfnamefont {O.}~\bibnamefont {G\"{u}l}},
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Conesa-Boj}}, \bibinfo
+  {author} {\bibfnamefont {M.~P.}\ \bibnamefont {Nowak}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Wimmer}}, \bibinfo {author} {\bibfnamefont
+  {K.}~\bibnamefont {Zuo}}, \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Mourik}}, \bibinfo {author} {\bibfnamefont {F.~K.}\ \bibnamefont
+  {de~Vries}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {van Veen}},
+  \bibinfo {author} {\bibfnamefont {M.~W.~A.}\ \bibnamefont {De~Moor}},
+  \bibinfo {author} {\bibfnamefont {J.~D.~S.}\ \bibnamefont {Bommer}}, \bibinfo
+  {author} {\bibfnamefont {D.~J.}\ \bibnamefont {van Woerkom}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Car}}, \bibinfo {author}
+  {\bibfnamefont {S.~R.}\ \bibnamefont {Plissard}}, \bibinfo {author}
+  {\bibfnamefont {E.~P. A.~M.}\ \bibnamefont {Bakkers}}, \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Quintero-P\'erez}}, \bibinfo {author}
+  {\bibfnamefont {M.~C.}\ \bibnamefont {Cassidy}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Koelling}}, \bibinfo {author}
+  {\bibfnamefont {S.}~\bibnamefont {Goswami}}, \bibinfo {author} {\bibfnamefont
+  {K.}~\bibnamefont {Watanabe}}, \bibinfo {author} {\bibfnamefont
+  {T.}~\bibnamefont {Taniguchi}},\ and\ \bibinfo {author} {\bibfnamefont
+  {L.~P.}\ \bibnamefont {Kouwenhoven}},\ }\bibfield  {title} {\bibinfo {title}
+  {Ballistic superconductivity in semiconductor nanowires},\ }\href
+  {https://doi.org/10.1038/ncomms16025
+  https://www.nature.com/articles/ncomms16025#supplementary-information}
+  {\bibfield  {journal} {\bibinfo  {journal} {Nat. Commun.}\ }\textbf {\bibinfo
+  {volume} {8}},\ \bibinfo {pages} {16025} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
+\end{thebibliography}%
+
+%TC:endignore
+\end{document}
