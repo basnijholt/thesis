@@ -1,16 +1,17 @@
-\section{Supplemental Experimental Details}
-\subsection{Nanowire growth and device fabrication}
+\section{Appendix}
+
+\subsection{Supplemental Experimental Details}
+\subsubsection{Nanowire growth and device fabrication}
 The \mbox{InSb} nanowires used here were grown using a Au-catalysed vapor-liquid-solid mechanism in a metal organic vapor phase epitaxy reactor, resulting in zinc blende nanowires grown \mbox{along} the [111] crystal orientation, which are free of stacking \mbox{faults} and dislocations \cite{Car2014}. Local gates, covered by a h-BN dielectric flake, were fabricated on a silicon substrate. The nanowires were individually placed over the gates using a micromanipulator \cite{Flohr2011}. The contacts are fabricated by exposing the chip to a mild oxygen plasma cleaning after resist development, followed by immersion in a saturated ammonium polysulphide solution diluted by water to a 1:200 ratio for 30 minutes at \ang{60}C \cite{Suyatin2007}. For the normal contacts, the wires are exposed to 30 seconds of in-situ helium ion milling, before evaporating 10 nm Cr and 110 nm Au. The NbTiN contacts are fabricated by exposing the nanowire to 5 seconds or Ar plasma etching at 25 W, followed by sputtering of 5 nm NbTi and 85 nm NbTiN \cite{HardGap,BalSc}.
 
-\subsection{Measurement details}
+\subsubsection{Measurement details}
 The measurements were performed in a dilution refrigerator at an electron temperature of $\sim$ 50 mK  using a three-axis vector magnet and standard lockin techniques.
 
-\newpage
-\section{Supplemental Theoretical Details}
-\subsection{Details of the tight binding simulations}
+\subsection{Supplemental Theoretical Details}
+\subsubsection{Details of the tight binding simulations}
 The Hamiltonian defined in the main text is discretized on a lattice of a realistic nanowire geometry with a diameter of 70 nm and a length of 2 $\mu$m using a lattice spacing of 10 nm. The nanowire is covered by a 35 nm thick superconducting shell covering 3/8 of the circumference of the wire, posititioned on top of the wire [Fig. 2, 3(b)] or rotated from the top to the side by \ang{45} [Fig. 4(b)]. Transport calculations are performed by connecting the nanowire to semi-infinite normal leads, separated by a tunnel barrier on one side. The normal leads provide broadening of the peaks in the simulations \cite{Liu2017,Danon2017}. The superconducting proximity effect is implemented using the weak coupling approximation \cite{Nijholt2016}, in which the pairing gap $\Delta_0$ $=$ 0 in the nanowire, which is tunnel coupled to a superconductor with $\Delta_0$ $>$ 0 providing an induced gap of 0.45 meV at $B$ $=$ 0 T. The potential in the wire is given by $V(y,z)= \frac{\Delta V_G}{R} (z\cos(\Phi)+y\sin(\Phi))$, where $\Delta V_G$ is the potential difference between the middle and outer points of the wire, $R$ is the radius of the nanowire, and $\Phi$ parametrizes the direction of the electric field $\mathbf{\hat{E}}$, which is set to $\Phi$ = \ang{0} in all simulations, except for Fig. 4(d), where $\Phi$ = \ang{45}. The vector potential $\mathbf{A} = \left[B_y(z-z_0)-B_z(y-y_0),0,B_x(y-y_0)\right]^T$ is chosen such that it does not depend on $x$ and the offsets $x_0$, $y_0$, $z_0$ are chosen such that the vector potential averages to zero inside the superconductor, implying a total supercurrent of zero in the superconductor. This choice is supported by the negligible screening currents we observe in our Ginzburg-Landau simulations [Fig. \ref{fig:GL}]. $\mathbf{A}$ is implemented in the tight-binding model by Peierls substitution in the hopping amplitudes \cite{Hofstader1976}.
 
-\subsection{Details of the Ginzburg-Landau simulations}
+\subsubsection{Details of the Ginzburg-Landau simulations}
 To calculate the stray fields in the nanowire due to Meissner screening and vortex entry in the superconducting contact (results shown in Fig. \ref{fig:GL}), we have performed simulations on the Ginzburg-Landau model \cite{Gropp1996} in a realistic three-dimensional geometry using the dimensions of device A. We used a penetration depth $\lambda$ = 290 nm and a Ginzburg-Landau parameter $\kappa = \lambda / \xi$ = 50, in line with the values expected for our NbTiN film, which has a room temperature resistivity of 95 $\mu \Omega$cm and a critical temperature of 15 K. The Ginzburg-Landau functional is discretized both inside the superconducting contact as well as in its surrounding space \cite{Du1999} using a second-order finite difference scheme at a maximum internode distance of 0.01$\lambda$. The resulting energy functional is minimized using the nonlinear conjugate gradient method and the code is implemented on a NVidia CUDA architecture with high parallelization.
 We obtain the energy of states with vortices at finite magnetic fields by first introducing artificial perturbations near the sample boundary, followed by energy minimization to find the local minimum corresponding to a specific number of vortices. The optimal number of vortices at a certain magnetic field is then determined by finding the state with the lowest energy globally. We note that non-optimal amounts of vortices can be metastable due to significant Bean-Livingston barriers for vortex entry, so the actual number of vortices is hysteretic and depends on the dynamics of the magnetic field.
 
@@ -22,9 +23,8 @@ We obtain the energy of states with vortices at finite magnetic fields by first 
     (a) The top panel shows the schematic of the geometry used for Ginzburg-Landau simulations: a superconducting film covering a hexagonal nanowire. In a superconductor exposed to an external magnetic field $B$ we calculate the screening currents $I_{\mathrm{screening}}$, which induce stray magnetic fields $\Delta B$ in the nanowire. In (b) we show $\Delta B$ in the $xy$-plane in the middle of the nanowire, as indicated by the white line in (a). The bottom panel shows a top view of this $xy$-plane, where the arrows indicate the $x$ and $y$ components of $\Delta B$ in the nanowire for $B \parallel z$. (b) The $x$, $y$ and $z$-components (black, yellow, blue) of $\Delta B$ relative to the external field $B$ as a function of the position $x$ along the nanowire axis, where $x = 0$ corresponds to the middle of the superconducting contact. The lines show the mean stray field and the shaded regions are bounded by the minimum and maximum stray field found along the nanowire width at a particular $x$.  The end of the superconducting film is indicated by the dashed line. $B$ is along $x$, $y$ and $z$ (left, middle and right panel). Since the device dimensions are comparable to the penetration depth $\lambda = 290$ nm, the magnetic screening in the superconductor is incomplete, leading to small screening currents and stray fields of at most 4\% of $B$. These modifications are much smaller and do not match the anisotropy we observe in the measurements, which excludes Meissner screening as the origin of the observed anisotropic gap closing. We note that we have also evaluated $\Delta B$ at several different magnitudes of $B$ as well as in the presence of vortices and find relative stray fields of very comparable magnitude. (c) Energetically most favorable number of vortices as a function of $B$ along $x$, $y$ and $z$ (black, yellow, blue). Vortices form far more easily for $B \parallel z$. An anisotropic gap closing due to vortices near the nanowire would therefore cause the fastest gap closing along $z$, contrary to the anisotropic gap closing we observe, where the gap closes fastest for $B \parallel  y$ [see e.g. Fig. 1(e)]. Furthermore, for $B \parallel y$ vortices only start to appear at $B > 0.2$ T, while the gap is already strongly suppressed at 0.2 T [see e.g. Fig. 1(e)], which excludes vortex formation as the origin of the gap closing for $B \parallel y$ and indicates that vortices do not have a strong effect on the size of the induced gap.}
 \end{figure}
 
-\newpage
-\section{Extraction of SOI strength}
-\subsection{Determination of SOI strength $\alpha$ from gap closing}
+\subsection{Extraction of SOI strength}
+\subsubsection{Determination of SOI strength $\alpha$ from gap closing}
 In a Majorana nanowire the SOI strength $\alpha$ determines the shape of the gap closing along $B$-directions perpendicular to the spin-orbit field $B_{\mathrm{SO}}$ \cite{VanHeck,Pan2018} [see Fig. \ref{fig:SOIFit}(a)]. To find an analytical expression for the dependence of the gap closing on $\alpha$, we start from the conventional one-dimensional Majorana nanowire Hamiltonian \cite{Lutchyn2010,Oreg2010}, in which the gap size is given by the lowest energy eigenstate:
 \begin{equation}
 \Delta(B) = \min \bigg( \epsilon^2 + \epsilon_{\mathrm{SO}}^2 + \epsilon_{Z}^2 + \Delta(0)^2 \pm 2 \sqrt{\epsilon^2 ( \epsilon_{\mathrm{SO}}^2+\epsilon_{Z}^2 ) + \epsilon_{Z}^2\Delta(0)^2} \bigg)^\frac{1}{2}
@@ -60,8 +60,7 @@ $\alpha$ (eV\AA) & 0.15 $\pm$ 0.05 & 0.3 $\pm$ 0.1 & 0.35 $\pm$ 0.05 & 0.35 $\pm
 }
 \end{figure}
 
-\newpage
-\subsection{Estimation of SOI strength based on level repulsion}
+\subsubsection{Estimation of SOI strength based on level repulsion}
 SOI induces coupling between states of different momentum and spin in finite length Majorana nanowires, which leads to level repulsion when energy levels are nearly degenerate \cite{Stanescu2013}. Recently this level repulsion between longitudinal states within the same subband was used to estimate a SOI strength in epitaxial Al-InSb nanowires \cite{DeMoor2018}. Here, we follow the same procedure to estimate the SOI strength in a seperate device with a NbTiN superconductor that exhibits such level repulsion. We consider a low energy model of two levels dispersing in the magnetic field due to the Zeeman effect, coupled to each other by SOI with the matrix element $\delta_{\mathrm{SO}}$:
 
 \begin{equation}
@@ -82,7 +81,7 @@ We fit the eigenenergies of $H$ to our experimental data [Fig. \ref{fig:SOIlevel
 \end{figure}
 
 \clearpage
-\section{Supplemental Experimental Data}
+\subsection{Supplemental Experimental Data}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.77\textwidth]{../SFig1_Bsweeps_reproduced.pdf}
