@@ -17,14 +17,14 @@ In the short-junction limit Andreev bound states have the most weight in the sup
 \co{MBS in short-junction limit}
 Systematically studying the short-junction limit is relevant for the creation of Majorana bound states (MBS)~\cite{Qi2011, Leijnse2012, Alicea2012, Beenakker2013, Elliott2015} in semiconductor nanowires\cite{Lutchyn2010, Oreg2010} partially coated with epitaxially grown aluminum that have high interface quality.
 These systems were observed to have a well-developed hard induced gap comparable to the gap in the bare Al~\cite{Chang2015}, and subsequently showed zero bias peaks~\cite{Deng2016} and suppressed splitting of low energy states characteristic to MBS~\cite{Albrecht2016}.
-The theoretical description of the response of strongly coupled zero-dimensional NS junctions to magnetic field was analyzed in Ref.~\onlinecite{Cole2015}, where the authors report a strong suppression of the effective $g$ factor, potentially leading to the impossibility of inducing a topological phase at magnetic fields below the Clogston limit~\cite{Clogston1962}.
+The theoretical description of the response of strongly coupled zero-dimensional NS junctions to magnetic field was analyzed in Ref.~\cite{Cole2015}, where the authors report a strong suppression of the effective $g$ factor, potentially leading to the impossibility of inducing a topological phase at magnetic fields below the Clogston limit~\cite{Clogston1962}.
 
 \co{Use scattering formalism}
-Here we extend the analysis of Ref.~\onlinecite{Cole2015} using the scattering formalism that allows us to capture the nonlinear features of the spectrum, and by considering higher-dimensional systems with translational invariance.
+Here we extend the analysis of Ref.~\cite{Cole2015} using the scattering formalism that allows us to capture the nonlinear features of the spectrum, and by considering higher-dimensional systems with translational invariance.
 The scattering formalism has been routinely applied to short junctions in mesoscopic physics~\cite{[{For review see }] Beenakker2005}.
 Relevant works to the present study are on two-dimensional electronic gases with spin-orbit interactions~\cite{Bezuglyi2002, Dimitrova2006}.
 However, in Majorana literature the use of the scattering formalism has been limited~\cite{Cheng2012}.
-The equivalent of the scattering formalism using the effective Hamiltonian approach amounts to introducing an effective self-energy $\Sigma(E)$ which has a proper dependence on energy $E$~\cite{Liu2012, Stanescu2013, Peng2015} and then neglecting the energy term in the nonlinear eigenvalue problem $[H-\Sigma(E)]\psi = E\psi$, as done in, e.~g.,~Ref.~\onlinecite{Poeyhoenen2016}.
+The equivalent of the scattering formalism using the effective Hamiltonian approach amounts to introducing an effective self-energy $\Sigma(E)$ which has a proper dependence on energy $E$~\cite{Liu2012, Stanescu2013, Peng2015} and then neglecting the energy term in the nonlinear eigenvalue problem $[H-\Sigma(E)]\psi = E\psi$, as done in, e.~g.,~Ref.~\cite{Poeyhoenen2016}.
 
 \co{We find that it is not so bad}
 Our overall findings are favorable for the creation of MBS in Al-based NS systems.
@@ -101,7 +101,7 @@ S_A=\alpha(E)R,\quad R=\pmat{0 & r\\ -r^* & 0},
 \end{equation}
 where the index $j$ runs over the terminals, $\phi_j$ is the superconducting phase in lead $j$, and $\alpha(E)=\exp(-i\arccos(E/\Delta))$.~\cite{Beenakker1991}
 
-Following Ref.~\onlinecite{Beenakker1991}, eliminating $\psi$ from Eq.~\eqref{bound}, and using an expression for a block matrix determinant one immediately arrives to a determinantal equation for the bound state energies:
+Following Ref.~\cite{Beenakker1991}, eliminating $\psi$ from Eq.~\eqref{bound}, and using an expression for a block matrix determinant one immediately arrives to a determinantal equation for the bound state energies:
 \begin{equation}\label{det}
 \det[
 1+\alpha^2(E)r^*S_e(E,\mathbf k)rS^*_e(-E,-\mathbf k)
@@ -526,7 +526,7 @@ The two length scales $\xi_0$ and $\xi_1$ become equal at $\varepsilon \sim E_\t
 We obtain the behavior of $\xi$ in the tight-binding simulations using Kwant~\cite{Groth2014} for the same parameters as in Fig.~\ref{fig:gaps}.
 In order for the self-energy to become local in the $x$ coordinate we neglect the transverse dispersion in the superconductor and set $m_\parallel = \infty$.
 We then integrate out the superconductor and add a self-energy to the semiconductor.
-Finally, similar to Ref.~\onlinecite{Nijholt2016} we perform an eigendecomposition of the translation operator in the $x$ direction at zero energy to obtain the evanescent waves $\psi\propto e^{-\kappa x}$, with $\kappa$ the eigenvalue of the translation operator.
+Finally, similar to Ref.~\cite{Nijholt2016} we perform an eigendecomposition of the translation operator in the $x$ direction at zero energy to obtain the evanescent waves $\psi\propto e^{-\kappa x}$, with $\kappa$ the eigenvalue of the translation operator.
 The largest decay length is:
 \begin{equation}\label{ximnum}
 \xi = \max\mathrm{Re}[\kappa]^{-1},
@@ -577,7 +577,7 @@ The magnetic field is $B=\SI{1.5}{T}$ and chemical potential $\mu=\SI{3}{\meV}$.
 \label{fig:compAB}
 \end{figure}
 
-Our results for the scaling of $\xi_M$ with $B$ and $l_\textrm{SO}$ agree with the predictions of the phenomenological 1D model both near the topological transition or deep in the topological phase (see, e.~g.,~Ref.~\onlinecite{Klinovaja2012}), but we find no dependence of $\xi_M$ on $\Delta$.
+Our results for the scaling of $\xi_M$ with $B$ and $l_\textrm{SO}$ agree with the predictions of the phenomenological 1D model both near the topological transition or deep in the topological phase (see, e.~g.,~Ref.~\cite{Klinovaja2012}), but we find no dependence of $\xi_M$ on $\Delta$.
 
 \section{Spectrum of finite length junctions}
 \label{sec:finite}
@@ -614,10 +614,10 @@ With increasing $\Delta$ above $E_\mathrm{Th}\approx \SI{1}{\meV}$ the system ex
 \label{sec:orb}
 
 \co{Orbital effect is important, and we analyze it in thin shell limit.}
-We now turn to evaluate the consequences of the orbital effect of the magnetic field, known to strongly influence MBS properties~\cite{Lim2013, osca_majorana_2014, Osca2015, Nijholt2016}, in the short-junction limit.
+We now turn to evaluate the consequences of the orbital effect of the magnetic field, known to strongly influence MBS properties~\cite{Lim2013, Osca2014, Osca2015, Nijholt2016}, in the short-junction limit.
 This effect does not manifest in the model of Sec.~\ref{sec:1stmodel} when magnetic field points in the $x$ direction.
-To include the orbital effect we use a thin shell approximation, when the electron wave function in the semiconductor is confined to its surface, similar to the system studied in Ref.~\onlinecite{osca_majorana_2014}.
-However unlike Ref.~\onlinecite{osca_majorana_2014} we do not assume a constant induced gap and consider instead the nanowire contacted by a bulk superconductor, as shown in Fig.~\ref{fig:orb}.
+To include the orbital effect we use a thin shell approximation, when the electron wave function in the semiconductor is confined to its surface, similar to the system studied in Ref.~\cite{Osca2014}.
+However unlike Ref.~\cite{Osca2014} we do not assume a constant induced gap and consider instead the nanowire contacted by a bulk superconductor, as shown in Fig.~\ref{fig:orb}.
 We model the coupling to the superconductor as two infinite planar superconductors on each side of the 2D uncovered wire section.
 By doing so we neglect the possibility for electrons to tunnel through the superconductor to the other side of the uncovered section, which is justified by the density mismatch between the superconductor and the semiconductor.
 The thin shell limit is oversimplified and it overestimates the orbital effect of a magnetic field, however it provides an upper bound on the impact of the orbital effect and remains analytically tractable.
