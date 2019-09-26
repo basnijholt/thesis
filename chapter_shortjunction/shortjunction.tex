@@ -3,10 +3,10 @@
 
 %% Start the actual chapter on a new page.
 \newpage
-\noindent 
+\noindent
 
 \section{Introduction}
-\comment{Long vs short Josephson junction}
+\co{Long vs short Josephson junction}
 The theory of normal conductor-superconductor (NS) hybrid systems distinguishes two limiting cases: long and short junctions.
 In long junctions, the dwell time $\tau_\textrm{dw}$ of a quasiparticle inside the normal region is much larger than the time $\hbar/\Delta$ it spends inside the superconductor (with $\Delta$ the superconducting gap).
 In this limit the induced gap inside the semiconductor is equal to $\hbar/\tau_{\textrm{dw}}$, and therefore it varies for different bound states.
@@ -14,19 +14,19 @@ In the short-junction or strong-coupling limit, the quasiparticles spend most of
 Then in the presence of time-reversal symmetry, the induced gap is close to $\Delta$ for every single Andreev bound state.
 In the short-junction limit Andreev bound states have the most weight in the superconductor, and therefore the conventional approach of integrating out the superconductor and obtaining an effective Hamiltonian of the normal system becomes inefficient due to the strong energy dependence of the effective Hamiltonian.
 
-\comment{MBS in short-junction limit}
+\co{MBS in short-junction limit}
 Systematically studying the short-junction limit is relevant for the creation of Majorana bound states (MBS)~\cite{Qi2011, Leijnse2012, Alicea2012, Beenakker2013, Elliott2015} in semiconductor nanowires\cite{Lutchyn2010, Oreg2010} partially coated with epitaxially grown aluminum that have high interface quality.
 These systems were observed to have a well-developed hard induced gap comparable to the gap in the bare Al~\cite{Chang2015}, and subsequently showed zero bias peaks~\cite{Deng2016} and suppressed splitting of low energy states characteristic to MBS~\cite{Albrecht2016}.
 The theoretical description of the response of strongly coupled zero-dimensional NS junctions to magnetic field was analyzed in Ref.~\onlinecite{Cole2015}, where the authors report a strong suppression of the effective $g$ factor, potentially leading to the impossibility of inducing a topological phase at magnetic fields below the Clogston limit~\cite{Clogston1962}.
 
-\comment{Use scattering formalism}
+\co{Use scattering formalism}
 Here we extend the analysis of Ref.~\onlinecite{Cole2015} using the scattering formalism that allows us to capture the nonlinear features of the spectrum, and by considering higher-dimensional systems with translational invariance.
 The scattering formalism has been routinely applied to short junctions in mesoscopic physics~\cite{[{For review see }] Beenakker2005}.
 Relevant works to the present study are on two-dimensional electronic gases with spin-orbit interactions~\cite{Bezuglyi2002, Dimitrova2006}.
 However, in Majorana literature the use of the scattering formalism has been limited~\cite{Cheng2012}.
 The equivalent of the scattering formalism using the effective Hamiltonian approach amounts to introducing an effective self-energy $\Sigma(E)$ which has a proper dependence on energy $E$~\cite{Liu2012, Stanescu2013, Peng2015} and then neglecting the energy term in the nonlinear eigenvalue problem $[H-\Sigma(E)]\psi = E\psi$, as done in, e.~g.,~Ref.~\onlinecite{Poeyhoenen2016}.
 
-\comment{We find that it is not so bad}
+\co{We find that it is not so bad}
 Our overall findings are favorable for the creation of MBS in Al-based NS systems.
 Specifically, we find that:
 \begin{itemize}
@@ -40,7 +40,7 @@ Our analytical calculations fully coincide with the results obtained using a num
 While these conclusions are favorable for the prospect of using weak superconductors for MBS creation, we note that the effects of disorder in the superconductor are not systematically treated here.
 Disorder has been recently predicted to have a strong detrimental effect on the creation of MBS in systems that are in the short-junction limit~\cite{Cole2016}.
 
-\comment{Organization of the paper}
+\co{Organization of the paper}
 The paper is organized as follows.
 Section~\ref{sec:formalism} contains a pedagogical review of scattering formalism for the calculation of Andreev spectrum.
 The following Sec.~\ref{sec:jjintro} presents scaling arguments supporting our conclusions.
@@ -57,7 +57,7 @@ This section reviews the scattering approach to calculating the Andreev bound st
 We start by considering a general NS junction with $n$ superconducting terminals.~\cite{Heck2014}
 We use the case $n=1$ in Secs.~\ref{sec:1stmodel},~\ref{sec:topphases},~\ref{sec:3d} and $n=2$ in Sec.~\ref{sec:orb}.
 
-\comment{Andreev bound states condition.}
+\co{Andreev bound states condition.}
 The levels with $|E|<\Delta$ are Andreev bound states, i.e., coherent superpositions of electron and hole excitations which occur due to Andreev reflections~\cite{Andreev1964} at the interface between the normal region and the superconducting terminals.
 The wave function quantization condition on the wave function requires that the total sequence of scattering events results in a phase shift of $2\pi n$.
 For the vector of modes $\psi$ incoming from the superconductor to the normal region this condition reads:
@@ -67,7 +67,7 @@ S_A S_N\psi=\psi.
 Here $S_N$ is the scattering matrix of the normal region, and $S_A$ the scattering matrix of Andreev reflection processes in the superconducting terminals.
 The mode vector has electron and hole components $\psi=(\psi_e, \psi_h)$.
 
-\comment{Different bases}
+\co{Different bases}
 The Andreev reflection matrix assumes a universal form when the superconductor has $s$-wave pairing without any sources of time-reversal symmetry breaking and additionally when the Andreev approximation holds (when the Fermi energy in the superconductor is much larger than $\Delta$).
 In the literature, the Andreev spectrum is often calculated in systems where the superconductor Hamiltonian has full spin-rotation invariance (an appropriate approximation for aluminum), making the spin basis a natural choice of basis of $\psi$.
 Yet the universal structure of the Andreev reflection matrix does not change in the presence of spin-orbit coupling in the superconductor.
@@ -75,7 +75,7 @@ However, in that case it is impossible to choose a spin basis due to lack of spi
 Throughout the paper we work in the latter basis but explain the relation to the more commonly used spin basis for reference at the end of this section.
 Importantly, we neglect the time-reversal symmetry breaking perturbations in the superconductor, restricting ourselves to magnetic fields much lower than critical.
 
-\comment{Normal state scattering matrix.}
+\co{Normal state scattering matrix.}
 The scattering matrix of the normal region is block diagonal in the Nambu space:
 \begin{equation}
 S_N(E,\mathbf k)=\pmat{S_e(E,\mathbf k) & 0 \\
@@ -93,7 +93,7 @@ Using the block-diagonal structure of $S_N$ it follows that the normal scatterin
 S_h(E,\mathbf k)=S_e^*(-E,-\mathbf k).
 \end{equation}
 
-\comment{Andreev reflection matrix}
+\co{Andreev reflection matrix}
 In the same basis, the Andreev reflection matrix reads:
 \begin{equation}\label{areflmat}
 S_A=\alpha(E)R,\quad R=\pmat{0 & r\\ -r^* & 0},
@@ -145,7 +145,7 @@ The symmetry condition~\eqref{phs}, equation~\eqref{det} for the Andreev spectru
 
 \section{Scaling arguments for the MBS properties in the short-junction limit}
 \label{sec:jjintro}
-\comment{Nothing depends on the superconducting gap}
+\co{Nothing depends on the superconducting gap}
 The superconducting gap enters only as an overall prefactor of the Andreev state energies in Eq.~\eqref{nsspec}, while the specific spectrum depends only on the normal state scattering matrix $S_e$.
 This simplification allows us to draw most of our conclusions about MBS properties solely using universal arguments and not by solving a specific model.
 For instance, since the Majorana phase transition occurs when Eq.~\eqref{nsspec} has a zero-energy solution, the critical field $B_*$ does not depend on $\Delta$.
@@ -155,7 +155,7 @@ Turning to the spatial extent of MBS in the normal region $\xi_M$, we observe th
 However $\xi_S$ is often short: For example in aluminum films $\xi_S \sim {100}{\nm}$ due to disorder effects.
 If $\xi_M$ is predominantly set by the properties of induced superconductivity in the normal region, $\xi_M$ must also be independent of $\Delta$, since it is a property of the eigenvectors of Eq.~\eqref{nsspec} at $E=0$.
 
-\comment{Thouless energy is the most important energy scale}
+\co{Thouless energy is the most important energy scale}
 If the semiconductor has a cross section $W$, effective electron mass $m_n$, and it is coupled to the superconductor by an interface with transparency $T$, then the Thouless energy equals
 \begin{equation}
 \label{eq:e_thouless}
@@ -166,7 +166,7 @@ The denominator of the expression for $\delta$ contains $2W$ since it is the tot
 We focus on the experimentally relevant low-density regime when $N\sim 1$.
 In realistic nanowires $m_n\sim 10^{-2}m_e$, and $W\approx \SI{100}{\nm}$, resulting in $\delta \approx \SI{1}{\meV}$, much larger than the superconducting gap in aluminum $\Delta_\textrm{Al} \approx \SI{0.2}{\meV}$, which justifies the short-junction approximation for sufficiently transparent contacts $T\gtrsim 0.1$.
 
-\comment{Thouless energy sets the energy scale for $E_Z$}
+\co{Thouless energy sets the energy scale for $E_Z$}
 In order for the spectral gap to close in the normal region---or, in other words, for a topological phase transition to appear---the scattering matrix $S_e$ must change by $\mathcal{O}(1)$ since, in the presence of time-reversal symmetry, all the Andreev bound states have the same energy $E=\Delta$.
 For the Zeeman field to cause such a perturbation, the electron spin must precess by a large angle during the propagation inside the scattering region.
 This results in a condition $E_Z \tau_\textrm{dw}/\hbar\sim 1$, or equivalently
@@ -175,7 +175,7 @@ B_* \sim E_\textrm{Th}/g \mu_B,\label{eq:b_critical}
 \end{equation}
 with $g$ the effective gyromagnetic factor and $\mu_B$ the Bohr magneton.
 
-\comment{Orbital field has the same scaling with the geometric parameters of the device}
+\co{Orbital field has the same scaling with the geometric parameters of the device}
 The orbital effect of the magnetic field causes an additional time-reversal symmetry breaking perturbation to the normal scattering region.
 It becomes significant [causes an $\mathcal{O}(1)$ change of $S_e$] when the flux penetrating the scattering region becomes comparable to the flux quantum $\Phi_0=h/e$.
 This defines another scale of the magnetic field, characterizing the importance of its orbital effect $B_\textrm{orb}\sim h/eW^2$.
@@ -187,13 +187,13 @@ Comparing $B_\textrm{orb}$ with $B_*$ we get
 If transparency is high and the number of modes is low, then the relative strength of the orbital and Zeeman effects of the magnetic field is a material parameter dependent on the $g$ factor and the effective mass.
 For realistic materials this factor is $\mathcal{O}(1)$, which is in line with our results in Secs.~\ref{sec:orb} and~\ref{sec:3d}.
 
-\comment{MBS size is given by $l_\textrm{SO}$.}
+\co{MBS size is given by $l_\textrm{SO}$.}
 Turning to the spatial extent of the MBS $\xi_M$, we observe that it must diverge in the topological regime in the absence of spin-orbit coupling.
 The spectral gap at a finite momentum appears already in the first order perturbation in spin-orbit strength $\alpha$, and hence $\xi_M \sim \alpha^{-1}$.
 Finally, in the optimally tuned situation $N\sim 1$, and $B \sim B_*$, so that $S_N$ only depends on two energy scales: $\delta$ and the spin-orbit energy $E_\textrm{SO} = m_n \alpha^2/2\hbar^2$.
 This means that there is only a single length scale inversely proportional to $\alpha$, the spin-orbit length $l_\textrm{SO} = \hbar/m_n\alpha$, and hence $\xi_M\sim l_\textrm{SO}$.
 
-\comment{In an open junction $\tau_\textrm{dw}$ is a smooth function, so there are no oscillations in $B_*$.}
+\co{In an open junction $\tau_\textrm{dw}$ is a smooth function, so there are no oscillations in $B_*$.}
 The scattering approach highlights another important property of the Majorana phase diagram, the relation between $T$ and the oscillatory behavior of $B_*$.
 If $T\sim 1$, there is little scattering at the NS interface, and $\tau_\textrm{dw}$ becomes a smooth function of the chemical potential $\mu$.
 Combining this with Eq.~\eqref{eq:b_critical} we conclude that $B_*$ must also depend on $\mu$ in a smooth fashion.
@@ -202,7 +202,7 @@ Away from the resonance, when there are no available states at the selected ener
 This behavior of Thouless energy results in the appearance of a sharp minimum in $B_*$ whenever $\mu$ matches the bottom of a new band in the semiconductor region.
 In Sec.~\ref{sec:1stmodel} we confirm the relation between the interface transparency and the oscillatory nature of the Majorana phase boundary.
 
-\comment{The long junction behavior is not so different}
+\co{The long junction behavior is not so different}
 These findings are different from the predictions of a purely 1D phenomenological model~\cite{Lutchyn2010, Oreg2010} with the Hamiltonian
 \begin{equation}
 \label{eq:1D_majo_ham}
@@ -221,21 +221,21 @@ Finally, the rest of our conclusions follow in a similar fashion for the long ju
 \label{sec:1stmodel}
 \subsection{General solution}
 \label{sub:gen}
-\comment{Clean infinite superconductor limit is not unreasonable.}
+\co{Clean infinite superconductor limit is not unreasonable.}
 To verify our general arguments, we consider a specific model, a semiconductor nanowire in contact with a large superconductor.
 We consider the effective superconductor thickness to be infinite, unlike the typical experimental situation where the superconductor thickness is around \SI{10}{\nm}.
 This limit is nevertheless a reasonable approximation due to the large Fermi surface size mismatch between the superconductor and the semiconductor.
 A much larger Fermi surface in the superconductor means that most electron trajectories approaching the nanowire from the superconductor side must be reflected back.
 Full internal reflection in combination with diffuse scattering allows the superconductor to accommodate quasiparticle trajectories much longer than the superconducting coherence length $\xi_\mathrm S=\hbar v_{s,F}/\Delta$, making the superconductor effectively infinite.
 
-\comment{We consider a planar geometry without orbital effect of the magnetic field}
+\co{We consider a planar geometry without orbital effect of the magnetic field}
 We first consider the device geometry shown in Fig.~\ref{fig:1stmodel}.
 The nanowire is oriented along the $x$ axis, NS interface is at $y=0$, and the outer boundary of the wire is at $y=W$.
 The superconductor occupies the half-space $y<0$.
 Neglecting the orbital effect of the magnetic field makes the motion in $z$ direction separable and reduces the problem to a purely two-dimensional geometry, shown in Fig.~\ref{fig:1stmodel}(b).
 
 \begin{figure}[t]
-\includegraphics[width=0.8\columnwidth]{3d.pdf}
+\includegraphics[width=0.8\columnwidth]{chapter_shortjunction/figures/3d.pdf}
 \caption{(Color online) (a) Nanowire with width $W$ oriented along the $x$ direction and coupled to a bulk superconductor.
 The magnetic field is parallel to the wire, while the Rashba electric field points along the $z$ direction.
 (b) Semiclassical bound state trajectory in the two-dimensional nanowire. Electrons (solid blue) and holes (dashed red) specularly reflect at the boundary with vacuum and undergo Andreev reflection at the interface with the superconductor.
@@ -244,7 +244,7 @@ The induced gap may only close at $k_x = 0$.}
 \label{fig:1stmodel}
 \end{figure}
 
-\comment{We use Rashba 2DEG + BdG}
+\co{We use Rashba 2DEG + BdG}
 The normal state Hamiltonian of the system is that of a Rashba two-dimensional electron gas coupled to a material with negligible spin-orbit interaction and Zeeman coupling~\cite{BenDaniel1966}:
 \begin{equation}\label{danduke}
 H=\bigg[\bm p\frac{1}{2m(y)}\bm p-\mu(y)\bigg]\sigma_0
@@ -377,23 +377,23 @@ This results in $\delta \approx \SI{0.6}{\meV} \gg \Delta$, well within the requ
 \subsection{Modeling the NS interface}
 \label{sub:interf}
 
-\comment{Interface transparency is the main parameter that we want to simulate correctly, and it is set by the velocity ratio in the model}
+\co{Interface transparency is the main parameter that we want to simulate correctly, and it is set by the velocity ratio in the model}
 The final crucial parameter of the hybrid system is the transparency of the NS interface.
 In the model Hamiltonian~\eqref{danduke} the interface properties are set by the velocity ratio $v_\pm/v_s$, the only way the superconductor Hamiltonian parameters enter the scattering matrix~\eqref{scattphase}.
 We use the $v_s$ as a free parameter allowing us to study the effect of the interface properties on the topological phase diagram.
 
-\comment{A transparent interface is not unreasonable to expect due to the charge accumulation}
+\co{A transparent interface is not unreasonable to expect due to the charge accumulation}
 While the Fermi energy difference between aluminum and the semiconductor may span several orders of magnitude, the Fermi velocities do not differ so much because of a smaller effective mass in narrow band semiconductors.
 Specifically, the Fermi velocity in aluminum is $v_s \sim \SI{2e6}{\m/\s}$, while $v_\pm \sim \SI{2e5}{\m/\s}$ at a relatively low $\mu_n = \SI{3}{\meV}$, resulting in $T\gtrsim 0.4$.
 In real systems, the microscopic interface properties such as coupling strength and charge accumulation further influence the interface transparency.
 In the absence of a Schottky barrier, extra charge density at the interface smoothens the sharp change in velocity between the semiconductor and the superconductor and further enhances the transparency.
 
-\comment{Long junction allows to determine transparency, while the observed short junction behavior only puts a lower bound on it}
+\co{Long junction allows to determine transparency, while the observed short junction behavior only puts a lower bound on it}
 Transparency of the NS interface is hard to measure experimentally due to the complicated geometry of the normal metal-nanowire-superconductor samples.
 The experiments using high $\Delta$ superconductors such as NbTiN are in a long junction regime allowing us to estimate $T$ because the induced superconducting gap is $\approx T \delta$.
 On the other hand, tunneling spectroscopy only provides a lower bound on the transparency: $T \gtrsim \Delta/\delta$ in the short-junction regime.
 
-\comment{Therefore we check what happens with a fully transparent interface as well as semi-reflective interface}
+\co{Therefore we check what happens with a fully transparent interface as well as semi-reflective interface}
 To explore the impact of interface transparency on the MBS properties we adopt two choices of $v_s$: the highly transparent interface corresponding to $v_s \approx v_\pm$ and an interface with a finite transparency where we fix the value of $\mu_s$ to a constant.
 For convenience we choose an anisotropic mass in the superconductor $m_{s,y} = m_n$, $m_{s,x} = m_\parallel \gg m_n$, so that $\mu_s = \mu_n$ results in a perfect transmission at a $k_x=0$ and $B = 0$.
 The condition $m_\parallel \gg m_n$ ensures that $v_s$ only weakly depends on $k_x$, as it should due to the Fermi surface in the superconductor being much larger than in the semiconductor.
@@ -406,7 +406,7 @@ q = \left[\frac{2m_n}{\hbar^2}\mu_s
 \end{equation}
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{spec_comp}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/spec_comp}
 \caption{(Color online) Comparison of the Andreev spectra of a transparent NS junction between analytical short-junction predictions (SJT), numerical short-junction results including the spin-orbit interaction in the $y$ direction (SJN), and exact diagonalization of the BdG Hamiltonian~\eqref{sc} (ED).
 The system parameters are chosen as in Sec.~\ref{sec:phys_params} and \ref{sub:interf}.
 The longitudinal momentum is either $k_x=0$ (red), or finite such that the spectrum stays always gapped (blue).
@@ -430,7 +430,7 @@ Slight deviations of exact diagonalization results occur near the bulk gap, caus
 \subsection{Phases boundaries and the spectral gap}
 \label{sec:phas-bound-spectr}
 
-\comment{We compute topological invariant of this model}
+\co{We compute topological invariant of this model}
 Equation~\eqref{toptrans} yields the closing of the spectral gap and the topological transitions in the model.
 This allows us to define the topological invariant of the Hamiltonian as
 \begin{equation}\label{index}
@@ -440,14 +440,14 @@ where the sign of the square root is fixed by the analytic continuation and chos
 A typical spectrum at $k_x = 0$ as well as $\mathcal Q$ for a fixed $\mu$ is shown in Fig.~\ref{fig:index}.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{index}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/index}
 \caption{(Color online) The Andreev spectrum and the topological index $\mathcal Q$~\eqref{index} as a function of magnetic field.
 Trivial phase has $\mathcal{Q}=+1$, topological phase $\mathcal{Q}=-1$.
 The junction is in the transparent regime with $\mu_s=\mu_n=\SI{3}{\meV}$.}
 \label{fig:index}
 \end{figure}
 
-\comment{We calculate the phase diagram from the spectrum}
+\co{We calculate the phase diagram from the spectrum}
 In addition to identifying the topological phase boundaries for each set of parameters $(B, \mu_n)$ we calculate the spectral gap
 \begin{equation}\label{specgap}
 \Delta_\mathrm{spec}=\min_{k_x}|E(k_x)|,
@@ -457,14 +457,14 @@ In general, the dispersion relation has several local minima, as shown in Fig.~\
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\linewidth]{dispersion}
+\includegraphics[width=\linewidth]{chapter_shortjunction/figures/dispersion}
 \caption{A schematic of the dispersion relation of the junction for typical parameters.
 The dispersion relation near local minima $\Delta_0$ and $\Delta_1$ of the Andreev state energy is well approximated with a gapped Dirac dispersion relation, with Dirac cones marked with dashed lines.
 When the number of available modes in the semiconductor increases, the number of minima at finite momenta grows, but the outermost minimum stays located approximately at $k_x = k_{n,F}$.}
 \label{fig:dispersion}
 \end{figure}
 
-\comment{It is reasonable overall, and has all the usual asymptotes.}
+\co{It is reasonable overall, and has all the usual asymptotes.}
 The resulting topological phase diagram of a transparent junction (with $\mu_s = \mu_n$) is shown in Fig.~\ref{fig:gaps}.
 For typical junction parameters (as described in Sec.~\ref{sec:phys_params}) $g\mu_B B_c \approx 9\,\delta$, and the phase diagram for higher field values does not apply to such junctions.
 The minimal value of the critical field in this phase diagram corresponds to $B_*\approx \SI{0.7}{\tesla}$.
@@ -483,7 +483,7 @@ In both estimates we assumed $\mu \sim E_Z \sim \delta$, and $T\sim 1$.
 Comparing Eqs.~\eqref{eq:dirac_point_gap} and \eqref{eq:SOC_gap} we find the energy scale for the transition between the two behaviors $\varepsilon_* \sim \sqrt{E_\textrm{SO} \delta}$.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{gaps}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/gaps}
 \caption{(Color online) The spectral gap times the topological index $\mathcal Q \Delta_\mathrm{spec} /\Delta \in(-1,1)$ as a function of chemical potential $\mu$ and magnetic field $B$.
 Here we consider a transparent NS interface $\mu=\mu_s=\mu_n$ and an anisotropic mass in the superconductor $m_\parallel=10\;m_n$, $m_\perp = m_n$.
 The phase boundaries Eq.~\eqref{toptrans} are given by continuous red lines.
@@ -493,7 +493,7 @@ The inset shows the phase boundaries in a similar parameter range for a junction
 \label{fig:gaps}
 \end{figure}
 
-\comment{But the phase boundary has no wiggles due to transparency.}
+\co{But the phase boundary has no wiggles due to transparency.}
 The most unusual feature of the topological phase diagram in Fig.~\ref{fig:gaps} is the smooth behavior of the topological phase boundary, different from the hyperbolically-shaped boundary $E_Z^2 > \Delta'^2 + \mu^2$ of the phenomenological models\cite{Lutchyn2010,Oreg2010,Lutchyn2011}.
 This difference appears not due to the short-junction limit---since the magnitude of the gap does not impact the topological phase boundary---but rather because of the high interface transparency.
 The inset in Fig.~\ref{fig:gaps} shows the shape of the topological phase boundary where we have reduced the transparency by fixing $\mu_s$ at a high value.
@@ -501,13 +501,13 @@ We find that in this case the phase boundary has a hyperbolic shape predicted by
 
 \subsection{Decay length of MBS}
 
-\comment{We calculate the decay length in the Dirac limit}
+\co{We calculate the decay length in the Dirac limit}
 Exact evaluation of the MBS decay length starting from Eq.~\eqref{andreev} is not possible because the spectrum in the short-junction approximation does not correspond to a local Hamiltonian (the same fact manifests in the complex nonlinear dispersion of the Andreev states).
 Nevertheless, the decay length is approximated well by assessing the contributions of different local minima of the dispersion relation, as shown in Fig.~\ref{fig:dispersion}.
 A gapped Dirac cone with velocity $v$ and gap $\Delta$ results in a wave function decay length $\xi = \hbar v/\Delta$ at $E=0$.
 The size of the MBS $\xi_M$ is set by the slowest decaying component of the wave function, or the largest $\xi$.
 
-\comment{Using scaling arguments we find that the crossover between two regimes happens at $\sim E_{SO}$}
+\co{Using scaling arguments we find that the crossover between two regimes happens at $\sim E_{SO}$}
 Once again, it is instructive to estimate $\xi$ using scaling arguments in two regimes: near a topological transition and deep in the topological phase.
 At the phase transition point the slope of the Dirac cone at $k_x=0$, $v_0 \propto \alpha$ since without spin-orbit coupling the band touching at $k_x = 0$ must have a parabolic shape.
 Since the bulk superconductor gap $\Delta$ must enter the spectrum only as an overall prefactor, we get
@@ -522,7 +522,7 @@ The velocity at the outermost Dirac point must not depend on $\alpha$, resulting
 \end{equation}
 The two length scales $\xi_0$ and $\xi_1$ become equal at $\varepsilon \sim E_\textrm{SO} \ll \sqrt{E_\textrm{SO} \delta} = \varepsilon_*$.
 
-\comment{The small crossover energy scale is clearly visible in the numerical calculation of $\xi$.}
+\co{The small crossover energy scale is clearly visible in the numerical calculation of $\xi$.}
 We obtain the behavior of $\xi$ in the tight-binding simulations using Kwant~\cite{Groth2014} for the same parameters as in Fig.~\ref{fig:gaps}.
 In order for the self-energy to become local in the $x$ coordinate we neglect the transverse dispersion in the superconductor and set $m_\parallel = \infty$.
 We then integrate out the superconductor and add a self-energy to the semiconductor.
@@ -538,7 +538,7 @@ The divergence in decay lengths seen in Fig.~\ref{fig:decay_diag} corresponds to
 Figure~\ref{fig:decay_diag} also confirms that $\xi_M$ saturates at a distance $\varepsilon \sim E_\textrm{SO}$ away from that phase transition (here $E_\textrm{SO} \approx\SI{40}{\mu eV}$).
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{decay_length_2d}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/decay_length_2d}
 \caption{(Color online) The largest decay length of subgap modes in units of wire width $W$, as a function of chemical potential $\mu$ and magnetic field $B$.
 At the topological transitions the decay length rapidly diverges.
 The junction is in a fully transparent regime with $\mu_n=\mu_s$ and $m_\parallel =\infty$ in the superconductor.
@@ -566,7 +566,7 @@ The Fermi velocity near $k_F\ne 0$ follows immediately:
 Taking the ratio~\eqref{eq:v_k_f}, it follows that the MBS decay length does indeed grow linearly with magnetic field and spin-orbit length deep in the topological phase [see Fig.~\ref{fig:compAB}], in qualitative agreement with the numerical calculation using Eq.~\eqref{ximnum}.
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{compAB}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/compAB}
 \caption{
 (Color online)
 Scaling behavior of the MBS decay length $\xi_M$ deep in the topological phase.
@@ -591,7 +591,7 @@ Finally, the remaining model parameters are chosen according to Sec.~\ref{sec:ph
 We determine numerically several lowest energy states and compare them with $\Delta_\textrm{spec}$ calculated in Sec.~\ref{sec:topphases}, as shown in Fig.~\ref{fig:finite}.
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{finite}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/finite}
 \caption{(Color online) Comparison between the predictions of the analytical short-junction approximation and a numerical spectrum of a finite NS junction.
 Solid line: $\Delta_\textrm{spec}$ calculated using Eqs.~\eqref{andreev} and~\eqref{specgap} as a function of magnetic field.
 Dotted lines: 10 lowest energy states in a finite size NS junction using the same parameters.
@@ -613,7 +613,7 @@ With increasing $\Delta$ above $E_\mathrm{Th}\approx \SI{1}{\meV}$ the system ex
 \section{Orbital field effect in thin shell approximation}
 \label{sec:orb}
 
-\comment{Orbital effect is important, and we analyze it in thin shell limit.}
+\co{Orbital effect is important, and we analyze it in thin shell limit.}
 We now turn to evaluate the consequences of the orbital effect of the magnetic field, known to strongly influence MBS properties~\cite{Lim2013, osca_majorana_2014, Osca2015, Nijholt2016}, in the short-junction limit.
 This effect does not manifest in the model of Sec.~\ref{sec:1stmodel} when magnetic field points in the $x$ direction.
 To include the orbital effect we use a thin shell approximation, when the electron wave function in the semiconductor is confined to its surface, similar to the system studied in Ref.~\onlinecite{osca_majorana_2014}.
@@ -623,7 +623,7 @@ By doing so we neglect the possibility for electrons to tunnel through the super
 The thin shell limit is oversimplified and it overestimates the orbital effect of a magnetic field, however it provides an upper bound on the impact of the orbital effect and remains analytically tractable.
 
 \begin{figure}[tb]
-\centering{\includegraphics[width=\columnwidth]{orb}}
+\centering{\includegraphics[width=\columnwidth]chapter_shortjunction/figures/{orb}}
 \caption{(Color online) (a) A cross section of a NS hybrid junction. The magnetic field is parallel to the wire axis, while the Andreev bound state trajectories are confined to the nanowire surface.
 (b) The equivalent two-dimensional system defined on the plane ($x,\theta$).
 Since we neglect the possibility for electrons to tunnel through the superconductor, we consider the superconducting leads at $\theta<0$ and $\theta>\theta_0$ infinite.
@@ -643,8 +643,8 @@ We assume that the magnetic field is fully screened from the superconductor and 
 Compared to the previous sections where the treatment was more general, we assume from the start the transparent junction limit, when Fermi velocities at $k_x=0$ are identical in the superconductor and the semiconductor and we also neglect the spin-orbit coupling in the transverse direction, as appropriate for $l_\textrm{SO} \gg R \theta_0$.
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{gaps_orb}
-\centering{\includegraphics[width=\columnwidth]{Borb}}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/gaps_orb}
+\centering{\includegraphics[width=\columnwidth]chapter_shortjunction/figures/{Borb}}
 \caption{(Color online) (a) Majorana phase diagram $\mathcal{Q} \Delta_\textrm{spec}$ of a transparent NS junction with $\mu_s=\mu_n=\mu$, $m_{s,x}=m_\parallel$, $m_{s,y}=m$, $m_n=m$, and $m_\parallel=10 m$, as a function of chemical potential and magnetic field.
 The covering angle is $\theta_0 = \SI{2}{rad}$, so that the width of the uncovered section $R\theta_0$ is equal to the wire diameter.
 (b) An example of Andreev spectrum at $k_x=0$, $\mu_n=\mu_s=\SI{3}{\meV}$, and other parameters the same as in (a) in the presence and absence of the orbital effect.
@@ -687,7 +687,7 @@ Despite that, it is the Zeeman field responsible for opening the topological gap
 \section{Numerical study of a three-dimensional nanowire}
 \label{sec:3d}
 
-\comment{As a final check we study 3D}
+\co{As a final check we study 3D}
 To confirm our findings in a model with a more realistic geometry, we numerically calculate the phase diagram of a three-dimensional nanowire in the short-junction limit.
 The system consists of a semiconductor nanowire infinite in the $x$ direction and with a square cross section contacted by a bulk superconductor occupying $y<0$ half space  [see Fig.~\ref{fig:1stmodel}(a)].
 
@@ -706,7 +706,7 @@ Comparing the top panels of Fig.~\ref{fig:phase_diagrams_3d} with Fig.~\ref{fig:
 These correspond to the appearance of the additional bands with a different value of $k_z$ and a minimum in the interface transparency.~\footnote{The code for the tight-binding simulations of the two-dimensional and three-dimensional junctions is available in ancillary files to the manuscript.}
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{phase_diagrams_3d}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/phase_diagrams_3d}
 \caption{(Color online) Spectral gap $\Delta_\mathrm{spec}/\Delta$ dependence on chemical potential $\mu$ in the nanowire and magnetic field $B$ of a square nanowire without (top panels) and with (bottom panels) orbital effect of the magnetic field.
 Panels (a), (c) show results for wire section $\SI{100}{\nm} \times \SI{100}{\nm}$, while (b), (d), for $\SI{120}{\nm} \times \SI{120}{\nm}$.
 The white box in the right panels shows the same parameter range rescaled by a factor $\left(100/120\right)^2$ to highlight the $W^2$ scaling of the phase diagram.}
@@ -719,36 +719,32 @@ Increasing the cross section of the wire [Fig.~\ref{fig:phase_diagrams_3d}(a), (
 \section{Conclusions and outlook}
 \label{sec:conc}
 
-\comment{Superconducting gap is unimportant.}
+\co{Superconducting gap is unimportant.}
 We have studied the impact of a small superconducting gap on the properties of MBS in semiconductor-superconductor junctions.
 The short-junction formalism, appropriate for this limit, allows us to draw universal conclusions about the MBS properties.
 Contrary to the intuitive expectations, we show that the reduction of the superconducting gap does not alter the Majorana phase diagram and does not change the size of the MBS.
 We therefore conclude that in most practical systems the superconducting gap should not be used as an important parameter in optimizing MBS properties.
 
-\comment{High interface transparency is advantageous.}
+\co{High interface transparency is advantageous.}
 On the other hand, we find that the transparency of the semiconductor-superconductor boundary has an important and previously overlooked effect on the Majorana phase diagram.
 An interface with $T \approx 1$ produces a phase boundary between trivial and topological phases which depends weakly on the chemical potential.
 This is in contrast to $T \ll 1$, used in most prior research, that results in the critical magnetic field having an oscillatory dependence on chemical potential with minima corresponding to the opening of a new band.
 
-\comment{Orbital effect of magnetic field cannot be avoided by superconductor choice or tuning system size.}
+\co{Orbital effect of magnetic field cannot be avoided by superconductor choice or tuning system size.}
 Orbital effect of magnetic field plays a dual role: It reduces the critical magnetic field as well as the spectral gap in the topological regime.
 Contrary to the predictions of a phenomenological model that assumes a constant induced gap, we show that relative importance of magnetic field cannot be controlled by the superconducting gap or the diameter of the nanowire.
 
-\comment{2DEGs are probably best for Majoranas}
+\co{2DEGs are probably best for Majoranas}
 Our findings suggest that creation of MBS in proximitized two-dimensional electron gases laterally contacted by a superconductor is a promising direction of further research.
 In these systems the relative strength of the orbital and the Zeeman effect of magnetic field is controlled by an extra tuning parameter: the ratio between the semiconductor thickness and its width.
 Additionally, the critical magnetic field in such devices could be tuned using a side gate, effectively changing the semiconductor width without altering the superconductor-semiconductor interface transparency.
 
-\comment{Insensitivity to chemical potential could mean insensitivity to disorder.}
+\co{Insensitivity to chemical potential could mean insensitivity to disorder.}
 Another important further direction of research is the interplay between junction transparency and disorder.
 Since a transparent interface results in a weaker dependence of the critical magnetic field on the chemical potential, it is reasonable to conjecture that the sensitivity of MBS properties to disorder is also reduced in the transparent regime.
 
-\acknowledgements{
-The authors thank B.~van Heck, M.~Irfan, M.~P.~Nowak, T.~\"O.~Rosdahl, and M.~Wimmer for many fruitful discussions.
-This research was supported by the Foundation for Fundamental Research on Matter (FOM), the Netherlands Organization for Scientific Research (NWO/OCW) as part of the Frontiers of Nanoscience program, and an ERC Starting Grant.}
-
-\appendix
-\section{Interface transparency in a two-dimensional junction}
+\section{appendix}
+\subsection{Interface transparency in a two-dimensional junction}
 \label{sec:app}
 The validity of the short-junction approximation depends on NS interface transparency $T$.
 In this section, we review the transparency of a sharp interface between two materials with a parabolic dispersion.
@@ -767,7 +763,7 @@ q &=& \left[\frac{2m_\perp}{\hbar^2}(E+\mu_s)
 where we use the same notation as in Sec.~\ref{sub:gen} the superconductor has anisotropic mass $(m_\perp, m_\parallel)$.
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{transparency}
+\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/transparency}
 \caption{(Color online)
 Transmission probability of one of the spin polarizations $T_-$ of an infinite NS junction.
 (a, c, and d) $T_-$ as a function of magnetic field $B$ in units of $\frac{2\delta}{g\mu_B}$, with $\delta$ defined in Eq.~\eqref{eq:e_thouless} and parallel momentum $k_x$ (in units of $k_F^0=\sqrt{2m_n\mu_n/\hbar^2}$).
@@ -806,7 +802,7 @@ Then the interface becomes opaque for higher momenta $k_x$.
 
 Finally, choosing $\mu_s = \mu_n$ and an anisotropic mass in the superconductor $(m_{s,x},m_{s,y})=(m_\parallel, m_n)$, with $m_\parallel \gg m_n$ results in an interface that stays transparent for all $k_x$ [see Fig.~\ref{fig:transp}(d)].
 
-\section{Independence of critical magnetic field on the superconducting gap}
+\subsection{Independence of critical magnetic field on the superconducting gap}
 \label{sec:app2}
 
 Here we verify the validity of our conclusions about the scaling of the eigenenergies and the independence of $B_*$ on $\Delta$ using exact diagonalization of a finite BdG Hamiltonian for the semiconductor-superconductor heterostructure at different values of the superconducting gap.
@@ -815,7 +811,7 @@ We check the behavior of the critical field and the bulk band gap by tracking th
 Our results for a heterojunction of size $\SI{3000}{\nm}\times\SI{6000}{\nm}$ with a normal region occupying $\SI{3000}{\nm}\times\SI{100}{\nm}$ are shown in Fig.~\ref{fig:scaling_delta}.
 
 \begin{figure}[h]
-\includegraphics[width=0.9\columnwidth]{scaling_ref}
+\includegraphics[width=0.9\columnwidth]{chapter_shortjunction/figures/scaling_ref}
 \caption{(Color online) The energy of the second excited state of a finite nanowire junction calculated using exact diagonalization.
 Up to the second topological phase transition it is a good approximation of the induced gap.
 The eigenenergies are normalized to $\Delta$ in panel (a) and unnormalized in panel (b).
