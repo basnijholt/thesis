@@ -1,0 +1,189 @@
+Aasen2016:
+  by_hand: false
+  doi: 10.1103/PhysRevX.6.031016
+AguadoReview:
+  by_hand: true
+  doi: 10.1393/ncr/i2017-10141-9
+Albrecht2016:
+  by_hand: false
+  doi: 10.1038/nature17162
+Antipov2018:
+  by_hand: false
+  doi: 10.1103/PhysRevX.8.031041
+BalMaj:
+  by_hand: false
+  doi: 10.1038/s41565-017-0032-8
+BalSc:
+  by_hand: false
+  doi: 10.1038/ncomms16025
+Car2014:
+  by_hand: false
+  doi: 10.1002/adma.201400924
+Chang2015:
+  by_hand: false
+  doi: 10.1038/nnano.2014.306
+Cole2015:
+  by_hand: false
+  doi: 10.1103/PhysRevB.92.174511
+Danon2017:
+  by_hand: false
+  doi: 10.1103/PhysRevB.96.125420
+DavidOneMin:
+  by_hand: false
+  doi: 10.1038/nphys3342
+DeMoor2018:
+  by_hand: false
+  doi: 10.1088/1367-2630/aae61d
+Deng2016:
+  by_hand: false
+  doi: 10.1126/science.aaf3961
+Du1999:
+  by_hand: false
+  doi: 10.1137/s0036142997330317
+Fasth2007:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.98.266801
+Flohr2011:
+  by_hand: false
+  doi: 10.1063/1.3657135
+Fu2008:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.100.096407
+Gazibegovic2017:
+  by_hand: false
+  doi: 10.1038/nature23468
+Gropp1996:
+  by_hand: false
+  doi: 10.1006/jcph.1996.0022
+Groth2014:
+  by_hand: false
+  doi: 10.1088/1367-2630/16/6/063065
+Hansen2005:
+  by_hand: false
+  doi: 10.1103/PhysRevB.71.205328
+HardGap:
+  by_hand: false
+  doi: 10.1021/acs.nanolett.7b00540
+Hofstader1976:
+  by_hand: false
+  doi: 10.1103/PhysRevB.14.2239
+Isaacson1968:
+  by_hand: false
+  doi: 10.1103/PhysRev.169.312
+JakobHelical:
+  by_hand: false
+  doi: 10.1038/s41467-017-00315-y
+JakobQuant:
+  by_hand: false
+  doi: 10.1021/acs.nanolett.6b00051
+Karzig2017:
+  by_hand: false
+  doi: 10.1103/PhysRevB.95.235305
+Kitaev2001:
+  by_hand: false
+  doi: 10.1070/1063-7869/44/10S/S29
+Kitaev2003:
+  by_hand: false
+  doi: 10.1016/S0003-4916(02)00018-0
+Krogstrup2015:
+  by_hand: false
+  doi: 10.1038/nmat4176
+Liu2017:
+  by_hand: false
+  doi: 10.1103/PhysRevB.95.054502
+Liu2019:
+  by_hand: false
+  doi: 10.1103/PhysRevB.99.024510
+Lutchyn2010:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.105.077001
+LutchynReview:
+  by_hand: false
+  doi: 10.1038/s41578-018-0003-1
+Mikkelsen2018:
+  by_hand: false
+  doi: 10.1103/PhysRevX.8.031040
+Mourik2012:
+  by_hand: false
+  doi: 10.1126/science.1222360
+NadjPerge2012:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.108.166801
+Nayak2008:
+  by_hand: false
+  doi: 10.1103/RevModPhys.80.1083
+Nijholt2016:
+  by_hand: false
+  doi: 10.1103/PhysRevB.93.235434
+Oreg2010:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.105.177002
+Osca2014:
+  by_hand: false
+  doi: 10.1103/PhysRevB.89.245405
+Pan2018:
+  by_hand: false
+  doi: 10.1103/PhysRevB.99.054507
+Pientka2012:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.109.227006
+Plugge2017:
+  by_hand: false
+  doi: 10.1126/science.1113523
+Prada2012:
+  by_hand: false
+  doi: 10.1103/PhysRevB.86.180503
+Pryor2006:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.96.026804
+QZBP:
+  by_hand: false
+  doi: 10.1038/nature26142
+Qu2016:
+  by_hand: false
+  doi: 10.1021/acs.nanolett.6b03297
+Reeg2018:
+  by_hand: false
+  doi: 10.1103/PhysRevB.97.165425
+Rex2014:
+  by_hand: false
+  doi: 10.1103/PhysRevB.90.115429
+Sau2012:
+  by_hand: false
+  doi: 10.1103/PhysRevB.85.064512
+Stanescu2011:
+  by_hand: false
+  doi: 10.1103/PhysRevB.84.144522
+Stanescu2012:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.109.266402
+Stanescu2013:
+  by_hand: false
+  doi: 10.1103/PhysRevB.87.094518
+Suyatin2007:
+  by_hand: false
+  doi: 10.1088/0957-4484/18/10/105307
+Takei2013:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.110.186803
+Tinkham:
+  by_hand: true
+  doi: null
+VanHeck:
+  by_hand: false
+  doi: 10.1103/PhysRevB.96.075404
+VanWeperen2015:
+  by_hand: false
+  doi: 10.1103/PhysRevB.91.201413
+VanWoerkom2017:
+  by_hand: false
+  doi: 10.1038/nphys4150
+Vuik2016:
+  by_hand: false
+  doi: 10.1088/1367-2630/18/3/033013
+Winkler2017:
+  by_hand: false
+  doi: 10.1103/PhysRevLett.119.037701
+Woods2018:
+  by_hand: false
+  doi: 10.1103/PhysRevB.98.035428
