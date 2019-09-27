@@ -6,7 +6,7 @@ all: pdf
 force-build:
 
 pdf: force-build
-	python combine_bib_files.py
+# 	python combine_bib_files.py
 	pdflatex dissertation
 	bibtex chapter_introduction/introduction
 	bibtex chapter_adaptive/adaptive
