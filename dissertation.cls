@@ -479,4 +479,3 @@
     linkcolor = title,
     urlcolor = title
 }
-
