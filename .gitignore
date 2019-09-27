@@ -10,7 +10,6 @@
 *.aux
 #*.pdf
 dissertation.pdf
-dissertation.bib
 
 # Packages #
 ############

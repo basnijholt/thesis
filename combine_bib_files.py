@@ -7,6 +7,7 @@ import yaml
 def replace_key(key, bib_entry):
     start = "@article{"
     result = start + ",".join([key] + bib_entry[len(start) :].split(",")[1:])
+    print(result, "\n")
     return result
 
 
@@ -18,7 +19,7 @@ def doi2bib(doi):
     return r.text
 
 bibs = [f for f in glob.glob("*/*yaml") if "tmp.yaml" not in f]
-print(bibs)
+print("Reading: ", bibs)
 
 mapping = {}
 for fname in bibs:
