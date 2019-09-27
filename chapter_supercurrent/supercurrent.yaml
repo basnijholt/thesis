@@ -1,6 +1,6 @@
 Aasen2016:
   by_hand: false
-  doi: 10.1103/physrevx.6.031016
+  doi: 10.1103/PhysRevX.6.031016
 Albrecht2016:
   by_hand: false
   doi: 10.1038/nature17162
@@ -75,7 +75,7 @@ Guel2018:
   doi: 10.1038/s41565-017-0032-8
 Hofstadter1976:
   by_hand: false
-  doi: 10.1103/physrevb.14.2239
+  doi: 10.1103/PhysRevB.14.2239
 Hyart2013:
   by_hand: false
   doi: 10.1103/physrevb.88.035121
@@ -84,13 +84,13 @@ Kammhuber2016:
   doi: 10.1021/acs.nanolett.6b00051
 Karzig2017:
   by_hand: false
-  doi: 10.1103/physrevb.95.235305
+  doi: 10.1103/PhysRevB.95.235305
 Kautz1990:
   by_hand: false
   doi: 10.1103/physrevb.42.9903
 Kitaev2001:
   by_hand: false
-  doi: 10.1070/1063-7869/44/10s/s29
+  doi: 10.1070/1063-7869/44/10S/S29
 Lange2015:
   by_hand: false
   doi: 10.1103/physrevlett.115.127002
@@ -105,7 +105,7 @@ Lehnert1999:
   doi: 10.1103/physrevlett.82.1265
 Lutchyn2010:
   by_hand: false
-  doi: 10.1103/physrevlett.105.077001
+  doi: 10.1103/PhysRevLett.105.077001
 Michelsen2008:
   by_hand: false
   doi: 10.1103/physrevb.77.184506
@@ -120,7 +120,7 @@ Nichele2017:
   doi: 10.1103/physrevlett.119.136803
 Oreg2010:
   by_hand: false
-  doi: 10.1103/physrevlett.105.177002
+  doi: 10.1103/PhysRevLett.105.177002
 Ostroukh2016:
   by_hand: false
   doi: 10.1103/physrevb.94.094514
@@ -159,13 +159,13 @@ Weperen2012:
   doi: 10.1021/nl3035256
 Weperen2015:
   by_hand: false
-  doi: 10.1103/physrevb.91.201413
+  doi: 10.1103/PhysRevB.91.201413
 Wiedenmann2015:
   by_hand: false
   doi: 10.1038/ncomms10303
 Yokoyama2014:
   by_hand: false
-  doi: 10.1103/physrevb.89.195407
+  doi: 10.1103/PhysRevB.89.195407
 Yokoyama2014a:
   by_hand: false
   doi: 10.1209/0295-5075/108/47009
