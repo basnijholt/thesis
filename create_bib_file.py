@@ -1,6 +1,7 @@
 import functools
 import glob
 import os
+from concurrent.futures import ThreadPoolExecutor
 
 import requests
 import yaml
@@ -9,6 +10,12 @@ import yaml
 def replace_key(key, bib_entry):
     start = "@article{"
     result = start + ",".join([key] + bib_entry[len(start) :].split(",")[1:])
+
+    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}")]
+    for old, new in to_replace:
+        result = result.replace(old.upper(), new.upper())
+        result = result.replace(old.lower(), new.lower())
+
     print(result, "\n")
     return result
 
@@ -32,11 +39,13 @@ for fname in bibs:
 mapping = dict(sorted(mapping.items()))
 
 
-entries = [
-    replace_key(key, doi2bib(d["doi"]))
-    for key, d in mapping.items()
-    if not d["by_hand"]
-]
+dois = {key: d["doi"] for key, d in mapping.items() if not d["by_hand"]}
+with ThreadPoolExecutor() as ex:
+    futs = ex.map(doi2bib, dois.values())
+    bibs = list(futs)
+
+
+entries = [replace_key(key, bib) for key, bib in zip(dois.keys(), bibs)]
 
 
 bib_files = glob.glob("chapter_*/not_on_crossref.bib")
