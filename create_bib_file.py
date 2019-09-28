@@ -8,12 +8,14 @@ import yaml
 
 
 def replace_key(key, bib_entry):
-    start = "@article{"
-    result = start + ",".join([key] + bib_entry[len(start) :].split(",")[1:])
+    bib_type, *_ = bib_entry.split("{")
+    _, *rest = bib_entry.split(",")
+    rest = ",".join(rest)
+    result = bib_type + "{" + key + "," + rest
 
     # XXX: I am not sure whether these substitutions are needed.
     # the problem seemed to be the utf-8 `requests.get` encoding.
-    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}") ]
+    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
     for old, new in to_replace:
         result = result.replace(old.upper(), new.upper())
         result = result.replace(old.lower(), new.lower())
