@@ -1,8 +1,10 @@
+import functools
 import glob
 import os
 
 import requests
 import yaml
+
 
 def replace_key(key, bib_entry):
     start = "@article{"
@@ -11,12 +13,14 @@ def replace_key(key, bib_entry):
     return result
 
 
+@functools.lru_cache()
 def doi2bib(doi):
     """Return a bibTeX string of metadata for a given DOI."""
     url = "http://dx.doi.org/" + doi
     headers = {"accept": "application/x-bibtex"}
     r = requests.get(url, headers=headers)
     return r.text
+
 
 bibs = [f for f in glob.glob("*/*yaml") if "tmp.yaml" not in f]
 print("Reading: ", bibs)
@@ -37,7 +41,7 @@ entries = [
 
 bib_files = glob.glob("chapter_*/not_on_crossref.bib")
 with open("dissertation.bib", "w") as outfile:
-    outfile.write("@preamble{ {\providecommand{\BIBYu}{Yu} } }\n\n")
+    outfile.write("@preamble{ {\\providecommand{\\BIBYu}{Yu} } }\n\n")
     for fname in bib_files:
         outfile.write(f"\n% Below is from `{fname}`.\n\n")
         with open(fname) as infile:
