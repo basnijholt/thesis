@@ -1,0 +1,26 @@
+% Hack from https://tex.stackexchange.com/a/272173 to fix to define {en} in bib files.
+\makeatletter
+% A change to a babel macro
+\def\bbl@set@language#1{%
+  \edef\languagename{%
+    \ifnum\escapechar=\expandafter`\string#1\@empty
+    \else\string#1\@empty\fi}%
+  %%%% ADDITION
+  \@ifundefined{babel@language@alias@\languagename}{}{%
+    \edef\languagename{\@nameuse{babel@language@alias@\languagename}}%
+  }%
+  %%%% END ADDITION
+  \select@language{\languagename}%
+  \expandafter\ifx\csname date\languagename\endcsname\relax\else
+    \if@filesw
+      \protected@write\@auxout{}{\string\select@language{\languagename}}%
+      \bbl@for\bbl@tempa\BabelContentsFiles{%
+        \addtocontents{\bbl@tempa}{\xstring\select@language{\languagename}}}%
+      \bbl@usehooks{write}{}%
+    \fi
+  \fi}
+% The user interface
+\newcommand{\DeclareLanguageAlias}[2]{%
+  \global\@namedef{babel@language@alias@#1}{#2}%
+}
+\makeatother
