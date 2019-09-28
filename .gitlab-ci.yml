@@ -4,7 +4,7 @@ job:
   script:
     - make clean
     - make
-    - gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=dissertation-compressed.pdf dissertation.pdf
+    - gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=dissertation-compressed.pdf dissertation.pdf
 
   artifacts:
     paths:
