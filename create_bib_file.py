@@ -11,7 +11,9 @@ def replace_key(key, bib_entry):
     start = "@article{"
     result = start + ",".join([key] + bib_entry[len(start) :].split(",")[1:])
 
-    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}")]
+    # XXX: I am not sure whether these substitutions are needed.
+    # the problem seemed to be the utf-8 `requests.get` encoding.
+    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}") ]
     for old, new in to_replace:
         result = result.replace(old.upper(), new.upper())
         result = result.replace(old.lower(), new.lower())
@@ -26,6 +28,7 @@ def doi2bib(doi):
     url = "http://dx.doi.org/" + doi
     headers = {"accept": "application/x-bibtex"}
     r = requests.get(url, headers=headers)
+    r.encoding = "utf-8"
     return r.text
 
 
