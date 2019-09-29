@@ -27,8 +27,10 @@ The barrier gate underneath the uncovered wire (red) can deplete the nanowire, l
 The tunneling differential conductance ($dI/dV$) resolves the induced superconducting gap, by sweeping the bias voltage ($V$) across the tunnel barrier [Fig. 1(b)].
 The dashed arrow indicates the induced gap of 0.65 meV.
 In this device, we have recently shown ballistic transport and Majorana signatures \cite{BalMaj}.
+
 \begin{figure}
-\includegraphics[width=\columnwidth]{chapter_spinorbit/figures/Fig1.pdf}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig1.pdf}
 \caption{\label{fig:fig1}
 (a) False-color scanning electron micrograph of Majorana nanowire device $A$.
 An InSb nanowire (blue) is contacted by a normal metal contact ($N$, yellow) and a NbTiN superconducting contact ($S$, purple).
@@ -44,6 +46,7 @@ At increasing $k$, $B_{\mathrm{SO}}$ increases, tilting the spin more towards $B
 The white dashed lines indicate a fit to the gap closing corresponding to $\alpha$ $=$ 0.15 $\pm$ 0.05 eV\AA.
 (f) Horizontal line cuts of (e) at $B$ indicated by the colored arrows in (e).
 }
+\end{center}
 \end{figure}
 
 The magnetic field ($B$) dependence of the induced gap of device $A$, with $B$ along three different directions, is shown in Fig. 1(e).
@@ -88,14 +91,17 @@ The Pauli matrices $\tau$ and $\sigma$ act in the particle-hole and spin space r
 We perform numerical simulations of this Hamiltonian on a 3D lattice in a realistic nanowire geometry using the \textsc{kwant} code \cite{Groth2014}.
 We note that recent theory work shows that the anisotropy is unaffected by additional factors such as the wire length, temperature, and strong coupling to the superconductor \cite{Liu2019}.
 Additional details are provided in the Supplemental Material \cite{Note1}.  % XXX: fix Note1
+
 \begin{figure}
-\includegraphics[width=\columnwidth]{chapter_spinorbit/figures/Fig2.pdf}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig2.pdf}
 \caption{\label{fig:fig2}
 (a) Numerical simulations of $dI/dV$ as a function of $V$ and $B$, including the Zeeman and the orbital (Lorentz) effect of the magnetic field.
 (b) Same as (a), but including Zeeman and SOI instead of the orbital effect, reproducing the anisotropy in Fig. 1(e).
 (c) Same as (b), but including the Zeeman, SOI and orbital effect.
 The parameters used in (a)-(c) are $\mu$ $=$ 5.6 meV and $\Delta V_G$ $=$ -8 meV.
 }
+\end{center}
 \end{figure}
 
 We identify which effects explain the observed anisotropic gap closing behavior by including them separately in our simulations.
@@ -108,8 +114,10 @@ By fitting the curvature of the gap closing \cite{VanHeck,Pan2018} along $x$ [wh
 This SOI strength is in \mbox{agreement} with the values extracted from level repulsion of Andreev states \cite{Stanescu2013,DeMoor2018} in an additional device $E$ \cite{Note1}.  % XXX: fix Note1
 \mbox{Since} $\alpha$ depends on the electric field in the wire, we expect the observed variation in the SOI strength of devices to be caused by differences in the applied gate voltages and wire diameter.
 Recently, the level repulsion of Andreev states in InSb nanowires covered with epitaxial aluminium has shown a SOI strength of approximately 0.1 eV\AA \cite{DeMoor2018}, slightly lower than we find for NbTiN covered nanowires, most likely due to strong coupling to the aluminium superconductor, leading to stronger renormalization of the InSb material parameters \cite{Stanescu2011,Cole2015,Antipov2018,Woods2018,Mikkelsen2018,Reeg2018}.
+
 \begin{figure}
-\includegraphics[width=\columnwidth]{chapter_spinorbit/figures/Fig3.pdf}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig3.pdf}
 \caption{\label{fig:fig3}
 (a) Measured $dI/dV$ as a function of $V$ upon rotation of $B$ at 0.3 T over angles $\Theta$ between $z$ and $y$ in device $B$ (see Fig. S5 \cite{Note1} for the same behavior in device $A$).  % XXX: fix Note1
 The voltage $V_{\mathrm{SG}}$ on the super gate (see insets) is varied in the three panels.
@@ -120,6 +128,7 @@ The middle and bottom panels additionally include the orbital effect at two valu
 Dashed lines indicate the $z$ axis ($\Theta$ $=$ \ang{0}).
 (d) Vertical line cuts of (a) at $\Theta$ $=$ \ang{0} (left) and $\Theta$ $=$ \ang{90} (right).
 }
+\end{center}
 \end{figure}
 
 To resolve the direction of the spin-orbit field, we fix the $B$ amplitude and continuously rotate the $B$ direction, parametrized by the angle $\Theta$ in the $zy$ plane [inset Fig. 3(a)].
@@ -128,8 +137,9 @@ We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and f
 This is illustrated in Fig. 3(c), which shows horizontal line cuts for subgap bias.
 The largest gap for a given $B$ amplitude is expected for $B$ $\perp$ $B_{\mathrm{SO}}$, indicating that $B_{\mathrm{SO}}$ $\parallel$ $y$, in agreement with the $E$-field direction dictated by the device geometry.
 
-\begin{figure}[b]
-\includegraphics[width=\columnwidth]{chapter_spinorbit/figures/Fig4.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig4.pdf}
 \caption{\label{fig:fig4}
 (a) Tilted view electron micrograph of Majorana nanowire device $E$, which is partially covered with NbTiN.
 In this device, the electric field $E$ (and the associated spin-orbit field $B_{\mathrm{SO}}$) can rotate away from the $z$ axis ($y$ axis), as illustrated in the inset.
@@ -140,6 +150,7 @@ $\Theta_{\mathrm{max}}$ is gate tuned to \ang{22}.
 (d)-(f) Simulated $dI/dV$ at 0.25 T at various $\Delta V_G$ (see inset) with the superconductor rotated to the side by \ang{45} and including the Zeeman effect, SOI, and the orbital effect.
 The illustrations in the insets indicate the direction of $E$, which is rotated by \ang{45} from $z$ in (d).
 }
+\end{center}
 \end{figure}
 
 Now, we check whether the orbital effect changes $\Theta_{\mathrm{max}}$.
@@ -204,8 +215,9 @@ The optimal number of vortices at a certain magnetic field is then determined by
 We note that non-optimal amounts of vortices can be metastable due to significant Bean-Livingston barriers for vortex entry, so the actual number of vortices is hysteretic and depends on the dynamics of the magnetic field.
 
 \begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=0.95\textwidth]{chapter_spinorbit/figures/SFig2_GL.pdf}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig2_GL.pdf}
 \caption{\label{fig:GL}
 Ginzburg-Landau simulations.
 (a) The top panel shows the schematic of the geometry used for Ginzburg-Landau simulations: a superconducting film covering a hexagonal nanowire.
@@ -226,6 +238,7 @@ Fig.~1(e)].
 Furthermore, for $B \parallel y$ vortices only start to appear at $B > 0.2$ T, while the gap is already strongly suppressed at 0.2 T [see e.g.
 Fig.~1(e)], which excludes vortex formation as the origin of the gap closing for $B \parallel y$ and indicates that vortices do not have a strong effect on the size of the induced gap.
 }
+\end{center}
 \end{figure}
 
 \subsection{Extraction of SOI strength}
@@ -240,7 +253,7 @@ $\epsilon_{\mathrm{SO}}=\alpha k$ is the SOI term with $\alpha$ the SOI strength
 $\epsilon_Z = \frac{1}{2}g\mu_BB$ is the Zeeman energy, with $g$ the Land\'e $g$-factor and $\mu_B$ the Bohr magneton.
 $\Delta(0)$ is the induced superconducting gap at $B = 0$ T, which we measure in the experiments (as indicated in Fig.~1(b)).
 
-For $B \parallel B_{\mathrm{SO}}$ ($y$-axis) and neglecting the orbital effect the gap closes linearly with the Zeeman energy due to tilting of the bands \cite{Osca2014,Rex2014}: 
+For $B \parallel B_{\mathrm{SO}}$ ($y$-axis) and neglecting the orbital effect the gap closes linearly with the Zeeman energy due to tilting of the bands \cite{Osca2014,Rex2014}:
 \begin{equation}
 \Delta(B) = \Delta(0) - \frac{1}{2}g\mu_BB
 \end{equation}
@@ -266,7 +279,7 @@ Since $\alpha$ depends on the electric field in the wire, we expect the observed
 \caption{Results of gap closing fitting procedure}
 \begin{tabular}{l|cccc}
 & Device A & Device B & Device C & Device D \\
-\hline 
+\hline
 $g$ & 90 $\pm$ 10 & 60 $\pm$ 20 & 85 $\pm$ 5 & 160 $\pm$ 20\\
 $\mu$ (meV) & 1.5 $\pm$ 0.4 & 1.8 $\pm$ 0.8 & 2.75 $\pm$ 0.25 & 2.8 $\pm$ 0.6\\
 $\alpha$ (eV\AA) & 0.15 $\pm$ 0.05 & 0.3 $\pm$ 0.1 & 0.35 $\pm$ 0.05 & 0.35 $\pm$ 0.05\\
@@ -274,8 +287,9 @@ $\alpha$ (eV\AA) & 0.15 $\pm$ 0.05 & 0.3 $\pm$ 0.1 & 0.35 $\pm$ 0.05 & 0.35 $\pm
 \end{table}
 
 \begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=0.95\textwidth]{chapter_spinorbit/figures/SFig7_AlphaFitting.pdf}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig7_AlphaFitting.pdf}
 \caption{\label{fig:SOIFit}
 Extracting SOI strength from gap closing curvature.
 (a) Lowest energy state $E_{\mathrm{min}}$ determining the gap in the one-dimensional model given by equation S1 as a function of magnetic field, $B$, in units of the critical field $B_c=\sqrt{\Delta^2+\mu^2}$ for various spin-orbit strengths $\alpha$.
@@ -287,6 +301,7 @@ By adjusting the $g$-factor used in the Majorana nanowire model from $g$ = 50 to
 We use this same approach to take the orbital effect into account in an effective manner in fits of the experimentally observed gap closing.
 The remaining parameters used in the simulations shown here are $\Delta(0)$ = 0.45 meV, $\mu$ = 0.95 meV, $\alpha$ = 0.2 eV\AA, $\Delta V_G$ = -10 meV.
 }
+\end{center}
 \end{figure}
 
 \subsubsection{Estimation of SOI strength based on level repulsion}
@@ -310,8 +325,9 @@ As $V_{\mathrm{SG}}$ becomes more negative, we see an increase in $\delta_{\math
 We can estimate $\alpha \sim$ 0.4 -- 0.55 eV\AA.
 Considering the uncertainty in the relation between $\alpha$ and $\delta_{\mathrm{SO}}$ and variation in the electrostatic environment of different devices, this magnitude is in line with our estimation based on the gap closing curvature.
 
-\begin{figure}[h]
-\includegraphics[width=0.95\textwidth]{chapter_spinorbit/figures/SFig3_Anticrossing.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig3_Anticrossing.pdf}
 \caption{\label{fig:SOIlevelrep}
 Extracting the SOI strength from level repulsion.
 (a) $dI/dV$ as a function of $V$ and $B$ at $V_{\mathrm{SG}}$ = -3.3 V, measured in device E.
@@ -322,13 +338,16 @@ The extracted coupling $\delta_{\mathrm{SO}}$ between the Andreev levels is indi
 The right axis shows the estimation of the SOI strength using $\alpha = 2\delta_{\mathrm{SO}}L/\pi$ for the 1.2 $\mu$m long superconducting region.
 The errorbars show the standard deviation in $\delta_{\mathrm{SO}}$ obtained from the fits.
 }
+\end{center}
 \end{figure}
 
 \clearpage
 \subsection{Supplemental Experimental Data}
-\begin{figure}[h!]
+
+\begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=0.77\textwidth]{chapter_spinorbit/figures/SFig1_Bsweeps_reproduced.pdf}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig1_Bsweeps_reproduced.pdf}
 \caption{\label{fig:BsweepsReproduced}
 Anisotropic gap closing in additional devices.
 (a) False colored scanning electron micrographs of additional devices B (used in Fig.~3) and C, showing anisotropy similar to the device in Fig.~1(e).
@@ -338,22 +357,26 @@ The white dashed lines indicate fits to the gap closing from which we extract a 
 We note that we do not observe clear reopening of the gap in all devices, which theoretical studies have attributed to the negligible contribution to the tunneling conductance of the states associated with the gap reopening due to their spatial wave function extension into the middle of the wire leading to minimal weight near the tunnel barrier \cite{Prada2012,Pientka2012,Stanescu2012,Liu2019}.
 The super gate was set to $V_{\mathrm{SG}}$ = -1.5 V, -2.6 V in (b), (c) respectively.
 }
+\end{center}
 \end{figure}
 
-\begin{figure}[p!]
+\begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=0.55\textwidth]{chapter_spinorbit/figures/SFig4_YZrot_Full1_reproduced.pdf}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig4_YZrot_Full1_reproduced.pdf}
 \caption{\label{fig:YZrotRep}
 Gap dependence on magnetic field orientation in \textit{zy}-plane in device A.
 (a) Differential conductance, $dI/dV$, as a function of bias voltage, $V$, upon rotation of the magnetic field at 0.25 T over angles $\Theta$ between $z$ and $y$ with different voltages on the super gate $V_{\mathrm{SG}}$ in the three panels.
 This is the same device as presented in Fig.
 1 (b) Horizontal line cuts of (a) averaged over a bias range $|V| < 0.2$ mV, showing that the hardest gap is at $\Theta = 0$, and increased $V_{\mathrm{SG}}$ suppresses the gap when $B$ is along $y$, the same behaviors observed in device B [Fig.~3].
 }
+\end{center}
 \end{figure}
 
-\begin{figure}[p!]
+\begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=0.85\textwidth]{chapter_spinorbit/figures/SFig5_SGdep_half_updated.pdf}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig5_SGdep_half_updated.pdf}
 \caption{\label{fig:SGdep}
 Dependence of spin-orbit direction on super gate voltage in device D, which is partially covered by NbTiN.
 (a) Differential conductance, $dI/dV$, as a function of bias voltage, $V$, and angle $\Theta$ between $z$ and $y$ at various values of $V_{\mathrm{SG}}$ as indicated in the insets.
@@ -365,11 +388,13 @@ A lowpass filter is applied along the $\Theta$ direction to suppress the effect 
 (c) $\Theta_{\mathrm{max}}$ as determined from the first (black) and second (yellow) minimum of the curves in (b) as a function of $V_{\mathrm{SG}}$.
 The second minima (yellow) signify $\Theta_{\mathrm{max}}$ at negative $B$ and are subtracted by \ang{180} accordingly.
 }
+\end{center}
 \end{figure}
 
-\begin{figure}[p!]
+\begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=0.95\textwidth]{chapter_spinorbit/figures/SFig6_Bsweeps_half.pdf}
+\includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig6_Bsweeps_half.pdf}
 \caption{\label{fig:BsweepsHalf}
 Gap dependence on magnetic field orientation in device E, which is partially covered by NbTiN.
 (a) Differential conductance, $dI/dV$, as a function of the angle $\Theta$ between the $z$ and $y$-axes at $V_{\mathrm{SG}}$ = 0.525 V and $B$ = 0.1 T, with a horizontal line cut averaged over a bias range $|V| < 0.3$ mV in the lower panel.
@@ -378,6 +403,7 @@ Gap dependence on magnetic field orientation in device E, which is partially cov
 The illustrations in the insets indicate the direction of the magnetic field.
 Note that due to the changed orientation of $B_{\mathrm{SO}}$, $B$-sweeps along directions rotated by $\sim$\ang{25} from the $y$-axis (second panel, $B \parallel B_{\mathrm{SO}}$) and the $z$-axis (right panel, $B \perp B_{\mathrm{SO}})$  now exhibit strong anisotropy, instead of the $y$ and $z$-axes which show strong anisotropy in devices symmetrically covered by NbTiN.
 }
+\end{center}
 \end{figure}
 
 \references{dissertation}

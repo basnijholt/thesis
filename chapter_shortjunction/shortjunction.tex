@@ -234,14 +234,16 @@ The nanowire is oriented along the $x$ axis, NS interface is at $y=0$, and the o
 The superconductor occupies the half-space $y<0$.
 Neglecting the orbital effect of the magnetic field makes the motion in $z$ direction separable and reduces the problem to a purely two-dimensional geometry, shown in Fig.~\ref{fig:1stmodel}(b).
 
-\begin{figure}[t]
-\includegraphics[width=0.8\columnwidth]{chapter_shortjunction/figures/3d.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/3d.pdf}
 \caption{(a) Nanowire with width $W$ oriented along the $x$ direction and coupled to a bulk superconductor.
 The magnetic field is parallel to the wire, while the Rashba electric field points along the $z$ direction.
 (b) Semiclassical bound state trajectory in the two-dimensional nanowire. Electrons (solid blue) and holes (dashed red) specularly reflect at the boundary with vacuum and undergo Andreev reflection at the interface with the superconductor.
 Two types of bound states are shown: at finite longitudinal momentum $k_x$ (left) and vanishing momentum $k_x=0$ (right).
 The induced gap may only close at $k_x = 0$.}
 \label{fig:1stmodel}
+\end{center}
 \end{figure}
 
 \co{We use Rashba 2DEG + BdG}
@@ -405,13 +407,15 @@ q = \left[\frac{2m_n}{\hbar^2}\mu_s
 -\frac{m_n}{m_\parallel}k_x^2\right]^{1/2}.
 \end{equation}
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/spec_comp}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/spec_comp}
 \caption{Comparison of the Andreev spectra of a transparent NS junction between analytical short-junction predictions (SJT), numerical short-junction results including the spin-orbit interaction in the $y$ direction (SJN), and exact diagonalization of the BdG Hamiltonian~\eqref{sc} (ED).
 The system parameters are chosen as in Sec.~\ref{sec:phys_params} and \ref{sub:interf}.
 The longitudinal momentum is either $k_x=0$ (red), or finite such that the spectrum stays always gapped (blue).
 Momentum $k_x$ is in units $k_F^0=\sqrt{2m_n\mu_n/\hbar^2}$, and $\mu_s=\mu_n=\SI{3}{\meV}$.}
 \label{fig:spec_comp}
+\end{center}
 \end{figure}
 
 \subsection{Comparison with tight-binding dispersion simulations}
@@ -440,11 +444,13 @@ where the sign of the square root is fixed by the analytic continuation and chos
 A typical spectrum at $k_x = 0$ as well as $\mathcal Q$ for a fixed $\mu$ is shown in Fig.~\ref{fig:index}.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/index}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/index}
 \caption{The Andreev spectrum and the topological index $\mathcal Q$~\eqref{index} as a function of magnetic field.
 Trivial phase has $\mathcal{Q}=+1$, topological phase $\mathcal{Q}=-1$.
 The junction is in the transparent regime with $\mu_s=\mu_n=\SI{3}{\meV}$.}
 \label{fig:index}
+\end{center}
 \end{figure}
 
 \co{We calculate the phase diagram from the spectrum}
@@ -455,13 +461,15 @@ In addition to identifying the topological phase boundaries for each set of para
 with $E(k_x)$ given by Eq.~\eqref{andreev}. The minimization is carried over all $k_x$ present in the superconductor.
 In general, the dispersion relation has several local minima, as shown in Fig.~\ref{fig:dispersion}, with the total number of minima approximately equal to the number of transverse modes in the normal region.
 
-\begin{figure}[tb]
+\begin{figure}
+\begin{center}
 \centering
-\includegraphics[width=\linewidth]{chapter_shortjunction/figures/dispersion}
+\includegraphics[width=0.7\linewidth]{chapter_shortjunction/figures/dispersion}
 \caption{A schematic of the dispersion relation of the junction for typical parameters.
 The dispersion relation near local minima $\Delta_0$ and $\Delta_1$ of the Andreev state energy is well approximated with a gapped Dirac dispersion relation, with Dirac cones marked with dashed lines.
 When the number of available modes in the semiconductor increases, the number of minima at finite momenta grows, but the outermost minimum stays located approximately at $k_x = k_{n,F}$.}
 \label{fig:dispersion}
+\end{center}
 \end{figure}
 
 \co{It is reasonable overall, and has all the usual asymptotes.}
@@ -483,7 +491,8 @@ In both estimates we assumed $\mu \sim E_Z \sim \delta$, and $T\sim 1$.
 Comparing Eqs.~\eqref{eq:dirac_point_gap} and \eqref{eq:SOC_gap} we find the energy scale for the transition between the two behaviors $\varepsilon_* \sim \sqrt{E_\textrm{SO} \delta}$.
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/gaps}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/gaps}
 \caption{The spectral gap times the topological index $\mathcal Q \Delta_\mathrm{spec} /\Delta \in(-1,1)$ as a function of chemical potential $\mu$ and magnetic field $B$.
 Here we consider a transparent NS interface $\mu=\mu_s=\mu_n$ and an anisotropic mass in the superconductor $m_\parallel=10\;m_n$, $m_\perp = m_n$.
 The phase boundaries Eq.~\eqref{toptrans} are given by continuous red lines.
@@ -491,6 +500,7 @@ The central region of the phase diagram is the topological phase $\mathcal Q=-1$
 The inset shows the phase boundaries in a similar parameter range for a junction with $\mu_s=\SI{11.7}{eV}$, $m_s=0.015\;m_n$ resulting in a low interface transparency.
 }
 \label{fig:gaps}
+\end{center}
 \end{figure}
 
 \co{But the phase boundary has no wiggles due to transparency.}
@@ -537,13 +547,15 @@ The results are presented in Fig.~\ref{fig:decay_diag}.
 The divergence in decay lengths seen in Fig.~\ref{fig:decay_diag} corresponds to topological transitions identical to the ones found in Fig.~\ref{fig:gaps}.
 Figure~\ref{fig:decay_diag} also confirms that $\xi_M$ saturates at a distance $\varepsilon \sim E_\textrm{SO}$ away from that phase transition (here $E_\textrm{SO} \approx\SI{40}{\mu eV}$).
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/decay_length_2d}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/decay_length_2d}
 \caption{The largest decay length of subgap modes in units of wire width $W$, as a function of chemical potential $\mu$ and magnetic field $B$.
 At the topological transitions the decay length rapidly diverges.
 The junction is in a fully transparent regime with $\mu_n=\mu_s$ and $m_\parallel =\infty$ in the superconductor.
 }
 \label{fig:decay_diag}
+\end{center}
 \end{figure}
 
 We now refine the scaling arguments of Eqs.~\eqref{eq:v_k_0} and \eqref{eq:v_k_f} by using Eq.~\eqref{andreev}.
@@ -565,8 +577,9 @@ The Fermi velocity near $k_F\ne 0$ follows immediately:
 \end{equation}
 Taking the ratio~\eqref{eq:v_k_f}, it follows that the MBS decay length does indeed grow linearly with magnetic field and spin-orbit length deep in the topological phase [see Fig.~\ref{fig:compAB}], in qualitative agreement with the numerical calculation using Eq.~\eqref{ximnum}.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/compAB}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/compAB}
 \caption{
 (Color online)
 Scaling behavior of the MBS decay length $\xi_M$ deep in the topological phase.
@@ -575,6 +588,7 @@ Comparison between symbolic calculation of the decay length from the linearizati
 (b) Linear dependence with spin-orbit length $l_\mathrm{SO}=\hbar^2/m\alpha$.
 The magnetic field is $B=\SI{1.5}{T}$ and chemical potential $\mu=\SI{3}{\meV}$.}
 \label{fig:compAB}
+\end{center}
 \end{figure}
 
 Our results for the scaling of $\xi_M$ with $B$ and $l_\textrm{SO}$ agree with the predictions of the phenomenological 1D model both near the topological transition or deep in the topological phase (see, e.~g.,~Ref.~\cite{Klinovaja2012}), but we find no dependence of $\xi_M$ on $\Delta$.
@@ -590,8 +604,9 @@ The lattice constant in the tight-binding simulation is \SI{10}{\nm}.
 Finally, the remaining model parameters are chosen according to Sec.~\ref{sec:phys_params} and Sec.~\ref{sub:interf}.
 We determine numerically several lowest energy states and compare them with $\Delta_\textrm{spec}$ calculated in Sec.~\ref{sec:topphases}, as shown in Fig.~\ref{fig:finite}.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/finite}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/finite}
 \caption{Comparison between the predictions of the analytical short-junction approximation and a numerical spectrum of a finite NS junction.
 Solid line: $\Delta_\textrm{spec}$ calculated using Eqs.~\eqref{andreev} and~\eqref{specgap} as a function of magnetic field.
 Dotted lines: 10 lowest energy states in a finite size NS junction using the same parameters.
@@ -599,6 +614,7 @@ The magnetic field is in units of $2\delta/g\mu_B$, with level spacing $\delta$ 
 The junction is in a transparent regime, the superconductor has anisotropic mass $m_\parallel = 10\, m_n$, and the rest of parameters are as specified in Sec.~\ref{sec:phys_params}.
 At a single end of the nanowire, there is only one MBS in the topological phase ($\SI{1}{T}\lesssim B \lesssim \SI{3}{T}$, for semiconductor width $W=\SI{100}{\nm}$) and two in the trivial phase at high field, due to the chiral symmetry.}
 \label{fig:finite}
+\end{center}
 \end{figure}
 
 We observe that the energy of most subgap states is bounded from below by an energy slightly lower than $\Delta_\textrm{spec}$, as expected close to the short-junction regime.
@@ -622,13 +638,15 @@ We model the coupling to the superconductor as two infinite planar superconducto
 By doing so we neglect the possibility for electrons to tunnel through the superconductor to the other side of the uncovered section, which is justified by the density mismatch between the superconductor and the semiconductor.
 The thin shell limit is oversimplified and it overestimates the orbital effect of a magnetic field, however it provides an upper bound on the impact of the orbital effect and remains analytically tractable.
 
-\begin{figure}[tb]
-\centering{\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/orb}}
+\begin{figure}
+\begin{center}
+\centering{\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/orb}}
 \caption{(a) A cross section of a NS hybrid junction. The magnetic field is parallel to the wire axis, while the Andreev bound state trajectories are confined to the nanowire surface.
 (b) The equivalent two-dimensional system defined on the plane ($x,\theta$).
 Since we neglect the possibility for electrons to tunnel through the superconductor, we consider the superconducting leads at $\theta<0$ and $\theta>\theta_0$ infinite.
 \label{fig:orb}
 }
+\end{center}
 \end{figure}
 
 The superconductor covers the wire over an angle $2\pi-\theta_0$, while both the wire and the superconductor are translationally invariant in the $x$ direction.
@@ -642,9 +660,10 @@ with $p_\theta = -i\hbar R^{-1}\partial/\partial \theta$, and $R$ the radius of 
 We assume that the magnetic field is fully screened from the superconductor and choose a gauge where the vector potential $A=0$ in the uncovered part of the surface, while the two superconducting leads have a phase difference $\phi = (2 e/\hbar) \pi B R^2$.
 Compared to the previous sections where the treatment was more general, we assume from the start the transparent junction limit, when Fermi velocities at $k_x=0$ are identical in the superconductor and the semiconductor and we also neglect the spin-orbit coupling in the transverse direction, as appropriate for $l_\textrm{SO} \gg R \theta_0$.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/gaps_orb}
-\centering{\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/Borb}}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/gaps_orb}
+\centering{\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/Borb}}
 \caption{(a) Majorana phase diagram $\mathcal{Q} \Delta_\textrm{spec}$ of a transparent NS junction with $\mu_s=\mu_n=\mu$, $m_{s,x}=m_\parallel$, $m_{s,y}=m$, $m_n=m$, and $m_\parallel=10 m$, as a function of chemical potential and magnetic field.
 The covering angle is $\theta_0 = \SI{2}{rad}$, so that the width of the uncovered section $R\theta_0$ is equal to the wire diameter.
 (b) An example of Andreev spectrum at $k_x=0$, $\mu_n=\mu_s=\SI{3}{\meV}$, and other parameters the same as in (a) in the presence and absence of the orbital effect.
@@ -652,6 +671,7 @@ Panel (b) additionally presents a comparison between short junction theoretical 
 The theoretical spectrum without orbital effect (NO) is in gray.
 The magnetic field is in units of $2\delta/g\mu_B$ with $\delta=\hbar^2\pi^2/2mR^2\theta_0^2$.}
 \label{fig:gaps_orb}
+\end{center}
 \end{figure}
 
 We solve the scattering problem in the basis of conserved spin projections set by Eq.~\eqref{spinors} corresponding to the basis of incoming and outgoing modes:
@@ -706,11 +726,13 @@ Comparing the top panels of Fig.~\ref{fig:phase_diagrams_3d} with Fig.~\ref{fig:
 These correspond to the appearance of the additional bands with a different value of $k_z$ and a minimum in the interface transparency.~\footnote{The code for the tight-binding simulations of the two-dimensional and three-dimensional junctions is available in ancillary files to the manuscript.} % XXX: link the files
 
 \begin{figure}
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/phase_diagrams_3d}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/phase_diagrams_3d}
 \caption{Spectral gap $\Delta_\mathrm{spec}/\Delta$ dependence on chemical potential $\mu$ in the nanowire and magnetic field $B$ of a square nanowire without (top panels) and with (bottom panels) orbital effect of the magnetic field.
 Panels (a), (c) show results for wire section $\SI{100}{\nm} \times \SI{100}{\nm}$, while (b), (d), for $\SI{120}{\nm} \times \SI{120}{\nm}$.
 The white box in the right panels shows the same parameter range rescaled by a factor $\left(100/120\right)^2$ to highlight the $W^2$ scaling of the phase diagram.}
 \label{fig:phase_diagrams_3d}
+\end{center}
 \end{figure}
 
 Similar to our observations from Sec.~\ref{sec:orb}, the orbital effect of the magnetic field has a strong effect on the shape of the topological phase boundaries and reduces both $\Delta_\textrm{spec}$ and $B_*$ similar to the thin shell simulations.
@@ -762,8 +784,9 @@ q &=& \left[\frac{2m_\perp}{\hbar^2}(E+\mu_s)
 \end{eqnarray}
 where we use the same notation as in Sec.~\ref{sub:gen} the superconductor has anisotropic mass $(m_\perp, m_\parallel)$.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{chapter_shortjunction/figures/transparency}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/transparency}
 \caption{(Color online)
 Transmission probability of one of the spin polarizations $T_-$ of an infinite NS junction.
 (a, c, and d) $T_-$ as a function of magnetic field $B$ in units of $\frac{2\delta}{g\mu_B}$, with $\delta$ defined in Eq.~\eqref{eq:e_thouless} and parallel momentum $k_x$ (in units of $k_F^0=\sqrt{2m_n\mu_n/\hbar^2}$).
@@ -775,6 +798,7 @@ The momenta $k_x$ run over the Fermi surface of the semiconductor, which is mark
 Only evanescent solutions exist in the white regions; transmission $T_-$ becomes imaginary.
 }
 \label{fig:transp}
+\end{center}
 \end{figure}
 
 The transmission probabilities of two spin orientations $(\pm)$ follow immediately:
@@ -810,8 +834,9 @@ We use the same setup of a finite heterojunction modeled with the BdG Hamiltonia
 We check the behavior of the critical field and the bulk band gap by tracking the energy of the second excited state while varying $B$ for values of $\Delta$ ranging from $\SI{40}{\mu\eV}$ to $\SI{3}{\meV}$ (almost two orders of magnitude).
 Our results for a heterojunction of size $\SI{3000}{\nm}\times\SI{6000}{\nm}$ with a normal region occupying $\SI{3000}{\nm}\times\SI{100}{\nm}$ are shown in Fig.~\ref{fig:scaling_delta}.
 
-\begin{figure}[h]
-\includegraphics[width=0.9\columnwidth]{chapter_shortjunction/figures/scaling_ref}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_shortjunction/figures/scaling_ref}
 \caption{The energy of the second excited state of a finite nanowire junction calculated using exact diagonalization.
 Up to the second topological phase transition it is a good approximation of the induced gap.
 The eigenenergies are normalized to $\Delta$ in panel (a) and unnormalized in panel (b).
@@ -819,6 +844,7 @@ In the long junction regime the induced gap tends to a constant, while in the sh
 The legend applies to both panels.
 The superconducting gaps $\Delta$ are in meV.}
 \label{fig:scaling_delta}
+\end{center}
 \end{figure}
 
 When $\Delta \gtrsim E_\mathrm{Th}\approx \SI{1}{\meV}$ the system transitions to the long junction regime, so that the ratio $\Delta_\textrm{spec}/\Delta$ continues to decrease, while $\Delta_\text{spec}$ becomes almost independent on $\Delta$.

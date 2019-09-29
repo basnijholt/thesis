@@ -99,14 +99,17 @@ A finite $B_y$ breaks both $\mathcal{R}_x$ and $\mathcal{C}'$ therefore, the ban
 The band structures in Fig.~\ref{fig:bandstructure} summarize the relation between the geometry of the setup of Figs~\ref{fig:geometry}(b) and Fig.~\ref{fig:geometry}(c), magnetic field orientation, and the symmetries of the Hamiltonian.
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/geometry}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/geometry}
 \caption{Three hexagonal nanowire devices we consider: (a) (a) with an intrinsic pairing term and with a proximity-coupled superconductor (b) on the top and (c) on the side.
 The last two setups have tunnel barriers between the superconductor and the nanowire.
 \label{fig:geometry}}
+\end{center}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/bandstructure_annotated}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/bandstructure_annotated}
 \caption{Band structures of the setup of Fig.~\ref{fig:geometry}(b) (top) and Fig.~\ref{fig:geometry}(c) (bottom).
 Each panel is labeled with the symmetries respected by the corresponding Hamiltonian.
 The dashed black line indicates the Fermi energy $(E=0)$.
@@ -115,6 +118,7 @@ In the top row, the reflection symmetry of the wire along the $y$-axis $\mathcal
 The wire used for the calculation of the bottom row dispersions lacks $\mathcal{R}_y$ and therefore has no $\mathcal{C}'$.
 Without $\mathcal{C}'$ the bands are allowed to tilt and the gap may close whenever $B_y \neq 0$ or $B_z \neq 0$.
 A magnetic field parallel to the $x$-axis preserves $\mathcal{R}_x$, which protects the band gap from closing.\label{fig:bandstructure}}
+\end{center}
 \end{figure}
 
 \section{Calculating the topological phase diagram}
@@ -133,18 +137,21 @@ The real eigenvalues of this eigenproblem are the values of $\mu$ where the gap 
 If the dispersion relation is gapped also at any finite $k$, these gap closings are the boundaries of the topological phase.
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/ev_problem}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/ev_problem}
 \caption{(a) Energy spectrum at $k=0$ of the setup of Fig.\ref{fig:geometry}(a) as a function of chemical potential $\mu$.
 The blue points are the solutions of $H_\textrm{BdG} \psi = E \psi$ at fixed $\mu$ marked by the blue line.
 The green points are the real eigenvalues of Eq.~\eqref{eq:eigenproblem} lying at $E=0$ (the green line).
 (b) The gap size for the same setup and parameters, with dark gray regions trivial and the orange regions topological.\label{fig:ev_problem}}
+\end{center}
 \end{figure}
 
 Since the eigenvalues of $H_\textrm{BdG}$ come in opposite sign pairs, the real eigenvalues of Eq.~\eqref{eq:eigenproblem} always come in degenerate pairs, and each pair lies at a transition between a trivial and a nontrivial phase.
 We complete the calculation of the topological phase diagram by using as a reference point that $H_\textrm{BdG}(\mu = -\infty)$ is topologically trivial.
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/comparing_phase_diagrams}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/comparing_phase_diagrams}
 \caption{Phase diagrams of the setup of Fig.~\ref{fig:geometry}(a) (a), (b) without
 the orbital effect of a magnetic field and (c), (d) with it.
 The green lines depict the topological phase transitions.
@@ -153,6 +160,7 @@ At $B \gtrsim \SI{1}{\tesla}$ the orbital effect of the magnetic field becomes s
 Furthermore, the orbital effect leads to a faster suppression of the band gaps with magnetic field.\label{fig:phase-diagrams}
 The narrow regions with suppressed $E_\textrm{gap}$ originating from the crossings of the phase boundaries in (c) are due to Dirac cones appearing in $(k_x, B)$\!-space and are protected by $C'$.
 The vertical black line in (a) indicates the value of the magnetic field used in Fig.~\ref{fig:ev_problem}.}
+\end{center}
 \end{figure}
 
 \co{We calculate the gap by performing a binary search for the energy at which propagating modes appear.}
@@ -172,27 +180,33 @@ We calculate $\xi$ using
 \end{equation}
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/misaligned}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/misaligned}
 \caption{Same as Fig.~\ref{fig:phase-diagrams}, but with the magnetic field slightly misaligned.
 We observe that the band gaps close quickly upon changing the direction of the magnetic field towards the spin-orbit direction in $y$.
 \label{fig:misaligned}}
+\end{center}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/sc_on_side_hist}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/sc_on_side_hist}
 \caption{Phase diagrams of the setup of Fig.~\ref{fig:geometry}(c) (a) without the orbital effect of a magnetic field and (b) with it. Color scale corresponds to $E_\textrm{gap}$, with the topological regions colored and trivial regions in grayscale.
-The histograms in the right-hand panels show the distribution of the gap values sampled in the topological regime within the selected parameter range. 
+The histograms in the right-hand panels show the distribution of the gap values sampled in the topological regime within the selected parameter range.
 Neglecting the orbital effect of the magnetic field incorrectly leads to a strong dependence of the critical field on $\mu$.
 With the orbital effect of magnetic field flux penetration through the quasiparticle trajectory changes the interference phases and can suppress the topological gap $E_\textrm{gap}$.
 \label{fig:phase-diagram-sc_on_side}}
+\end{center}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.95\columnwidth]{chapter_orbitalfield/figures/sc_on_side_length}
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{chapter_orbitalfield/figures/sc_on_side_length}
 \caption{Same as Fig.~\ref{fig:phase-diagram-sc_on_side}, but with color representing inverse Majorana length $\xi^{-1}$.
 The histogram and color scales are truncated from above at $\SI{1}{\per\micro\metre}$.
 The mode of the distribution of $\xi^{-1}$ reduces from $\SI{0.35}{\per\micro\metre}$ to $\SI{0.10}{\per\micro\metre}$ upon taking the orbital effect into account.
 Although the Majorana lengths are overall much larger with the orbital effect of the magnetic field, the minimal length is close to $\SI{200}{\nano\metre}$ in both cases.\label{fig:Majorana-length}}
+\end{center}
 \end{figure}
 
 \section{Results}
