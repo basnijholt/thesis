@@ -11,15 +11,15 @@ def replace_key(key, bib_entry):
     bib_type, *_ = bib_entry.split("{")
     _, *rest = bib_entry.split(",")
     rest = ",".join(rest)
-    result = bib_type + "{" + key + "," + rest
+    # Now only modify `rest` because we don't want to touch the key.
 
     # XXX: I am not sure whether these substitutions are needed.
     # the problem seemed to be the utf-8 `requests.get` encoding.
     to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
 
     for old, new in to_replace:
-        result = result.replace(old.upper(), new.upper())
-        result = result.replace(old.lower(), new.lower())
+        rest = rest.replace(old.upper(), new.upper())
+        rest = rest.replace(old.lower(), new.lower())
 
     to_replace = [
         (r"a{\r}", r"\r{a}"),  # "Nyga{\r}rd" -> "Nyg\r{a}rd", bug in doi.org
@@ -27,6 +27,7 @@ def replace_key(key, bib_entry):
         ("Majorana", "{M}ajorana"),
         ("Andreev", "{A}ndreev"),
         ("Kramers", "{K}ramers"),
+        ("Kitaev", "{K}itaev"),
         (
             r"metastable0and$\uppi$states",
             r"metastable $0$ and $\pi$ states",
@@ -62,7 +63,7 @@ def replace_key(key, bib_entry):
         ("Physical Review B", "Phys. Rev. B"),
         ("Physical Review Letters", "Phys. Rev. Lett."),
         ("Physical Review X", "Phys. Rev. X"),
-        ("Physical Review", "Phys. Rev."), # should be before the above subs
+        ("Physical Review", "Phys. Rev."),  # should be before the above subs
         ("Physics-Uspekhi", "Phys. Usp."),
         ("Reports on Progress in Physics", "Rep. Prog. Phys."),
         ("Review of Scientific Instruments", "Rev. Sci. Instrum."),
@@ -87,7 +88,9 @@ def replace_key(key, bib_entry):
     ]
 
     for old, new in to_replace + journals:
-        result = result.replace(old, new)
+        rest = rest.replace(old, new)
+
+    result = bib_type + "{" + key + "," + rest
 
     print(result, "\n")
     return result
