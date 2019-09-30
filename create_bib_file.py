@@ -37,6 +37,8 @@ def replace_key(key, bib_entry):
         ),  # fix for PhysRevLett.96.026804
     ]
 
+    # I got these by using JabRef and converting to abbr journals
+    # and parsing the git diff.
     journals = [
         ("Advanced Materials", "Adv. Mater."),
         ("Annals of Physics", "Ann. Phys."),
