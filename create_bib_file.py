@@ -59,10 +59,10 @@ def replace_key(key, bib_entry):
         ("Nature Nanotechnology", "Nat. Nanotechnol."),
         ("Nature Physics", "Nat. Phys."),
         ("New Journal of Physics", "New J. Phys."),
-        ("Physical Review", "Phys. Rev."),
         ("Physical Review B", "Phys. Rev. B"),
         ("Physical Review Letters", "Phys. Rev. Lett."),
         ("Physical Review X", "Phys. Rev. X"),
+        ("Physical Review", "Phys. Rev."), # should be before the above subs
         ("Physics-Uspekhi", "Phys. Usp."),
         ("Reports on Progress in Physics", "Rep. Prog. Phys."),
         ("Review of Scientific Instruments", "Rev. Sci. Instrum."),
