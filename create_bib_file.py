@@ -72,6 +72,20 @@ def replace_key(key, bib_entry):
         ("Semiconductor Science and Technology", "Semicond. Sci. Technol."),
     ]
 
+    # Manually added
+    journals += [
+        (
+            "Annual Review of Condensed Matter Physics",
+            "Annu. Rev. Condens. Matter Phys.",
+        ),
+        ("{EPL} (Europhysics Letters)", "{EPL}"),
+        ("Nature Reviews Materials", "Nat. Rev. Mater."),
+        ("Physics Letters", "Phys. Lett."),
+        ("The European Physical Journal B", "Eur. Phys. J. B"),
+        ("{SIAM} Journal on Numerical Analysis", "{SIAM} J. Numer. Anal."),
+        ("{AIP} Conference Proceedings", "{AIP} Conf. Proc."),
+    ]
+
     for old, new in to_replace + journals:
         result = result.replace(old, new)
 
