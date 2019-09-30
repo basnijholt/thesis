@@ -17,7 +17,7 @@ Beenakker1992:
   by_hand: false
   doi: 10.1103/PhysRevB.46.12841
 Beenakker2005:
-  by_hand: true
+  by_hand: false
   doi: 10.1007/11358817_4
 Beenakker2013:
   by_hand: false
@@ -74,7 +74,7 @@ Gennes1963:
   by_hand: false
   doi: 10.1016/0031-9163(63)90148-3
 Gennes1999:
-  by_hand: true
+  by_hand: false
   doi: 10.1201/9780429497032
 Golubov1996:
   by_hand: false
@@ -158,7 +158,7 @@ Schmidt1997:
   by_hand: true
   doi: null
 Schnyder2009:
-  by_hand: true
+  by_hand: false
   doi: 10.1063/1.3149481
 Stanescu2013:
   by_hand: false
