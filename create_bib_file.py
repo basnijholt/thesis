@@ -15,17 +15,23 @@ def replace_key(key, bib_entry):
 
     # XXX: I am not sure whether these substitutions are needed.
     # the problem seemed to be the utf-8 `requests.get` encoding.
-    to_replace = [
-        ("ö", r"\"{o}"),
-        ("ü", r"\"{u}"),
-        ("ë", r"\"{e}"),
-        ("ï", r"\"{i}"),
-        (r"a{\r}", r"\r{a}"),  # "Nyga{\r}rd" -> "Nyg\r{a}rd", bug in doi.org
-    ]
+    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
 
     for old, new in to_replace:
         result = result.replace(old.upper(), new.upper())
         result = result.replace(old.lower(), new.lower())
+
+    to_replace = [
+        (r"a{\r}", r"\r{a}"),  # "Nyga{\r}rd" -> "Nyg\r{a}rd", bug in doi.org
+        ("Josephson", "{J}osephson"),
+        ("Majorana", "{M}ajorana"),
+        ("Andreev", "{A}ndreev"),
+        ("Kramers", "{K}ramers"),
+        (r"metastable0and$\uppi$states", r"metastable $0$ and $\pi$ states"),  # fix for 10.1103/physrevb.63.214512
+        (r"Land{\'{e}}{gFactors}", r"Land{\'{e}} {$g$} Factors"),  # fix for PhysRevLett.96.026804
+    ]
+    for old, new in to_replace:
+        result = result.replace(old, new)
 
     print(result, "\n")
     return result
