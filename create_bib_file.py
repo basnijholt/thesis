@@ -27,10 +27,50 @@ def replace_key(key, bib_entry):
         ("Majorana", "{M}ajorana"),
         ("Andreev", "{A}ndreev"),
         ("Kramers", "{K}ramers"),
-        (r"metastable0and$\uppi$states", r"metastable $0$ and $\pi$ states"),  # fix for 10.1103/physrevb.63.214512
-        (r"Land{\'{e}}{gFactors}", r"Land{\'{e}} {$g$} Factors"),  # fix for PhysRevLett.96.026804
+        (
+            r"metastable0and$\uppi$states",
+            r"metastable $0$ and $\pi$ states",
+        ),  # fix for 10.1103/physrevb.63.214512
+        (
+            r"Land{\'{e}}{gFactors}",
+            r"Land{\'{e}} {$g$} Factors",
+        ),  # fix for PhysRevLett.96.026804
     ]
-    for old, new in to_replace:
+
+    journals = [
+        ("Advanced Materials", "Adv. Mater."),
+        ("Annals of Physics", "Ann. Phys."),
+        ("Applied Physics Letters", "Appl. Phys. Lett."),
+        ("JETP Lett", "JETP Lett."),
+        ("Journal de Physique", "J. Phys."),
+        ("Journal of Computational Physics", "J. Comput. Phys."),
+        ("Journal of Experimental and Theoretical Physics", "J. Exp. Theor. Phys."),
+        ("Journal of Low Temperature Physics", "J. Low Temp. Phys."),
+        (
+            "Journal of Physics A: Mathematical and Theoretical",
+            "J. Phys. A: Math. Theor.",
+        ),
+        ("Journal of Physics: Condensed Matter", "J. Phys.: Condens. Matter"),
+        ("Nano Letters", "Nano Lett."),
+        ("Nature Communications", "Nat. Commun."),
+        ("Nature Materials", "Nat. Mater."),
+        ("Nature Nanotechnology", "Nat. Nanotechnol."),
+        ("Nature Physics", "Nat. Phys."),
+        ("New Journal of Physics", "New J. Phys."),
+        ("Physical Review", "Phys. Rev."),
+        ("Physical Review B", "Phys. Rev. B"),
+        ("Physical Review Letters", "Phys. Rev. Lett."),
+        ("Physical Review X", "Phys. Rev. X"),
+        ("Physics-Uspekhi", "Phys. Usp."),
+        ("Reports on Progress in Physics", "Rep. Prog. Phys."),
+        ("Review of Scientific Instruments", "Rev. Sci. Instrum."),
+        ("Reviews of Modern Physics", "Rev. Mod. Phys."),
+        ("Science Advances", "Sci. Adv."),
+        ("Scientific Reports", "Sci. Rep."),
+        ("Semiconductor Science and Technology", "Semicond. Sci. Technol."),
+    ]
+
+    for old, new in to_replace + journals:
         result = result.replace(old, new)
 
     print(result, "\n")
