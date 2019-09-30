@@ -65,8 +65,8 @@ Gharavi2017:
   by_hand: false
   doi: 10.1088/1361-6528/aa5643
 Goffman2017:
-  by_hand: true
-  doi: 10.1088/1367-2630
+  by_hand: false
+  doi: 10.1088/1367-2630/aa7641
 Groth2014:
   by_hand: false
   doi: 10.1088/1367-2630/16/6/063065
