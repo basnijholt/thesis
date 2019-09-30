@@ -118,7 +118,7 @@ mapping = dict(sorted(mapping.items()))
 
 dois = {key: d["doi"] for key, d in mapping.items() if not d["by_hand"]}
 with ThreadPoolExecutor() as ex:
-    futs = ex.map(doi2bib, dois.values())
+    futs = ex.map(doi2bib, list(dois.values()))
     bibs = list(futs)
 
 
@@ -134,4 +134,8 @@ with open("dissertation.bib", "w") as outfile:
             outfile.write(infile.read())
     outfile.write("\n% Below is from all `yaml` files.\n\n")
     for e in entries:
-        outfile.write(f"{e}\n\n")
+        for line in e.split('\n'):
+            # Remove the url line
+            if "url = {" not in line:
+                outfile.write(f"{line}\n")
+        outfile.write('\n')
