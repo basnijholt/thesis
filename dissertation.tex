@@ -22,18 +22,18 @@
 \usepackage{upgreek}
 \usepackage{pifont}
 
+% start: from chapter_orbitalfield
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 % A comment command to keep track of the narrative.
 % Uncomment the second line below to see the paragraph meanings.
 \newcommand{\co}[2]{#2}
 %\renewcommand{\co}{\paragraph}
+% start: from chapter_orbitalfield
 
 
-% start: from adaptive-paper
+% start: from chapter_adaptive
 \usepackage{listings}
 \renewcommand{\paragraph}[2]{#2}
-
-% workaround for https://github.com/jgm/pandoc/issues/2392#issuecomment-140114736
-\renewcommand{\citep}{\cite}
 
 % workaround for https://github.com/jgm/pandoc/issues/4716
 \newcommand{\passthrough}[1]{\lstset{mathescape=false}#1\lstset{mathescape=true}}
@@ -61,10 +61,12 @@
     linewidth=\columnwidth,
     basewidth=0.5em,
 }
-% end: from adaptive-paper
+% end: from chapter_adaptive
 
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+% start: from chapter_shortjunction
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+% end: from chapter_shortjunction
 
 \begin{document}
 
