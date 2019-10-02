@@ -133,8 +133,8 @@ with open("dissertation.bib", "w") as outfile:
             outfile.write(infile.read())
     outfile.write("\n% Below is from all `yaml` files.\n\n")
     for e in entries:
-        for line in e.split('\n'):
+        for line in e.split("\n"):
             # Remove the url line
             if "url = {" not in line:
                 outfile.write(f"{line}\n")
-        outfile.write('\n')
+        outfile.write("\n")

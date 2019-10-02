@@ -17,7 +17,10 @@ with open("adaptive_full.tex") as f:
             line = line.replace(r"\citep", r"\cite")
             line = line.replace(r"\(", r"$")
             line = line.replace(r"\)", r"$")
-            line = line.replace(r"\includegraphics{figures/", r"\includegraphics{chapter_adaptive/figures/")
+            line = line.replace(
+                r"\includegraphics{figures/",
+                r"\includegraphics{chapter_adaptive/figures/",
+            )
             line = line.replace(r"\onlinecite{", r"\cite{")
             text.append(line)
 text = "".join(text)
@@ -46,7 +49,11 @@ os.system("unzip tmp.zip")
 os.system("mv adaptive-paper-master-figures/figures .")
 os.system("rm -fr adaptive-paper-master-figures")
 
-fnames = {"paper.yaml": "adaptive.yaml", "paper.bib": "adaptive.bib", "not_on_crossref.bib": "not_on_crossref.bib"}
+fnames = {
+    "paper.yaml": "adaptive.yaml",
+    "paper.bib": "adaptive.bib",
+    "not_on_crossref.bib": "not_on_crossref.bib",
+}
 for fname_old, fname_new in fnames.items():
     os.system(f"rm -fr {fname_old}")
     cmd = f"wget -O {fname_old} https://gitlab.kwant-project.org/qt/adaptive-paper/raw/master/{fname_old}?inline=false"
