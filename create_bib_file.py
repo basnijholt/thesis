@@ -113,10 +113,9 @@ mapping = {}
 for fname in bibs:
     with open(fname) as f:
         mapping = {**mapping, **yaml.safe_load(f)}
-mapping = dict(sorted(mapping.items()))
+dois = dict(sorted(mapping.items()))
 
 
-dois = {key: d["doi"] for key, d in mapping.items() if not d["by_hand"]}
 with ThreadPoolExecutor() as ex:
     futs = ex.map(doi2bib, list(dois.values()))
     bibs = list(futs)

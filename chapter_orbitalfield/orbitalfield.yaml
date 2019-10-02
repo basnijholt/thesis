@@ -1,87 +1,29 @@
-Adagideli2014:
-  by_hand: false
-  doi: 10.1103/PhysRevB.89.144506
-Alicea2012:
-  by_hand: false
-  doi: 10.1088/0034-4885/75/7/076501
-Altland1997:
-  by_hand: false
-  doi: 10.1103/PhysRevB.55.1142
-Beenakker2013:
-  by_hand: false
-  doi: 10.1146/annurev-conmatphys-030212-184337
-Churchill2013:
-  by_hand: false
-  doi: 10.1103/PhysRevB.87.241401
-Das2012:
-  by_hand: false
-  doi: 10.1038/nphys2479
-Deng2012:
-  by_hand: false
-  doi: 10.1021/nl303758w
-Deng2014:
-  by_hand: false
-  doi: 10.1038/srep07261
-Diez2012:
-  by_hand: false
-  doi: 10.1103/PhysRevB.86.094501
-Groth2014:
-  by_hand: false
-  doi: 10.1088/1367-2630/16/6/063065
-Hofstadter1976:
-  by_hand: false
-  doi: 10.1103/PhysRevB.14.2239
-Lim2012:
-  by_hand: false
-  doi: 10.1103/PhysRevB.86.121103
-Lim2013:
-  by_hand: false
-  doi: 10.1209/0295-5075/103/37004
-Liu2012:
-  by_hand: false
-  doi: 10.1103/PhysRevLett.109.267002
-Lutchyn2010:
-  by_hand: false
-  doi: 10.1103/PhysRevLett.105.077001
-Mourik2012:
-  by_hand: false
-  doi: 10.1126/science.1222360
-Nijholt2016_data:
-  by_hand: false
-  doi: 10.4121/uuid:20f1c784-1143-4c61-a03d-7a3454914abb
-Oreg2010:
-  by_hand: false
-  doi: 10.1103/PhysRevLett.105.177002
-Osca2015:
-  by_hand: false
-  doi: 10.1103/PhysRevB.91.235417
-Pientka2012:
-  by_hand: false
-  doi: 10.1103/PhysRevLett.109.227006
-Potter2010:
-  by_hand: false
-  doi: 10.1103/PhysRevLett.105.227003
-Potter2012:
-  by_hand: false
-  doi: 10.1103/PhysRevB.85.094516
-Rex2014:
-  by_hand: false
-  doi: 10.1103/PhysRevB.90.115429
-Stanescu2013a:
-  by_hand: false
-  doi: 10.1088/0953-8984/25/23/233201
-Stanescu2014:
-  by_hand: false
-  doi: 10.1103/PhysRevB.90.085302
-Tewari2012:
-  by_hand: false
-  doi: 10.1103/PhysRevLett.109.150408
-Varjas2018:
-  by_hand: false
-  doi: 10.1088/1367-2630/aadf67
-Vuik2016:
-  by_hand: false
-  doi: 10.1088/1367-2630/18/3/033013
-Weperen2015:
-  by_hand: false
-  doi: 10.1103/PhysRevB.91.201413
+Adagideli2014: 10.1103/PhysRevB.89.144506
+Alicea2012: 10.1088/0034-4885/75/7/076501
+Altland1997: 10.1103/PhysRevB.55.1142
+Beenakker2013: 10.1146/annurev-conmatphys-030212-184337
+Churchill2013: 10.1103/PhysRevB.87.241401
+Das2012: 10.1038/nphys2479
+Deng2012: 10.1021/nl303758w
+Deng2014: 10.1038/srep07261
+Diez2012: 10.1103/PhysRevB.86.094501
+Groth2014: 10.1088/1367-2630/16/6/063065
+Hofstadter1976: 10.1103/PhysRevB.14.2239
+Lim2012: 10.1103/PhysRevB.86.121103
+Lim2013: 10.1209/0295-5075/103/37004
+Liu2012: 10.1103/PhysRevLett.109.267002
+Lutchyn2010: 10.1103/PhysRevLett.105.077001
+Mourik2012: 10.1126/science.1222360
+Nijholt2016_data: 10.4121/uuid:20f1c784-1143-4c61-a03d-7a3454914abb
+Oreg2010: 10.1103/PhysRevLett.105.177002
+Osca2015: 10.1103/PhysRevB.91.235417
+Pientka2012: 10.1103/PhysRevLett.109.227006
+Potter2010: 10.1103/PhysRevLett.105.227003
+Potter2012: 10.1103/PhysRevB.85.094516
+Rex2014: 10.1103/PhysRevB.90.115429
+Stanescu2013a: 10.1088/0953-8984/25/23/233201
+Stanescu2014: 10.1103/PhysRevB.90.085302
+Tewari2012: 10.1103/PhysRevLett.109.150408
+Varjas2018: 10.1088/1367-2630/aadf67
+Vuik2016: 10.1088/1367-2630/18/3/033013
+Weperen2015: 10.1103/PhysRevB.91.201413

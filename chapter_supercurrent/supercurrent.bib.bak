@@ -1,0 +1,774 @@
+@Data{Zuo2017,
+  author    = {Zuo, Kun and Mourik, Vincent and Szombati, Daniel B and Nijholt, Bas and van Woerkom, David J and Geresdi, Attila and Chen, Jun and Ostroukh, Viacheslav P and Akhmerov, Anton R and Plissard, Sebasti{\'e}n R and Bakkers, Erik P. A. M. and Kouwenhoven, Leo P},
+  title     = {Supercurrent interference in few-mode nanowire {J}osephson junctions},
+  year      = {2017},
+  note      = {Dataset},
+  doi       = {10.4121/uuid:daa83d96-85d6-4739-841e-52abc86b6b15},
+  publisher = {Delft University of Technology},
+}
+
+@Article{Bulaevskii1977,
+  author  = {Bulaevskii, L N and Kuzii, V V and Sobyanin, A A},
+  title   = {Superconducting system with weak coupling to the current in the ground state},
+  journal = {JETP Lett},
+  year    = {1977},
+  volume  = {25},
+  number  = {7},
+  pages   = {290--294},
+  url     = {http://www.jetpletters.ac.ru/ps/1410/article_21163.pdf},
+}
+
+@Article{Buzdin1982,
+  author  = {Buzdin, A I and Bulaevskii, L N and Panyukov, S V},
+  title   = {Critical-current oscillations as a function of the exchange field and thickness of the ferromagnetic metal (F) in an SFS Josephson junction},
+  journal = {JETP Lett},
+  year    = {1982},
+  volume  = {35},
+  number  = {178},
+  pages   = {103--104},
+  url     = {http://www.jetpletters.ac.ru/ps/1314/article_19853.pdf},
+}
+
+@article{Aasen2016,
+    doi = {10.1103/PhysRevX.6.031016},
+    url = {https://doi.org/10.1103%2Fphysrevx.6.031016},
+    year = 2016,
+    month = {aug},
+    publisher = {American Physical Society ({APS})},
+    volume = {6},
+    number = {3},
+    author = {David Aasen and Michael Hell and Ryan V. Mishmash and Andrew Higginbotham and Jeroen Danon and Martin Leijnse and Thomas S. Jespersen and Joshua A. Folk and Charles M. Marcus and Karsten Flensberg and Jason Alicea},
+    title = {Milestones Toward Majorana-Based Quantum Computing},
+    journal = {Physical Review X}
+} 
+
+@article{Albrecht2016,
+    doi = {10.1038/nature17162},
+    url = {https://doi.org/10.1038%2Fnature17162},
+    year = 2016,
+    month = {mar},
+    publisher = {Springer Science and Business Media {LLC}},
+    volume = {531},
+    number = {7593},
+    pages = {206--209},
+    author = {S. M. Albrecht and A. P. Higginbotham and M. Madsen and F. Kuemmeth and T. S. Jespersen and J. Nyg{\aa}rd and P. Krogstrup and C. M. Marcus},
+    title = {Exponential protection of zero modes in Majorana islands},
+    journal = {Nature}
+} 
+
+@article{Beenakker1997,
+    doi = {10.1103/revmodphys.69.731},
+    url = {https://doi.org/10.1103%2Frevmodphys.69.731},
+    year = 1997,
+    month = {jul},
+    publisher = {American Physical Society ({APS})},
+    volume = {69},
+    number = {3},
+    pages = {731--808},
+    author = {C. W. J. Beenakker},
+    title = {Random-matrix theory of quantum transport},
+    journal = {Reviews of Modern Physics}
+} 
+
+@article{Bocquillon2016,
+    doi = {10.1038/nnano.2016.159},
+    url = {https://doi.org/10.1038%2Fnnano.2016.159},
+    year = 2016,
+    month = {aug},
+    publisher = {Springer Nature},
+    volume = {12},
+    number = {2},
+    pages = {137--143},
+    author = {Erwann Bocquillon and Russell S. Deacon and Jonas Wiedenmann and Philipp Leubner and Teunis M. Klapwijk and Christoph Br\"{u}ne and Koji Ishibashi and Hartmut Buhmann and Laurens W. Molenkamp},
+    title = {Gapless Andreev bound states in the quantum spin Hall insulator {HgTe}},
+    journal = {Nature Nanotechnology}
+} 
+
+@article{Chauvin2006,
+    doi = {10.1103/physrevlett.97.067006},
+    url = {https://doi.org/10.1103%2Fphysrevlett.97.067006},
+    year = 2006,
+    month = {aug},
+    publisher = {American Physical Society ({APS})},
+    volume = {97},
+    number = {6},
+    author = {M. Chauvin and P. vom Stein and H. Pothier and P. Joyez and M. E. Huber and D. Esteve and C. Urbina},
+    title = {Superconducting Atomic Contacts under Microwave Irradiation},
+    journal = {Physical Review Letters}
+} 
+
+@article{Chen2017,
+    doi = {10.1126/sciadv.1701476},
+    url = {https://doi.org/10.1126%2Fsciadv.1701476},
+    year = 2017,
+    month = {sep},
+    publisher = {American Association for the Advancement of Science ({AAAS})},
+    volume = {3},
+    number = {9},
+    pages = {e1701476},
+    author = {Jun Chen and Peng Yu and John Stenger and Mo\"{i}ra Hocevar and Diana Car and S{\'{e}}bastien R. Plissard and Erik P. A. M. Bakkers and Tudor D. Stanescu and Sergey M. Frolov},
+    title = {Experimental phase diagram of zero-bias conductance peaks in superconductor/semiconductor nanowire devices},
+    journal = {Science Advances}
+} 
+
+@article{Cleuziou2006,
+    doi = {10.1038/nnano.2006.54},
+    url = {https://doi.org/10.1038%2Fnnano.2006.54},
+    year = 2006,
+    month = {oct},
+    publisher = {Springer Nature},
+    volume = {1},
+    number = {1},
+    pages = {53--59},
+    author = {J.-P. Cleuziou and W. Wernsdorfer and V. Bouchiat and T. Ondar{\c{c}}uhu and M. Monthioux},
+    title = {Carbon nanotube superconducting quantum interference device},
+    journal = {Nature Nanotechnology}
+} 
+
+@article{Courtois2008,
+    doi = {10.1103/physrevlett.101.067002},
+    url = {https://doi.org/10.1103%2Fphysrevlett.101.067002},
+    year = 2008,
+    month = {aug},
+    publisher = {American Physical Society ({APS})},
+    volume = {101},
+    number = {6},
+    author = {H. Courtois and M. Meschke and J. T. Peltonen and J. P. Pekola},
+    title = {Origin of Hysteresis in a Proximity Josephson Junction},
+    journal = {Physical Review Letters}
+} 
+
+@article{Cuevas2007,
+    doi = {10.1103/physrevlett.99.217002},
+    url = {https://doi.org/10.1103%2Fphysrevlett.99.217002},
+    year = 2007,
+    month = {nov},
+    publisher = {American Physical Society ({APS})},
+    volume = {99},
+    number = {21},
+    author = {J. C. Cuevas and F. S. Bergeret},
+    title = {Magnetic Interference Patterns and Vortices in Diffusive {SNS} Junctions},
+    journal = {Physical Review Letters}
+} 
+
+@article{Deacon2017,
+    doi = {10.1103/physrevx.7.021011},
+    url = {https://doi.org/10.1103%2Fphysrevx.7.021011},
+    year = 2017,
+    month = {apr},
+    publisher = {American Physical Society ({APS})},
+    volume = {7},
+    number = {2},
+    author = {R.{\hspace{0.167em}}S. Deacon and J. Wiedenmann and E. Bocquillon and F. Dom{\'{\i}}nguez and T.{\hspace{0.167em}}M. Klapwijk and P. Leubner and C. Br\"{u}ne and E.{\hspace{0.167em}}M. Hankiewicz and S. Tarucha and K. Ishibashi and H. Buhmann and L.{\hspace{0.167em}}W. Molenkamp},
+    title = {Josephson Radiation from Gapless Andreev Bound States in {HgTe}-Based Topological Junctions},
+    journal = {Physical Review X}
+} 
+
+@article{Demler1997,
+    doi = {10.1103/physrevb.55.15174},
+    url = {https://doi.org/10.1103%2Fphysrevb.55.15174},
+    year = 1997,
+    month = {jun},
+    publisher = {American Physical Society ({APS})},
+    volume = {55},
+    number = {22},
+    pages = {15174--15182},
+    author = {E. A. Demler and G. B. Arnold and M. R. Beasley},
+    title = {Superconducting proximity effects in magnetic metals},
+    journal = {Physical Review B}
+} 
+
+@article{Deng2012,
+    doi = {10.1021/nl303758w},
+    url = {https://doi.org/10.1021%2Fnl303758w},
+    year = 2012,
+    month = {nov},
+    publisher = {American Chemical Society ({ACS})},
+    volume = {12},
+    number = {12},
+    pages = {6414--6419},
+    author = {M. T. Deng and C. L. Yu and G. Y. Huang and M. Larsson and P. Caroff and H. Q. Xu},
+    title = {Anomalous Zero-Bias Conductance Peak in a Nb{\textendash}{InSb} Nanowire{\textendash}Nb Hybrid Device},
+    journal = {Nano Letters}
+} 
+
+@article{Deng2014,
+    doi = {10.1038/srep07261},
+    url = {https://doi.org/10.1038%2Fsrep07261},
+    year = 2014,
+    month = {dec},
+    publisher = {Springer Science and Business Media {LLC}},
+    volume = {4},
+    number = {1},
+    author = {M. T. Deng and C. L. Yu and G. Y. Huang and M. Larsson and P. Caroff and H. Q. Xu},
+    title = {Parity independence of the zero-bias conductance peak in a nanowire based topological superconductor-quantum dot hybrid device},
+    journal = {Scientific Reports}
+} 
+
+@article{Deng2016,
+    doi = {10.1126/science.aaf3961},
+    url = {https://doi.org/10.1126%2Fscience.aaf3961},
+    year = 2016,
+    month = {dec},
+    publisher = {American Association for the Advancement of Science ({AAAS})},
+    volume = {354},
+    number = {6319},
+    pages = {1557--1562},
+    author = {M. T. Deng and S. Vaitiek{\.{e}}nas and E. B. Hansen and J. Danon and M. Leijnse and K. Flensberg and J. Nyg{\aa}rd and P. Krogstrup and C. M. Marcus},
+    title = {Majorana bound state in a coupled quantum-dot hybrid-nanowire system},
+    journal = {Science}
+} 
+
+@article{DinsmoreIII2008,
+    doi = {10.1063/1.3012360},
+    url = {https://doi.org/10.1063%2F1.3012360},
+    year = 2008,
+    month = {nov},
+    publisher = {{AIP} Publishing},
+    volume = {93},
+    number = {19},
+    pages = {192505},
+    author = {R. C. Dinsmore and Myung-Ho Bae and A. Bezryadin},
+    title = {Fractional order Shapiro steps in superconducting nanowires},
+    journal = {Applied Physics Letters}
+} 
+
+@article{Doh2005,
+    doi = {10.1126/science.1113523},
+    url = {https://doi.org/10.1126%2Fscience.1113523},
+    year = 2005,
+    month = {jul},
+    publisher = {American Association for the Advancement of Science ({AAAS})},
+    volume = {309},
+    number = {5732},
+    pages = {272--275},
+    author = {Y.-J. Doh},
+    title = {Tunable Supercurrent Through Semiconductor Nanowires},
+    journal = {Science}
+} 
+
+@article{Dubos2001,
+    doi = {10.1103/physrevlett.87.206801},
+    url = {https://doi.org/10.1103%2Fphysrevlett.87.206801},
+    year = 2001,
+    month = {oct},
+    publisher = {American Physical Society ({APS})},
+    volume = {87},
+    number = {20},
+    author = {P. Dubos and H. Courtois and O. Buisson and B. Pannetier},
+    title = {Coherent Low-Energy Charge Transport in a Diffusive S-N-S Junction},
+    journal = {Physical Review Letters}
+} 
+
+@article{Finck2013,
+    doi = {10.1103/physrevlett.110.126406},
+    url = {https://doi.org/10.1103%2Fphysrevlett.110.126406},
+    year = 2013,
+    month = {mar},
+    publisher = {American Physical Society ({APS})},
+    volume = {110},
+    number = {12},
+    author = {A. D. K. Finck and D. J. Van Harlingen and P. K. Mohseni and K. Jung and X. Li},
+    title = {Anomalous Modulation of a Zero-Bias Peak in a Hybrid Nanowire-Superconductor Device},
+    journal = {Physical Review Letters}
+} 
+
+@article{Gharavi2015,
+    doi = {10.1103/physrevb.91.245436},
+    url = {https://doi.org/10.1103%2Fphysrevb.91.245436},
+    year = 2015,
+    month = {jun},
+    publisher = {American Physical Society ({APS})},
+    volume = {91},
+    number = {24},
+    author = {Kaveh Gharavi and Jonathan Baugh},
+    title = {Orbital Josephson interference in a nanowire proximity-effect junction},
+    journal = {Physical Review B}
+} 
+
+@article{Gharavi2017,
+    doi = {10.1088/1361-6528/aa5643},
+    url = {https://doi.org/10.1088%2F1361-6528%2Faa5643},
+    year = 2017,
+    month = {jan},
+    publisher = {{IOP} Publishing},
+    volume = {28},
+    number = {8},
+    pages = {085202},
+    author = {Kaveh Gharavi and Gregory W Holloway and Ray R LaPierre and Jonathan Baugh},
+    title = {Nb/{InAs} nanowire proximity junctions from Josephson to quantum dot regimes},
+    journal = {Nanotechnology}
+} 
+
+@article{Goffman2017,
+    doi = {10.1088/1367-2630/aa7641},
+    url = {https://doi.org/10.1088%2F1367-2630%2Faa7641},
+    year = 2017,
+    month = {sep},
+    publisher = {{IOP} Publishing},
+    volume = {19},
+    number = {9},
+    pages = {092002},
+    author = {M F Goffman and C Urbina and H Pothier and J Nyga{\r}rd and C M Marcus and P Krogstrup},
+    title = {Conduction channels of an {InAs}-Al nanowire Josephson weak link},
+    journal = {New Journal of Physics}
+} 
+
+@article{Groth2014,
+    doi = {10.1088/1367-2630/16/6/063065},
+    url = {https://doi.org/10.1088%2F1367-2630%2F16%2F6%2F063065},
+    year = 2014,
+    month = {jun},
+    publisher = {{IOP} Publishing},
+    volume = {16},
+    number = {6},
+    pages = {063065},
+    author = {Christoph W Groth and Michael Wimmer and Anton R Akhmerov and Xavier Waintal},
+    title = {Kwant: a software package for quantum transport},
+    journal = {New Journal of Physics}
+} 
+
+@article{Guel2018,
+    doi = {10.1038/s41565-017-0032-8},
+    url = {https://doi.org/10.1038%2Fs41565-017-0032-8},
+    year = 2018,
+    month = {jan},
+    publisher = {Springer Nature},
+    volume = {13},
+    number = {3},
+    pages = {192--197},
+    author = {\"{O}nder G\"{u}l and Hao Zhang and Jouri D. S. Bommer and Michiel W. A. de Moor and Diana Car and S{\'{e}}bastien R. Plissard and Erik P. A. M. Bakkers and Attila Geresdi and Kenji Watanabe and Takashi Taniguchi and Leo P. Kouwenhoven},
+    title = {Ballistic Majorana nanowire devices},
+    journal = {Nature Nanotechnology}
+} 
+
+@article{Hofstadter1976,
+    doi = {10.1103/PhysRevB.14.2239},
+    url = {https://doi.org/10.1103%2Fphysrevb.14.2239},
+    year = 1976,
+    month = {sep},
+    publisher = {American Physical Society ({APS})},
+    volume = {14},
+    number = {6},
+    pages = {2239--2249},
+    author = {Douglas R. Hofstadter},
+    title = {Energy levels and wave functions of Bloch electrons in rational and irrational magnetic fields},
+    journal = {Physical Review B}
+} 
+
+@article{Hyart2013,
+    doi = {10.1103/physrevb.88.035121},
+    url = {https://doi.org/10.1103%2Fphysrevb.88.035121},
+    year = 2013,
+    month = {jul},
+    publisher = {American Physical Society ({APS})},
+    volume = {88},
+    number = {3},
+    author = {T. Hyart and B. van Heck and I. C. Fulga and M. Burrello and A. R. Akhmerov and C. W. J. Beenakker},
+    title = {Flux-controlled quantum computation with Majorana fermions},
+    journal = {Physical Review B}
+} 
+
+@article{Kammhuber2016,
+    doi = {10.1021/acs.nanolett.6b00051},
+    url = {https://doi.org/10.1021%2Facs.nanolett.6b00051},
+    year = 2016,
+    month = {may},
+    publisher = {American Chemical Society ({ACS})},
+    volume = {16},
+    number = {6},
+    pages = {3482--3486},
+    author = {Jakob Kammhuber and Maja C. Cassidy and Hao Zhang and \"{O}nder G\"{u}l and Fei Pei and Michiel W. A. de Moor and Bas Nijholt and Kenji Watanabe and Takashi Taniguchi and Diana Car and S{\'{e}}bastien R. Plissard and Erik P. A. M. Bakkers and Leo P. Kouwenhoven},
+    title = {Conductance Quantization at Zero Magnetic Field in {InSb} Nanowires},
+    journal = {Nano Letters}
+} 
+
+@article{Karzig2017,
+    doi = {10.1103/PhysRevB.95.235305},
+    url = {https://doi.org/10.1103%2Fphysrevb.95.235305},
+    year = 2017,
+    month = {jun},
+    publisher = {American Physical Society ({APS})},
+    volume = {95},
+    number = {23},
+    author = {Torsten Karzig and Christina Knapp and Roman M. Lutchyn and Parsa Bonderson and Matthew B. Hastings and Chetan Nayak and Jason Alicea and Karsten Flensberg and Stephan Plugge and Yuval Oreg and Charles M. Marcus and Michael H. Freedman},
+    title = {Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes},
+    journal = {Physical Review B}
+} 
+
+@article{Kautz1990,
+    doi = {10.1103/physrevb.42.9903},
+    url = {https://doi.org/10.1103%2Fphysrevb.42.9903},
+    year = 1990,
+    month = {dec},
+    publisher = {American Physical Society ({APS})},
+    volume = {42},
+    number = {16},
+    pages = {9903--9937},
+    author = {R. L. Kautz and John M. Martinis},
+    title = {Noise-{affectedI}-Vcurves in small hysteretic Josephson junctions},
+    journal = {Physical Review B}
+} 
+
+@article{Kitaev2001,
+    doi = {10.1070/1063-7869/44/10S/S29},
+    url = {https://doi.org/10.1070%2F1063-7869%2F44%2F10s%2Fs29},
+    year = 2001,
+    month = {oct},
+    publisher = {Uspekhi Fizicheskikh Nauk ({UFN}) Journal},
+    volume = {44},
+    number = {10S},
+    pages = {131--136},
+    author = {A Yu Kitaev},
+    title = {Unpaired Majorana fermions in quantum wires},
+    journal = {Physics-Uspekhi}
+} 
+
+@article{Lange2015,
+    doi = {10.1103/physrevlett.115.127002},
+    url = {https://doi.org/10.1103%2Fphysrevlett.115.127002},
+    year = 2015,
+    month = {sep},
+    publisher = {American Physical Society ({APS})},
+    volume = {115},
+    number = {12},
+    author = {G. de Lange and B. van Heck and A. Bruno and D.{\hspace{0.167em}}J. van Woerkom and A. Geresdi and S.{\hspace{0.167em}}R. Plissard and E.{\hspace{0.167em}}P.{\hspace{0.167em}}A.{\hspace{0.167em}}M. Bakkers and A.{\hspace{0.167em}}R. Akhmerov and L. DiCarlo},
+    title = {Realization of Microwave Quantum Circuits Using Hybrid Superconducting-Semiconducting Nanowire Josephson Elements},
+    journal = {Physical Review Letters}
+} 
+
+@article{Larsen2015,
+    doi = {10.1103/physrevlett.115.127001},
+    url = {https://doi.org/10.1103%2Fphysrevlett.115.127001},
+    year = 2015,
+    month = {sep},
+    publisher = {American Physical Society ({APS})},
+    volume = {115},
+    number = {12},
+    author = {T.{\hspace{0.167em}}W. Larsen and K.{\hspace{0.167em}}D. Petersson and F. Kuemmeth and T.{\hspace{0.167em}}S. Jespersen and P. Krogstrup and J. Nyg{\aa}rd and C.{\hspace{0.167em}}M. Marcus},
+    title = {Semiconductor-Nanowire-Based Superconducting Qubit},
+    journal = {Physical Review Letters}
+} 
+
+@article{Lee2017,
+    doi = {10.1021/acs.nanolett.9b00494},
+    url = {https://doi.org/10.1021%2Facs.nanolett.9b00494},
+    year = 2019,
+    month = {mar},
+    publisher = {American Chemical Society ({ACS})},
+    volume = {19},
+    number = {5},
+    pages = {3083--3090},
+    author = {Joon Sue Lee and Borzoyeh Shojaei and Mihir Pendharkar and Anthony P. McFadden and Younghyun Kim and Henri J. Suominen and Morten Kjaergaard and Fabrizio Nichele and Hao Zhang and Charles M. Marcus and Chris J. Palmstr{\o}m},
+    title = {Transport Studies of Epi-Al/{InAs} Two-Dimensional Electron Gas Systems for Required Building-Blocks in Topological Superconductor Networks},
+    journal = {Nano Letters}
+} 
+
+@article{Lehnert1999,
+    doi = {10.1103/physrevlett.82.1265},
+    url = {https://doi.org/10.1103%2Fphysrevlett.82.1265},
+    year = 1999,
+    month = {feb},
+    publisher = {American Physical Society ({APS})},
+    volume = {82},
+    number = {6},
+    pages = {1265--1268},
+    author = {K. W. Lehnert and N. Argaman and H.-R. Blank and K. C. Wong and S. J. Allen and E. L. Hu and H. Kroemer},
+    title = {Nonequilibrium ac Josephson Effect in Mesoscopic Nb-{InAs}-Nb Junctions},
+    journal = {Physical Review Letters}
+} 
+
+@article{Lutchyn2010,
+    doi = {10.1103/PhysRevLett.105.077001},
+    url = {https://doi.org/10.1103%2Fphysrevlett.105.077001},
+    year = 2010,
+    month = {aug},
+    publisher = {American Physical Society ({APS})},
+    volume = {105},
+    number = {7},
+    author = {Roman M. Lutchyn and Jay D. Sau and S. Das Sarma},
+    title = {Majorana Fermions and a Topological Phase Transition in Semiconductor-Superconductor Heterostructures},
+    journal = {Physical Review Letters}
+} 
+
+@article{Michelsen2008,
+    doi = {10.1103/physrevb.77.184506},
+    url = {https://doi.org/10.1103%2Fphysrevb.77.184506},
+    year = 2008,
+    month = {may},
+    publisher = {American Physical Society ({APS})},
+    volume = {77},
+    number = {18},
+    author = {J. Michelsen and V. S. Shumeiko and G. Wendin},
+    title = {Manipulation with Andreev states in spin active mesoscopic Josephson junctions},
+    journal = {Physical Review B}
+} 
+
+@article{Mourik2012,
+    doi = {10.1126/science.1222360},
+    url = {https://doi.org/10.1126%2Fscience.1222360},
+    year = 2012,
+    month = {apr},
+    publisher = {American Association for the Advancement of Science ({AAAS})},
+    volume = {336},
+    number = {6084},
+    pages = {1003--1007},
+    author = {V. Mourik and K. Zuo and S. M. Frolov and S. R. Plissard and E. P. A. M. Bakkers and L. P. Kouwenhoven},
+    title = {Signatures of Majorana Fermions in Hybrid Superconductor-Semiconductor Nanowire Devices},
+    journal = {Science}
+} 
+
+@article{Nadj-Perge2012,
+    doi = {10.1103/PhysRevLett.108.166801},
+    url = {https://doi.org/10.1103%2Fphysrevlett.108.166801},
+    year = 2012,
+    month = {apr},
+    publisher = {American Physical Society ({APS})},
+    volume = {108},
+    number = {16},
+    author = {S. Nadj-Perge and V. S. Pribiag and J. W. G. van den Berg and K. Zuo and S. R. Plissard and E. P. A. M. Bakkers and S. M. Frolov and L. P. Kouwenhoven},
+    title = {Spectroscopy of Spin-Orbit Quantum Bits in Indium Antimonide Nanowires},
+    journal = {Physical Review Letters}
+} 
+
+@article{Nichele2017,
+    doi = {10.1103/physrevlett.119.136803},
+    url = {https://doi.org/10.1103%2Fphysrevlett.119.136803},
+    year = 2017,
+    month = {sep},
+    publisher = {American Physical Society ({APS})},
+    volume = {119},
+    number = {13},
+    author = {Fabrizio Nichele and Asbj{\o}rn C.{\hspace{0.167em}}C. Drachmann and Alexander M. Whiticar and Eoin C.{\hspace{0.167em}}T. O'Farrell and Henri J. Suominen and Antonio Fornieri and Tian Wang and Geoffrey C. Gardner and Candice Thomas and Anthony T. Hatke and Peter Krogstrup and Michael J. Manfra and Karsten Flensberg and Charles M. Marcus},
+    title = {Scaling of Majorana Zero-Bias Conductance Peaks},
+    journal = {Physical Review Letters}
+} 
+
+@article{Oreg2010,
+    doi = {10.1103/PhysRevLett.105.177002},
+    url = {https://doi.org/10.1103%2Fphysrevlett.105.177002},
+    year = 2010,
+    month = {oct},
+    publisher = {American Physical Society ({APS})},
+    volume = {105},
+    number = {17},
+    author = {Yuval Oreg and Gil Refael and Felix von Oppen},
+    title = {Helical Liquids and Majorana Bound States in Quantum Wires},
+    journal = {Physical Review Letters}
+} 
+
+@article{Ostroukh2016,
+    doi = {10.1103/physrevb.94.094514},
+    url = {https://doi.org/10.1103%2Fphysrevb.94.094514},
+    year = 2016,
+    month = {sep},
+    publisher = {American Physical Society ({APS})},
+    volume = {94},
+    number = {9},
+    author = {V. P. Ostroukh and B. Baxevanis and A. R. Akhmerov and C. W. J. Beenakker},
+    title = {Two-dimensional Josephson vortex lattice and anomalously slow decay of the Fraunhofer oscillations in a ballistic {SNS} junction with a warped Fermi surface},
+    journal = {Physical Review B}
+} 
+
+@article{Paajaste2015,
+    doi = {10.1021/nl504544s},
+    url = {https://doi.org/10.1021%2Fnl504544s},
+    year = 2015,
+    month = {feb},
+    publisher = {American Chemical Society ({ACS})},
+    volume = {15},
+    number = {3},
+    pages = {1803--1808},
+    author = {J. Paajaste and M. Amado and S. Roddaro and F. S. Bergeret and D. Ercolani and L. Sorba and F. Giazotto},
+    title = {Pb/{InAs} Nanowire Josephson Junction with High Critical Current and Magnetic Flux Focusing},
+    journal = {Nano Letters}
+} 
+
+@article{Plugge2017b,
+    doi = {10.1088/1367-2630/aa54e1},
+    url = {https://doi.org/10.1088%2F1367-2630%2Faa54e1},
+    year = 2017,
+    month = {jan},
+    publisher = {{IOP} Publishing},
+    volume = {19},
+    number = {1},
+    pages = {012001},
+    author = {Stephan Plugge and Asbj{\o}rn Rasmussen and Reinhold Egger and Karsten Flensberg},
+    title = {Majorana box qubits},
+    journal = {New Journal of Physics}
+} 
+
+@article{Radovifmmodecuteclseci2001,
+    doi = {10.1103/physrevb.63.214512},
+    url = {https://doi.org/10.1103%2Fphysrevb.63.214512},
+    year = 2001,
+    month = {may},
+    publisher = {American Physical Society ({APS})},
+    volume = {63},
+    number = {21},
+    author = {Z. Radovi{\'{c}} and L. Dobrosavljevi{\'{c}}-Gruji{\'{c}} and B. Vuji{\v{c}}i{\'{c}}},
+    title = {Coexistence of stable and metastable0and$\uppi$states in Josephson junctions},
+    journal = {Physical Review B}
+} 
+
+@article{San-Jose2014,
+    doi = {10.1103/physrevlett.112.137001},
+    url = {https://doi.org/10.1103%2Fphysrevlett.112.137001},
+    year = 2014,
+    month = {apr},
+    publisher = {American Physical Society ({APS})},
+    volume = {112},
+    number = {13},
+    author = {Pablo San-Jose and Elsa Prada and Ram{\'{o}}n Aguado},
+    title = {Mapping the Topological Phase Diagram of Multiband Semiconductors with Supercurrents},
+    journal = {Physical Review Letters}
+} 
+
+@article{Sellier2004,
+    doi = {10.1103/physrevlett.92.257005},
+    url = {https://doi.org/10.1103%2Fphysrevlett.92.257005},
+    year = 2004,
+    month = {jun},
+    publisher = {American Physical Society ({APS})},
+    volume = {92},
+    number = {25},
+    author = {Hermann Sellier and Claire Baraduc and Fran{\c{c}}ois Lefloch and Roberto Calemczuk},
+    title = {Half-Integer Shapiro Steps at the0-$\uppi$Crossover of a Ferromagnetic Josephson Junction},
+    journal = {Physical Review Letters}
+} 
+
+@article{Spanton2017,
+    doi = {10.1038/nphys4224},
+    url = {https://doi.org/10.1038%2Fnphys4224},
+    year = 2017,
+    month = {aug},
+    publisher = {Springer Nature},
+    volume = {13},
+    number = {12},
+    pages = {1177--1181},
+    author = {Eric M. Spanton and Mingtang Deng and Saulius Vaitiek{\.{e}}nas and Peter Krogstrup and Jesper Nyg{\aa}rd and Charles M. Marcus and Kathryn A. Moler},
+    title = {Current{\textendash}phase relations of few-mode {InAs} nanowire Josephson junctions},
+    journal = {Nature Physics}
+} 
+
+@article{Szombati2016,
+    doi = {10.1038/nphys3742},
+    url = {https://doi.org/10.1038%2Fnphys3742},
+    year = 2016,
+    month = {may},
+    publisher = {Springer Science and Business Media {LLC}},
+    volume = {12},
+    number = {6},
+    pages = {568--572},
+    author = {D. B. Szombati and S. Nadj-Perge and D. Car and S. R. Plissard and E. P. A. M. Bakkers and L. P. Kouwenhoven},
+    title = {Josephson $\upphi$0-junction in nanowire quantum dots},
+    journal = {Nature Physics}
+} 
+
+@article{Tiira2017,
+    doi = {10.1038/ncomms14984},
+    url = {https://doi.org/10.1038%2Fncomms14984},
+    year = 2017,
+    month = {apr},
+    publisher = {Springer Science and Business Media {LLC}},
+    volume = {8},
+    number = {1},
+    author = {J. Tiira and E. Strambini and M. Amado and S. Roddaro and P. San-Jose and R. Aguado and F. S. Bergeret and D. Ercolani and L. Sorba and F. Giazotto},
+    title = {Magnetically-driven colossal supercurrent enhancement in {InAs} nanowire Josephson junctions},
+    journal = {Nature Communications}
+} 
+
+@article{VanDam2006,
+    doi = {10.1038/nature05018},
+    url = {https://doi.org/10.1038%2Fnature05018},
+    year = 2006,
+    month = {aug},
+    publisher = {Springer Nature},
+    volume = {442},
+    number = {7103},
+    pages = {667--670},
+    author = {Jorden A. van Dam and Yuli V. Nazarov and Erik P. A. M. Bakkers and Silvano De Franceschi and Leo P. Kouwenhoven},
+    title = {Supercurrent reversal in quantum dots},
+    journal = {Nature}
+} 
+
+@article{Vuik2016,
+    doi = {10.1088/1367-2630/18/3/033013},
+    url = {https://doi.org/10.1088%2F1367-2630%2F18%2F3%2F033013},
+    year = 2016,
+    month = {mar},
+    publisher = {{IOP} Publishing},
+    volume = {18},
+    number = {3},
+    pages = {033013},
+    author = {A Vuik and D Eeltink and A R Akhmerov and M Wimmer},
+    title = {Effects of the electrostatic environment on the Majorana nanowire devices},
+    journal = {New Journal of Physics}
+} 
+
+@article{Weperen2012,
+    doi = {10.1021/nl3035256},
+    url = {https://doi.org/10.1021%2Fnl3035256},
+    year = 2012,
+    month = {dec},
+    publisher = {American Chemical Society ({ACS})},
+    volume = {13},
+    number = {2},
+    pages = {387--391},
+    author = {Ilse van Weperen and S{\'{e}}bastien R. Plissard and Erik P. A. M. Bakkers and Sergey M. Frolov and Leo P. Kouwenhoven},
+    title = {Quantized Conductance in an {InSb} Nanowire},
+    journal = {Nano Letters}
+} 
+
+@article{Weperen2015,
+    doi = {10.1103/PhysRevB.91.201413},
+    url = {https://doi.org/10.1103%2Fphysrevb.91.201413},
+    year = 2015,
+    month = {may},
+    publisher = {American Physical Society ({APS})},
+    volume = {91},
+    number = {20},
+    author = {I. van Weperen and B. Tarasinski and D. Eeltink and V. S. Pribiag and S. R. Plissard and E. P. A. M. Bakkers and L. P. Kouwenhoven and M. Wimmer},
+    title = {Spin-orbit interaction in {InSb} nanowires},
+    journal = {Physical Review B}
+} 
+
+@article{Wiedenmann2015,
+    doi = {10.1038/ncomms10303},
+    url = {https://doi.org/10.1038%2Fncomms10303},
+    year = 2016,
+    month = {jan},
+    publisher = {Springer Science and Business Media {LLC}},
+    volume = {7},
+    number = {1},
+    author = {J. Wiedenmann and E. Bocquillon and R. S. Deacon and S. Hartinger and O. Herrmann and T. M. Klapwijk and L. Maier and C. Ames and C. Br\"{u}ne and C. Gould and A. Oiwa and K. Ishibashi and S. Tarucha and H. Buhmann and L. W. Molenkamp},
+    title = {4$\uppi$-periodic Josephson supercurrent in {HgTe}-based topological Josephson junctions},
+    journal = {Nature Communications}
+} 
+
+@article{Yokoyama2014,
+    doi = {10.1103/PhysRevB.89.195407},
+    url = {https://doi.org/10.1103%2Fphysrevb.89.195407},
+    year = 2014,
+    month = {may},
+    publisher = {American Physical Society ({APS})},
+    volume = {89},
+    number = {19},
+    author = {Tomohiro Yokoyama and Mikio Eto and Yuli V. Nazarov},
+    title = {Anomalous Josephson effect induced by spin-orbit interaction and Zeeman effect in semiconductor nanowires},
+    journal = {Physical Review B}
+} 
+
+@article{Yokoyama2014a,
+    doi = {10.1209/0295-5075/108/47009},
+    url = {https://doi.org/10.1209%2F0295-5075%2F108%2F47009},
+    year = 2014,
+    month = {nov},
+    publisher = {{IOP} Publishing},
+    volume = {108},
+    number = {4},
+    pages = {47009},
+    author = {T. Yokoyama and Yu. V. Nazarov},
+    title = {Magnetic anisotropy of critical current in nanowire Josephson junction with spin-orbit interaction},
+    journal = {{EPL} (Europhysics Letters)}
+} 
