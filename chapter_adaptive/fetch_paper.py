@@ -33,6 +33,7 @@ with open("adaptive_full.tex") as f:
             for old, new in to_replace:
                 line = line.replace(old, new)
             text.append(line)
+
 text = "".join(text)
 
 tex = (
@@ -42,6 +43,7 @@ tex = (
 %% Start the actual chapter on a new page.
 \newpage
 \noindent
+
 """
     + text
     + r"\references{dissertation}"
