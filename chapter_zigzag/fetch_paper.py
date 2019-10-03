@@ -24,7 +24,7 @@ to_replace = [
     (r"\onlinecite{", r"\cite{"),
     (r"\bibliography{zigzag}", ""),
     (r"\bibliographystyle{apsrev4-1}", ""),
-    (r"\appendix", "\section{Appendix}")
+    (r"\appendix", r"\section{Appendix}"),
 ]
 
 with open("zigzag_full.tex") as f:
