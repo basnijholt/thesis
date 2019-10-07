@@ -19,6 +19,7 @@ to_replace = [
     (r"\includegraphics{figures/", r"\includegraphics{chapter_adaptive/figures/"),
     (r"\onlinecite{", r"\cite{"),
     (r"\paragraph", r"\co"),
+    (r"this paper", r"this chapter"),
 ]
 
 with open("adaptive_full.tex") as f:

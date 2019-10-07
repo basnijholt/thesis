@@ -44,7 +44,7 @@ For a one-dimensional function with three points known (its boundary points and 
 (4) calculate $f(x_\textrm{new})$,
 (5) repeat the previous steps, without redoing calculations for unchanged intervals.
 
-In this paper, we present a class of algorithms that rely on local criteria for sampling, such as in the above example.
+In this chapter, we present a class of algorithms that rely on local criteria for sampling, such as in the above example.
 Here we associate a \emph{local loss} to each interval and pick a \emph{candidate point} inside the interval with the largest loss.
 For example, in the case of the integration algorithm, the loss is the error estimate.
 The advantage of these \emph{local} algorithms is that they allow for easy parallelization and have a low computational overhead.
@@ -75,7 +75,7 @@ Most of our algorithms allow for a customizable loss function with which one can
 It integrates with the Jupyter notebook environment as well as popular parallel computation frameworks such as \passthrough{\lstinline!ipyparallel!}, \passthrough{\lstinline!mpi4py!}, and \passthrough{\lstinline!dask.distributed!}.
 It provides auxiliary functionality such as live-plotting, inspecting the data as the calculation is in progress, and automatically saving and loading of the data.
 
-The raw data and source code that produces all plots in this paper is available at \cite{papercode}.
+The raw data and source code that produces all plots in this chapter is available at \cite{papercode}.
 
 \hypertarget{sec:review}{%
 \section{Review of adaptive sampling}\label{sec:review}}
@@ -120,7 +120,7 @@ An example of such a polygonal remeshing method is one where the polygons align 
 
 \co{We aim to sample low to intermediate cost functions in parallel.}
 
-The general algorithm that we describe in this paper works best for low to intermediate cost functions.
+The general algorithm that we describe in this chapter works best for low to intermediate cost functions.
 The point suggestion step happens in a single sequential process while the function executions can be in parallel.
 This means that to benefit from an adaptive sampling algorithm, that the time it takes to suggest a new point $t_\textrm{suggest}$ must be much smaller than the average function execution time $t_f$ over the number of parallel workers $N$: $t_f / N \gg t_\textrm{suggest}$.
 Extremely fast functions can be calculated on a dense grid, and extremely slow functions might benefit from full-scale Bayesian optimization where $t_\textrm{suggest}$ is large.
