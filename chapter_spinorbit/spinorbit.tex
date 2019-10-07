@@ -25,7 +25,7 @@ However, the SOI strength relevant to the topological protection is affected by 
 Here, we reveal SOI in an InSb nanowire coupled to a NbTiN superconductor through the dependence of the superconducting gap on the magnetic field, both strength and orientation.
 We find that the geometry of the superconductor on the nanowire strongly modifies the direction of the spin-orbit field, which is further tunable by electrostatic gating, in line with the expected modifications of the electric field due to work function difference and electrostatic screening at the nanowire-superconductor interface.
 
-Figure 1(a) shows the device image.
+Figure~\ref{fig:fig1}(a) shows the device image.
 An InSb nanowire (blue) is covered by a NbTi/NbTiN superconducting contact (purple) and a Cr/Au normal metal contact (yellow).
 The barrier gate underneath the uncovered wire (red) can deplete the nanowire, locally creating a tunnel barrier.
 The tunneling differential conductance ($dI/dV$) resolves the induced superconducting gap, by sweeping the bias voltage ($V$) across the tunnel barrier [Fig.~\ref{fig:fig1}(b)].
@@ -60,7 +60,7 @@ The $z$ axis is perpendicular to the substrate and coincides with the electric f
 Since the Rashba spin-orbit field ($B_{\mathrm{SO}}$ $\propto$ $E$ $\times$ $k$) is perpendicular to both $k$ and $E$, it points along the $y$ axis.
 When $B$ is aligned with $x$ or $z$ [left and right panels in Fig.~\ref{fig:fig1}(e)], both perpendicular to $B_{\mathrm{SO}}$, the gap closes \mbox{slowly} (at around 0.6 T), followed by the emergence of a zero-bias peak possibly characteristic of a Majorana zero mode when $B$ is along the nanowire, although we emphasize that a conjecture of Majorana zero modes is not essential for the purposes of this chapter.
 On the contrary, when $B$ is aligned with the $y$ axis (middle panel), parallel to $B_{\mathrm{SO}}$, the gap closes much faster (at around 0.25 T).
-Figure 1f shows the line cuts at $|B|$ $=$ 0.25 T along the three axes: for $B$ $\perp$ $B_{\mathrm{SO}}$, the gap is almost the same as when $B$ $=$ 0 T, while the gap is closed for $B$ $\parallel$ $B_{\mathrm{SO}}$.
+Figure~\ref{fig:fig1}(f) shows the line cuts at $|B|$ $=$ 0.25 T along the three axes: for $B$ $\perp$ $B_{\mathrm{SO}}$, the gap is almost the same as when $B$ $=$ 0 T, while the gap is closed for $B$ $\parallel$ $B_{\mathrm{SO}}$.
 This observation matches the predictions of the Majorana nanowire model, as illustrated in Fig.~\ref{fig:fig1}(d): when $B$ $\perp$ $B_{\mathrm{SO}}$, SOI counteracts the Zeeman-induced gap closing by rotating the spin eigenstate towards $B_{\mathrm{SO}}$, which reduces the component of the Zeeman field along the direction of the spin eigenstate.
 In contrast, when $B$ $\parallel$ $B_{\mathrm{SO}}$, the spin eigenstate is always parallel to $B$, which prevents spin-orbit protection and results in a fast gap closing \cite{Osca2014,Rex2014}.
 This pronounced anisotropy of the gap closing with respect to different $B$ directions is universally observed in over ten devices (four shown in this chapter) for all gate settings
@@ -94,7 +94,7 @@ The last term accounts for the superconducting proximity effect, which we implem
 The Pauli matrices $\tau$ and $\sigma$ act in the particle-hole and spin space respectively.
 We perform numerical simulations of this Hamiltonian on a 3D lattice in a realistic nanowire geometry using the \textsc{kwant} code \cite{Groth2014}.
 We note that recent theory work shows that the anisotropy is unaffected by additional factors such as the wire length, temperature, and strong coupling to the superconductor \cite{Liu2019}.
-Additional details are provided in the Supplemental Material \cite{Note1}.  % XXX: fix Note1
+Additional details are provided in the Appendix \ref{sec:appendix}.
 
 \begin{figure}
 \begin{center}
@@ -109,7 +109,7 @@ The parameters used in (a)-(c) are $\mu$ $=$ 5.6 meV and $\Delta V_G$ $=$ -8 meV
 \end{figure}
 
 We identify which effects explain the observed anisotropic gap closing behavior by including them separately in our simulations.
-Figure ~\ref{fig:fig2}(a) shows the magnetic field dependence of the gap without SOI (setting $\alpha$ $=$ 0 in the Hamiltonian).
+Figure~\ref{fig:fig2}(a) shows the magnetic field dependence of the gap without SOI (setting $\alpha$ $=$ 0 in the Hamiltonian).
 In contrast to Fig.~\ref{fig:fig1}(e) the gap closes around 0.3 T for all three directions, reflecting the dominant contribution of the Zeeman effect.
 In Fig.~\ref{fig:fig2}(b), we turn on the SOI, and turn off the orbital effect by setting the magnetic vector potential $\mathbf{A}$ $=$ 0, which qualitatively reproduces the anisotropic behavior between the $y$ axis and the $x$ and $z$-axes.
 We have explored other combinations of parameters and find that the experimental results of Fig.~\ref{fig:fig1}(e) can only be reproduced by including SOI.
@@ -136,7 +136,7 @@ Dashed lines indicate the $z$ axis ($\Theta$ $=$ \ang{0}).
 \end{figure}
 
 To resolve the direction of the spin-orbit field, we fix the $B$ amplitude and continuously rotate the $B$ direction, parametrized by the angle $\Theta$ in the $zy$ plane [inset Fig.~\ref{fig:fig3}(a)].
-Figure 3(a) shows the dependence of the gap on $\Theta$, where we adjust the electric field strength in the nanowire with a voltage $V_{\mathrm{SG}}$ on the super gate (SG) underneath the superconductor [green in Fig.~\ref{fig:fig1}(a)].
+Figure \ref{fig:fig3}(a) shows the dependence of the gap on $\Theta$, where we adjust the electric field strength in the nanowire with a voltage $V_{\mathrm{SG}}$ on the super gate (SG) underneath the superconductor [green in Fig.~\ref{fig:fig1}(a)].
 We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and find $\Theta_{\mathrm{max}}$ $=$ 3 $\pm$ \ang{2} ($z$ axis) for all $V_{\mathrm{SG}}$ and in multiple devices (Fig.~\ref{fig:fig3} and Fig.~\ref{fig:YZrotRep} \cite{Note1}) (error due to uncertainty in the extraction procedure).  % XXX: fix Note1
 This is illustrated in Fig.~\ref{fig:fig3}(c), which shows horizontal line cuts for subgap bias.
 The largest gap for a given $B$ amplitude is expected for $B$ $\perp$ $B_{\mathrm{SO}}$, indicating that $B_{\mathrm{SO}}$ $\parallel$ $y$, in agreement with the $E$-field direction dictated by the device geometry.
@@ -182,7 +182,7 @@ The significance of the orbital effect in our devices underlines the importance 
 In conclusion, the observed gap closing anisotropy for different magnetic field orientations demonstrates SOI in our Majorana nanowires, a necessary condition to create Majorana zero modes.
 Our experiments reveal that SOI is strongly affected by the work function difference at the nanowire-superconductor interface and the geometry of the superconductor, while electrostatic gating provides tunability of SOI.
 
-\section{Appendix}
+\section{Appendix}\label{sec:appendix}
 
 \subsection{Supplemental Experimental Details}
 \subsubsection{Nanowire growth and device fabrication}
@@ -260,8 +260,7 @@ For $B \parallel B_{\mathrm{SO}}$ ($y$-axis) and neglecting the orbital effect t
 \begin{equation}\label{eq:eqS2}
 \Delta(B) = \Delta(0) - \frac{1}{2}g\mu_BB
 \end{equation}
-The orbital effect significantly enhances the gap closing in our devices [cf.
-Fig.~\ref{fig:fig1},~\ref{fig:fig2}], with a  strong dependence on the potential difference $\Delta V_G$ in the three-dimensional model.
+The orbital effect significantly enhances the gap closing in our devices [cf.~Fig.~\ref{fig:fig1},~\ref{fig:fig2}], with a  strong dependence on the potential difference $\Delta V_G$ in the three-dimensional model.
 Although the value of $\Delta V_G$ in our devices is unknown, we find that the orbital effect can be effectively taken into account in the one-dimensional model by adjusting the $g$-factor to match the gap closing along $B_{\mathrm{SO}}$, where SOI disappears and only the Zeeman and orbital effect contribute to the gap closing.
 We emphasize that the $g$-factor extracted from the fits therefore does not correspond to the pure Zeeman $g$-factor used in our tight-binding calculations.
 The validity of this approximation is demonstrated in Fig.~\ref{fig:SOIFit}(b), where the color map shows the gap closing resulting from our numerical calculations on the three-dimensional tight-binding model (taking the orbital effect into account and using $g = 50$) and the dashed white lines show the gap given by Eq.~\eqref{eq:S1} for $B\parallel x$ and by Eq.~\eqref{eq:S2} for $B\parallel y$ using $g=65$.
@@ -370,8 +369,7 @@ The super gate was set to $V_{\mathrm{SG}}$ = -1.5 V, -2.6 V in (b), (c) respect
 \caption{\label{fig:YZrotRep}
 Gap dependence on magnetic field orientation in \textit{zy}-plane in device A.
 (a) Differential conductance, $dI/dV$, as a function of bias voltage, $V$, upon rotation of the magnetic field at 0.25 T over angles $\Theta$ between $z$ and $y$ with different voltages on the super gate $V_{\mathrm{SG}}$ in the three panels.
-This is the same device as presented in Fig.
-1 (b) Horizontal line cuts of (a) averaged over a bias range $|V| < 0.2$ mV, showing that the hardest gap is at $\Theta = 0$, and increased $V_{\mathrm{SG}}$ suppresses the gap when $B$ is along $y$, the same behaviors observed in device B [Fig.~\ref{fig:fig3}].
+This is the same device as presented in Fig.~\ref{fig:fig1}(b) Horizontal line cuts of (a) averaged over a bias range $|V| < 0.2$ mV, showing that the hardest gap is at $\Theta = 0$, and increased $V_{\mathrm{SG}}$ suppresses the gap when $B$ is along $y$, the same behaviors observed in device B [Fig.~\ref{fig:fig3}].
 }
 \end{center}
 \end{figure}
