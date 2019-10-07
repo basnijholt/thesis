@@ -130,8 +130,6 @@ At the same time, the zigzag geometry limits the length of a trajectory therefor
 \comment{We show that zigzag geometry solves this problem by eliminating the long trajectories.}
 We propose a new experimental setup (see Fig.~\ref{fig:setup}(b)) for the creation of Majoranas that eliminates long trajectories and therefore prevents the appearance of a soft gap, while also increasing the topological gap (the smallest gap in the dispersion relation) by more than an order of magnitude, depending on the parameters.
 The setup consists of a zigzag or snake-like geometry for the semiconductor where long trajectories are not possible due to the geometry.
-In this paper we will focus on two-dimensional (2D) Josephson junctions; however, a zigzag geometry will also work with only one superconductor.\footnote{We confirmed this numerically, although it is not included in this paper.}
-
 
 %%██████████████████████████████████████████████████████████████████████████
 %%██ Setup
@@ -139,7 +137,8 @@ In this paper we will focus on two-dimensional (2D) Josephson junctions; however
 \section{Setup}\label{sec:setup}
 
 \comment{We consider a two-dimensional system with zigzag and BdG Hamiltonian.}
-We consider a Josephson junction (Fig.~\ref{fig:setup}) consisting of a 2D strip of semiconductor, with superconductors on both sides.
+We consider a Josephson junction (Fig.~\ref{fig:setup}) consisting of a 2D strip of semiconductor, with superconductors on both sides~\cite{Pientka2017,Hell2017}.
+(In the App.~\ref{appendix:NS_junction} we demonstrate that similar physics also occurs in devices with a single superconductor.)
 We modulate the shape of the normal region, which can be either zigzag as depicted [Fig.~\ref{fig:setup}(b)], or a more smooth sinusoidal-like shape.
 Similar to the conventional straight system \cite{Pientka2017}, a magnetic field $B_x$ perpendicular to the junction is applied.
 We model the system with a Bogoliubov-de Gennes Hamiltonian (BdG):
@@ -259,7 +258,7 @@ The remaining parameter values are written at the end of Sec.~\ref{sec:setup}, e
 \label{fig:phasediagrams}}
 \end{figure}
 
-\comment{We calculate the topological phase diagram using the gap size.}
+\comment{We calculate the topological phase diagram.}
 In Fig.~\ref{fig:phasediagrams} we compare the phase diagrams of the straight and the zigzag junction.
 We plot $E_\textrm{gap}$ as a function of magnetic field, chemical potential, $E_\textrm{gap}(B_x, \mu)$; and the superconducting phase difference $E_\textrm{gap}(B_x, \phi)$ for both a straight system [(c) and (e)] and a zigzag system [(d) and (f)].
 Additionally, we plot the first $\SI{1300}{\nm}$ (one zigzag period) of the wave functions [(a) and (b)] at the optimal point in parameter space for the straight system.
@@ -268,6 +267,7 @@ Additionally, in Fig.~\ref{fig:phasediagrams}(c) we plot the phase boundaries ob
 Due to the large size of the zigzag supercell, we are unable to apply these methods to zigzag geometries.
 Instead, we calculate $E_\textrm{gap}$ by finding the absolute minimum of the spectrum $E_\textrm{gap}=\min{\left|E(k)\right|}$.
 By both observing the gap closings and comparing to the topological phase diagram of the straight system, we then infer the topology of the zigzag system and verify this by calculating the Majorana wave function of a finite length zigzag.
+As a further check, in App.~\ref{appendix:direction_B} we also compute $E_\textrm{gap}$ as function of the angle of magnetic field and observe that the zigzag device protects Majoranas from magnetic field misalignments.
 
 \comment{The introduction of a the zigzag breaks a chiral symmetry, bringing the system from the BDI to the D symmetry class}
 The straight system is in the symmetry class BDI \cite{Pientka2017}.
@@ -325,11 +325,12 @@ All authors performed the analysis of the results and planning of the project.
 
 \appendix
 
-\section{Zigzag device with a single superconductor}
+\section{Zigzag device with a single superconductor}\label{appendix:NS_junction}
 
-
-\comment{The same principle applies to devices with only one superconductor.}
-In this letter we have focused on SNS junctions and showed that $E_\textrm{gap}$ is significantly increased when going from a straight device to a zigzag device, however, with a single superconductor the same principles still apply, although the effect is less significant.
+\comment{We run the simulation and observe that the phase diagrams are the same but the zigzag device is still better.}
+A zigzag-shaped device with a single superconductor shows a similar enhancement of the superconducting gap as the Josephson junction devices.
+We demonstrate this by simulating a straight and a zigzag device and computing $E_\textrm{gap}(B_x, \; \mu)$ in Fig.~\ref{fig:ns_junction}.
+We observe that the order of magnitude increase of $E_\textrm{gap}$ also occurs upon the introduction of a zigzag geometry.
 
 \begin{figure}[!htb]
 \centering
@@ -339,42 +340,45 @@ We observe that the zigzag geometry also increases the gap in this case.
 \label{fig:ns_junction}}
 \end{figure}
 
-\comment{We run the simulation and observe that the phase diagrams are the same but the zigzag device is still better.}
-We show this through a numerical simulation of a straight and a zigzag device where we compute $E_\textrm{gap}(B_x, \; \mu)$ in Fig.~\ref{fig:ns_junction}.
-Here we see that the order of magnitude increase of $E_\textrm{gap}$ also occurs upon the introducation of a zigzag geometry.
-
-
-\section{Direction of the magnetic field}
-
-\comment{Short trajectories are less sensitive to the alignment of magnetic field.}
-Besides short trajectories having a larger $E_\textrm{gap}$, we also find that they are less sensitive to the alignment of the magnetic field.
+\section{Direction of the magnetic field}\label{appendix:direction_B}
 
 \comment{Zigzag geometry removes the need for precise field alignment.}
-Because the zigzag geometry cuts off long trajectories---leaving only short trajectories---this device will require a less precise alignment of the magnetic field.
-To show this, we have performed a simulation of a straight and zigzag device where we rotate the field, and the results are in Fig.~\ref{fig:tilted_angle_phase_diagram}.
-We observe that at a $10\circ$ misaligned magnetic field, the zigzag device still has a sizeable gap, wherein the staight device a $1\circ$ misalignment would be detrimental.
+Because the zigzag geometry cuts off long trajectories---leaving only short trajectories---this device requires a less precise alignment of the magnetic field.
+To show this, we perform a simulation of a straight and zigzag device with a rotated field (see Fig.~\ref{fig:tilted_angle_phase_diagram}).
+We observe that the zigzag device still has a sizeable gap with a $10^\circ$ misaligned magnetic field, wherea a $1^\circ$ misalignment makes a straight device gapless.
+
+\comment{Likewise a inhomogeneous magnetic field does not matter.}
+Strong screening of the magnetic field by the superconductors may distort the magnetic field pattern.
+To determine whether this effect degrades the device quality, we simulate a device with the magnetic field parallel to the NS interface, shown in Fig.~\ref{fig:syst_snaking_magnetic_field}.
+We find that the resulting gap is comparable to that of a device with the magnetic field purely in the $x$-direction, as shown in Fig.~\ref{fig:snaking_magnetic_field}.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=0.9\columnwidth]{figures/tilted_angle_phase_diagram.pdf}
-\caption{A comparison of a straight device (a) and a zigzag one (b) where the magnetic field is rotated.
-On the x-axis is the magnetic field $B$ and on the y-axis is the angle $\theta=\arctan{B_y/B_x}$ in degrees.
-The colormaps and the y-axis have a different scale for both panels.
-We see that the device with the zigzag geometry is much more resilient against a misaligned magnetic field.
+\caption{The topological gap as a function of the magnetic field magnitude $B$ and its angle $\theta=\arctan{B_y/B_x}$ for a straight device (a) and a zigzag device (b).
+Note that the colormaps and the $\theta$-axes differ between panels: the zigzag-shaped device becomes gapless at $\theta$ an order of magnitude larger compared to the straight device.
 \label{fig:tilted_angle_phase_diagram}}
 \end{figure}
 
+\begin{figure}[!htb]
+\centering
+\includegraphics{figures/syst_snaking_magnetic_field.pdf}
+\caption{
+The magnetic field pattern emulating strong screening by the superconductors.
+\label{fig:syst_snaking_magnetic_field}}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics{figures/snaking_magnetic_field.pdf}
+\caption{
+Comparison of the zigzag device's band structures with the magnetic field following the shape of the junction (orange) (see Fig.~\ref{fig:syst_snaking_magnetic_field}) and a magnetic field in the $x$-direction (blue) for different values of $z_y$.
+\label{fig:snaking_magnetic_field}}
+\end{figure}
+
 \comment{In a realistic device the magnetic field might not be inhomogeneous, but zigzag doesn't care.}
-
-% \begin{figure}[!htb]
-% \centering
-% \includegraphics[width=0.9\columnwidth]{figures/snaking_magnetic_field.pdf}
-% \caption{
-% % Fig 4. (d) and (f) with snaking B
-% \label{fig:snaking_magnetic_field}}
-% \end{figure}
-
-To verify that the change in the interface transparency alone is not sufficient to explain the increase of the topological gap, we have simulated the dispersion of a system with $z_x = z_y = \SI{80}{\nm} \approx v_\textrm{F}$ and $W=\SI{400}{\nm}$, so that the angle of the boundaries is sufficiently large, but the boundary modulation is much smaller than the width.
-We have observed that $E_\textrm{gap}$ became $\SI{6.1}{\mu \eV}$, a 2x increase compared to the straight system.
+The change in the interface transparency alone is not sufficient to explain the increase of the topological gap.
+To verify this, we compute the dispersion of a system with $z_x = z_y = \SI{80}{\nm} \approx v_\textrm{F}$ and $W=\SI{400}{\nm}$, so that the angle of the boundaries is sufficiently large, but the boundary modulation is much smaller than the width.
+We observe that $E_\textrm{gap}$ becomes $\SI{6.1}{\mu \eV}$, a two-fold increase compared to the straight system, not the order of magnitude increase resulting from the cutting off of long trajectories.
 
 \end{document}
