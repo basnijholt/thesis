@@ -73,9 +73,9 @@ First, an anisotropic magnetic field-induced closing of the bulk superconducting
 We note that this is different from aluminium films \cite{Chang2015,Deng2016,Gazibegovic2017,Zhang2018}, where a small magnetic field ($<$0.3 T) perpendicular to the film completely suppresses superconductivity, making them unsuitable to reveal SOI from an anisotropic gap closing.
 Next, we consider Meissner screening currents in NbTiN that can cause deviations in the magnetic field in the nanowire.
 Our Ginzburg-Landau simulations show that the field corrections due to Meissner screening are negligible \cite{Note1}, since the dimensions of the NbTiN film ($<$1 $\mu$m) are comparable to the penetration depth ($\sim$290 nm).  % XXX: fix Note1
-The simulations also show that vortex formation is most favorable along the $z$ axis \cite{Note1}, which implies that the observed anisotropic gap closing is not caused by gap suppression due to vortices near the nanowire \cite{Takei2013}, since we do not observe the fastest gap closing along $z$ [Fig.~\ref{fig:fig1}(f)].  % XXX: fix Note1  % XXX: hardcoded Fig #
+The simulations also show that vortex formation is most favorable along the $z$ axis \cite{Note1}, which implies that the observed anisotropic gap closing is not caused by gap suppression due to vortices near the nanowire \cite{Takei2013}, since we do not observe the fastest gap closing along $z$ [Fig.~\ref{fig:fig1}(f)].
 Finally, in the InSb nanowire, the Zeeman $g$ factor can become anisotropic due to quantum confinement \cite{Nadj-Perge2012,Pryor2006,Qu2016}.
-However, our nanowire geometry leads to confinement in both the $y$ and $z$ directions, implying similar gap closing along $y$ and $z$, inconsistent with our observations [Fig.~\ref{fig:fig1}(e)].  % XXX: hardcoded Fig #
+However, our nanowire geometry leads to confinement in both the $y$ and $z$ directions, implying similar gap closing along $y$ and $z$, inconsistent with our observations [Fig.~\ref{fig:fig1}(e)].
 
 Having excluded the above mechanisms, we are now left with three effects: spin splitting of the electron \mbox{states} in magnetic fields with the Land\'e $g$ factor (Zeeman eff\mbox{ect)}, the orbital effect of the magnetic field representing the Lorentz force acting on traveling electrons, and SOI.
 To investigate the role of these effects, we use a theoretical three-dimensional Majorana nanowire model defined by the Hamiltonian \cite{Lutchyn2010,Oreg2010,Nijholt2016}:
@@ -101,7 +101,7 @@ Additional details are provided in the Supplemental Material \cite{Note1}.  % XX
 \includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig2.pdf}
 \caption{\label{fig:fig2}
 (a) Numerical simulations of $dI/dV$ as a function of $V$ and $B$, including the Zeeman and the orbital (Lorentz) effect of the magnetic field.
-(b) Same as (a), but including Zeeman and SOI instead of the orbital effect, reproducing the anisotropy in Fig.~\ref{fig:fig1}(e).  % XXX: hardcoded Fig #
+(b) Same as (a), but including Zeeman and SOI instead of the orbital effect, reproducing the anisotropy in Fig.~\ref{fig:fig1}(e).
 (c) Same as (b), but including the Zeeman, SOI and orbital effect.
 The parameters used in (a)-(c) are $\mu$ $=$ 5.6 meV and $\Delta V_G$ $=$ -8 meV.
 }
@@ -110,11 +110,11 @@ The parameters used in (a)-(c) are $\mu$ $=$ 5.6 meV and $\Delta V_G$ $=$ -8 meV
 
 We identify which effects explain the observed anisotropic gap closing behavior by including them separately in our simulations.
 Figure ~\ref{fig:fig2}(a) shows the magnetic field dependence of the gap without SOI (setting $\alpha$ $=$ 0 in the Hamiltonian).
-In contrast to Fig.~\ref{fig:fig1}(e) the gap closes around 0.3 T for all three directions, reflecting the dominant contribution of the Zeeman effect.  % XXX: hardcoded Fig #
-In Fig.~\ref{fig:fig2}(b), we turn on the SOI, and turn off the orbital effect by setting the magnetic vector potential $\mathbf{A}$ $=$ 0, which qualitatively reproduces the anisotropic behavior between the $y$ axis and the $x$ and $z$-axes.  % XXX: hardcoded Fig #
-We have explored other combinations of parameters and find that the experimental results of Fig.~\ref{fig:fig1}(e) can only be reproduced by including SOI.  % XXX: hardcoded Fig #
-We note that adding the orbital effect in Fig.~\ref{fig:fig2}(c) shifts the gap closing to a field almost twice as small for $B$ $\parallel$ $y$, which explains why we observe a gap closing for $B$ $\parallel$ $y$ at around 0.25 T, far below 0.45 T, the critical field expected when only the Zeeman effect with $g$ $=$ 50 suppresses the gap.  % XXX: hardcoded Fig #
-By fitting the curvature of the gap closing \cite{Heck2017,Pan2019} along $x$ [white dashed line in Fig.~\ref{fig:fig1}(e)] we estimate a range of the SOI strength $\alpha$ of 0.15 -- 0.35 eV\AA\ from devices $A$-$D$ (for fitting details and fits to additional devices, see Supplemental Material \cite{Note1}).  % XXX: fix Note1  % XXX: hardcoded Fig #
+In contrast to Fig.~\ref{fig:fig1}(e) the gap closes around 0.3 T for all three directions, reflecting the dominant contribution of the Zeeman effect.
+In Fig.~\ref{fig:fig2}(b), we turn on the SOI, and turn off the orbital effect by setting the magnetic vector potential $\mathbf{A}$ $=$ 0, which qualitatively reproduces the anisotropic behavior between the $y$ axis and the $x$ and $z$-axes.
+We have explored other combinations of parameters and find that the experimental results of Fig.~\ref{fig:fig1}(e) can only be reproduced by including SOI.
+We note that adding the orbital effect in Fig.~\ref{fig:fig2}(c) shifts the gap closing to a field almost twice as small for $B$ $\parallel$ $y$, which explains why we observe a gap closing for $B$ $\parallel$ $y$ at around 0.25 T, far below 0.45 T, the critical field expected when only the Zeeman effect with $g$ $=$ 50 suppresses the gap.
+By fitting the curvature of the gap closing \cite{Heck2017,Pan2019} along $x$ [white dashed line in Fig.~\ref{fig:fig1}(e)] we estimate a range of the SOI strength $\alpha$ of 0.15 -- 0.35 eV\AA\ from devices $A$-$D$ (for fitting details and fits to additional devices, see Supplemental Material \cite{Note1}).  % XXX: fix Note1
 This SOI strength is in \mbox{agreement} with the values extracted from level repulsion of Andreev states \cite{Stanescu2013,Moor2018} in an additional device $E$ \cite{Note1}.  % XXX: fix Note1
 \mbox{Since} $\alpha$ depends on the electric field in the wire, we expect the observed variation in the SOI strength of devices to be caused by differences in the applied gate voltages and wire diameter.
 Recently, the level repulsion of Andreev states in InSb nanowires covered with epitaxial aluminium has shown a SOI strength of approximately 0.1 eV\AA \cite{Moor2018}, slightly lower than we find for NbTiN covered nanowires, most likely due to strong coupling to the aluminium superconductor, leading to stronger renormalization of the InSb material parameters \cite{Stanescu2011,Cole2015,Antipov2018,Woods2018,Mikkelsen2018,Reeg2018}.
@@ -123,7 +123,7 @@ Recently, the level repulsion of Andreev states in InSb nanowires covered with e
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig3.pdf}
 \caption{\label{fig:fig3}
-(a) Measured $dI/dV$ as a function of $V$ upon rotation of $B$ at 0.3 T over angles $\Theta$ between $z$ and $y$ in device $B$ (see Fig. S5 \cite{Note1} for the same behavior in device $A$).  % XXX: fix Note1  % XXX: hardcoded Fig #
+(a) Measured $dI/dV$ as a function of $V$ upon rotation of $B$ at 0.3 T over angles $\Theta$ between $z$ and $y$ in device $B$ (see Fig.~\ref{fig:YZrotRep} \cite{Note1} for the same behavior in device $A$).  % XXX: fix Note1
 The voltage $V_{\mathrm{SG}}$ on the super gate (see insets) is varied in the three panels.
 (b) Simulated $dI/dV$ as a function of $\Theta$ and $V$ at 0.25 T.
 The top panel includes the Zeeman effect and SOI.
@@ -135,9 +135,9 @@ Dashed lines indicate the $z$ axis ($\Theta$ $=$ \ang{0}).
 \end{center}
 \end{figure}
 
-To resolve the direction of the spin-orbit field, we fix the $B$ amplitude and continuously rotate the $B$ direction, parametrized by the angle $\Theta$ in the $zy$ plane [inset Fig.~\ref{fig:fig3}(a)].  % XXX: hardcoded Fig #
-Figure 3(a) shows the dependence of the gap on $\Theta$, where we adjust the electric field strength in the nanowire with a voltage $V_{\mathrm{SG}}$ on the super gate (SG) underneath the superconductor [green in Fig.~\ref{fig:fig1}(a)].  % XXX: hardcoded Fig #
-We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and find $\Theta_{\mathrm{max}}$ $=$ 3 $\pm$ \ang{2} ($z$ axis) for all $V_{\mathrm{SG}}$ and in multiple devices (Fig.~\ref{fig:fig3} and Fig. S5 \cite{Note1}) (error due to uncertainty in the extraction procedure).  % XXX: fix Note1  % XXX: hardcoded Fig #
+To resolve the direction of the spin-orbit field, we fix the $B$ amplitude and continuously rotate the $B$ direction, parametrized by the angle $\Theta$ in the $zy$ plane [inset Fig.~\ref{fig:fig3}(a)].
+Figure 3(a) shows the dependence of the gap on $\Theta$, where we adjust the electric field strength in the nanowire with a voltage $V_{\mathrm{SG}}$ on the super gate (SG) underneath the superconductor [green in Fig.~\ref{fig:fig1}(a)].
+We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and find $\Theta_{\mathrm{max}}$ $=$ 3 $\pm$ \ang{2} ($z$ axis) for all $V_{\mathrm{SG}}$ and in multiple devices (Fig.~\ref{fig:fig3} and Fig.~\ref{fig:YZrotRep} \cite{Note1}) (error due to uncertainty in the extraction procedure).  % XXX: fix Note1
 This is illustrated in Fig.~\ref{fig:fig3}(c), which shows horizontal line cuts for subgap bias.
 The largest gap for a given $B$ amplitude is expected for $B$ $\perp$ $B_{\mathrm{SO}}$, indicating that $B_{\mathrm{SO}}$ $\parallel$ $y$, in agreement with the $E$-field direction dictated by the device geometry.
 
@@ -158,26 +158,25 @@ The illustrations in the insets indicate the direction of $E$, which is rotated 
 \end{figure}
 
 Now, we check whether the orbital effect changes $\Theta_{\mathrm{max}}$.
-The simulations in Fig.~\ref{fig:fig3}(b) show the effect of magnetic field rotation on the gap with $B_{\mathrm{SO}}$ $\parallel$ $y$, confirming that $\Theta_{\mathrm{max}}$ is, indeed, always given by the direction perpendicular to $B_{\mathrm{SO}}$, i.e.  % XXX: hardcoded Fig #
-$\Theta_{\mathrm{max}}$ $=$ \ang{0}.
+The simulations in Fig.~\ref{fig:fig3}(b) show the effect of magnetic field rotation on the gap with $B_{\mathrm{SO}}$ $\parallel$ $y$, confirming that $\Theta_{\mathrm{max}}$ is, indeed, always given by the direction perpendicular to $B_{\mathrm{SO}}$, i.e.~$\Theta_{\mathrm{max}}$ $=$ \ang{0}.
 Comparing the top panel (without the orbital effect) with the middle panel (with the orbital effect), we conclude that the orbital effect does not affect $\Theta_{\mathrm{max}}$.
 This conclusion also holds when we vary the potential difference $\Delta V_G$ between the middle and outer of the wire (corresponding to $V_{\mathrm{SG}}$) in the middle panel and bottom panel.
 We note that, at $\Delta V_G$ $=$ 2 meV (bottom panel) the wave function is moved towards the bottom of the nanowire, which increases the strength of the orbital effect by breaking the reflection symmetry about the $z$ axis, as evidenced by the longer angle range over which the gap is closed compared to $\Delta V_G$ $=$ -4 meV (middle panel).
-Experimentally, we also observe this in Fig.~\ref{fig:fig3}(a), with line cuts in Fig.~\ref{fig:fig3}(c), where the gap is closed over a significantly longer angle range with increasing $V_{\mathrm{SG}}$.  % XXX: hardcoded Fig #
+Experimentally, we also observe this in Fig.~\ref{fig:fig3}(a), with line cuts in Fig.~\ref{fig:fig3}(c), where the gap is closed over a significantly longer angle range with increasing $V_{\mathrm{SG}}$.
 We note that we use small values of $\Delta V_G$ in the simulations, because we expect a weak gate response due to effective electrostatic screening by the superconductor, which covers five of the six nanowire facets \cite{Zhang2017}.
 
-Finally, we turn to a second type of device in which the superconducting film only partially covers the nanowire facets [Fig.~\ref{fig:fig4}(a)].  % XXX: hardcoded Fig #
-This partial superconductor coverage can modify the orientation of $B_{\mathrm{SO}}$ by changing the associated electric field direction \cite{Vuik2016}, as sketched in the inset of Fig.~\ref{fig:fig4}(a).  % XXX: hardcoded Fig #
+Finally, we turn to a second type of device in which the superconducting film only partially covers the nanowire facets [Fig.~\ref{fig:fig4}(a)].
+This partial superconductor coverage can modify the orientation of $B_{\mathrm{SO}}$ by changing the associated electric field direction \cite{Vuik2016}, as sketched in the inset of Fig.~\ref{fig:fig4}(a).
 The electric field in the wire has two main origins.
 The first one originates from the work function difference between the superconductor and nanowire, which leads to charge redistribution.
 The resulting electric field is expected to rotate away from the $z$ axis due to the partial superconductor coverage which breaks the spatial symmetry.
-In Fig.~\ref{fig:fig4}(b) we rotate $B$ in the $zy$ plane, perpendicular to the nanowire axis, and find that $\Theta_{\mathrm{max}}$ is, indeed, no longer at zero, but at 32 $\pm$ \ang{2}.  % XXX: hardcoded Fig #
+In Fig.~\ref{fig:fig4}(b) we rotate $B$ in the $zy$ plane, perpendicular to the nanowire axis, and find that $\Theta_{\mathrm{max}}$ is, indeed, no longer at zero, but at 32 $\pm$ \ang{2}.
 The second contribution to the electric field arises from the applied $V_{\mathrm{SG}}$ and the electrostatic screening due to the grounded superconductor.
 Changing $V_{\mathrm{SG}}$ should, therefore, rotate the electric field for partial coverage.
-Indeed, we find that $\Theta_{\mathrm{max}}$ shifts by \ang{10} by adjusting $V_{\mathrm{SG}}$ by 7.5 V [Fig.~\ref{fig:fig4}(c)].  % XXX: hardcoded Fig #
+Indeed, we find that $\Theta_{\mathrm{max}}$ shifts by \ang{10} by adjusting $V_{\mathrm{SG}}$ by 7.5 V [Fig.~\ref{fig:fig4}(c)].
 Field rotation at intermediate $V_{\mathrm{SG}}$ and magnetic field sweeps confirming the change of $\Theta_{\mathrm{max}}$ are shown in the Supplemental Material \cite{Note1}.  % XXX: fix Note1
-Our theory simulations confirm that $\Theta_{\mathrm{max}}$ is still given by the direction orthogonal to $B_{\mathrm{SO}}$ when the electric field is not necessarily along a \mbox{spatial} symmetry axis of the partially covered device [Fig.~\ref{fig:fig4}(d) and 4(e)].  % XXX: hardcoded Fig #
-While the orbital effect does not change $\Theta_{\mathrm{max}}$ [Fig.~\ref{fig:fig4}(e) and 4(f)], it can induce asymmetry in the energy spectrum around $\Theta_{\mathrm{max}}$ resulting from wave function asymmetry when the electric field is not along the mirror plane of the device [Fig.~\ref{fig:fig4}(b) and Fig.~\ref{fig:fig4}(e)].  % XXX: hardcoded Fig #
+Our theory simulations confirm that $\Theta_{\mathrm{max}}$ is still given by the direction orthogonal to $B_{\mathrm{SO}}$ when the electric field is not necessarily along a \mbox{spatial} symmetry axis of the partially covered device [Fig.~\ref{fig:fig4}(d) and ~\ref{fig:fig4}(e)].
+While the orbital effect does not change $\Theta_{\mathrm{max}}$ [Fig.~\ref{fig:fig4}(e) and ~\ref{fig:fig4}(f)], it can induce asymmetry in the energy spectrum around $\Theta_{\mathrm{max}}$ resulting from wave function asymmetry when the electric field is not along the mirror plane of the device [Fig.~\ref{fig:fig4}(b) and ~\ref{fig:fig4}(e)].
 The significance of the orbital effect in our devices underlines the importance of including it in realistic simulations of Majorana nanowires.
 
 In conclusion, the observed gap closing anisotropy for different magnetic field orientations demonstrates SOI in our Majorana nanowires, a necessary condition to create Majorana zero modes.
@@ -249,7 +248,7 @@ Fig.~\ref{fig:fig1}(e)], which excludes vortex formation as the origin of the ga
 \subsubsection{Determination of SOI strength $\alpha$ from gap closing}
 In a Majorana nanowire the SOI strength $\alpha$ determines the shape of the gap closing along $B$-directions perpendicular to the spin-orbit field $B_{\mathrm{SO}}$ \cite{Heck2017,Pan2019} [see Fig.~\ref{fig:SOIFit}(a)].
 To find an analytical expression for the dependence of the gap closing on $\alpha$, we start from the conventional one-dimensional Majorana nanowire Hamiltonian \cite{Lutchyn2010,Oreg2010}, in which the gap size is given by the lowest energy eigenstate:
-\begin{equation}
+\begin{equation}\label{eq:eqS1}
 \Delta(B) = \min \bigg( \epsilon^2 + \epsilon_{\mathrm{SO}}^2 + \epsilon_{Z}^2 + \Delta(0)^2 \pm 2 \sqrt{\epsilon^2 ( \epsilon_{\mathrm{SO}}^2+\epsilon_{Z}^2 ) + \epsilon_{Z}^2\Delta(0)^2} \bigg)^\frac{1}{2}
 \end{equation}
 Here, $\epsilon=\hbar^2k^2/2m^*-\mu$ represents the kinetic energy, with $k$ the electron wave vector and $m^*=0.015 m_e$ the effective mass.
@@ -258,21 +257,21 @@ $\epsilon_Z = \frac{1}{2}g\mu_BB$ is the Zeeman energy, with $g$ the Land\'e $g$
 $\Delta(0)$ is the induced superconducting gap at $B = 0$ T, which we measure in the experiments (as indicated in Fig.~\ref{fig:fig1}(b)).
 
 For $B \parallel B_{\mathrm{SO}}$ ($y$-axis) and neglecting the orbital effect the gap closes linearly with the Zeeman energy due to tilting of the bands \cite{Osca2014,Rex2014}:
-\begin{equation}
+\begin{equation}\label{eq:eqS2}
 \Delta(B) = \Delta(0) - \frac{1}{2}g\mu_BB
 \end{equation}
 The orbital effect significantly enhances the gap closing in our devices [cf.
 Fig.~\ref{fig:fig1},~\ref{fig:fig2}], with a  strong dependence on the potential difference $\Delta V_G$ in the three-dimensional model.
 Although the value of $\Delta V_G$ in our devices is unknown, we find that the orbital effect can be effectively taken into account in the one-dimensional model by adjusting the $g$-factor to match the gap closing along $B_{\mathrm{SO}}$, where SOI disappears and only the Zeeman and orbital effect contribute to the gap closing.
 We emphasize that the $g$-factor extracted from the fits therefore does not correspond to the pure Zeeman $g$-factor used in our tight-binding calculations.
-The validity of this approximation is demonstrated in Fig.~\ref{fig:SOIFit}(b), where the color map shows the gap closing resulting from our numerical calculations on the three-dimensional tight-binding model (taking the orbital effect into account and using $g = 50$) and the dashed white lines show the gap given by equation (S1) for $B\parallel x$ and by equation (S2) for $B\parallel y$ using $g=65$.
+The validity of this approximation is demonstrated in Fig.~\ref{fig:SOIFit}(b), where the color map shows the gap closing resulting from our numerical calculations on the three-dimensional tight-binding model (taking the orbital effect into account and using $g = 50$) and the dashed white lines show the gap given by Eq.~\eqref{eq:S1} for $B\parallel x$ and by Eq.~\eqref{eq:S2} for $B\parallel y$ using $g=65$.
 
-To extract $\alpha$ from our measurements, we fit the model given by equation (S1) and (S2) to the measured gap closing both along the wire and along $B_{\mathrm{SO}}$ simultaneously.
+To extract $\alpha$ from our measurements, we fit the model given by Eq.~\eqref{eq:S1} and ~\eqref{eq:S2} to the measured gap closing both along the wire and along $B_{\mathrm{SO}}$ simultaneously.
 We prevent overfitting by independently constraining the free parameters.
 First, $g$ is determined by the gap closing along $B_{\mathrm{SO}}$, which only depends on the Zeeman effect.
 Then, $\mu$ follows from the critical field $B_C$ along $x$, where $\frac{1}{2}g\mu_BB_C = \sqrt{\Delta(0)^2+\mu^2}$ \cite{Lutchyn2010,Oreg2010} (note that $B_C$ does not depend on $\alpha$).
 The SOI strength $\alpha$ is now the only free parameter left to fit the curvature of the gap closing along $x$.
-This procedure is applied to four devices [see Fig.~\ref{fig:fig1}(f), Fig.~\ref{fig:BsweepsReproduced}(b),(c), and Fig.~\ref{fig:BsweepsHalf}], resulting in a SOI strength of 0.15 -- 0.35 eV\AA, corresponding to a spin-orbit energy $E_{\mathrm{SO}}=m^*\alpha^2/2\hbar^2$ of 20 -- 120 $\mu$eV.  % XXX: hardcoded Fig #
+This procedure is applied to four devices [see Fig.~\ref{fig:fig1}(f), Fig.~\ref{fig:BsweepsReproduced}(b),(c), and Fig.~\ref{fig:BsweepsHalf}], resulting in a SOI strength of 0.15 -- 0.35 eV\AA, corresponding to a spin-orbit energy $E_{\mathrm{SO}}=m^*\alpha^2/2\hbar^2$ of 20 -- 120 $\mu$eV.
 The remaining parameters used for the fit of device A shown in Fig.~\ref{fig:fig1}(e) are $g$ = 90, $\mu$ = 1.4 meV.
 The values of $g$ and $\mu$ found for the remaining devices are given in Fig.~\ref{fig:BsweepsReproduced}.
 Table I shows the range of values of the fitting parameters for which good fits can be obtained.
@@ -296,11 +295,11 @@ $\alpha$ (eV\AA) & 0.15 $\pm$ 0.05 & 0.3 $\pm$ 0.1 & 0.35 $\pm$ 0.05 & 0.35 $\pm
 \includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/SFig7_AlphaFitting.pdf}
 \caption{\label{fig:SOIFit}
 Extracting SOI strength from gap closing curvature.
-(a) Lowest energy state $E_{\mathrm{min}}$ determining the gap in the one-dimensional model given by equation S1 as a function of magnetic field, $B$, in units of the critical field $B_c=\sqrt{\Delta^2+\mu^2}$ for various spin-orbit strengths $\alpha$.
+(a) Lowest energy state $E_{\mathrm{min}}$ determining the gap in the one-dimensional model given by Eq.~\eqref{eq:S1} as a function of magnetic field, $B$, in units of the critical field $B_c=\sqrt{\Delta^2+\mu^2}$ for various spin-orbit strengths $\alpha$.
 The curvature of the gap closing is strongly affected by $\alpha$.
 Stronger SOI counteracts the Zeeman effect up to larger $B/B_c$, leading initially to a slow gap closing, followed by a sharp gap closing when approaching the critical field, where the lowest energy state is at $k \approx 0$ for which $B_{\mathrm{SO}}(k)$ vanishes.
 The remaining parameters are: $\Delta(0)$ = 1 meV, $\mu$ = 2 meV.
-(b) Comparison of the numerical simulations on the 3D tight binding model, including the orbital effect (color map), with the 1D model given by equations (S1) and (S2) which does not account for the orbital effect (dashed lines).
+(b) Comparison of the numerical simulations on the 3D tight binding model, including the orbital effect (color map), with the 1D model given by Eqs.~\eqref{eq:S1} and ~\eqref{eq:S2} which does not account for the orbital effect (dashed lines).
 By adjusting the $g$-factor used in the Majorana nanowire model from $g$ = 50 to 65 to match the gap closing for $B \parallel B_{\mathrm{SO}}$, keeping all other parameters the same in both models, we find good agreement for the gap closing for $B \parallel x$.
 We use this same approach to take the orbital effect into account in an effective manner in fits of the experimentally observed gap closing.
 The remaining parameters used in the simulations shown here are $\Delta(0)$ = 0.45 meV, $\mu$ = 0.95 meV, $\alpha$ = 0.2 eV\AA, $\Delta V_G$ = -10 meV.
@@ -314,7 +313,7 @@ Recently this level repulsion between longitudinal states within the same subban
 Here, we follow the same procedure to estimate the SOI strength in a seperate device with a NbTiN superconductor that exhibits such level repulsion.
 We consider a low energy model of two levels dispersing in the magnetic field due to the Zeeman effect, coupled to each other by SOI with the matrix element $\delta_{\mathrm{SO}}$:
 
-\begin{equation}
+\begin{equation}\label{eq:S3}
 H = \begin{bmatrix}
 E_0 + \frac{1}{2}g_0 \mu_B B & \delta_{\mathrm{SO}} \\
 \delta_{\mathrm{SO}} & E_1 - \frac{1}{2}g_1 \mu_B B
@@ -336,7 +335,7 @@ Considering the uncertainty in the relation between $\alpha$ and $\delta_{\mathr
 Extracting the SOI strength from level repulsion.
 (a) $dI/dV$ as a function of $V$ and $B$ at $V_{\mathrm{SG}}$ = -3.3 V, measured in device E.
 Two Andreev states come down from the gap edge and exhibit an avoided crossing around $B = 0.5$ T.
-The dashed lines indicate fits to the solution of equation (S3).
+The dashed lines indicate fits to the solution of Eq.~\eqref{eq:S3}.
 The extracted coupling $\delta_{\mathrm{SO}}$ between the Andreev levels is indicated by the arrow.
 (b) $2\delta_{\mathrm{SO}}$ as a function of $V_{\mathrm{SG}}$.
 The right axis shows the estimation of the SOI strength using $\alpha = 2\delta_{\mathrm{SO}}L/\pi$ for the 1.2 $\mu$m long superconducting region.
