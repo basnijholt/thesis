@@ -72,18 +72,15 @@ Before we discuss the SOI in more detail, we rule out alternative mechanisms for
 First, an anisotropic magnetic field-induced closing of the bulk superconducting gap is excluded for the fields we apply, which are far below the critical field of NbTiN ($>$9 T) \cite{VanWoerkom2015}.
 We note that this is different from aluminium films \cite{Chang2015,Deng2016,Gazibegovic2017,Zhang2018}, where a small magnetic field ($<$0.3 T) perpendicular to the film completely suppresses superconductivity, making them unsuitable to reveal SOI from an anisotropic gap closing.
 Next, we consider Meissner screening currents in NbTiN that can cause deviations in the magnetic field in the nanowire.
-Our Ginzburg-Landau simulations show that the field corrections due to Meissner screening are negligible \cite{Note1}, since the dimensions of the NbTiN film ($<$1 $\mu$m) are comparable to the penetration depth ($\sim$290 nm).  % XXX: fix Note1
-The simulations also show that vortex formation is most favorable along the $z$ axis \cite{Note1}, which implies that the observed anisotropic gap closing is not caused by gap suppression due to vortices near the nanowire \cite{Takei2013}, since we do not observe the fastest gap closing along $z$ [Fig.~\ref{fig:fig1}(f)].
+Our Ginzburg-Landau simulations show that the field corrections due to Meissner screening are negligible (see Fig.~\ref{fig:GL}), since the dimensions of the NbTiN film ($<$1 $\mu$m) are comparable to the penetration depth ($\sim$290 nm).
+The simulations also show that vortex formation is most favorable along the $z$ axis, which implies that the observed anisotropic gap closing is not caused by gap suppression due to vortices near the nanowire \cite{Takei2013}, since we do not observe the fastest gap closing along $z$ [Fig.~\ref{fig:fig1}(f)].
 Finally, in the InSb nanowire, the Zeeman $g$ factor can become anisotropic due to quantum confinement \cite{Nadj-Perge2012,Pryor2006,Qu2016}.
 However, our nanowire geometry leads to confinement in both the $y$ and $z$ directions, implying similar gap closing along $y$ and $z$, inconsistent with our observations [Fig.~\ref{fig:fig1}(e)].
 
 Having excluded the above mechanisms, we are now left with three effects: spin splitting of the electron \mbox{states} in magnetic fields with the Land\'e $g$ factor (Zeeman eff\mbox{ect)}, the orbital effect of the magnetic field representing the Lorentz force acting on traveling electrons, and SOI.
 To investigate the role of these effects, we use a theoretical three-dimensional Majorana nanowire model defined by the Hamiltonian \cite{Lutchyn2010,Oreg2010,Nijholt2016}:
 \begin{equation*}
-\begin{split}
-H = &\left(\frac{\mathbf{p}^2}{2m^*}-\mu+V(y,z)\right) \tau_z + \frac{\alpha}{\hbar} \boldsymbol{\sigma} \cdot \mathbf{(\hat{E}\times p)} \tau_z\\
-&+ \frac{1}{2}g\mu_B\mathbf{B\cdot}\boldsymbol{\sigma}+\Delta_0 \tau_x
-\end{split}
+H = \left(\frac{\mathbf{p}^2}{2m^*}-\mu+V(y,z)\right) \tau_z + \frac{\alpha}{\hbar} \boldsymbol{\sigma} \cdot \mathbf{(\hat{E}\times p)} \tau_z + \frac{1}{2}g\mu_B\mathbf{B\cdot}\boldsymbol{\sigma}+\Delta_0 \tau_x
 \end{equation*}
 Here, the first term represents the kinetic and potential energy, with $\mu$ the chemical potential measured from the middle of the helical gap and $V(y,z)$ $=$ $\frac{\Delta V_G}{R}[0,y,z]$ $\cdot$ $\mathbf{\hat{E}}$ is the electrostatic potential in the wire, whose magnitude is parametrized by $\Delta V_G$, with $\mathbf{\hat{E}}$ the direction of the electric field and $R$ the wire radius.
 The orbital effect enters the Hamiltonian via the vector potential $\mathbf{A}$ in the canonical momentum: $\mathbf{p}$ $=$ $-i\hbar \nabla$ $+$ $e\mathbf{A}$.
@@ -114,8 +111,8 @@ In contrast to Fig.~\ref{fig:fig1}(e) the gap closes around 0.3 T for all three 
 In Fig.~\ref{fig:fig2}(b), we turn on the SOI, and turn off the orbital effect by setting the magnetic vector potential $\mathbf{A}$ $=$ 0, which qualitatively reproduces the anisotropic behavior between the $y$ axis and the $x$ and $z$-axes.
 We have explored other combinations of parameters and find that the experimental results of Fig.~\ref{fig:fig1}(e) can only be reproduced by including SOI.
 We note that adding the orbital effect in Fig.~\ref{fig:fig2}(c) shifts the gap closing to a field almost twice as small for $B$ $\parallel$ $y$, which explains why we observe a gap closing for $B$ $\parallel$ $y$ at around 0.25 T, far below 0.45 T, the critical field expected when only the Zeeman effect with $g$ $=$ 50 suppresses the gap.
-By fitting the curvature of the gap closing \cite{Heck2017,Pan2019} along $x$ [white dashed line in Fig.~\ref{fig:fig1}(e)] we estimate a range of the SOI strength $\alpha$ of 0.15 -- 0.35 eV\AA\ from devices $A$-$D$ (for fitting details and fits to additional devices, see Supplemental Material \cite{Note1}).  % XXX: fix Note1
-This SOI strength is in \mbox{agreement} with the values extracted from level repulsion of Andreev states \cite{Stanescu2013,Moor2018} in an additional device $E$ \cite{Note1}.  % XXX: fix Note1
+By fitting the curvature of the gap closing \cite{Heck2017,Pan2019} along $x$ [white dashed line in Fig.~\ref{fig:fig1}(e)] we estimate a range of the SOI strength $\alpha$ of 0.15 -- 0.35 eV\AA\ from devices $A$-$D$ (for fitting details and fits to additional devices, see Sec.~\ref{sec:SOI_extraction}).
+This SOI strength is in \mbox{agreement} with the values extracted from level repulsion of Andreev states \cite{Stanescu2013,Moor2018} in an additional device $E$, see Sec.~\ref{sec:level_rep} for more details.
 \mbox{Since} $\alpha$ depends on the electric field in the wire, we expect the observed variation in the SOI strength of devices to be caused by differences in the applied gate voltages and wire diameter.
 Recently, the level repulsion of Andreev states in InSb nanowires covered with epitaxial aluminium has shown a SOI strength of approximately 0.1 eV\AA \cite{Moor2018}, slightly lower than we find for NbTiN covered nanowires, most likely due to strong coupling to the aluminium superconductor, leading to stronger renormalization of the InSb material parameters \cite{Stanescu2011,Cole2015,Antipov2018,Woods2018,Mikkelsen2018,Reeg2018}.
 
@@ -123,7 +120,7 @@ Recently, the level repulsion of Andreev states in InSb nanowires covered with e
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{chapter_spinorbit/figures/Fig3.pdf}
 \caption{\label{fig:fig3}
-(a) Measured $dI/dV$ as a function of $V$ upon rotation of $B$ at 0.3 T over angles $\Theta$ between $z$ and $y$ in device $B$ (see Fig.~\ref{fig:YZrotRep} \cite{Note1} for the same behavior in device $A$).  % XXX: fix Note1
+(a) Measured $dI/dV$ as a function of $V$ upon rotation of $B$ at 0.3 T over angles $\Theta$ between $z$ and $y$ in device $B$ (see Fig.~\ref{fig:YZrotRep} for the same behavior in device $A$).
 The voltage $V_{\mathrm{SG}}$ on the super gate (see insets) is varied in the three panels.
 (b) Simulated $dI/dV$ as a function of $\Theta$ and $V$ at 0.25 T.
 The top panel includes the Zeeman effect and SOI.
@@ -244,11 +241,11 @@ Fig.~\ref{fig:fig1}(e)], which excludes vortex formation as the origin of the ga
 \end{center}
 \end{figure}
 
-\subsection{Extraction of SOI strength}
+\subsection{Extraction of SOI strength}\label{sec:SOI_extraction}
 \subsubsection{Determination of SOI strength $\alpha$ from gap closing}
 In a Majorana nanowire the SOI strength $\alpha$ determines the shape of the gap closing along $B$-directions perpendicular to the spin-orbit field $B_{\mathrm{SO}}$ \cite{Heck2017,Pan2019} [see Fig.~\ref{fig:SOIFit}(a)].
 To find an analytical expression for the dependence of the gap closing on $\alpha$, we start from the conventional one-dimensional Majorana nanowire Hamiltonian \cite{Lutchyn2010,Oreg2010}, in which the gap size is given by the lowest energy eigenstate:
-\begin{equation}\label{eq:eqS1}
+\begin{equation}\label{eq:S1}
 \Delta(B) = \min \bigg( \epsilon^2 + \epsilon_{\mathrm{SO}}^2 + \epsilon_{Z}^2 + \Delta(0)^2 \pm 2 \sqrt{\epsilon^2 ( \epsilon_{\mathrm{SO}}^2+\epsilon_{Z}^2 ) + \epsilon_{Z}^2\Delta(0)^2} \bigg)^\frac{1}{2}
 \end{equation}
 Here, $\epsilon=\hbar^2k^2/2m^*-\mu$ represents the kinetic energy, with $k$ the electron wave vector and $m^*=0.015 m_e$ the effective mass.
@@ -257,7 +254,7 @@ $\epsilon_Z = \frac{1}{2}g\mu_BB$ is the Zeeman energy, with $g$ the Land\'e $g$
 $\Delta(0)$ is the induced superconducting gap at $B = 0$ T, which we measure in the experiments (as indicated in Fig.~\ref{fig:fig1}(b)).
 
 For $B \parallel B_{\mathrm{SO}}$ ($y$-axis) and neglecting the orbital effect the gap closes linearly with the Zeeman energy due to tilting of the bands \cite{Osca2014,Rex2014}:
-\begin{equation}\label{eq:eqS2}
+\begin{equation}\label{eq:S2}
 \Delta(B) = \Delta(0) - \frac{1}{2}g\mu_BB
 \end{equation}
 The orbital effect significantly enhances the gap closing in our devices [cf.~Fig.~\ref{fig:fig1},~\ref{fig:fig2}], with a  strong dependence on the potential difference $\Delta V_G$ in the three-dimensional model.
@@ -306,7 +303,7 @@ The remaining parameters used in the simulations shown here are $\Delta(0)$ = 0.
 \end{center}
 \end{figure}
 
-\subsubsection{Estimation of SOI strength based on level repulsion}
+\subsubsection{Estimation of SOI strength based on level repulsion}\label{sec:level_rep}
 SOI induces coupling between states of different momentum and spin in finite length Majorana nanowires, which leads to level repulsion when energy levels are nearly degenerate \cite{Stanescu2013}.
 Recently this level repulsion between longitudinal states within the same subband was used to estimate a SOI strength in epitaxial Al-InSb nanowires \cite{Moor2018}.
 Here, we follow the same procedure to estimate the SOI strength in a seperate device with a NbTiN superconductor that exhibits such level repulsion.
