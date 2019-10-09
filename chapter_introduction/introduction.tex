@@ -2,7 +2,7 @@
 \label{ch:introduction}
 
 \section{Preface}
-Paul Dirac introduced the concept of particles and antiparticles in 1930~\cite{Dirac1930}.
+In 1930, Paul Dirac introduced the concept of particles and antiparticles~\cite{Dirac1930}.
 His prediction was based on a purely mathematical argument and explained the negative energy solution of his own relativistic wave equation: the Dirac equation.
 The solution he found was a pair of wavefunctions that are each other's complex conjugates.
 Three years later, Anderson observed the positron~\cite{Anderson1933}, the electron's complex conjugate.
@@ -16,10 +16,8 @@ In a superconductor, electrons (filled states at energy $E$ above the Fermi leve
 This charge difference of $2\textrm{e}$ can be absorbed as a Cooper pair in the superconducting condensate.
 At the Fermi level ($E=0$, in the middle of the superconducting gap), the eigenstates are charge-neutral superpositions of electrons and holes.
 These midgap excitations are called Majorana bound states~\cite{Beenakker2013}.
-\footnote{In this thesis we mostly refer to Majorana bound states as Majoranas.}
-More about superconductivity and the symmetry that protects the Majoranas in chapter \ref{sec:superconductivity} and \ref{sec:topology}.
 
-In a two-dimensional space, Majorana bound states have non-Abelian exchange statistics~\cite{Stern2010}.
+In a two-dimensional space, Majorana bound states exhibit non-Abelian exchange statistics~\cite{Stern2010}.
 The operation of exchanging two identical particles with such statistics can send the system into a different state with the same particle configuration.
 This is different from Abelian exchange statistics (for fermions and bosons), where an exchange can only lead to a global phase shift.
 A system with $2N$ Majoranas present is $2^{N}$-fold degenerate, because all decoupled Majoranas are at zero energy.
@@ -114,7 +112,11 @@ We write $c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\
 c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}=\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}+b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{l}}+b_{\bm{l}}\right),\label{eq:MF}
 \end{equation}
 and expand the products.
-Neglecting the second-order fluctuation term  $\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{k}}\right)$ in Eq.~\ref{eq:MF} and using it to rewrite Eq.~\ref{eq:BCS} gives
+Neglecting the second-order fluctuation term
+\begin{equation}
+\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{k}}\right)
+\end{equation}
+in Eq.~\ref{eq:MF} and using it to rewrite Eq.~\ref{eq:BCS} gives
 \begin{equation}
 \mathcal{H}_{\textrm{BCS}_{\textrm{MF}}}=\underset{\bm{k},\sigma}{\sum}\epsilon_{\bm{k}}c_{\bm{k}\sigma}^{\dagger}c_{\bm{k}\sigma}-\underset{\bm{k}}{\sum}\left(\Delta_{\bm{k}}c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}+\Delta_{\bm{k}}^{*}c_{-\bm{k}\downarrow}c_{\bm{k}\uparrow}-\Delta_{\bm{k}}b_{\bm{k}}^{*}\right),\label{eq:BCS_MF}
 \end{equation}
