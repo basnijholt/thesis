@@ -1,13 +1,21 @@
 # Preface
 <!-- We briefly discuss the following things -->
-##### Dirac introduced particle/anti-particles using his equation.
-##### Majorana found an alternative solution, predicting Majorana fermions.
-##### Majorana fermions have not been found; however, in condensed matter physics there are Majorana bound states (MBS) in superconductors.
-##### In 2D they have non-Abelian exchange statistics, so they are useful for quantum computing.
+##### Phase transitions (such as water -> ice) can be characterized by changes in underlying symmetries.
+##### Methods to study them where developed in the 40s by Landau.
+##### In the 80s the QHE was discovered, which challenged that method because the transition doesn't arise from a change in symmetry.
+##### Rather, QHE can be explained by topology, and does not depend of specific geometry.
+##### In 2016 the Nobel price was awarded to Thouless, Haldane, and Kosterlitz.
+##### The field of topology in condensed matter has grown over the past decades.
+##### Discoveries include, TIs, that have similarities with QHE.
+##### These materials can be used to build a topological quantum computer.
+##### In 2008, Fu and Kane predicted that TI+sc supports Majorana zero modes.
+##### Later it was found that Majoranas can be created inside a sc + sm hybrid nanowire device.
+##### The experimental discovery has led to much interest to use them for QC.
+##### Realistic modeling is needed to understand the proporties of the Majoranas in real devices.
 
 # Superconductivity
 <!-- this chapter leads up to Majoranas -->
-##### Superconductivity is explained by Ginzburg-Landau theory and the microscopic BCS theory and today's research includes hybrid structures.
+##### Superconductivity is explained by microscopic BCS theory and today's research includes hybrid structures.
 ##### The BCS Hamiltonian in terms of second quantization is ...
 ##### We can make a mean-field approximation and write the Hamiltonian as a BdG Hamiltonian.
 ##### This Hamiltonian has a symmetry.
