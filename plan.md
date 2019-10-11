@@ -6,6 +6,7 @@
 ##### More topological states have been realized, one example is TIs.
 ##### Topological states might be used to build a topological quantum computer.
 ##### Majoranas can be used to create this topological quantum computer.
+##### In this thesis we study the hybrid Majorana model.
 
 # Topological protection of Majoranas
 <!-- this chapter leads up to Majoranas -->
