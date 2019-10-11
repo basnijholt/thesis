@@ -1,17 +1,11 @@
 # Preface
-<!-- We briefly discuss the following things -->
-##### Phase transitions often involve a symmetry breaking process
-##### Methods to study them where developed in the 40s by Landau.
-##### In the 80s the QHE was discovered, which challenged that method because the transition doesn't arise from a change in symmetry.
-##### Rather, QHE can be explained by topology, and does not depend of specific geometry.
-##### In 1985 and 2016 the Nobel price was awarded for QHE and theoretical findings of topological states, respectively
-##### The field of topology in condensed matter has grown over the past decades.
-##### Discoveries include, TIs, that have similarities with QHE.
-##### These materials can be used to build a topological quantum computer.
-##### In 2008, Fu and Kane predicted that TI+sc supports Majorana zero modes, which are {insert explaination}.
-##### Later it was found that Majoranas can be created inside a sc + sm hybrid nanowire device.
-##### The experimental discovery has led to much interest to use them for QC.
-##### Realistic modeling is needed to understand the proporties of the Majoranas in real devices.
+##### Different phases of matter exist and are determined by the way the atoms are organized.
+##### Symmetry-breaking theory explains how to understand the different phases of matter.
+##### Symmetry-breaking theory works well but not for topologically ordered matter.
+##### The QHE is an example that can be described using of the theory of topological order.
+##### More topological states have been realized, one example is TIs.
+##### Topological states might be used to build a topological quantum computer.
+##### Majoranas can be used to create this topological quantum computer.
 
 # Topological protection of Majoranas
 <!-- this chapter leads up to Majoranas -->
