@@ -36,6 +36,11 @@ def replace_key(key, bib_entry):
             r"Land{\'{e}}{gFactors}",
             r"Land{\'{e}} {$g$} Factors",
         ),  # fix for PhysRevLett.96.026804
+        (
+            r"apx$\mathplus$ipysuperconductor",
+            r"a $p_x + i p_y$ superconductor",
+        ),  # fix for 10.1103/physrevb.73.220502
+        (r"apx$\mathplus${ipySuperfluid}", r"$p_x + i p_y$ superfluid"),  # fix for 10.1103/physrevlett.98.010506
     ]
 
     # I got these by using JabRef and converting to abbr journals
