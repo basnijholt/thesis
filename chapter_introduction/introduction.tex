@@ -112,7 +112,7 @@ A good understanding of ``conventional'' superconductivity was reached by a pair
 Today's research is focuses on exotic superconductors, high $T_{\mathrm{C}}$ superconductors, and hybrid structures that consist of a superconductor and another material.
 In this thesis, we study such hybrid structures.
 
-\subsection{BCS theory}\label{sec:BCS-theory}
+\subsection{BCS theory and the mean-field approximation}\label{sec:BCS-theory}
 \co{We can model superconductivity using BCS theory.}
 BCS theory describes superconductivity as a microscopic effect and assumes that two electrons from a Cooper pair where the electrons can effectively attract due to electron-phonon coupling \cite{Cooper1956,Bardeen1957,Bardeen1957a}.
 It postulates that superconductivity is caused by a condensation of Cooper pairs at the Fermi energy\footnote{We assume zero temperature $\left(T=0\right)$, so $E_{\textrm{F}}=\mu$, where $\mu$ is the chemical potential.} $E_{\textrm{F}}$ into a boson-like state, a Bose Einstein condensate.
@@ -138,6 +138,8 @@ $V_{\bm{kl}}$  & interaction potential.\tabularnewline
 
 The interaction term includes only the Cooper pairs, which consist of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum that can be denoted as $(\bm{\bm{k}}\uparrow,-\bm{k}\uparrow)$.
 Finding the ground state of this so-called pairing Hamiltonian is impossible; therefore, we have to make an approximation.  % XXX: is it really impossible?
+
+\co{We use the mean-field approximation and get the Bogoliubov-de Gennes Hamiltonian and get its spectrum.}
 A classic approximation scheme that describes the behavior of conventional superconductors remarkably well is the mean-field approximation.
 First we define the quantity
 \[
@@ -148,7 +150,6 @@ which we use to define the so-called gap energy
 \Delta_{\bm{k}}=-\sum_{\bm{k'}}V_{\bm{kk'}}b_{\bm{k'}}.
 \]
 We write the last term in Eq.~\eqref{eq:BCS} as
-
 \begin{equation}
 c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}=\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}+b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{l}}+b_{\bm{l}}\right),\label{eq:MF}
 \end{equation}
@@ -176,7 +177,7 @@ and write Eq.~\eqref{eq:BCS_MF} matrix form
 \Delta_{\bm{k}}^{*} & -\epsilon_{\bm{k}}
 \end{array}\right)}}\Psi_{\bm{k}}.
 \]
-To calculate the energy spectrum, we can diagonalize the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$ using the unitary Boguliubov transformation matrix $U_{\textrm{B}}$.
+To calculate the energy spectrum, we can diagonalize the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$ using the unitary Boguliubov transformation matrix $U_{\textrm{B}}$.  % XXX: should I mention this?
 Alternatively, we can square $H_{\textrm{BdG}}$ which gives a diagonal matrix
 \[
 H_{\textrm{BdG}}^{2}=\left(\begin{array}{cc}
@@ -190,26 +191,72 @@ This immediately result in the spectrum
 E=\pm\sqrt{\epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2}}.\label{eq:SC_spectrum}
 \end{equation}
 
+\co{In the single particle picture, we essentially double the degrees of freedom and introduce a symmetry.}
 The Bogoliubov-de Gennes Hamiltonian acts on the Nambu spinors [Eq.~\eqref{eq:Nambu}] whose first half is composed out of annihilation operators of electrons, and the second half out of creations operators of the same electrons.
 To go to a single particle description (first quantization), we can view the latter creation operators as annihilation operators of an extra set of holes, which doubles the number of degrees of freedom in the system.
-
 Besides the Pauli matrices that act on spin ($\sigma_{i}$ where $i\in x,y,z$) we introduce $\tau_{i}$ to act on the electron-hole degree of freedom.
 The Hamiltonian becomes a $4\times4$ matrix\footnote{Here $\otimes$ denotes the Kronecker product and we usually omit $\sigma_{0}$ and $\tau_{0}$.}
-\[
+\begin{equation}
 H_{\textrm{BdG}}=\epsilon_{k}\tau_{z}\otimes\sigma_{0}+\Delta\tau_{x}\otimes\sigma_{0}=\left(\begin{array}{cccc}
 \epsilon_{k} & 0 & \Delta & 0\\
 0 & \epsilon_{k} & 0 & \Delta\\
 \Delta & 0 & -\epsilon_{k} & 0\\
 0 & \Delta & 0 & -\epsilon_{k}
-\end{array}\right),
-\]
+\end{array}\right),\label{eq:H_BdG}
+\end{equation}
 which acts on the wavefunction
 \begin{equation}
 \Psi=\left(\psi_{\textrm{e}\uparrow},\psi_{\textrm{e}\downarrow},\psi_{\textrm{h}\downarrow},-\psi_{\textrm{h}\uparrow}\right)^{T},\label{eq:4wf}
 \end{equation}
 where $\psi_{\textrm{e}}$, $\psi_{\textrm{h}}$ are the electron and hole components of the wave function, and $\psi_{\uparrow}$, $\psi_{\downarrow}$ are the spin-up and spin-down states.
-Because the holes are related to the electrons, $H_{\textrm{BdG}}$ has an additional symmetry.
-Symmetry will be the topic of the next chapter.
+Because the holes are related to the electrons, $H_{\textrm{BdG}}$ has a particle hole symmetry, and it determines the material's specific topology.
+Symmetry and its interplay with topology is the topic of the next section.
+
+\subsection{Topology and symmetry}\label{sec:topology}
+\co{Symmetry determines a system's topology.}
+The concept of symmetry plays a fundamental part in physics.
+In condensed matter systems only three discrete symmetries are important: time-reversal symmetry $\mathcal{T}$, particle-hole symmetry $\mathcal{P}$, and chiral symmetry $\mathcal{C}$.
+Wigner's theorem states that a symmetry must either be a unitary or an anti-unitary operator.
+Both $\mathcal{T}$ and $\mathcal{P}$ have anti-unitary operators and may square either to $+1$ or $-1$ depending on the specifics of the system.
+Chiral symmetries have a unitary operator and always squares to $+1$.
+Together these three symmetries form ten symmetry classes~\cite{Altland1997}, each class characterized by the type and absence or presence of these symmetries.
+Topology studies whether objects can be continuously transformed into each other.
+The object that is studied in condensed matter is the Hamiltonian of a system.
+If two Hamiltonians can be continuously transformed\footnote{An example of a continuous transformation from $H_{1}$ to $H_{2}$: $H=\alpha H_{1}+(1-\alpha)H_{2}$ where $\alpha=0\rightarrow1$.} into each other without changing the topological invariant: the systems are said to be topologically equivalent.
+The dimensionality and symmetry class determine the type of topological invariant of a system.
+
+\co{The PHS relates electrons to holes and this is obvious in its spectrum.}
+Mathematically a particle-hole symmetry $\mathcal{P}$ is expressed as an operator that is anti-unitary and anti-commutes with the Hamiltonian.
+An example of where this symmetry is present, is the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$ from Eq.~\eqref{eq:H_BdG}.
+Here, $H_{\textrm{BdG}}$ acts on a two-component wave function $\psi_{\textrm{BdG}}=\left(u,v\right)^{T}$ with $u$ electron component and $v$ the hole component.
+The symmetry of this Hamiltonian is most obvious in its dispersion relation, where each eigenstate $\psi_{E}=\left(u_{0},v_{0}\right)^{T}$ has a particle-hole symmetric partner at $\psi_{-E}=\left(\mathcal{P}u_{0},\mathcal{P}v_{0}\right)^{T}$.
+In constructing $H_{\textrm{BdG}}$, we artificially doubled the degrees of freedom by considering electrons and holes separately.
+Therefore, the creation operator $c^{\dagger}$ of the quasiparticle in the $\psi_{E}$ state is equal to the annihilation operator $c$ of the quasiparticle in the $\psi_{-E}$ state.
+From this, it is clear that $\psi_{E}$ and $\psi_{-E}$ correspond to the same quasiparticle, and the creation of a quasiparticle with positive energy is identical to the annihilation of a quasiparticle with negative energy.
+
+\co{At E=0, we get a the Majorana condition.}
+At zero energy, something curious happens: here we have a state $\psi_{0}$ that upon applying $\mathcal{P}$ is transformed into itself $\mathcal{P}\psi_{0}=\psi_{0}$.
+This state has a creation operator $\gamma^{\dagger}$ that is identical to the annihilation operator $\gamma$ of itself, so $\gamma^{\dagger}=\gamma$.
+We call this property the Majorana condition.
+If we use the Majorana condition in the fermionic commutation relation
+\[
+\gamma^{\dagger}\gamma+\gamma\gamma^{\dagger}=1
+\]
+we get $\gamma^{\dagger}\gamma=1/2$ and see that the Majorana state is always half occupied.
+Removing a Majorana from zero energy is, therefore, only possible if it is paired with another Majorana to form a fermionic mode.
+In a one or higher dimensional system, the operator $\mathcal{P}$ will not only send $E\rightarrow-E$ but will also send the momentum $k\rightarrow-k$ as
+\[
+\mathcal{P^{\dagger}}H\left(k\right)\mathcal{P}=-H\left(-k\right),
+\]
+because $\mathcal{P}$ is an anti-unitary operator.
+
+\co{Having a PHS means symmetry class D, which has a Z2 invariant that in 1D indicates the presence or abscence of Majoranas.}
+The symmetry class of the one-dimensional system we study in this thesis has a particle-hole symmetry $\mathcal{P}$, and therefore belongs to class $\mathcal{D}$.
+This class has a $\mathcal{Z}_2$ topological invariant that is the sign of the Pfaffian of the Hamiltonian: $\sgn\Pf\left(H\right)$.
+This invariant can only assume two values, $+1$ or $-1$, and indicates the presence or absence of Majoranas.
+The Pfaffian for an anti-symmetric matrix is related to the determinant as $\Pf(A)^{2}=\det(A)$.
+This topological invariant is only defined for a system with an energy gap, which means the Hamiltonian of the system has no eigenvalues in a finite interval around zero energy.
+If we can continuously transform a Hamiltonian $H_{1}$ into another Hamiltonian $H_{2}$ without ever closing the energy gap, we say $H_{1}$ and $H_{2}$ are topologically equivalent, and thus have the same topological invariant.
 
 \section{Structure of this thesis}
 
