@@ -87,7 +87,7 @@ Physicists experiment with different approaches to create a qubit; for example, 
 In general, one of the most significant problems is to limit and correct the computational errors, and therefore a large fraction of the research is focussed on error-correction \cite{Lidar2013}.
 Here, the advantage of using topological states becomes apparent because the topological qubit naturally protects its state against small perturbations in the environment \cite{Nayak2008}.
 
-\co{Majoranas can be used to create this topological quantum computer.}
+\co{Majoranas can be used to create this topological quantum computer.}  % XXX: maybe mention that Majoranas are topologically protected
 The simplest non-Abelian exitation is the zero-energy Majorana bound state (MBS), which were first proposed to exist as quasiparticle excitations of the $\nu = 5/2$ quantum Hall effect \cite{Read2000,Moore1991}, which requires a high material purity and very low temperatures.
 Other early proposals \cite{Gurarie2005,Sarma2006,Tewari2007} rely on rare and exotic $p$-wave superconductors and are extremely challenging to realize experimentally.
 In 2008, Fu and Kane suggested a new approach to create MBSs by using a hybrid structure of an ordinary $s$-wave superconductor coupled to a topological insulator to create a state that resembles a spinless $p$-wave superconductor \cite{Fu2008}.
@@ -101,6 +101,115 @@ Because of the simplicity of the model it can be solved analytically; however, i
 In this thesis, we study extensions to this model and go beyond the regime that can be studied analytically.
 The next sections introduce superconductivity and the topological protection of Majoranas (Sec.~\ref{sec:superconductivity}), non-Abelian statistics (Sec.~\ref{sec:?}), the minimal hybrid Majorana model (Sec.~\ref{sec:?}), and finally, a few extensions to this model (Sec.~\ref{sec:?}).
 At that point, it should be evident that solving this problem requires numerical methods, which is the topic of Sec.~\ref{sec:?}.
+
+\section{Topological protection of Majoranas}\label{sec:superconductivity}
+\co{To understand the topological protection of MBS in hybrid structures, we discusses superconductivity.}
+This section discusses superconductivity to understand the topological protection of Majorana bound states.
+Superconductivity is a phenomenon that occurs in certain materials when cooled below a characteristic critical temperature $T_{\mathrm{C}}$.
+Upon reaching this temperature, the material undergoes a phase transition that results in exactly zero electrical resistance and the expulsion of magnetic fields.
+Since the discovery of superconductivity by Heike Kamerlingh Onnes in 1911, considerable efforts have been devoted to finding out how and why it works.
+A good understanding of ``conventional'' superconductivity was reached by a pair of important theories: the phenomenological Ginzburg-Landau theory and the microscopic BCS theory.
+Today's research is focuses on exotic superconductors, high $T_{\mathrm{C}}$ superconductors, and hybrid structures that consist of a superconductor and another material.
+In this thesis, we study such hybrid structures.
+
+\subsection{BCS theory}\label{sec:BCS-theory}
+\co{We can model superconductivity using BCS theory.}
+BCS theory describes superconductivity as a microscopic effect and assumes that two electrons from a Cooper pair where the electrons can effectively attract due to electron-phonon coupling \cite{Cooper1956,Bardeen1957,Bardeen1957a}.
+It postulates that superconductivity is caused by a condensation of Cooper pairs at the Fermi energy\footnote{We assume zero temperature $\left(T=0\right)$, so $E_{\textrm{F}}=\mu$, where $\mu$ is the chemical potential.} $E_{\textrm{F}}$ into a boson-like state, a Bose Einstein condensate.
+The model Hamiltonian in the language of second quantization ~\cite{Gennes1999} equals:
+
+\begin{equation}
+\mathcal{H}_{\textrm{BCS}}=\sum_{\bm{k}\sigma}\epsilon_{\bm{k}}c_{\bm{k}\sigma}^{\dagger}c_{\bm{k}\sigma}+\sum_{\bm{k}\bm{l}}V_{\bm{k}\bm{l}}c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow},\label{eq:BCS}
+\end{equation}
+
+where
+
+\begin{tabular}{ll}
+$c$            & annihilation operator electron,\tabularnewline
+$c^{\dagger}$  & creation operator electron,\tabularnewline
+$\epsilon_{k}$ & $E_{k}-\mu$,\tabularnewline
+$\mu$          & chemical potential,\tabularnewline
+$E_{k}$        & kinetic energy ($\frac{\hbar^{2}k^{2}}{2m}$),\tabularnewline
+$m$            & mass,\tabularnewline
+$k$            & momentum,\tabularnewline
+$\sigma\uparrow,\sigma\downarrow$  & spin of electron,\tabularnewline
+$V_{\bm{kl}}$  & interaction potential.\tabularnewline
+\end{tabular}
+
+The interaction term includes only the Cooper pairs, which consist of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum that can be denoted as $(\bm{\bm{k}}\uparrow,-\bm{k}\uparrow)$.
+Finding the ground state of this so-called pairing Hamiltonian is impossible; therefore, we have to make an approximation.  % XXX: is it really impossible?
+A classic approximation scheme that describes the behavior of conventional superconductors remarkably well is the mean-field approximation.
+First we define the quantity
+\[
+b_{\bm{k}}=\left\langle c_{\bm{k}\uparrow}c_{-\bm{k}\downarrow}\right\rangle ,
+\]
+which we use to define the so-called gap energy
+\[
+\Delta_{\bm{k}}=-\sum_{\bm{k'}}V_{\bm{kk'}}b_{\bm{k'}}.
+\]
+We write the last term in Eq.~\eqref{eq:BCS} as
+
+\begin{equation}
+c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}=\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}+b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{l}}+b_{\bm{l}}\right),\label{eq:MF}
+\end{equation}
+and expand the products.
+We neglect the second-order fluctuation term
+\begin{equation}
+\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{k}}\right)
+\end{equation}
+in Eq.~\eqref{eq:MF} and rewrite Eq.~\eqref{eq:BCS} to
+\begin{equation}
+\mathcal{H}_{\textrm{BCS}_{\textrm{MF}}}=\underset{\bm{k},\sigma}{\sum}\epsilon_{\bm{k}}c_{\bm{k}\sigma}^{\dagger}c_{\bm{k}\sigma}-\underset{\bm{k}}{\sum}\left(\Delta_{\bm{k}}c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}+\Delta_{\bm{k}}^{*}c_{-\bm{k}\downarrow}c_{\bm{k}\uparrow}-\Delta_{\bm{k}}b_{\bm{k}}^{*}\right),\label{eq:BCS_MF}
+\end{equation}
+where the last term is a constant that can be neglected.
+We now introduce Nambu spinors
+\begin{equation}
+\Psi_{\bm{k}}=\left(\begin{array}{c}
+c_{\bm{k}\uparrow}\\
+c_{-\bm{k}\downarrow}^{\dagger}
+\end{array}\right)\label{eq:Nambu}
+\end{equation}
+and write Eq.~\eqref{eq:BCS_MF} matrix form
+\[
+\mathcal{H}_{\textrm{BCS}_{\textrm{MF}}}=\underset{\bm{k}}{\sum}\Psi_{\bm{k}}^{\dagger}\underset{H_{\textrm{BdG}}}{\underbrace{\left(\begin{array}{cc}
+\epsilon_{\bm{k}} & \Delta\\
+\Delta_{\bm{k}}^{*} & -\epsilon_{\bm{k}}
+\end{array}\right)}}\Psi_{\bm{k}}.
+\]
+To calculate the energy spectrum, we can diagonalize the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$ using the unitary Boguliubov transformation matrix $U_{\textrm{B}}$.
+Alternatively, we can square $H_{\textrm{BdG}}$ which gives a diagonal matrix
+\[
+H_{\textrm{BdG}}^{2}=\left(\begin{array}{cc}
+\epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2} & 0\\
+0 & \epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2}
+\end{array}\right),
+\]
+where we can use that the eigenvalues are the square root of the eigenvalues of $H_{\textrm{BdG}}$.
+This immediately result in the spectrum
+\begin{equation}
+E=\pm\sqrt{\epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2}}.\label{eq:SC_spectrum}
+\end{equation}
+
+The Bogoliubov-de Gennes Hamiltonian acts on the Nambu spinors [Eq.~\eqref{eq:Nambu}] whose first half is composed out of annihilation operators of electrons, and the second half out of creations operators of the same electrons.
+To go to a single particle description (first quantization), we can view the latter creation operators as annihilation operators of an extra set of holes, which doubles the number of degrees of freedom in the system.
+
+Besides the Pauli matrices that act on spin ($\sigma_{i}$ where $i\in x,y,z$) we introduce $\tau_{i}$ to act on the electron-hole degree of freedom.
+The Hamiltonian becomes a $4\times4$ matrix\footnote{Here $\otimes$ denotes the Kronecker product and we usually omit $\sigma_{0}$ and $\tau_{0}$.}
+\[
+H_{\textrm{BdG}}=\epsilon_{k}\tau_{z}\otimes\sigma_{0}+\Delta\tau_{x}\otimes\sigma_{0}=\left(\begin{array}{cccc}
+\epsilon_{k} & 0 & \Delta & 0\\
+0 & \epsilon_{k} & 0 & \Delta\\
+\Delta & 0 & -\epsilon_{k} & 0\\
+0 & \Delta & 0 & -\epsilon_{k}
+\end{array}\right),
+\]
+which acts on the wavefunction
+\begin{equation}
+\Psi=\left(\psi_{\textrm{e}\uparrow},\psi_{\textrm{e}\downarrow},\psi_{\textrm{h}\downarrow},-\psi_{\textrm{h}\uparrow}\right)^{T},\label{eq:4wf}
+\end{equation}
+where $\psi_{\textrm{e}}$, $\psi_{\textrm{h}}$ are the electron and hole components of the wave function, and $\psi_{\uparrow}$, $\psi_{\downarrow}$ are the spin-up and spin-down states.
+Because the holes are related to the electrons, $H_{\textrm{BdG}}$ has an additional symmetry.
+Symmetry will be the topic of the next chapter.
 
 \section{Structure of this thesis}
 
