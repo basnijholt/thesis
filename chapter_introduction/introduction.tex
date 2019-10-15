@@ -25,7 +25,7 @@ It was long believed that the symmetry breaking theory explains all phases in ma
 In 1987, in an attempt to describe high $T_c$ superconductors, the chiral spin state was introduced \cite{Kalmeyer1987}.
 However, it was soon realized that the symmetry breaking description was not sufficient to explain its phase.
 A new kind of phase called a ``topological phase'' was introduced \cite{Wen1989,XiaoGang1990}.
-It is a zero-temperature phase of matter (i.e.~quantum matter) that is described by a robust ground state degeneracy and has quantized non-Abelian geometric phases of degenerate ground states, we disscus what this means in Sec.~\ref{sec:non-abelian}.
+It is a zero-temperature phase of matter (i.e.~quantum matter) that is described by a robust ground state degeneracy and has quantized non-Abelian geometric phases of degenerate ground states, we disscus what this means in Sec.~\ref{sec:braiding}.
 
 \co{The QHE is an example that can be described using of the theory of topological order.}
 The quantum Hall effect is an example of a state that cannot be described by its symmetries alone; instead, it can be characterized by a distinct topology (see Fig.~\ref{fig:knots}).  %XXX: add ref
@@ -57,7 +57,7 @@ Unlike a knot that can be visualized in space, the topology of the quantum Hall 
 The integer quantum Hall effect.
 The Hall resistance $R_H$ (reciprocal of the Hall conductance $G_H$) of a two-dimensional electron gas as a function of the perpendicular magnetic field $B_\perp$ at low-temperature.
 It displays a stairlike quantized sequence of Hall conductances equal to $ne^2/h$, where $n$ is an integer characterizing each plateau.
-\label{fig:qhe}}
+\label{fig:qhe_example}}
 \end{center}
 \end{figure}
 
@@ -67,8 +67,8 @@ Recently, in 2016, the Nobel prize was awarded to Thouless, Haldane, and Kosterl
 One of these new states are ``topological insulators,'' which also exhibit edge or surface states and have similarities to the quantum Hall effect, but do not require extreme conditions such as the large magnetic field.
 Here, the effect of the magnetic field is replaced by spin-orbit coupling.
 This is a coupling between the electron's momentum and spin, effectively causing a momentum dependent magnetic field for electrons that move through a crystal lattice.
-The spin-orbit coupling effect is discussed in more detail in Sec.~\ref{sec:spin-orbit}.
-Due to the absence of a magnetic field (which breaks time-reversal symmetry in the quantum Hall effect) the edge states always come in counter-propagating pairs, shown in see Fig.~\ref{fig:}.
+The spin-orbit coupling effect is discussed in more detail in Sec.~\ref{sec:hamiltonian_term_by_term}.
+Due to the absence of a magnetic field (which breaks time-reversal symmetry in the quantum Hall effect) the edge states always come in counter-propagating pairs, shown in see Fig.~\ref{fig:qhe_example}.
 
 \begin{figure}[!htb]
 \begin{center}
@@ -83,7 +83,7 @@ Comparison of an insulator, quantum Hall effect, and a topological insulator.
 \co{Topological states might be used to build a topological quantum computer.}
 In addition to the exciting new physical insights into topological materials, topological states might be used to design novel new quantum devices.
 One of the most exciting applications is to use these states to build a topological quantum computer by exploiting their non-Abelian properties.
-It is predicted that a quantum computer is much faster than a classical computer in performing certain tasks, such as the simulation of quantum systems \ref{Feynman1982} and prime factorization \cite{Shor1994}.
+It is predicted that a quantum computer is much faster than a classical computer in performing certain tasks, such as the simulation of quantum systems \cite{Feynman1982} and prime factorization \cite{Shor1994}.
 The fundamental building block of the quantum computer is the qubit (or quantum bit), the quantum equivalent of the classical transistor.
 Because these qubits store quantum information, they are extremely fragile, and even a small interaction with its environment can destroy its state and result in computational errors.
 Physicists experiment with different approaches to create a qubit; for example, there are proposals (and some realizations of) qubits based on quantum optics, ultracold atoms, spin-based systems, and superconducting systems.  % XXX: add refs
@@ -102,7 +102,7 @@ Because of the simplicity of the model it can be solved analytically; however, i
 
 \co{In this thesis we study the hybrid Majorana model.}
 In this thesis, we study extensions to this model and go beyond the regime that can be studied analytically.
-The next sections introduce superconductivity and the topological protection of Majoranas (Sec.~\ref{sec:superconductivity}), non-Abelian statistics (Sec.~\ref{sec:braiding}), the minimal hybrid Majorana model (Sec.~\ref{sec:?}), and finally, a few extensions to this model (Sec.~\ref{sec:?}).
+The next sections introduce superconductivity and the topological protection of Majoranas (Sec.~\ref{sec:superconductivity}), non-Abelian statistics (Sec.~\ref{sec:braiding}), the minimal hybrid Majorana model (Sec.~\ref{sec:minimal_majoranas}), and finally, a few extensions to this model (Sec.~\ref{sec:?}).
 At that point, it should be evident that solving this problem requires numerical methods, which is the topic of Sec.~\ref{sec:?}.
 
 
@@ -258,7 +258,7 @@ If we use the Majorana condition in the fermionic commutation relation
 we get $\gamma^{\dagger}\gamma=1/2$ and see that the Majorana state is always half occupied.
 Removing a Majorana from zero energy is, therefore, only possible if it is paired with another Majorana to form a fermionic mode.
 Later, in Sec.~\ref{sec:braiding} we make use of this property and show how these Majoranas exhibit non-Abelian statistics.
-Subsequently, in Sec.~\ref{sec:MBS} we show that it is possible to create Majoranas at two opposite edges of a nanowire where they do not couple and are pinned to $E=0$; this is the so-called topological protection.
+Subsequently, in Sec.~\ref{sec:minimal_majoranas} we show that it is possible to create Majoranas at two opposite edges of a nanowire where they do not couple and are pinned to $E=0$; this is the so-called topological protection.
 
 \co{Having a PHS means symmetry class D, which in 1D has a Z2 invariant that indicates the presence or absence of Majoranas.}
 The symmetry class of the one-dimensional system we study in this thesis has a particle-hole symmetry $\mathcal{P}$, and therefore belongs to class $\mathcal{D}$.
@@ -302,7 +302,7 @@ vertical wires and then swapping the position of the other Majorana.
 The only thing that distinguishes Majoranas is their position in the network.
 That means that if we exchanged two Majoranas in space, the system would look exactly the same as it looked before the exchange.
 We now assume the energy spectrum is gapped for $|E|<\Delta$ with the Majorana ground state at $E=0$.
-If this ground state contains several Majoranas, there will be several states all at zero energy, forming a  ``ground state manifold''.
+If this ground state contains several Majoranas, there will be several states all at zero energy, forming a  ``ground state manifold.''
 
 \co{We consider $N$ Majoranas and write down its state of fermionic modes.}
 From now on we only consider the states corresponding to the Majoranas and neglect the states that live in the bulk ($E \geq \Delta$).
@@ -413,7 +413,7 @@ This means that some of the qubit operations are topologically protected, which 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Creating Majoranas in a minimal hybrid nanowire}\label{sec:MBS}
+\section{Creating Majoranas in a minimal hybrid nanowire}\label{sec:minimal_majoranas}
 \co{Superconductivity, spin-orbit coupling, a Zeeman field, and tuned µ leads to the appearance of Majoranas near the edges of the wire.}
 The combined effect of superconductivity, spin-orbit coupling, and a Zeeman field can lead to the appearance of Majoranas near the edges of the wire~\cite{Lutchyn2010,Oreg2010}.
 To understand how this happens we study the effects of the various terms in the Hamiltonian.
@@ -428,7 +428,7 @@ This invariant can only assume $Q=+1$ (no Majoranas) and $Q=-1$ (Majoranas prese
 \end{center}
 \end{figure}
 
-\subsection{The Hamiltonian: term by term}
+\subsection{The Hamiltonian: term by term}\label{sec:hamiltonian_term_by_term}
 \co{We show what the effect of these individual terms is on the band structure.}
 The complete model Hamiltonian is rather complicated; therefore, we start with a one-dimensional single band Hamiltonian and study its band structure while adding the terms needed to make a topological band structure and ``engineer'' our way towards Majoranas.
 The Hamiltonian in its simplest form is quadratic in momentum and has an off-set in chemical potential $\mu$
@@ -453,8 +453,7 @@ and opens a gap because $\tau_{x}$ mixes the electron and holes [see Fig.~\ref{f
 
 \co{We break the spin degeneracy using a magnetic field.}
 Now we have a gapped spectrum; however, we closed the band structure twice because of the doubly degenerate spin bands both crossing zero energy simultaneously.
-We are now left in a state where for every eigenstate, there is at least one more eigenstate with the same energy, this is called Kramers degeneracy, and it needs to be broken in order to make Majoranas.
-\footnote{With Kramers degeneracy, we would make two Majoranas per edge, which is just a fermion.}
+We are now left in a state where for every eigenstate, there is at least one more eigenstate with the same energy, this is called Kramers degeneracy\footnote{With Kramers degeneracy, we would make two Majoranas per edge, which is just a fermion.}, and it needs to be broken in order to make Majoranas.
 To couple to spin we introduce the Zeeman field in the Hamiltonian
 \begin{equation}
 H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x},\label{eq:zeeman}
