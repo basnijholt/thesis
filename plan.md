@@ -5,36 +5,36 @@
 ##### The QHE is an example that can be described using of the theory of topological order.
 ##### More topological states have been realized, one example is TIs.
 ##### Topological states might be used to build a topological quantum computer.
-##### Majoranas can be used to create this topological quantum computer.
-##### In this thesis we study the hybrid Majorana model.
 
 # Topological protection of Majoranas
 <!-- this chapter leads up to Majoranas -->
-##### Superconductivity is explained by microscopic BCS theory and today's research includes hybrid structures.
-##### The BCS Hamiltonian in terms of second quantization is ...
-##### We can make a mean-field approximation and write the Hamiltonian as a BdG Hamiltonian.
-##### This Hamiltonian has a symmetry.
-##### The abscence or presence of it of implies that a certain physical property of that system is conserved.
-##### The BdG Hamiltonian has a PHS.
-##### At zero energy, applying a PHS operator, a state is transformed into itself, resulting in the Majorana condition.
-##### In a 1D system with PHS we can calculate whether these Majoranas are present (called the topological invariant) using the Pfaffian.
+##### Majoranas can be used to create this topological quantum computer.}  % XXX: maybe mention that Majoranas are topologically protecte
+##### In this thesis we study the hybrid Majorana model.
+##### To understand the topological protection of MBS in hybrid structures, we discuss superconductivity.
+##### We can model superconductivity using BCS theory.
+##### We use the mean-field approximation and get the Bogoliubov-de Gennes Hamiltonian and get its spectrum.
+##### In the single-particle picture, we essentially double the degrees of freedom and introduce a symmetry.
+##### Symmetry determines a system's topology.
+##### The PHS relates electrons to holes and this is obvious in its spectrum.
+##### At E=0, we get a the Majorana condition.
+##### Having a PHS means symmetry class D, which in 1D has a Z2 invariant that indicates the presence or absence of Majoranas.
 
 ## Non-Abelian statistics
 <!-- This section motivates the research -->
-##### The reason to study Majoranas are its non-Abelian quantum statistics.
-##### Exchanging two Majoranas changes the state.
-##### The BdG Hamiltonian from prev chapter does not conserve particle number, but conserves parity.
-##### We can write down a unitary operator that commutes with the parity operator and we show what happens when we exchange two Majoranas.
+##### Majoranas have non-Abelian statistics which is the motivation to study them.
+##### Multiple Majoranas form a ground state manifold.
+##### We consider $N$ Majoranas and write down its state of fermionic modes.
+##### The parity of the groundstate is an observable.
+##### We can deduce the braiding operator that exchanges two Majoranas.
+##### As an example, we apply this operator to the simplest non-trivial case of having just four Majoranas.
 
 ## Majoranas inside a minimal nanowire
 <!-- This section introduces the "Majorana ingredients" -->
 ##### Superconductivity, spin-orbit coupling, a Zeeman field, and tuned µ leads to the appearance of Majoranas near the edges of the wire.
 ##### We show what the effect of these individual terms is on the band structure.
-##### Changing µ in a Hamiltonian with electrons and holes will shift the bands in energy.
-##### Adding superconductivity creates a gapped band structure.
-##### A magnetic field will break Kramers's degeneracy.
-##### Spin-orbit coupling breaks spin-rotation symmetry.
-##### By tuning these parameters such that E_z²>µ²+Δ², Majoranas appear, and in a finite length system we can plot its wavefunction.
+##### We require a bandgap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.
+##### We break the spin degeneracy using a magnetic field.
+##### To break spin-rotation symmetry, we introduce the spin-orbit coupling, which by itself isn't enough to create Majoranas.
 
 ## Majoranas in a more realistic 3D nanowire
 <!-- Here we make the model more realistic -->
