@@ -3,8 +3,10 @@ import glob
 import os
 from concurrent.futures import ThreadPoolExecutor
 
+import diskcache
 import requests
 import yaml
+import tqdm
 
 
 def replace_key(key, bib_entry):
@@ -40,7 +42,10 @@ def replace_key(key, bib_entry):
             r"apx$\mathplus$ipysuperconductor",
             r"a $p_x + i p_y$ superconductor",
         ),  # fix for 10.1103/physrevb.73.220502
-        (r"apx$\mathplus${ipySuperfluid}", r"$p_x + i p_y$ superfluid"),  # fix for 10.1103/physrevlett.98.010506
+        (
+            r"apx$\mathplus${ipySuperfluid}",
+            r"$p_x + i p_y$ superfluid",
+        ),  # fix for 10.1103/physrevlett.98.010506
     ]
 
     # I got these by using JabRef and converting to abbr journals
@@ -101,9 +106,22 @@ def replace_key(key, bib_entry):
     return result
 
 
-@functools.lru_cache()
+def cached_doi2bib(doi):
+    """Look up if this has previously been called."""
+    with diskcache.Cache("bibs.pickle") as cache:
+        text = cache.get(doi)
+        if text is not None:
+            return text
+        text = doi2bib(doi)
+        if text is not "" and "<html>" not in text:
+            print(f"Succesfully got {doi}!")
+            cache[doi] = text
+        return text
+
+
 def doi2bib(doi):
     """Return a bibTeX string of metadata for a given DOI."""
+    print(f"Requesting {doi}")
     url = "http://dx.doi.org/" + doi
     headers = {"accept": "application/x-bibtex"}
     r = requests.get(url, headers=headers)
@@ -120,12 +138,12 @@ for fname in bibs:
         mapping = {**mapping, **yaml.safe_load(f)}
 dois = dict(sorted(mapping.items()))
 
+# Doing it in parallel doesn't seem to work since ~13 Oct
+# with ThreadPoolExecutor() as ex:
+#     futs = ex.map(cached_doi2bib, list(dois.values()))
+#     bibs = list(futs)
 
-with ThreadPoolExecutor() as ex:
-    futs = ex.map(doi2bib, list(dois.values()))
-    bibs = list(futs)
-
-
+bibs = [cached_doi2bib(doi) for doi in tqdm.tqdm(dois.values())]
 entries = [replace_key(key, bib) for key, bib in zip(dois.keys(), bibs)]
 
 
