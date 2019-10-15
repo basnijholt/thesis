@@ -235,7 +235,8 @@ while executor.n_outstanding_points > 0:
   if loss.n_neighbors > 0:
     subdomains_to_update = set()
     for d in new_subdomains:
-        subdomains_to_update.update(domain.neighbors(d, loss.n_neighbors))
+      neighbors = domain.neighbors(d, loss.n_neighbors)
+      subdomains_to_update.update(neighbors)
     subdomains_to_update -= set(new_subdomains)
     for subdomain in subdomains_to_update:
       queue.update(subdomain, priority=scaled_loss(domain, subdomain, data))
