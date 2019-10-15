@@ -38,7 +38,7 @@ Classically, we can visualize what happens as electrons localizing in small cycl
 These states along the egdes are responsible for the conduction and are called ``edge states.''
 
 \begin{figure}[!htb]
-\centering
+\begin{center}
 % \includegraphics{chapter_introduction/figures/knots.pdf}
 \caption{
 Topology in mathematics concerns itself with the properties of an object that are preserved under continuous deformations.
@@ -47,16 +47,18 @@ In condensed matter physics the object that is studied is the Hamiltonian.
 Whenever the Hamiltonian can be continuously transformed into another Hamiltonian, they are topologically equivalent.
 Unlike a knot that can be visualized in space, the topology of the quantum Hall state manifests itself in momentum space.
 \label{fig:knots}}
+\end{center}
 \end{figure}
 
 \begin{figure}[!htb]
-\centering
+\begin{center}
 % \includegraphics{chapter_introduction/figures/qhe.pdf}
 \caption{
 The integer quantum Hall effect.
 The Hall resistance $R_H$ (reciprocal of the Hall conductance $G_H$) of a two-dimensional electron gas as a function of the perpendicular magnetic field $B_\perp$ at low-temperature.
 It displays a stairlike quantized sequence of Hall conductances equal to $ne^2/h$, where $n$ is an integer characterizing each plateau.
 \label{fig:qhe}}
+\end{center}
 \end{figure}
 
 \co{More topological states have been realized, one example is TIs.}
@@ -69,12 +71,13 @@ The spin-orbit coupling effect is discussed in more detail in Sec.~\ref{sec:spin
 Due to the absence of a magnetic field (which breaks time-reversal symmetry in the quantum Hall effect) the edge states always come in counter-propagating pairs, shown in see Fig.~\ref{fig:}.
 
 \begin{figure}[!htb]
-\centering
+\begin{center}
 % \includegraphics{chapter_introduction/figures/qhe_vs_ti.pdf}
 \caption{
 Comparison of an insulator, quantum Hall effect, and a topological insulator.
 % Rip Fig. 2 and 5 from 10.1103/RevModPhys.82.3045
 \label{fig:qhe}}
+\end{center}
 \end{figure}
 
 \co{Topological states might be used to build a topological quantum computer.}
@@ -259,7 +262,7 @@ Subsequently, in Sec.~\ref{sec:MBS} we show that it is possible to create Majora
 
 \co{Having a PHS means symmetry class D, which in 1D has a Z2 invariant that indicates the presence or absence of Majoranas.}
 The symmetry class of the one-dimensional system we study in this thesis has a particle-hole symmetry $\mathcal{P}$, and therefore belongs to class $\mathcal{D}$.
-This class has a $\mathcal{Z}_2$ topological invariant that is the sign of the Pfaffian of the Hamiltonian: $\sgn\Pf\left(H\right)$.
+This class has a $\mathcal{Z}_2$ topological invariant $Q$ that is the sign of the Pfaffian of the Hamiltonian: $Q=\sgn\Pf\left(H\right)$.
 This invariant can only assume two values ($+1$ or $-1$) and indicates the presence or absence of Majoranas.
 \footnote{The Pfaffian for an anti-symmetric matrix is related to the determinant as $\Pf(A)^{2}=\det(A)$.}
 This topological invariant is only defined for a system with an energy gap, which means the Hamiltonian of the system has no eigenvalues in a finite interval around zero energy, as in Eq.~\ref{eq:H_BdG_sc}.
@@ -285,9 +288,8 @@ Exchanging two Majoranas in 1D is ill-defined because it is impossible to swap t
 We can construct a network of nanowires to form T-junctions (see Fig.~\ref{fig:Majorana-T-junction}), which allows us to exchange positions of Majoranas.
 Here, one can temporarily move a Majorana to one of the unoccupied wires and perform the exchange without the Majoranas ever becoming too close to each other.
 \begin{figure}
-\begin{centering}
+\begin{center}
 \includegraphics[width=0.95\textwidth]{chapter_introduction/figures/T-junction-network.pdf}
-\par\end{centering}
 \centering{}
 \caption{Majorana T-junction.
 The circles represent the Majoranas $\gamma_{1}...\gamma_{6}$.
@@ -295,6 +297,7 @@ This network of nanowires allows for the exchange of two Majoranas without havin
 This is possible by temporarily bringing a Majorana to one of the
 vertical wires and then swapping the position of the other Majorana.
 \label{fig:Majorana-T-junction}}
+\end{center}
 \end{figure}
 The only thing that distinguishes Majoranas is their position in the network.
 That means that if we exchanged two Majoranas in space, the system would look exactly the same as it looked before the exchange.
@@ -339,7 +342,7 @@ but when the pairs share a Majorana they do not commute anymore
 \[
 (\gamma_{1}\gamma_{2})(\gamma_{2}\gamma_{3})=-(\gamma_{2}\gamma_{3})(\gamma_{1}\gamma_{2}).
 \]
-In chapter \ref{sec:superconductivity} you might have noticed that the total particle number in the Hamiltonian is not conserved; however, the parity is conserved.
+In Sec.~\ref{sec:superconductivity} you might have noticed that the total particle number in the Hamiltonian is not conserved; however, the parity is conserved.
 The total parity can be obtained by multiplying all parity operators
 \[
 P_{\textrm{tot}}=P_{1}\cdot P_{2}\cdot\,\dots\,\cdot P_{N}=i^{N}\gamma_{1}\gamma_{2}\dots\gamma_{2N}.
@@ -406,7 +409,159 @@ This means that some of the qubit operations are topologically protected, which 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Structure of this thesis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% MAJORANAS IN A MINIMAL NANOWIRE %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Creating Majoranas in a minimal hybrid nanowire}\label{sec:MBS}
+\co{We can create a topological nanowire using superconductivity, spin-orbit coupling, and a Zeeman field.}
+The combined effect of superconductivity, spin-orbit coupling, and a Zeeman field can lead to the appearance of Majoranas near the edges of the wire~\cite{Lutchyn2010,Oreg2010}.
+To understand how this happens we study the effects of the various terms in the Hamiltonian.
+As discussed in Sec.~\ref{sec:topology}, the appearance of Majoranas is a topological effect and is accompanied by the change of the topological invariant $Q$ of symmetry class $\mathcal{D}$.
+This invariant can only assume $Q=+1$ (no Majoranas) and $Q=-1$ (Majoranas present) and changes when the bandgap is closes and reopens.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/triv_topo_bandstructure.pdf}
+\caption{Band structures of Hamiltonians with chemical potential $\mu=-0.3$ and superconducting gap $\Delta=0$ (left); $\mu=0.3$ and $\Delta=0$ (middle); and $\mu=0.3$ and $\Delta=0.1$ (right).
+\label{fig:triv_topo_bandstructure}}
+\end{center}
+\end{figure}
+
+\subsection{The Hamiltonian, term by term.}
+\co{We know that to create Majoranas, we have to close and reopen the bandgap. Therfore, we engineer our Hamiltonian term by term and start simple.}
+The complete model Hamiltonian is rather complicated; therefore, we start with a one-dimensional single band Hamiltonian and study its band structure while adding the terms needed to make a topological band structure and ``engineer'' our way towards Majoranas.
+The Hamiltonian in its simplest form is quadratic in momentum and has an off-set in chemical potential $\mu$
+\begin{equation}
+H=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z},\label{eq:simple_ham}
+\end{equation}
+where $\tau_{z}$ is a Pauli matrix that acts on the electron-hole substructure.
+The band structure for this Hamiltonian with $\mu=-0.3$ is shown in Fig.~\ref{fig:triv_topo_bandstructure} (left).
+We assume that this band structure is topologically trivial and has $Q=+1$.
+Because this Hamiltonian acts trivially in spin-space, the bands in Fig.~\ref{fig:triv_topo_bandstructure} (left) are doubly degenerate.
+Finally, the electrons are at positive energy $E$ and the holes on $-E$.
+
+\co{We require a bandgap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.}
+Next, we raise $\mu$, which shifts the bands see Fig.~\ref{fig:triv_topo_bandstructure} (middle).
+In Sec.~\ref{sec:topology}, we explained that the topological invariant is only defined for a system with an energy gap.
+This band structure has no bandgap, so it cannot be topological.
+Further, in Sec.~\ref{sec:superconductivity} we observed that a BdG Hamiltonian has a gapped spectrum (Eq.~\eqref{eq:SC_spectrum}), so we add $\Delta\tau_{x}$, which results in
+\[
+H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x},
+\]
+and opens a gap because $\tau_{x}$ mixes the electron and holes [see Fig.~\ref{fig:triv_topo_bandstructure} (right)].
+
+\co{We break the spin degeneracy using a magnetic field.}
+Now we have a gapped spectrum; however, we closed the band structure twice because of the doubly degenerate spin bands both crossing zero energy simultaneously.
+We are now left in a state where for every eigenstate, there is at least one more eigenstate with the same energy, this is called Kramers degeneracy, and it needs to be broken in order to make Majoranas.
+\footnote{With Kramers degeneracy, we would make two Majoranas per edge, which is just a fermion.}
+To couple to spin we introduce the Zeeman field in the Hamiltonian
+\begin{equation}
+H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x},\label{eq:zeeman}
+\end{equation}
+where $g$ is the Landé factor, $\mu_{\textrm{B}}$ the Bohr magneton and $B$ magnetic field along $x$, parallel to the wire direction.
+In Fig.~\ref{fig:zeeman} we observe the effect of a magnetic field on the band structure.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/zeeman.pdf}
+\caption{Band structures of Eq.~\eqref{eq:zeeman} for different values of magnetic field and $\Delta=0.1$, $\mu=0.3$.
+\label{fig:zeeman}}
+\end{center}
+\end{figure}
+We see that a magnetic field breaks the Kramers degeneracy.
+The bands that move towards each other have opposite spin (orthogonal states), and as we see in Fig.~\ref{fig:zeeman} (middle and left), these spins do not couple.
+The problem is that Zeeman conserves spin in $x$-direction, and therefore spin is still a good quantum number.
+We know that Majoranas must be spinless because they are their own complex conjugate.
+
+\co{To break spin-rotation symmetry, we introduce the spin-orbit coupling, which by itself isn't enough to create Majoranas.}
+The solution to this last problem is spin-orbit coupling, which in its simplest form is Rashba: $H_{\textrm{Rashba}}=-\alpha p_{x}\sigma_{y}\tau_{z}$.
+The Hamiltonian is now complete and equals
+\begin{equation}
+H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}-\alpha p_{x}\sigma_{y}\tau_{z}.\label{eq:rashba}
+\end{equation}
+Spin-orbit by itself---eventhough it couples spin---is not sufficient to break the Kramers degeneracy.
+In Fig.~\ref{fig:SO_no_zeeman} we see that raising $\alpha$ moves the different spin bands away in either $+k$ or $-k$ direction.
+However, a degeneracy remains at $k=0$, revealing why a magnetic field is needed.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/SO_no_zeeman.pdf}
+\caption{Band structures of Eq.~\eqref{eq:rashba} for different values of spin-orbit coupling $\alpha$ and $B=0$, $\Delta=0.1$, $\mu=0.3$.
+\label{fig:SO_no_zeeman}}
+\end{center}
+\end{figure}
+If we now also turn on magnetic field we see that spin-orbit opens the gap at finite $k$ (see Fig.~\ref{fig:SO_and_zeeman}).
+This system will accommodate Majoranas at $E=0$ and is called topologically nontrivial, for it has no degeneracies, a gapped spectrum, and $Q=-1$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/SO_and_zeeman.pdf}
+\caption{Band structures of Eq.~\eqref{eq:rashba} for different values of spin-orbit coupling $\alpha$ and $B=0.3$, $\Delta=0.1$, $\mu=0.3$.
+\label{fig:SO_and_zeeman}}
+\end{center}
+\end{figure}
+
+
+\subsection{Wavefunctions}
+
+With a topological band structure, we expect Majoranas to appear near
+the edges of the nanowires.
+We can check if this happens by calculating the wavefunctions of a finite wire and plotting the probability density of the wavefunction corresponding to the lowest energy.
+In Fig.~\ref{fig:wavefunction_1d} (left), we see the probability density of the lowest energy mode (the Majorana wavefunction) is indeed localized near edges of the nanowire.
+The wavefunction decays exponentially with decay length $\xi$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/wavefunction_1d.pdf}
+\caption{Probability density and band structure of a 1D system.
+The probability density of the lowest energy wavefunction (Majorana wavefunction) of a \SI{2}{\micro\metre} long nanowire (left) and a topological band structure (right) with the same parameter values, but for an infinite system.
+The Majorana length $\xi$---the decay length of the wavefunction---in
+the left plot is $\xi=\SI{315}{nm}$.
+\label{fig:wavefunction_1d}}
+\end{center}
+\end{figure}
+
+In 2D the model Hamiltonian (Eq.~\eqref{eq:rashba}) looks very similar
+\begin{equation}
+H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}+\alpha\left(p_{y}\sigma_{x}-p_{x}\sigma_{y}\right)\tau_{z},\label{eq:2D_Ham}
+\end{equation}
+where it now also includes the transverse part of the Rashba spin-orbit.
+The probability density and band structure of a 2D system is plotted in Fig.~\ref{fig:wavefunction_2d}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/wavefunction_2d.pdf}
+\caption{Similar to Fig~\ref{fig:wavefunction_1d}, but for a 2D system.
+\label{fig:wavefunction_2d}}
+\end{center}
+\end{figure}
+
+
+\subsection{Phase diagrams}
+
+We have seen that a topological band structure leads to Majoranas near the edges of the nanowire.
+In the Hamiltonian (Eq.~\eqref{eq:rashba}) we see a few fundamental constants or constants that are material dependent.
+However, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment; asking for which values of $B$ and $\mu$ the system becomes topological is therefore a valid question.
+In Fig.~\ref{fig:topo_bands} we see a phase diagram, which indicates for which value of $\left(B,\mu\right)$ the system is topological.
+The color intensity indicates the size of the topological bandgap, which is a measure of the quality of the Majorana.
+In Sec.~\ref{sec:phase-diagram} we explain how to calculate a phase diagram.
+
+In the next chapter we will extend this model to three dimensions and add the orbital effect of the magnetic field.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{chapter_introduction/figures/phase_diagrams_bands.pdf}
+\caption{Topological phase diagram of a 3D system.
+On the left three phase diagrams with a blue dot that indicates the value of $B,\mu$ at which the band structure to the right of it is plotted.
+The color in the phase diagrams depicts the topological region and its intensity the size of the topological gap.
+The bottom band structure is topological, and a small gap is visible in the plot.
+\label{fig:topo_bands}}
+\end{center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STRUCTURE OF THIS THESIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
