@@ -220,20 +220,20 @@ Symmetry and its resulting topology is the topic of the next section, after whic
 
 \subsection{Topology and symmetry}\label{sec:topology}
 \co{Symmetry determines a system's topology.}
-The concept of symmetry plays a fundamental part in physics.
+Symmetry plays a fundamental part in physics.
 In condensed matter systems, only three discrete symmetries are important: time-reversal symmetry $\mathcal{T}$, particle-hole symmetry $\mathcal{P}$, and chiral symmetry $\mathcal{C}$.
 Wigner's theorem states that a symmetry must either be a unitary or an anti-unitary operator.
 Both $\mathcal{T}$ and $\mathcal{P}$ have anti-unitary operators and may square either to $+1$ or $-1$ depending on the specifics of the system.
 Chiral symmetries have a unitary operator and always squares to $+1$.
-Together these three symmetries form ten symmetry classes~\cite{Altland1997}, each class characterized by the type and absence or presence of these symmetries.
+The combination of these three symmetries from ten symmetry classes~\cite{Altland1997}.
+Each class is characterized by the absence or presence of these symmetries, and together with the dimensionality of a sytem determines the specific topological invariant it has.
 Topology studies whether objects can be continuously transformed into each other.
 The object that is studied in condensed matter is the Hamiltonian of a system.
 If two Hamiltonians can be continuously transformed\footnote{An example of a continuous transformation from $H_{1}$ to $H_{2}$: $H=\alpha H_{1}+(1-\alpha)H_{2}$ where $\alpha=0\rightarrow1$.} into each other without changing the topological invariant: the systems are said to be topologically equivalent.
-The dimensionality and symmetry class determine the type of topological invariant of a system.
 How a topological invariant changes varies for the different symmetry classes.
 
 \co{The PHS relates electrons to holes and this is obvious in its spectrum.}
-We ended Sec.~\ref{sec:superconductivity} by noting that $H_{\textrm{BdG}}$ [Eq.~\eqref{eq:H_BdG_sc}] has a particle-hole symmetry $\mathcal{P}$.
+We ended Sec.~\ref{sec:BCS-theory} by noting that $H_{\textrm{BdG}}$ [Eq.~\eqref{eq:H_BdG_sc}] has a particle-hole symmetry $\mathcal{P}$.
 This Hamiltonian acts on a two-component wave function $\psi_{\textrm{BdG}}=\left(u,v\right)^{T}$ with $u$ electron component and $v$ the hole component.
 The symmetry of this Hamiltonian is most obvious in its dispersion relation, where each eigenstate $\psi_{E}=\left(u_{0},v_{0}\right)^{T}$ has a particle-hole symmetric partner at $\psi_{-E}=\left(\mathcal{P}u_{0},\mathcal{P}v_{0}\right)^{T}$.
 In constructing $H_{\textrm{BdG}}$, we artificially doubled the degrees of freedom by considering electrons and holes separately.
@@ -254,14 +254,15 @@ If we use the Majorana condition in the fermionic commutation relation
 \]
 we get $\gamma^{\dagger}\gamma=1/2$ and see that the Majorana state is always half occupied.
 Removing a Majorana from zero energy is, therefore, only possible if it is paired with another Majorana to form a fermionic mode.
-% XXX: we discuss this in Sec....
+Later, in Sec.~\ref{sec:braiding} we make use of this property and show how these Majoranas exhibit non-Abelian statistics.
+Subsequently, in Sec.~\ref{sec:MBS} we show that it is possible to create Majoranas at two opposite edges of a nanowire where they do not couple and are pinned to $E=0$; this is the so-called topological protection.
 
 \co{Having a PHS means symmetry class D, which in 1D has a Z2 invariant that indicates the presence or absence of Majoranas.}
 The symmetry class of the one-dimensional system we study in this thesis has a particle-hole symmetry $\mathcal{P}$, and therefore belongs to class $\mathcal{D}$.
 This class has a $\mathcal{Z}_2$ topological invariant that is the sign of the Pfaffian of the Hamiltonian: $\sgn\Pf\left(H\right)$.
 This invariant can only assume two values ($+1$ or $-1$) and indicates the presence or absence of Majoranas.
 \footnote{The Pfaffian for an anti-symmetric matrix is related to the determinant as $\Pf(A)^{2}=\det(A)$.}
-This topological invariant is only defined for a system with an energy gap, which means the Hamiltonian of the system has no eigenvalues in a finite interval around zero energy.
+This topological invariant is only defined for a system with an energy gap, which means the Hamiltonian of the system has no eigenvalues in a finite interval around zero energy, as in Eq.~\ref{eq:H_BdG_sc}.
 If we can continuously transform a Hamiltonian $H_{1}$ into another Hamiltonian $H_{2}$ without ever closing the energy gap, we say $H_{1}$ and $H_{2}$ are topologically equivalent, and thus have the same topological invariant.
 Finally, the spectrum of a BdG Hamiltonian [Eq.~\eqref{eq:SC_spectrum}] is gapped around $E=0$, and since Majoranas live at zero energy, there are no nearby states in energy for the Majorana to decay to; this is the so-called topological protection. % XXX: Rephrase this and maybe move it.
 
