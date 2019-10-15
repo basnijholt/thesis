@@ -151,13 +151,13 @@ Finding the ground state of this so-called pairing Hamiltonian is impossible; th
 \co{We use the mean-field approximation and get the Bogoliubov-de Gennes Hamiltonian and get its spectrum.}
 A classic approximation scheme that describes the behavior of conventional superconductors remarkably well is the mean-field approximation.
 First we define the quantity
-\[
+\begin{equation}
 b_{\bm{k}}=\left\langle c_{\bm{k}\uparrow}c_{-\bm{k}\downarrow}\right\rangle ,
-\]
+\end{equation}
 which we use to define the so-called gap energy
-\[
+\begin{equation}
 \Delta_{\bm{k}}=-\sum_{\bm{k'}}V_{\bm{kk'}}b_{\bm{k'}}.
-\]
+\end{equation}
 We write the last term in Eq.~\eqref{eq:BCS} as
 \begin{equation}
 c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}=\left(c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}-b_{\bm{k}}^{\dagger}+b_{\bm{k}}^{\dagger}\right)\left(c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow}-b_{\bm{l}}+b_{\bm{l}}\right),\label{eq:MF}
@@ -180,20 +180,20 @@ c_{-\bm{k}\downarrow}^{\dagger}
 \end{array}\right)\label{eq:Nambu}
 \end{equation}
 and write Eq.~\eqref{eq:BCS_MF} matrix form
-\[
+\begin{equation}
 \mathcal{H}_{\textrm{BCS}_{\textrm{MF}}}=\underset{\bm{k}}{\sum}\Psi_{\bm{k}}^{\dagger}\underset{H_{\textrm{BdG}}}{\underbrace{\left(\begin{array}{cc}
 \epsilon_{\bm{k}} & \Delta\\
 \Delta_{\bm{k}}^{*} & -\epsilon_{\bm{k}}
 \end{array}\right)}}\Psi_{\bm{k}}.
-\]
+\end{equation}
 To calculate the energy spectrum, we can diagonalize the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$ using the unitary Boguliubov transformation matrix $U_{\textrm{B}}$.  % XXX: should I mention this?
 Alternatively, we can square $H_{\textrm{BdG}}$ which gives a diagonal matrix
-\[
+\begin{equation}
 H_{\textrm{BdG}}^{2}=\left(\begin{array}{cc}
 \epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2} & 0\\
 0 & \epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2}
 \end{array}\right),
-\]
+\end{equation}
 where we can use that the eigenvalues are the square root of the eigenvalues of $H_{\textrm{BdG}}$.
 This immediately result in the spectrum
 \begin{equation}
@@ -243,18 +243,18 @@ In constructing $H_{\textrm{BdG}}$, we artificially doubled the degrees of freed
 Therefore, the creation operator $c^{\dagger}$ of the quasiparticle in the $\psi_{E}$ state is equal to the annihilation operator $c$ of the quasiparticle in the $\psi_{-E}$ state.
 From this, it is clear that $\psi_{E}$ and $\psi_{-E}$ correspond to the same quasiparticle, and the creation of a quasiparticle with positive energy is identical to the annihilation of a quasiparticle with negative energy.
 In a one or higher dimensional system, the operator $\mathcal{P}$ will not only send $E \rightarrow -E$ but will also send the momentum $k \rightarrow -k$ as
-\[
+\begin{equation}
 \mathcal{P^{\dagger}}H\left(k\right)\mathcal{P}=-H\left(-k\right).
-\]
+\end{equation}
 
 \co{At E=0, we get a the Majorana condition.}
 At zero energy, something curious happens: here we have a state $\psi_{0}$ that upon applying $\mathcal{P}$ is transforms into itself $\mathcal{P}\psi_{0}=\psi_{0}$.
 This state has a creation operator $\gamma^{\dagger}$ that is identical to the annihilation operator $\gamma$ of itself, so $\gamma^{\dagger}=\gamma$.
 We call this property the Majorana condition.
 If we use the Majorana condition in the fermionic commutation relation
-\[
+\begin{equation}
 \gamma^{\dagger}\gamma+\gamma\gamma^{\dagger}=1
-\]
+\end{equation}
 we get $\gamma^{\dagger}\gamma=1/2$ and see that the Majorana state is always half occupied.
 Removing a Majorana from zero energy is, therefore, only possible if it is paired with another Majorana to form a fermionic mode.
 Later, in Sec.~\ref{sec:braiding} we make use of this property and show how these Majoranas exhibit non-Abelian statistics.
@@ -312,41 +312,41 @@ By pairing two Majoranas (two times half a degree of freedom), we can form fermi
 By pairing up neighboring Majoranas $\gamma_{2n-1}$ and $\gamma_{2n}$ we get a creation operator that is its own complex conjugate $c_{n}^{\dagger}=\tfrac{1}{2}(\gamma_{2n-1}+i\gamma_{2n})$, where $c$ is a fermionic creation operator.
 Each pair gives two possible quantum states, so $N$ pairs will have $2^{N}$ possible states.
 We can represent every such state with a ket
-\[
+\begin{equation}
 \left|s_{1},s_{2},\dots,s_{N}\right\rangle ,
-\]
+\end{equation}
 where $s_{n}$ is either unoccupied $0$ or occupied $1$.
 These states form a complete basis of the Hilbert space of the set of Majoranas.
 
 \co{The parity of the groundstate is an observable.}
 We define the fermion parity operator
-\[
+\begin{equation}
 P_{n}\equiv1-2c_{n}^{\dagger}c_{n}=i\gamma_{2n-1}\gamma_{2n},
-\]
+\end{equation}
 that acts on the states and where we recognize the $c_{n}^{\dagger}c_{n}$ term as the number operator.
 All basis states in the Hilbert space of Majoranas are eigenstates of $P_{n}$.
 For example, we have
-\[
+\begin{equation}
 P_{1}\left|0,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|0,\dots\right\rangle =+\left|0,\dots\right\rangle ,
-\]
+\end{equation}
 
-\[
+\begin{equation}
 P_{1}\left|1,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|1,\dots\right\rangle =-\left|1,\dots\right\rangle .
-\]
+\end{equation}
 Another essential property of Majoranas is that a pair of Majorana operators all anti-commute with each other.
 So
-\[
+\begin{equation}
 (\gamma_{1}\gamma_{2})(\gamma_{3}\gamma_{4})=(\gamma_{3}\gamma_{4})(\gamma_{1}\gamma_{2}),
-\]
+\end{equation}
 but when the pairs share a Majorana they do not commute anymore
-\[
+\begin{equation}
 (\gamma_{1}\gamma_{2})(\gamma_{2}\gamma_{3})=-(\gamma_{2}\gamma_{3})(\gamma_{1}\gamma_{2}).
-\]
+\end{equation}
 In Sec.~\ref{sec:superconductivity} you might have noticed that the total particle number in the Hamiltonian is not conserved; however, the parity is conserved.
 The total parity can be obtained by multiplying all parity operators
-\[
+\begin{equation}
 P_{\textrm{tot}}=P_{1}\cdot P_{2}\cdot\,\dots\,\cdot P_{N}=i^{N}\gamma_{1}\gamma_{2}\dots\gamma_{2N}.
-\]
+\end{equation}
 where $P_{\textrm{tot}}$ has eigenvalues $\pm1$.
 The parity is an observable and can, therefore, be experimentally measured.
 
@@ -358,32 +358,32 @@ The exact form of $U$ can be derived without a direct calculation.
 We do this by assuming that $U$ only depends on the Majoranas involved in the exchange ( $\gamma_{n}$ and $\gamma_{m}$) and by using that the slow exchange does not change the parity of the system because the system stays gapped at all times.
 Since the parity is conserved we know: $U$ commutes with the total fermion parity $[U,P_{\textrm{tot}}]=0$, and that $U$ can only depend on the product $i\gamma_{n}\gamma_{m}$.
 This product is Hermitian, so we can create a unitary operator by taking the exponential of $i$ times this Hermitian operator as
-\[
+\begin{equation}
 U\equiv\exp(\beta\gamma_{n}\gamma_{m})=\cos(\beta)+\gamma_{n}\gamma_{m}\sin(\beta),
-\]
+\end{equation}
 where $\beta$ is a real coefficient to be determined.
 In the last equality we used $(\gamma_{n}\gamma_{m})^{2}=\gamma_{n}\gamma_{m}\gamma_{n}\gamma_{m}=-\gamma_{n}\underset{=1}{\underbrace{\gamma_{m}\gamma_{m}}}\gamma_{n}=-1$
 in the Taylor expansion.
 We now move to the Heisenberg picture where we look at the evolution of the Majorana operators in time
-\[
+\begin{equation}
 \gamma_{n}\to U\gamma_{n}U^{\dagger}=\left(\cos\beta+\gamma_{n}\gamma_{m}\sin\beta\right)\gamma_{n}\left(\cos\beta+\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}\sin\beta\right)
-\]
+\end{equation}
 
-\[
+\begin{equation}
 =\gamma_{n}\cos^{2}\beta+\left(\gamma_{n}\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}+\gamma_{n}\gamma_{m}\gamma_{n}\right)\sin\beta\cos\beta+\gamma_{n}\gamma_{m}\gamma_{n}\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}\sin^{2}\beta
-\]
+\end{equation}
 
-\[
+\begin{equation}
 =\gamma_{n}\cos^{2}\beta-\gamma_{n}^{\dagger}\sin^{2}\beta-2\gamma_{m}\sin\beta\cos\beta
-\]
+\end{equation}
 
-\[
+\begin{equation}
 =\gamma_{n}\cos2\beta-\gamma_{m}\sin2\beta
-\]
+\end{equation}
 Similarly we get
-\[
+\begin{equation}
 \gamma_{m}\to U\gamma_{m}U^{\dagger}=\gamma_{m}\cos2\beta+\gamma_{n}\sin2\beta.
-\]
+\end{equation}
 After the exchange happened we know that $\gamma_{m}\to\gamma_{n}$ and $\gamma_{n}\to\gamma_{m}$, this leads to $\beta=\pm\pi/4$.
 The two signs make sense; this distinguishes the clockwise and the counterclockwise exchange of the Majoranas.
 We now found an operator that exchanges two Majoranas
@@ -399,9 +399,9 @@ The four basis states in the ground state manifold are
 \end{equation}
 where the first number is the occupation number of the fermionic mode $c_{1}^{\dagger}=\tfrac{1}{2}(\gamma_{1}+i\gamma_{2})$ and the second number the occupation number of $c_{2}^{\dagger}=\tfrac{1}{2}(\gamma_{3}+i\gamma_{4})$.
 For instance, if we start from the state $\left|00\right\rangle $ and we exchange $\gamma_{2}$ and $\gamma_{3}$ by applying $U_{23}=\tfrac{1}{\sqrt{2}}\left(1\pm\gamma_{2}\gamma_{3}\right)$, we obtain\footnote{See appendix \ref{chap:U_der} for derivations of $U_{nm}$.}  % XXX: add this to the appendix.
-\[
+\begin{equation}
 \left|00\right\rangle \to U_{23}\left|00\right\rangle =\tfrac{1}{\sqrt{2}}\left(\left|00\right\rangle +i\left|11\right\rangle \right).
-\]
+\end{equation}
 Here we see a superposition of states, which is not like bosons or fermions at all, where the exchange can only change the sign.
 This property makes Majoranas non-Abelian anyons, and the exchange of two non-Abelian anyons is usually called braiding.
 Using these braiding operations we can create a qubit that can perform a certain set (but not all) of rotations on the single-qubit Bloch sphere.
@@ -414,7 +414,7 @@ This means that some of the qubit operations are topologically protected, which 
 
 
 \section{Creating Majoranas in a minimal hybrid nanowire}\label{sec:MBS}
-\co{We can create a topological nanowire using superconductivity, spin-orbit coupling, and a Zeeman field.}
+\co{Superconductivity, spin-orbit coupling, a Zeeman field, and tuned µ leads to the appearance of Majoranas near the edges of the wire.}
 The combined effect of superconductivity, spin-orbit coupling, and a Zeeman field can lead to the appearance of Majoranas near the edges of the wire~\cite{Lutchyn2010,Oreg2010}.
 To understand how this happens we study the effects of the various terms in the Hamiltonian.
 As discussed in Sec.~\ref{sec:topology}, the appearance of Majoranas is a topological effect and is accompanied by the change of the topological invariant $Q$ of symmetry class $\mathcal{D}$.
@@ -428,8 +428,8 @@ This invariant can only assume $Q=+1$ (no Majoranas) and $Q=-1$ (Majoranas prese
 \end{center}
 \end{figure}
 
-\subsection{The Hamiltonian, term by term.}
-\co{We know that to create Majoranas, we have to close and reopen the bandgap. Therfore, we engineer our Hamiltonian term by term and start simple.}
+\subsection{The Hamiltonian: term by term}
+\co{We show what the effect of these individual terms is on the band structure.}
 The complete model Hamiltonian is rather complicated; therefore, we start with a one-dimensional single band Hamiltonian and study its band structure while adding the terms needed to make a topological band structure and ``engineer'' our way towards Majoranas.
 The Hamiltonian in its simplest form is quadratic in momentum and has an off-set in chemical potential $\mu$
 \begin{equation}
@@ -446,9 +446,9 @@ Next, we raise $\mu$, which shifts the bands see Fig.~\ref{fig:triv_topo_bandstr
 In Sec.~\ref{sec:topology}, we explained that the topological invariant is only defined for a system with an energy gap.
 This band structure has no bandgap, so it cannot be topological.
 Further, in Sec.~\ref{sec:superconductivity} we observed that a BdG Hamiltonian has a gapped spectrum (Eq.~\eqref{eq:SC_spectrum}), so we add $\Delta\tau_{x}$, which results in
-\[
+\begin{equation}
 H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x},
-\]
+\end{equation}
 and opens a gap because $\tau_{x}$ mixes the electron and holes [see Fig.~\ref{fig:triv_topo_bandstructure} (right)].
 
 \co{We break the spin degeneracy using a magnetic field.}
