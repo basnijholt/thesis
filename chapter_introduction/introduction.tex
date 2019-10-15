@@ -99,7 +99,7 @@ Because of the simplicity of the model it can be solved analytically; however, i
 
 \co{In this thesis we study the hybrid Majorana model.}
 In this thesis, we study extensions to this model and go beyond the regime that can be studied analytically.
-The next sections introduce superconductivity and the topological protection of Majoranas (Sec.~\ref{sec:superconductivity}), non-Abelian statistics (Sec.~\ref{sec:?}), the minimal hybrid Majorana model (Sec.~\ref{sec:?}), and finally, a few extensions to this model (Sec.~\ref{sec:?}).
+The next sections introduce superconductivity and the topological protection of Majoranas (Sec.~\ref{sec:superconductivity}), non-Abelian statistics (Sec.~\ref{sec:braiding}), the minimal hybrid Majorana model (Sec.~\ref{sec:?}), and finally, a few extensions to this model (Sec.~\ref{sec:?}).
 At that point, it should be evident that solving this problem requires numerical methods, which is the topic of Sec.~\ref{sec:?}.
 
 
@@ -264,7 +264,151 @@ This invariant can only assume two values ($+1$ or $-1$) and indicates the prese
 \footnote{The Pfaffian for an anti-symmetric matrix is related to the determinant as $\Pf(A)^{2}=\det(A)$.}
 This topological invariant is only defined for a system with an energy gap, which means the Hamiltonian of the system has no eigenvalues in a finite interval around zero energy, as in Eq.~\ref{eq:H_BdG_sc}.
 If we can continuously transform a Hamiltonian $H_{1}$ into another Hamiltonian $H_{2}$ without ever closing the energy gap, we say $H_{1}$ and $H_{2}$ are topologically equivalent, and thus have the same topological invariant.
-Finally, the spectrum of a BdG Hamiltonian [Eq.~\eqref{eq:SC_spectrum}] is gapped around $E=0$, and since Majoranas live at zero energy, there are no nearby states in energy for the Majorana to decay to; this is the so-called topological protection. % XXX: Rephrase this and maybe move it.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BRAIDING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Non-Abelian statistics and braiding}\label{sec:braiding}
+\co{Majoranas have non-Abelian statistics which is the motivation to study them.}
+For many researchers that work on Majoranas, the ultimate motivation to study them is the fact that they have a fascinating property, non-Abelian quantum statistics.
+Quantum statistic studies what happens to wavefunctions describing identical particles when their positions are exchanged in space.
+In our quantum mechanics courses, we learned that particles are divided into two classes according to quantum statistics: bosons which stay the same under the exchange and fermions for which the wavefunction changes sign.
+However, Majorana bound states do not belong to either of these.
+The operation of exchanging two Majoranas (called braiding) can send the system into a different state with the same particle configuration.
+Explaining how one could experimentally perform a braiding operation is beyond the scope of this thesis; therefore, we will focus on the mathematical operations that describe the braiding process.
+
+\co{Multiple Majoranas form a ground state manifold.}
+Exchanging two Majoranas in 1D is ill-defined because it is impossible to swap them without having them collide, which would annihilate them.
+We can construct a network of nanowires to form T-junctions (see Fig.~\ref{fig:Majorana-T-junction}), which allows us to exchange positions of Majoranas.
+Here, one can temporarily move a Majorana to one of the unoccupied wires and perform the exchange without the Majoranas ever becoming too close to each other.
+\begin{figure}
+\begin{centering}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/T-junction-network.pdf}
+\par\end{centering}
+\centering{}
+\caption{Majorana T-junction.
+The circles represent the Majoranas $\gamma_{1}...\gamma_{6}$.
+This network of nanowires allows for the exchange of two Majoranas without having them collide.
+This is possible by temporarily bringing a Majorana to one of the
+vertical wires and then swapping the position of the other Majorana.
+\label{fig:Majorana-T-junction}}
+\end{figure}
+The only thing that distinguishes Majoranas is their position in the network.
+That means that if we exchanged two Majoranas in space, the system would look exactly the same as it looked before the exchange.
+We now assume the energy spectrum is gapped for $|E|<\Delta$ with the Majorana ground state at $E=0$.
+If this ground state contains several Majoranas, there will be several states all at zero energy, forming a  ``ground state manifold''.
+
+\co{We consider $N$ Majoranas and write down its state of fermionic modes.}
+From now on we only consider the states corresponding to the Majoranas and neglect the states that live in the bulk ($E \geq \Delta$).
+As mentioned in Sec.\ref{sec:topology}, a Majorana only has half a degree of freedom and thus, they can only be assigned quantum states in pairs.
+In Fig.~\ref{fig:Majorana-T-junction} we see six Majoranas (3 pairs), but for generality lets consider $N$ pairs.
+By pairing two Majoranas (two times half a degree of freedom), we can form fermionic modes that will give us two possible degenerate quantum states, either unoccupied $\ket 0$ or occupied $\ket 1$.
+By pairing up neighboring Majoranas $\gamma_{2n-1}$ and $\gamma_{2n}$ we get a creation operator that is its own complex conjugate $c_{n}^{\dagger}=\tfrac{1}{2}(\gamma_{2n-1}+i\gamma_{2n})$, where $c$ is a fermionic creation operator.
+Each pair gives two possible quantum states, so $N$ pairs will have $2^{N}$ possible states.
+We can represent every such state with a ket
+\[
+\left|s_{1},s_{2},\dots,s_{N}\right\rangle ,
+\]
+where $s_{n}$ is either unoccupied $0$ or occupied $1$.
+These states form a complete basis of the Hilbert space of the set of Majoranas.
+
+\co{The parity of the groundstate is an observable.}
+We define the fermion parity operator
+\[
+P_{n}\equiv1-2c_{n}^{\dagger}c_{n}=i\gamma_{2n-1}\gamma_{2n},
+\]
+that acts on the states and where we recognize the $c_{n}^{\dagger}c_{n}$ term as the number operator.
+All basis states in the Hilbert space of Majoranas are eigenstates of $P_{n}$.
+For example, we have
+\[
+P_{1}\left|0,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|0,\dots\right\rangle =+\left|0,\dots\right\rangle ,
+\]
+
+\[
+P_{1}\left|1,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|1,\dots\right\rangle =-\left|1,\dots\right\rangle .
+\]
+Another essential property of Majoranas is that a pair of Majorana operators all anti-commute with each other.
+So
+\[
+(\gamma_{1}\gamma_{2})(\gamma_{3}\gamma_{4})=(\gamma_{3}\gamma_{4})(\gamma_{1}\gamma_{2}),
+\]
+but when the pairs share a Majorana they do not commute anymore
+\[
+(\gamma_{1}\gamma_{2})(\gamma_{2}\gamma_{3})=-(\gamma_{2}\gamma_{3})(\gamma_{1}\gamma_{2}).
+\]
+In chapter \ref{sec:superconductivity} you might have noticed that the total particle number in the Hamiltonian is not conserved; however, the parity is conserved.
+The total parity can be obtained by multiplying all parity operators
+\[
+P_{\textrm{tot}}=P_{1}\cdot P_{2}\cdot\,\dots\,\cdot P_{N}=i^{N}\gamma_{1}\gamma_{2}\dots\gamma_{2N}.
+\]
+where $P_{\textrm{tot}}$ has eigenvalues $\pm1$.
+The parity is an observable and can, therefore, be experimentally measured.
+
+\co{We can deduce the braiding operator that exchanges two Majoranas.}
+We can now start to think about what would happen when we exchange two Majoranas~\cite{Ivanov2001}.
+Our ground state manifold $\ket\Psi$ will never leave the ground state if we perform the exchange slowly enough.
+The exchange of two Majoranas $\gamma_{n}$ and $\gamma_{m}$ will change the ground state $\left|\Psi\right\rangle \to U\left|\Psi\right\rangle $ where $U$ is a unitary operator.
+The exact form of $U$ can be derived without a direct calculation.
+We do this by assuming that $U$ only depends on the Majoranas involved in the exchange ( $\gamma_{n}$ and $\gamma_{m}$) and by using that the slow exchange does not change the parity of the system because the system stays gapped at all times.
+Since the parity is conserved we know: $U$ commutes with the total fermion parity $[U,P_{\textrm{tot}}]=0$, and that $U$ can only depend on the product $i\gamma_{n}\gamma_{m}$.
+This product is Hermitian, so we can create a unitary operator by taking the exponential of $i$ times this Hermitian operator as
+\[
+U\equiv\exp(\beta\gamma_{n}\gamma_{m})=\cos(\beta)+\gamma_{n}\gamma_{m}\sin(\beta),
+\]
+where $\beta$ is a real coefficient to be determined.
+In the last equality we used $(\gamma_{n}\gamma_{m})^{2}=\gamma_{n}\gamma_{m}\gamma_{n}\gamma_{m}=-\gamma_{n}\underset{=1}{\underbrace{\gamma_{m}\gamma_{m}}}\gamma_{n}=-1$
+in the Taylor expansion.
+We now move to the Heisenberg picture where we look at the evolution of the Majorana operators in time
+\[
+\gamma_{n}\to U\gamma_{n}U^{\dagger}=\left(\cos\beta+\gamma_{n}\gamma_{m}\sin\beta\right)\gamma_{n}\left(\cos\beta+\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}\sin\beta\right)
+\]
+
+\[
+=\gamma_{n}\cos^{2}\beta+\left(\gamma_{n}\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}+\gamma_{n}\gamma_{m}\gamma_{n}\right)\sin\beta\cos\beta+\gamma_{n}\gamma_{m}\gamma_{n}\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}\sin^{2}\beta
+\]
+
+\[
+=\gamma_{n}\cos^{2}\beta-\gamma_{n}^{\dagger}\sin^{2}\beta-2\gamma_{m}\sin\beta\cos\beta
+\]
+
+\[
+=\gamma_{n}\cos2\beta-\gamma_{m}\sin2\beta
+\]
+Similarly we get
+\[
+\gamma_{m}\to U\gamma_{m}U^{\dagger}=\gamma_{m}\cos2\beta+\gamma_{n}\sin2\beta.
+\]
+After the exchange happened we know that $\gamma_{m}\to\gamma_{n}$ and $\gamma_{n}\to\gamma_{m}$, this leads to $\beta=\pm\pi/4$.
+The two signs make sense; this distinguishes the clockwise and the counterclockwise exchange of the Majoranas.
+We now found an operator that exchanges two Majoranas
+\begin{equation}
+U=\exp\left(\pm\frac{\pi}{4}\gamma_{n}\gamma_{m}\right)=\tfrac{1}{\sqrt{2}}\left(1\pm\gamma_{n}\gamma_{m}\right).\label{eq:U_nm}
+\end{equation}
+
+\co{As an example, we apply this operator to the simplest non-trivial case of having just four Majoranas.}
+As an example, lets now look at what happens when we have just four Majoranas $\gamma_{1}$, $\gamma_{2}$, $\gamma_{3}$ and $\gamma_{4}$.
+The four basis states in the ground state manifold are
+\begin{equation}
+\left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle ,\label{eq:basis}
+\end{equation}
+where the first number is the occupation number of the fermionic mode $c_{1}^{\dagger}=\tfrac{1}{2}(\gamma_{1}+i\gamma_{2})$ and the second number the occupation number of $c_{2}^{\dagger}=\tfrac{1}{2}(\gamma_{3}+i\gamma_{4})$.
+For instance, if we start from the state $\left|00\right\rangle $ and we exchange $\gamma_{2}$ and $\gamma_{3}$ by applying $U_{23}=\tfrac{1}{\sqrt{2}}\left(1\pm\gamma_{2}\gamma_{3}\right)$, we obtain\footnote{See appendix \ref{chap:U_der} for derivations of $U_{nm}$.}  % XXX: add this to the appendix.
+\[
+\left|00\right\rangle \to U_{23}\left|00\right\rangle =\tfrac{1}{\sqrt{2}}\left(\left|00\right\rangle +i\left|11\right\rangle \right).
+\]
+Here we see a superposition of states, which is not like bosons or fermions at all, where the exchange can only change the sign.
+This property makes Majoranas non-Abelian anyons, and the exchange of two non-Abelian anyons is usually called braiding.
+Using these braiding operations we can create a qubit that can perform a certain set (but not all) of rotations on the single-qubit Bloch sphere.
+This means that some of the qubit operations are topologically protected, which reduces the amount of error-correction needed in comparison with a non-topological qubit, and in turn means that fewer physical qubits are required.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Structure of this thesis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section{Structure of this thesis}
 
