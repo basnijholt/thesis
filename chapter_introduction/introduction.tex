@@ -418,7 +418,7 @@ This means that some of the qubit operations are topologically protected, which 
 The combined effect of superconductivity, spin-orbit coupling, and a Zeeman field can lead to the appearance of Majoranas near the edges of the wire~\cite{Lutchyn2010,Oreg2010}.
 To understand how this happens we study the effects of the various terms in the Hamiltonian.
 As discussed in Sec.~\ref{sec:topology}, the appearance of Majoranas is a topological effect and is accompanied by the change of the topological invariant $Q$ of symmetry class $\mathcal{D}$.
-This invariant can only assume $Q=+1$ (no Majoranas) and $Q=-1$ (Majoranas present) and changes when the bandgap is closes and reopens.
+This invariant can only assume $Q=+1$ (no Majoranas) and $Q=-1$ (Majoranas present) and changes when the band gap is closes and reopens.
 
 \begin{figure}
 \begin{center}
@@ -441,25 +441,25 @@ We assume that this band structure is topologically trivial and has $Q=+1$.
 Because this Hamiltonian acts trivially in spin-space, the bands in Fig.~\ref{fig:triv_topo_bandstructure} (left) are doubly degenerate.
 Finally, the electrons are at positive energy $E$ and the holes on $-E$.
 
-\co{We require a bandgap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.}
-Next, we raise $\mu$, which shifts the bands see Fig.~\ref{fig:triv_topo_bandstructure} (middle).
+\co{We require a band gap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.}
+Next, we raise $\mu$, which shifts the bands [see Fig.~\ref{fig:triv_topo_bandstructure} (middle)].
 In Sec.~\ref{sec:topology}, we explained that the topological invariant is only defined for a system with an energy gap.
-This band structure has no bandgap, so it cannot be topological.
-Further, in Sec.~\ref{sec:superconductivity} we observed that a BdG Hamiltonian has a gapped spectrum (Eq.~\eqref{eq:SC_spectrum}), so we add $\Delta\tau_{x}$, which results in
+This band structure has no band gap, and therefore cannot be topological.
+Further, in Sec.~\ref{sec:superconductivity} we observed that a BdG Hamiltonian has a gapped spectrum [Eq.~\eqref{eq:SC_spectrum}], so we add $\Delta\tau_{x}$, which results in
 \begin{equation}
 H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x},
 \end{equation}
 and opens a gap because $\tau_{x}$ mixes the electron and holes [see Fig.~\ref{fig:triv_topo_bandstructure} (right)].
 
 \co{We break the spin degeneracy using a magnetic field.}
-Now we have a gapped spectrum; however, we closed the band structure twice because of the doubly degenerate spin bands both crossing zero energy simultaneously.
+We are left with a gapped spectrum; however, we closed the band gap twice because of the doubly degenerate spin bands both crossing zero energy simultaneously.
 The spin degeneracy (called a Kramers degeneracy\footnote{A Kramers degeneracy would result it two Majoranas per edge (just a fermion).}) is a result of a time-reversal symmetry and needs to be broken to create isolated Majoranas.
 To couple to spin we introduce the Zeeman field in the Hamiltonian
 \begin{equation}
 H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x},\label{eq:zeeman}
 \end{equation}
 where $g$ is the Landé factor, $\mu_{\textrm{B}}$ the Bohr magneton and $B$ magnetic field along $x$, parallel to the wire direction.
-In Fig.~\ref{fig:zeeman} we observe the effect of a magnetic field on the band structure.
+In Fig.~\ref{fig:zeeman} we plot the effect of a magnetic field on the band structure and observe that a magnetic field breaks the Kramers degeneracy.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.95\textwidth]{chapter_introduction/figures/zeeman.pdf}
@@ -467,8 +467,7 @@ In Fig.~\ref{fig:zeeman} we observe the effect of a magnetic field on the band s
 \label{fig:zeeman}}
 \end{center}
 \end{figure}
-We see that a magnetic field breaks the Kramers degeneracy.
-The bands that move towards each other have opposite spin (orthogonal states), and as we see in Fig.~\ref{fig:zeeman} (middle and left), these spins do not couple.
+The bands moving towards each other have opposite spin (orthogonal states), and as we see in Fig.~\ref{fig:zeeman} (middle and left), these spins do not couple.
 The problem is that Zeeman conserves spin in $x$-direction, and therefore spin is still a good quantum number.
 We know that Majoranas must be spinless because they are their own complex conjugate.
 
@@ -478,10 +477,9 @@ The Hamiltonian is now complete and equals
 \begin{equation}
 H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}-\alpha p_{x}\sigma_{y}\tau_{z}.\label{eq:rashba}
 \end{equation}
-Spin-orbit by itself---eventhough it couples spin---is not sufficient to break the Kramers degeneracy.
+Spin-orbit by itself---eventhough it couples spin---is insufficient to break the Kramers degeneracy.
 In Fig.~\ref{fig:SO_no_zeeman} we see that raising $\alpha$ moves the different spin bands away in either $+k$ or $-k$ direction.
 However, a degeneracy remains at $k=0$, revealing why a magnetic field is needed.
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.95\textwidth]{chapter_introduction/figures/SO_no_zeeman.pdf}
@@ -489,9 +487,8 @@ However, a degeneracy remains at $k=0$, revealing why a magnetic field is needed
 \label{fig:SO_no_zeeman}}
 \end{center}
 \end{figure}
-If we now also turn on magnetic field we see that spin-orbit opens the gap at finite $k$ (see Fig.~\ref{fig:SO_and_zeeman}).
-This system will accommodate Majoranas at $E=0$ and is called topologically nontrivial, for it has no degeneracies, a gapped spectrum, and $Q=-1$.
-
+Including a magnetic field opens the gap at $k=0$ (see Fig.~\ref{fig:SO_and_zeeman}) making the system topologically nontrivial.
+If the system is of a finite length, it will host Majoranas on its edges at $E=0$.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.95\textwidth]{chapter_introduction/figures/SO_and_zeeman.pdf}
@@ -502,7 +499,6 @@ This system will accommodate Majoranas at $E=0$ and is called topologically nont
 
 
 \subsection{Wavefunctions}
-
 With a topological band structure, we expect Majoranas to appear near
 the edges of the nanowires.
 We can check if this happens by calculating the wavefunctions of a finite wire and plotting the probability density of the wavefunction corresponding to the lowest energy.
@@ -542,7 +538,7 @@ We have seen that a topological band structure leads to Majoranas near the edges
 In the Hamiltonian (Eq.~\eqref{eq:rashba}) we see a few fundamental constants or constants that are material dependent.
 However, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment; asking for which values of $B$ and $\mu$ the system becomes topological is therefore a valid question.
 In Fig.~\ref{fig:topo_bands} we see a phase diagram, which indicates for which value of $\left(B,\mu\right)$ the system is topological.
-The color intensity indicates the size of the topological bandgap, which is a measure of the quality of the Majorana.
+The color intensity indicates the size of the topological band gap, which is a measure of the quality of the Majorana.
 In Sec.~\ref{sec:phase-diagram} we explain how to calculate a phase diagram.
 
 In the next chapter we will extend this model to three dimensions and add the orbital effect of the magnetic field.
