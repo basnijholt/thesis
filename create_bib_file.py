@@ -101,8 +101,6 @@ def replace_key(key, bib_entry):
         rest = rest.replace(old, new)
 
     result = bib_type + "{" + key + "," + rest
-
-    print(result, "\n")
     return result
 
 
@@ -114,7 +112,7 @@ def cached_doi2bib(doi):
             return text
         text = doi2bib(doi)
         if text is not "" and "<html>" not in text:
-            print(f"Succesfully got {doi}!")
+            print(f"Succesfully got {doi}!create_bib_file.py")
             cache[doi] = text
         return text
 
