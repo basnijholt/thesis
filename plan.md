@@ -1,7 +1,3 @@
-
-
-
-
 # Preface
 ##### Different phases of matter exist and are determined by the way the atoms are organized.
 ##### Symmetry-breaking theory explains how to understand the different phases of matter.
@@ -44,11 +40,11 @@
 
 ## Majoranas in a more realistic 3D nanowire
 <!-- Here we make the model more realistic -->
-##### Experiment does not agree, so we need to include more physical effects.
+##### The simple model is great, but experiments does not agree, so we need to include more physical effects.
 ##### In 3D more orbitals are present, breaking the simple E_z²>µ²+Δ² requirement for Majoranas.
 ##### Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.
 ##### A real system's material is not perfectly smooth and has impurities, we can model this disorder by random onsite energy.
-##### Proximity SC, k.p, electrostatics.
+##### Other improvements include a better model for proximity SC, more accurate SOC with k.p, and including self-consistent electrostatics.
 
 <!-- I still need to write down what happens in the next chapter -->
 # Numerical methods
