@@ -259,7 +259,7 @@ we get $\gamma^{\dagger}\gamma=1/2$ and see that the Majorana state is always ha
 Removing a Majorana from zero energy is, therefore, only possible if it is paired with another Majorana to form a fermionic mode.
 Later, in Sec.~\ref{sec:braiding} we make use of this property and show how these Majoranas exhibit non-Abelian statistics.
 Subsequently, in Sec.~\ref{sec:minimal_majoranas}, we show that it is possible to create Majoranas at two opposite edges of a nanowire where they do not couple and are pinned to $E=0$; this provides the so-called topological protection.
-Here, the fermionic mode (which is occupied or unoccupied), is the quantity that is protected.
+Here, the fermionic mode (which is occupied or unoccupied,) is the quantity that is protected.
 
 \co{Having a PHS means symmetry class D, which in 1D has a Z2 invariant that indicates the presence or absence of Majoranas.}
 The symmetry class of the one-dimensional system we study in this thesis has a particle-hole symmetry $\mathcal{P}$, and therefore belongs to class $\mathcal{D}$.
@@ -459,7 +459,7 @@ and opens a gap because $\tau_{x}$ mixes the electron and holes [see Fig.~\ref{f
 \co{We break the spin degeneracy using a magnetic field.}
 We are left with a gapped spectrum; however, we closed the band gap twice because of the doubly degenerate spin bands both crossing zero energy simultaneously.
 The spin degeneracy (called a Kramers degeneracy\footnote{A Kramers degeneracy would result in two Majoranas per edge (just a fermion).}) is a result of a time-reversal symmetry and needs to be broken to create isolated Majoranas.
-To couple to spin we introduce the Zeeman field in the Hamiltonian
+To couple to spin we introduce the Zeeman field $E_\textrm{Z}\sigma_{x}=\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}$ in the Hamiltonian
 \begin{equation}
 H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x},\label{eq:zeeman}
 \end{equation}
@@ -503,30 +503,39 @@ If the system is of a finite length, it will host Majoranas on its edges at $E=0
 \end{figure}
 
 \subsection{Wavefunction}
-We now have all the terms in the Hamiltonian to create a topological band structure, which we calculate for an infinite system (i.e., system with a translation symmetry).
+\co{Using the right parameters, we can plot the Majorana wavefunction.}
+We now have all the terms in the Hamiltonian to create a topological band structure, which we calculate for an infinite system (i.e., system with a translational symmetry).
 To observe Majoranas, we need to diagonalize the Hamiltonian of a finite system with the same parameters that resulted in the topological band structure and plot the wavefunction with the lowest energy: the Majorana wavefunction.
 In Fig.~\ref{fig:wavefunction_1d} (left), we plot the probability density of the Majorana wavefunction and observe that it is indeed localized near edges of the nanowire.
-This wavefunction decays exponentially from both sides with a decay length $\xi$.
+This wavefunction decays exponentially from both sides with a decay length $\xi_\textrm{M}$.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/wavefunction_1d.pdf}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/wf_and_band_structure.pdf}
 \caption{Probability density and band structure of a 1D system.
-The probability density of the lowest energy wavefunction (Majorana wavefunction) of a \SI{2}{\micro\metre} long nanowire (left) and a topological band structure (right) with the same parameter values, but for an infinite system.
-The Majorana length $\xi$---the decay length of the wavefunction---in the left plot is $\xi=\SI{315}{nm}$.
+The probability density of the lowest energy wavefunction (Majorana wavefunction) of a \SI{0.3}{\micro\metre} long nanowire (left) and a topological band structure (right) with the same parameter values, but for an infinite system.
+The Majorana length $\xi$---the decay length of the wavefunction---in the left plot is $\xi_\textrm{M}=\SI{43.4}{nm}$.
 \label{fig:wavefunction_1d}}
 \end{center}
 \end{figure}
 
-\subsection{Phase diagrams}
+\subsection{Phase diagram}
+\co{With a phase diagram, we show for which tunable parameters the system is topological.}
+The Hamiltonian [Eq.~\eqref{eq:rashba}] contains a few fundamental constants and constants that are material dependent; however, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment.
+A good question is, for which values of $B$ and $\mu$ the system is topological.
+Due to its compactness, this model can be solved analytically, and it predicts that Majorana bound states appear when $E_\textrm{Z}^{2}>\mu^{2}+\Delta^{2}$, when the Zeeman energy becomes larger than the harmonic mean of the superconducting gap and the chemical potential.
+In Fig.~\ref{fig:phase_diagram_1D} we plot a phase diagram, which indicates for which value of $\left(B,\; \mu\right)$ the system is topological.
+In the next section, we will extend this model to three dimensions and study how it modifies the phase diagram.
 
-We have seen that a topological band structure leads to Majoranas near the edges of the nanowire.
-In the Hamiltonian (Eq.~\eqref{eq:rashba}) we see a few fundamental constants or constants that are material dependent.
-However, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment; asking for which values of $B$ and $\mu$ the system becomes topological is, therefore, a valid question.
-In Fig.~\ref{fig:topo_bands} we see a phase diagram, which indicates for which value of $\left(B,\; \mu\right)$ the system is topological.
-The colour intensity indicates the size of the topological band gap, which is a measure of the quality of the Majorana.
-In Sec.~\ref{sec:phase-diagram}, we explain how to calculate a phase diagram.
-In the next chapter, we will extend this model to three dimensions and add the orbital effect of the magnetic field.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth]{chapter_introduction/figures/phase_diagram_1D.pdf}
+\caption{A phase diagram of a one-dimensional Majorana nanowire device as a function of magnetic field $B$ and chemical potential $\mu$.
+The color indicates whether the system is in the topological or trivial phase.
+This system becomes topological whenever $E_\textrm{Z}^{2}>\mu^{2}+\Delta^{2}$.
+\label{fig:phase_diagram_1D}}
+\end{center}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

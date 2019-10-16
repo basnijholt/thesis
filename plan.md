@@ -1,3 +1,7 @@
+
+
+
+
 # Preface
 ##### Different phases of matter exist and are determined by the way the atoms are organized.
 ##### Symmetry-breaking theory explains how to understand the different phases of matter.
@@ -32,9 +36,11 @@
 <!-- This section introduces the "Majorana ingredients" -->
 ##### Superconductivity, spin-orbit coupling, a Zeeman field, and tuned µ leads to the appearance of Majoranas near the edges of the wire.
 ##### We show what the effect of these individual terms is on the band structure.
-##### We require a bandgap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.
+##### We require a band gap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.
 ##### We break the spin degeneracy using a magnetic field.
-##### To break spin-rotation symmetry, we introduce the spin-orbit coupling, which by itself isn't enough to create Majoranas.
+##### To break spin-rotation symmetry, we introduce the spin-orbit coupling, which by itself is not enough to create Majoranas.
+##### Using the right parameters, we can plot the Majorana wavefunction.
+##### With a phase diagram, we show for which tunable parameters the system is topological.
 
 ## Majoranas in a more realistic 3D nanowire
 <!-- Here we make the model more realistic -->
