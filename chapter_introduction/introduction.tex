@@ -276,10 +276,10 @@ If we can continuously transform a Hamiltonian $H_{1}$ into another Hamiltonian 
 
 \section{Non-Abelian statistics and braiding}\label{sec:braiding}
 \co{Majoranas have non-Abelian statistics which is the motivation to study them.}
-For many researchers that work on Majoranas, the ultimate motivation to study them is the fact that they have a fascinating property, non-Abelian quantum statistics.
+For many researchers, the ultimate motivation to study Majoranas is the fact that they have a fascinating property, non-Abelian quantum statistics.
 Quantum statistic studies what happens to wavefunctions describing identical particles when their positions are exchanged in space.
-In our quantum mechanics courses, we learned that particles are divided into two classes according to quantum statistics: bosons which stay the same under the exchange and fermions for which the wavefunction changes sign.
-However, Majorana bound states do not belong to either of these.
+In introductory quantum mechanics courses, we learned that particles are divided into two classes according to quantum statistics: bosons which stay the same under the exchange and fermions for which the wavefunction changes sign.
+However, Majorana bound states do not belong to either of these and are non-Abelian anyons.
 The operation of exchanging two Majoranas (called braiding) can send the system into a different state with the same particle configuration.
 Explaining how one could experimentally perform a braiding operation is beyond the scope of this thesis; therefore, we will focus on the mathematical operations that describe the braiding process.
 
@@ -326,6 +326,7 @@ P_{n}\equiv1-2c_{n}^{\dagger}c_{n}=i\gamma_{2n-1}\gamma_{2n},
 that acts on the states and where we recognize the $c_{n}^{\dagger}c_{n}$ term as the number operator.
 All basis states in the Hilbert space of Majoranas are eigenstates of $P_{n}$.
 For example, we have
+\begin{subequations}
 \begin{equation}
 P_{1}\left|0,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|0,\dots\right\rangle =+\left|0,\dots\right\rangle ,
 \end{equation}
@@ -333,6 +334,7 @@ P_{1}\left|0,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|0,\dots\right\
 \begin{equation}
 P_{1}\left|1,\dots\right\rangle \ =(1-2c_{1}^{\dagger}c_{1})\left|1,\dots\right\rangle =-\left|1,\dots\right\rangle .
 \end{equation}
+\end{subequations}
 Another essential property of Majoranas is that a pair of Majorana operators all anti-commute with each other.
 So
 \begin{equation}
@@ -365,6 +367,7 @@ where $\beta$ is a real coefficient to be determined.
 In the last equality we used $(\gamma_{n}\gamma_{m})^{2}=\gamma_{n}\gamma_{m}\gamma_{n}\gamma_{m}=-\gamma_{n}\underset{=1}{\underbrace{\gamma_{m}\gamma_{m}}}\gamma_{n}=-1$
 in the Taylor expansion.
 We now move to the Heisenberg picture where we look at the evolution of the Majorana operators in time
+\begin{subequations}
 \begin{equation}
 \gamma_{n}\to U\gamma_{n}U^{\dagger}=\left(\cos\beta+\gamma_{n}\gamma_{m}\sin\beta\right)\gamma_{n}\left(\cos\beta+\gamma_{m}^{\dagger}\gamma_{n}^{\dagger}\sin\beta\right)
 \end{equation}
@@ -380,6 +383,7 @@ We now move to the Heisenberg picture where we look at the evolution of the Majo
 \begin{equation}
 =\gamma_{n}\cos2\beta-\gamma_{m}\sin2\beta
 \end{equation}
+\end{subequations}
 Similarly we get
 \begin{equation}
 \gamma_{m}\to U\gamma_{m}U^{\dagger}=\gamma_{m}\cos2\beta+\gamma_{n}\sin2\beta.
@@ -413,7 +417,7 @@ This means that some of the qubit operations are topologically protected, which 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Creating Majoranas in a minimal hybrid nanowire}\label{sec:minimal_majoranas}
+\section{Majoranas in a minimal hybrid nanowire}\label{sec:minimal_majoranas}
 \co{Superconductivity, spin-orbit coupling, a Zeeman field, and tuned µ leads to the appearance of Majoranas near the edges of the wire.}
 The combined effect of superconductivity, spin-orbit coupling, and a Zeeman field can lead to the appearance of Majoranas near the edges of the wire~\cite{Lutchyn2010,Oreg2010}.
 To understand how this happens we study the effects of the various terms in the Hamiltonian.
@@ -497,10 +501,8 @@ If the system is of a finite length, it will host Majoranas on its edges at $E=0
 \end{center}
 \end{figure}
 
-
-\subsection{Wavefunctions}
-With a topological band structure, we expect Majoranas to appear near
-the edges of the nanowires.
+\subsection{Wavefunction}
+With a topological band structure, we expect Majoranas to appear near the edges of the nanowires.
 We can check if this happens by calculating the wavefunctions of a finite wire and plotting the probability density of the wavefunction corresponding to the lowest energy.
 In Fig.~\ref{fig:wavefunction_1d} (left), we see the probability density of the lowest energy mode (the Majorana wavefunction) is indeed localized near edges of the nanowire.
 The wavefunction decays exponentially with decay length $\xi$.
@@ -514,6 +516,27 @@ The Majorana length $\xi$---the decay length of the wavefunction---in the left p
 \label{fig:wavefunction_1d}}
 \end{center}
 \end{figure}
+
+\subsection{Phase diagrams}
+
+We have seen that a topological band structure leads to Majoranas near the edges of the nanowire.
+In the Hamiltonian (Eq.~\eqref{eq:rashba}) we see a few fundamental constants or constants that are material dependent.
+However, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment; asking for which values of $B$ and $\mu$ the system becomes topological is therefore a valid question.
+In Fig.~\ref{fig:topo_bands} we see a phase diagram, which indicates for which value of $\left(B,\; \mu\right)$ the system is topological.
+The color intensity indicates the size of the topological band gap, which is a measure of the quality of the Majorana.
+In Sec.~\ref{sec:phase-diagram} we explain how to calculate a phase diagram.
+
+In the next chapter we will extend this model to three dimensions and add the orbital effect of the magnetic field.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% MAJORANAS IN A REALISTIC 3D NANOWIRE %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Majoranas in a more realistic 3D hybrid nanowire}
 
 In 2D the model Hamiltonian (Eq.~\eqref{eq:rashba}) looks very similar
 \begin{equation}
@@ -530,17 +553,6 @@ The probability density and band structure of a 2D system is plotted in Fig.~\re
 \end{center}
 \end{figure}
 
-
-\subsection{Phase diagrams}
-
-We have seen that a topological band structure leads to Majoranas near the edges of the nanowire.
-In the Hamiltonian (Eq.~\eqref{eq:rashba}) we see a few fundamental constants or constants that are material dependent.
-However, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment; asking for which values of $B$ and $\mu$ the system becomes topological is therefore a valid question.
-In Fig.~\ref{fig:topo_bands} we see a phase diagram, which indicates for which value of $\left(B,\; \mu\right)$ the system is topological.
-The color intensity indicates the size of the topological band gap, which is a measure of the quality of the Majorana.
-In Sec.~\ref{sec:phase-diagram} we explain how to calculate a phase diagram.
-
-In the next chapter we will extend this model to three dimensions and add the orbital effect of the magnetic field.
 
 \begin{figure}
 \begin{center}
