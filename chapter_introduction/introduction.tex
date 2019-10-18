@@ -545,19 +545,38 @@ This system becomes topological whenever $E_\textrm{Z}^{2}>\mu^{2}+\Delta^{2}$.
 
 \section{Majoranas in a more realistic 3D hybrid nanowire}\label{sec:realistic_nanowire}
 \co{The simple model is great, but experiments does not agree, so we need to include more physical effects.}
-The simple one-dimensional model we introduced in the previous section is great because it can be solved analytically and therefore, gives it can give us a lot of insights.
-However, because of its simplicity it also ignores many relavant physical effects.
+The simple one-dimensional model we introduced in the previous section is useful because it can be solved analytically and therefore, it gives us many insights.
+However, because of its simplicity, it also ignores multiple relevant physical effects.
 For example, the model assumes a one-dimensional nanowire even though we live in a three-dimensional world, and so does the nanowire device when an experimentalist creates it.
 Besides the additional orbitals that are present in a three-dimensional system, the magnetic flux penetrating the nanowire cross-section modifies the Hamiltonian and changes the complex phases of the moving quasiparticles.
-Futher, the simple model assumes a tunable but constant chemical potential $\mu$ inside the nanowire.
-In an experiment the nanowire is close to a metal gate at a certain voltage, its electric field changes the potential inside the nanowire non-homogeneously.
-In addition to the theoretial considerations, 
-
-
-Soft gap, no quantized conductance, we know that we are ignoring effects 
-
+Further, the simple model assumes a tunable but constant chemical potential $\mu$ inside the nanowire.
+In an experiment, the nanowire is close to a metal gate at a certain voltage; its electric field changes the potential inside the nanowire non-homogeneously.
+In addition to these theoretical considerations, the experimental measurement results do not correspond to the predictions that the simple model makes.
+For example, for measuring the conductance from a nanowire hosting Majoranas to a normal lead, the model predicts a quantized conductance of $2 e^2/h$ at a bias voltage of $V_\textrm{B}=0$, the so-called zero-bias peak.
+Nearly all experiments \footnote{not arXiv:1710.10701} that measure this fail to reproduce this zero-bias peak where the conductance is quantized.
+Another effect that is not captured by the simple model is the superconducting density of states (DOS), which in theory predicts a vanishing DOS inside the gap ($|E|<\Delta$) but the experiment a non-zero DOS persists, this phenomenon is also called ``soft gap.''
+Because of these limitations, we will improve the simple model by adding relevant physical effects.
 
 \co{In 3D more orbitals are present, breaking the simple E_z²>µ²+Δ² requirement for Majoranas.}
+In 3D the model Hamiltonian [Eq.~\eqref{eq:rashba}] is modified to
+\begin{equation}
+H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}+\alpha\left(p_{y}\sigma_{x}-p_{x}\sigma_{y}\right)\tau_{z},\label{eq:3D_Ham}
+\end{equation}
+such that it includes the transverse part of the Rashba spin-orbit.
+The extra dimensions result in more orbitals and equivalently more bands; therefore, the condition $E_\textrm{Z}^{2}>\mu^{2}+\Delta^{2}$ breaks.
+The phase boundaries position now also depends on the cross-section's geometry.
+For example, Fig.~\ref{fig:topo_bands} shows a phase diagram and band structures at different combinations of $B,\; \mu$ for a nanowire with a hexagonal cross-section.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{chapter_introduction/figures/phase_diagrams_bands.pdf}
+\caption{Topological phase diagram of a 3D system.
+On the left three phase diagrams with a blue dot that indicates the value of $B,\; \mu$ at which the band structure to the right of it is plotted.
+The color in the phase diagrams depicts the topological region and its intensity the size of the topological gap.
+The bottom band structure is topological, and a small gap is visible in the plot.
+\label{fig:topo_bands}}
+\end{center}
+\end{figure}
+
 \co{Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
 \co{A real system's material is not perfectly smooth and has impurities, we can model this disorder by random onsite energy.}
 \co{Other improvements include a better model for proximity SC, more accurate SOC with k.p, and including self-consistent electrostatics.}
@@ -567,14 +586,6 @@ Soft gap, no quantized conductance, we know that we are ignoring effects
 
 
 
-
-
-
-In 2D the model Hamiltonian (Eq.~\eqref{eq:rashba}) looks very similar
-\begin{equation}
-H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}+\alpha\left(p_{y}\sigma_{x}-p_{x}\sigma_{y}\right)\tau_{z},\label{eq:2D_Ham}
-\end{equation}
-where it now also includes the transverse part of the Rashba spin-orbit.
 The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
 
 \begin{figure}
@@ -586,16 +597,6 @@ The probability density and band structure of a 2D system are plotted in Fig.~\r
 \end{figure}
 
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{chapter_introduction/figures/phase_diagrams_bands.pdf}
-\caption{Topological phase diagram of a 3D system.
-On the left three phase diagrams with a blue dot that indicates the value of $B,\; \mu$ at which the band structure to the right of it is plotted.
-The color in the phase diagrams depicts the topological region and its intensity the size of the topological gap.
-The bottom band structure is topological, and a small gap is visible in the plot.
-\label{fig:topo_bands}}
-\end{center}
-\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
