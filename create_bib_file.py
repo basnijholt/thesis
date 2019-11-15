@@ -10,7 +10,36 @@ import yaml
 from crossref.restful import Etiquette, Works
 from tqdm import tqdm
 
+bibs = [f for f in glob.glob("*/*yaml") if "tmp.yaml" not in f]
+bib_files = glob.glob("chapter_*/not_on_crossref.bib")
+output = "dissertation.bib"
+
 works = Works(etiquette=Etiquette("publist", contact_email="basnijholt@gmail.com"))
+
+TO_REPLACE = [
+    (r"a{\r}", r"\r{a}"),  # "Nyga{\r}rd" -> "Nyg\r{a}rd", bug in doi.org
+    ("Josephson", "{J}osephson"),
+    ("Majorana", "{M}ajorana"),
+    ("Andreev", "{A}ndreev"),
+    ("Kramers", "{K}ramers"),
+    ("Kitaev", "{K}itaev"),
+    (
+        r"metastable0and$\uppi$states",
+        r"metastable $0$ and $\pi$ states",
+    ),  # fix for 10.1103/physrevb.63.214512
+    (
+        r"Land{\'{e}}{gFactors}",
+        r"Land{\'{e}} {$g$} Factors",
+    ),  # fix for PhysRevLett.96.026804
+    (
+        r"apx$\mathplus$ipysuperconductor",
+        r"a $p_x + i p_y$ superconductor",
+    ),  # fix for 10.1103/physrevb.73.220502
+    (
+        r"apx$\mathplus${ipySuperfluid}",
+        r"$p_x + i p_y$ superfluid",
+    ),  # fix for 10.1103/physrevlett.98.010506
+]
 
 
 JOURNALS = [
@@ -22,10 +51,7 @@ JOURNALS = [
     ("Journal of Computational Physics", "J. Comput. Phys."),
     ("Journal of Experimental and Theoretical Physics", "J. Exp. Theor. Phys."),
     ("Journal of Low Temperature Physics", "J. Low Temp. Phys."),
-    (
-        "Journal of Physics A: Mathematical and Theoretical",
-        "J. Phys. A: Math. Theor.",
-    ),
+    ("Journal of Physics A: Mathematical and Theoretical", "J. Phys. A: Math. Theor."),
     ("Journal of Physics: Condensed Matter", "J. Phys.: Condens. Matter"),
     ("Nano Letters", "Nano Lett."),
     ("Nature Communications", "Nat. Commun."),
@@ -44,10 +70,7 @@ JOURNALS = [
     ("Science Advances", "Sci. Adv."),
     ("Scientific Reports", "Sci. Rep."),
     ("Semiconductor Science and Technology", "Semicond. Sci. Technol."),
-    (
-        "Annual Review of Condensed Matter Physics",
-        "Annu. Rev. Condens. Matter Phys.",
-    ),
+    ("Annual Review of Condensed Matter Physics", "Annu. Rev. Condens. Matter Phys."),
     ("{EPL} (Europhysics Letters)", "{EPL}"),
     ("Nature Reviews Materials", "Nat. Rev. Mater."),
     ("Physics Letters", "Phys. Lett."),
@@ -64,7 +87,7 @@ def get_pages(data, works=works):
         if "page" in data:
             page = data["page"].split("-")[0]
         else:
-            raise Exception('No page number found!')
+            raise Exception("No page number found!")
     return page
 
 
@@ -97,35 +120,10 @@ def replace_key(key, data, bib_entry):
         rest = rest.replace(old.upper(), new.upper())
         rest = rest.replace(old.lower(), new.lower())
 
-    to_replace = [
-        (r"a{\r}", r"\r{a}"),  # "Nyga{\r}rd" -> "Nyg\r{a}rd", bug in doi.org
-        ("Josephson", "{J}osephson"),
-        ("Majorana", "{M}ajorana"),
-        ("Andreev", "{A}ndreev"),
-        ("Kramers", "{K}ramers"),
-        ("Kitaev", "{K}itaev"),
-        (
-            r"metastable0and$\uppi$states",
-            r"metastable $0$ and $\pi$ states",
-        ),  # fix for 10.1103/physrevb.63.214512
-        (
-            r"Land{\'{e}}{gFactors}",
-            r"Land{\'{e}} {$g$} Factors",
-        ),  # fix for PhysRevLett.96.026804
-        (
-            r"apx$\mathplus$ipysuperconductor",
-            r"a $p_x + i p_y$ superconductor",
-        ),  # fix for 10.1103/physrevb.73.220502
-        (
-            r"apx$\mathplus${ipySuperfluid}",
-            r"$p_x + i p_y$ superfluid",
-        ),  # fix for 10.1103/physrevlett.98.010506
-    ]
-
-    to_replace += JOURNALS  # hard coded abbrvs.
+    to_replace += TO_REPLACE + JOURNALS  # hard coded abbrvs
 
     with contextlib.suppress(Exception):
-        # Use the journal abbrv.
+        # Use the journal abbrv. from crossref, not used if hard coded.
         to_replace.append(get_journal(data))
 
     for old, new in to_replace:
@@ -137,8 +135,8 @@ def replace_key(key, data, bib_entry):
         # Add the page number if it's missing
         with contextlib.suppress(Exception):
             pages = get_pages(data)
-            lines = result.split('\n')
-            lines.insert(2, f'\tpages = {{{pages}}},')
+            lines = result.split("\n")
+            lines.insert(2, f"\tpages = {{{pages}}},")
             result = "\n".join(lines)
 
     return result
@@ -168,7 +166,6 @@ def cached_doi2bib(doi):
 
 
 if __name__ == "__main__":
-    bibs = [f for f in glob.glob("*/*yaml") if "tmp.yaml" not in f]
     print("Reading: ", bibs)
 
     mapping = {}
@@ -182,8 +179,7 @@ if __name__ == "__main__":
         for key, doi in tqdm(dois.items())
     ]
 
-    bib_files = glob.glob("chapter_*/not_on_crossref.bib")
-    with open("dissertation.bib", "w") as outfile:
+    with open(output, "w") as outfile:
         outfile.write("@preamble{ {\\providecommand{\\BIBYu}{Yu} } }\n\n")
         for fname in bib_files:
             outfile.write(f"\n% Below is from `{fname}`.\n\n")
