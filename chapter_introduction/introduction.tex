@@ -579,8 +579,29 @@ The band structure (b) is trivial but near a phase transition, (c) is at the pha
 \end{figure}
 
 \co{Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
+Whenever a magnetic flux can penatrate a surface of the nanowire, the canonical momentum operator in Eq.~\eqref{eq:3D_Ham} is modified to include the vector potential
+\begin{equation}
+\bm{p} \rightarrow -i \hbar \nabla + e \bm{A} \tau_z,
+\end{equation}
+where $e$ is the electron charge.
+In the weak coupling regime---with a non transparent semiconductor/superconductor interface---and a wire that is symmetric with respect to the wire axis, the vector potential is $\mathbf{A}={\left[ B_y (z - z_0) - B_z (y - y_0), 0, B_x (y - y_0)\right]}^{T}$, which is chosen such that it does not depend on $x$.
+Here, we set the offsets $y_0$ and $z_0$ such that the average vector potential vanishes in the superconductor.
+Physically, this choice corresponds to a limit where the total supercurrent $J_s$ is zero, appropriate for existing devices that use NbTiN as superconducting shell.
+In this case, the superconductor can be considered as a perturbation that only provides the electron-hole coupling in the normal regime.
+However, devices that have a thin Al shell are in the strong coupling regime.
+These devices are harder to simulate due to the large difference in the effective masses and Fermi energies between the semiconductor and the superconductor.
+This means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al, ~$\SI{0.1}{\AA}$.
+Additionally, because of the high density inside the superconductor, the wire can no longer be considered as symmetric with respect to the wire axis.
+To get correct physical observables from both the vector potential and the superconducting phase difference, we have to ensure that the total supercurrent cancels out,
+\begin{equation}
+j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.
+\end{equation}
+At zero temperature, this can be archieved by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$.~\cite{Wojcik2018}
+This minimization results in the correct vector potential and superconducting phase.
+
 % This modifies the phase diagram again
 \co{A real system's material is not perfectly smooth and has impurities, we can model this disorder by random onsite energy.}
+
 
 \co{Other improvements include a better model for proximity SC, more accurate SOC with k.p, and including self-consistent electrostatics.}
 
