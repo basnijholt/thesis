@@ -592,11 +592,11 @@ However, devices that have a thin Al shell are in the strong coupling regime.
 These devices are harder to simulate due to the large difference in the effective masses and Fermi energies between the semiconductor and the superconductor.
 This means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al, ~$\SI{0.1}{\AA}$.
 Additionally, because of the high density inside the superconductor, the wire can no longer be considered as symmetric with respect to the wire axis.
-To get correct physical observables from both the vector potential and the superconducting phase difference, we have to ensure that the total supercurrent cancels out,
+To get correct physical observables from both the vector potential and the superconducting phase difference~\cite{Wojcik2018}, we have to ensure that the total supercurrent cancels out,
 \begin{equation}
-j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.
+j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.  % XXX: check units, maybe from Georg's paper Eq. (9).
 \end{equation}
-At zero temperature, this can be archived by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$.~\cite{Wojcik2018}
+At zero temperature, this can be archived by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$ ~\cite{Winkler2019}.
 This minimization results in the correct vector potential and superconducting phase.
 
 % This modifies the phase diagram again
