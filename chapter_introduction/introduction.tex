@@ -594,13 +594,18 @@ This means that the discretization in the superconductor has to be smaller than 
 Additionally, because of the high density inside the superconductor, the wire can no longer be considered as symmetric with respect to the wire axis.
 To get correct physical observables from both the vector potential and the superconducting phase difference~\cite{Wojcik2018}, we have to ensure that the total supercurrent cancels out,
 \begin{equation}
-j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.  % XXX: check units, maybe from Georg's paper Eq. (9).
+j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.  % XXX: check units, from Georg's paper Eq. (9).
 \end{equation}
 At zero temperature, this can be archived by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$ ~\cite{Winkler2019}.
 This minimization results in the correct vector potential and superconducting phase.
+The inclusion of the orbital effect modifies the phase diagram shown in Fig.~\ref{fig:topo_bands}.
+In Ch.~\ref{ch:orbitalfield}, we discuss the weakly coupled superconductor case while ~\cite{Wojcik2018} discusses the strongly coupled superconductor case.
 
-% This modifies the phase diagram again
 \co{A real system's material is not perfectly smooth and has impurities, we can model this disorder by random onsite energy.}
+Perfectly ordered crystalline solids are characterized by a faultlessly regular arrangement of their atoms in a crystal lattice, yet, these do not occur in nature. % https://onlinelibrary.wiley.com/doi/pdf/10.1002/anie.197004891
+Real solid-state systems are not perfectly smooth and have impurities: they are disordered.
+Disorder is always present and it has a strong impact on the physical properties of proximitized nanowires.
+Research has shown that both disorder in the semiconductor and at the semiconductor-superconductor interface is detrimental to the creation of Majoranas in proximitized nanowires~\cite{Lobos2012,Lutchyn2012,Sau2012a,Sau2013,Hui2015,Cole2016,Liu2018}.
 
 
 \co{Other improvements include a better model for proximity SC, more accurate SOC with k.p, and including self-consistent electrostatics.}
