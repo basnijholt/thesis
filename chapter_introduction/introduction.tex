@@ -314,7 +314,7 @@ By pairing up neighboring Majoranas $\gamma_{2n-1}$ and $\gamma_{2n}$ we get a c
 Each pair gives two possible quantum states, so $N$ pairs will have $2^{N}$ possible states.
 We can represent every such state with a ket
 \begin{equation}
-\left|s_{1},s_{2},\dots,s_{N}\right\rangle ,
+\left|s_{1},s_{2},\dots,s_{N}\right\rangle,
 \end{equation}
 where $s_{n}$ is either unoccupied $0$ or occupied $1$.
 These states form a complete basis of the Hilbert space of the set of Majoranas.
@@ -345,7 +345,7 @@ but when the pairs share a Majorana they do not commute anymore
 \begin{equation}
 (\gamma_{1}\gamma_{2})(\gamma_{2}\gamma_{3})=-(\gamma_{2}\gamma_{3})(\gamma_{1}\gamma_{2}).
 \end{equation}
-In Sec.~\ref{sec:superconductivity} you might have noticed that the total particle number in the Hamiltonian is not conserved; however, the parity is conserved.
+In Sec.~\ref{sec:superconductivity}, we introduced the Hamiltonian Eq.~\eqref{eq:H_BdG_sc}, which does not conserve particle number; however, the parity is conserved.
 The total parity can be obtained by multiplying all parity operators
 \begin{equation}
 P_{\textrm{tot}}=P_{1}\cdot P_{2}\cdot\,\dots\,\cdot P_{N}=i^{N}\gamma_{1}\gamma_{2}\dots\gamma_{2N}.
@@ -565,7 +565,7 @@ H_{\textrm{BdG}}=\left(\frac{\bm{p}^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\
 such that it includes the transverse part of the Rashba spin-orbit.
 The two additional dimensions result in more orbitals and equivalently more bands; therefore, the condition $E_\textrm{Z}^{2}>\mu^{2}+\Delta^{2}$ for a topological nanowire is no longer valid.
 Because there are more bands, multiple Majoranas can be created on both edges of the nanowire as $\mu$ increases.
-However, these additional Majoranas are not topologically protected (without an additional symmetry) and a small perturbation can pair-wise annihilate all but $N \mod 2$ of them.
+However, these additional Majoranas are not topologically protected (without an additional symmetry), and a small perturbation can pair-wise annihilate all but $N \mod 2$ of them.
 The position of the phase boundaries now also depends on the cross-section's geometry.
 For example, Fig.~\ref{fig:topo_bands} shows a phase diagram (and band structures at different combinations of $B$ and $\mu$) of a nanowire with a cylindrical cross-section.
 \begin{figure}
@@ -586,29 +586,33 @@ Whenever a magnetic flux can penatrate a surface of the nanowire, the canonical 
 where $e$ is the electron charge.
 In the weak coupling regime---with a non transparent semiconductor/superconductor interface---and a wire that is symmetric with respect to the wire axis, the vector potential is $\mathbf{A}={\left[ B_y (z - z_0) - B_z (y - y_0), 0, B_x (y - y_0)\right]}^{T}$, which is chosen such that it does not depend on $x$.
 Here, we set the offsets $y_0$ and $z_0$ such that the average vector potential vanishes in the superconductor.
-Physically, this choice corresponds to a limit where the total supercurrent $J_s$ is zero, appropriate for existing devices that use NbTiN as superconducting shell.
+Physically, this choice corresponds to a limit where the total supercurrent $J_s$ is zero, appropriate for existing devices that use NbTiN as a superconducting shell.
 In this case, the superconductor can be considered as a perturbation that only provides the electron-hole coupling in the normal regime.
 However, devices that have a thin Al shell are in the strong coupling regime.
-These devices are harder to simulate due to the large difference in the effective masses and Fermi energies between the semiconductor and the superconductor.
-This means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al, ~$\SI{0.1}{\AA}$.
-Additionally, because of the high density inside the superconductor, the wire can no longer be considered as symmetric with respect to the wire axis.
+Because of the high density inside the superconductor (compared to the semiconductor), the wire can no longer be considered as symmetric with respect to the wire axis.
 To get correct physical observables from both the vector potential and the superconducting phase difference~\cite{Wojcik2018}, we have to ensure that the total supercurrent cancels out,
 \begin{equation}
 j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.  % XXX: check units, from Georg's paper Eq. (9).
 \end{equation}
 At zero temperature, this can be archived by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$ ~\cite{Winkler2019}.
-This minimization results in the correct vector potential and superconducting phase.
+This minimization results in the correct vector potential and the superconducting phase.
 The inclusion of the orbital effect modifies the phase diagram shown in Fig.~\ref{fig:topo_bands}.
-In Ch.~\ref{ch:orbitalfield}, we discuss the weakly coupled superconductor case while ~\cite{Wojcik2018} discusses the strongly coupled superconductor case.
+Chapter ~\ref{ch:orbitalfield}, discusses the weakly coupled superconductor case while Ch.~\ref{ch:shortjunction} discusses the strongly coupled superconductor case.
 
-\co{A real system's material is not perfectly smooth and has impurities, we can model this disorder by random onsite energy.}
-Perfectly ordered crystalline solids are characterized by a faultlessly regular arrangement of their atoms in a crystal lattice, yet, these do not occur in nature. % https://onlinelibrary.wiley.com/doi/pdf/10.1002/anie.197004891
+\co{A real system's material is not perfectly smooth and has impurities, and we can model this disorder by random onsite energy.}
+Perfectly ordered crystalline solids are characterized by a faultlessly regular arrangement of their atoms in a crystal lattice, yet, these do not occur in nature~\cite{Nolting1970}.
 Real solid-state systems are not perfectly smooth and have impurities: they are disordered.
 Disorder is always present and it has a strong impact on the physical properties of proximitized nanowires.
 Research has shown that both disorder in the semiconductor and at the semiconductor-superconductor interface is detrimental to the creation of Majoranas in proximitized nanowires~\cite{Lobos2012,Lutchyn2012,Sau2012a,Sau2013,Hui2015,Cole2016,Liu2018}.
+However, semiconductor nanowire with epitaxially grown aluminium \cite{Lutchyn2018,Krogstrup2015} minimize the disorder effects and have high-quality semiconductors and semiconductor-superconductor interfaces; however, its outer surface is oxidized and therefore strongly disordered.
+Scattering of the disordered superconducting boundary randomizes the quasiparticle's motion inside the superconductor.
+Fortunately, because of the large difference in the effective masses and Fermi energies between the semiconductor and the superconductor, as argued by the authors of \cite{Sticlet2017,Lutchyn2012,Liu2018}, disorder in the superconductor is not detrimental to the manipulation and observation of Majoranas, however, a more systematic numerical study is required.
+This problem is complex to study numerically because of the aforementioned high density differences, which means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al,~$\SI{0.1}{\AA}$.
+A full-scale three-dimensional simulation is beyond therefore beyond what is currently feasible.
+Nevertheless, \cite{Antipov2018} simulates a slice of the proximitized nanowire.
+It finds that disorder strongly affects important quantities such as the induced gap $\Delta_\textrm{ind}$, the critical field $B_\textrm{c}$, and their dependence on the external gate voltage.
 
-
-\co{Other improvements include a better model for proximity SC, more accurate SOC with k.p, and including self-consistent electrostatics.}
+\co{Other improvements include a better model for a proximitized superconductor, more accurate SOC with k.p, and including self-consistent electrostatics.}
 
 
 

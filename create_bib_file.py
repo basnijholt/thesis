@@ -160,7 +160,7 @@ def cached_doi2bib(doi):
             return text
         text = doi2bib(doi)
         if text is not "" and "<html>" not in text:
-            print(f"Succesfully got {doi}!create_bib_file.py")
+            print(f"Succesfully got '{doi}'")
             cache[doi] = text
         return text
 
