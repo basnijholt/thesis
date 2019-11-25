@@ -171,7 +171,15 @@ if __name__ == "__main__":
     mapping = {}
     for fname in bibs:
         with open(fname) as f:
-            mapping = {**mapping, **yaml.safe_load(f)}
+            for k, v in yaml.safe_load(f).items():
+                # Check that there are no duplicate keys with different DOIs.
+                if k in mapping:
+                    if v.lower() != mapping[k].lower():
+                        msg = f"{k} exists for multiple DOIs: {v} and {mapping[k]}."
+                        raise KeyError(msg)
+                else:
+                    mapping[k] = v
+
     dois = dict(sorted(mapping.items()))
 
     entries = [
