@@ -611,7 +611,7 @@ This problem is complex to study numerically because of the aforementioned high 
 A full-scale three-dimensional simulation is therefore beyond what is currently feasible.
 Nevertheless, \cite{Antipov2018} simulates a slice of the proximitized nanowire, and finds that disorder strongly affects important quantities such as the induced gap $\Delta_\textrm{ind}$, the critical field $B_\textrm{c}$, and their dependence on the external gate voltage.
 
-\co{Other improvements include a better model for a proximitized superconductor, more accurate SOC with k.p, and including self-consistent electrostatics.}
+\co{Majorana device proposals rely on a fine control of the electrostatics and understanding what happens is complicated.}
 The model Hamiltonian Eq.~\eqref{eq:3D_Ham} has a constant chemical potential $\mu$ in the nanowire.
 Experimentally, $\mu$ is set by the external metal gates that, when applying a voltage, will change the electrostatic environment inside the device.
 Therefore, we replace the static chemical potential by a spatially dependent electrostatic potential $\mu \rightarrow -V(x, y, z)$ in the Hamiltonian.
@@ -644,6 +644,9 @@ For example, \cite{Vuik2016} does this in the long junction or weakly coupled re
 Other works try to solve this problem for the short junction or strongly coupled regime also only simulating the cross-section of the nanowire \cite{Antipov2018} and/or by employing the Thomas-Fermi approximation~\cite{Mikkelsen2018,Winkler2019} (with which one can replace step 2.~and 3.~by using a scalar equation that returns the density $\rho$,) or by using other approximantions~\cite{Escribano2017,Dominguez2017,Woods2018}.
 These works find that applying a voltage on external metal gates renormalizes several important physical parameters, such as the induced superconducting gap $\Delta_\textrm{ind}$ and the critical magnetic field $B_\textrm{c}$, and in turn this means that the phase diagram changes.
 Due to the extreme computational complexity, no one has solved the full three-dimensional Schrödinger-Poisson problem, while treating the superconductor and semiconductor on equal footing.
+
+\co{Other improvements include a better model for a proximitized superconductor and more accurate SOC with k.p.}
+
 
 \newpage
 The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
