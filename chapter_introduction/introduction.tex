@@ -608,12 +608,26 @@ However, semiconductor nanowire with epitaxially grown aluminium \cite{Lutchyn20
 Scattering of the disordered superconducting boundary randomizes the quasiparticle's motion inside the superconductor.
 Fortunately, because of the large difference in the effective masses and Fermi energies between the semiconductor and the superconductor, as argued by the authors of \cite{Sticlet2017,Lutchyn2012,Liu2018}, disorder in the superconductor is not detrimental to the manipulation and observation of Majoranas, however, a more systematic numerical study is required.
 This problem is complex to study numerically because of the aforementioned high density differences, which means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al,~$\SI{0.1}{\AA}$.
-A full-scale three-dimensional simulation is beyond therefore beyond what is currently feasible.
-Nevertheless, \cite{Antipov2018} simulates a slice of the proximitized nanowire.
-It finds that disorder strongly affects important quantities such as the induced gap $\Delta_\textrm{ind}$, the critical field $B_\textrm{c}$, and their dependence on the external gate voltage.
+A full-scale three-dimensional simulation is therefore beyond what is currently feasible.
+Nevertheless, \cite{Antipov2018} simulates a slice of the proximitized nanowire, and finds that disorder strongly affects important quantities such as the induced gap $\Delta_\textrm{ind}$, the critical field $B_\textrm{c}$, and their dependence on the external gate voltage.
 
 \co{Other improvements include a better model for a proximitized superconductor, more accurate SOC with k.p, and including self-consistent electrostatics.}
-
+The model Hamiltonian Eq.~\eqref{eq:3D_Ham} has a constant chemical potential $\mu$ in the nanowire.
+Experimentally, $\mu$ is set by the external metal gates that, when applying a voltage, will change the electrostatic environment inside the device.
+Therefore, we replace the static chemical potential by a spatially dependent electrostatic potential $\mu \rightarrow -V(x, y, z)$ in the Hamiltonian.
+Recent proposals of scalable designs for topological quantum computing with Majoranas rely on a precise electrostatic control.
+An good understanding of how the metal gates influence the electrostatic potential, is therefore required to interpret both existing Majorana experiments and future improved Majorana devices.
+One of the challenges is that the metal gates have band offsets in the 1-eV range, while a typical semiconductor's Fermi energy lies in the 1-meV range, three orders of magnitude difference~\cite{Armagnat2019}.
+We can formulate the quantum-electrostatic problem as a solution of three equations solved self-consistently.
+\begin{enumerate}
+\item Given the electronic density, solving the Poisson equation results in the electrostatic potential.
+\item Given the electrostatic potential, solving the Schrödinger equation results in the energy spectrum and wave functions.
+\item Finally, using that the bands fill according to the Fermi distribution, we get the electronic density.
+\end{enumerate}
+% This 
+% The el
+% To find the electrostatic potential, a self-consistent problem needs to be solved, iterating between 
+% Initial studies Vuik2016: 10.1088/1367-2630/18/3/
 
 
 
