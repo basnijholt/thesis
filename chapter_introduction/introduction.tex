@@ -597,7 +597,7 @@ j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.  % XXX: check units, from Georg's pap
 At zero temperature, this can be archived by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$ ~\cite{Winkler2019}.
 This minimization results in the correct vector potential and the superconducting phase.
 The inclusion of the orbital effect modifies the phase diagram shown in Fig.~\ref{fig:topo_bands}.
-Chapter ~\ref{ch:orbitalfield}, discusses the weakly coupled superconductor case while Ch.~\ref{ch:shortjunction} discusses the strongly coupled superconductor case.
+Chapter ~\ref{ch:orbitalfield} discusses the weakly coupled superconductor case while Ch.~\ref{ch:shortjunction} discusses the strongly coupled superconductor case.
 
 \co{A real system's material is not perfectly smooth and has impurities, and we can model this disorder by random onsite energy.}
 Perfectly ordered crystalline solids are characterized by a faultlessly regular arrangement of their atoms in a crystal lattice, yet, these do not occur in nature~\cite{Nolting1970}.
@@ -639,14 +639,24 @@ Using these equations, one can iterate the following steps until convergence has
 \item given the electrostatic potential $V(x, y, z)$, solving the Schrödinger equation [Eq.~\eqref{eq:schrodinger}] results in the energy spectrum $E$ and wave functions $\psi$,
 \item finally, using that the bands fill according to the Fermi distribution $f(E)$, we get the electronic density [Eq.~\eqref{eq:DOS}].
 \end{enumerate}
-Several works have solved this problem using certain approximations of the full system.
+Several works have solved this problem, however, always using certain approximations.
 For example, \cite{Vuik2016} does this in the long junction or weakly coupled regime for a translationally invariant slice of the system.
 Other works try to solve this problem for the short junction or strongly coupled regime, also only simulating the cross-section of the nanowire \cite{Antipov2018}, and/or by employing the Thomas-Fermi approximation~\cite{Mikkelsen2018,Winkler2019} (with which one can replace step 2.~and 3.~by using a scalar equation that returns the density $\rho$,) or by using other approximations~\cite{Escribano2017,Dominguez2017,Woods2018}.
 These works find that applying a voltage on external metal gates renormalizes several important physical parameters, such as the induced superconducting gap $\Delta_\textrm{ind}$ and the critical magnetic field $B_\textrm{c}$, and in turn, this means that the phase diagram changes.
 Due to the extreme computational complexity, no one has solved the full three-dimensional Schrödinger-Poisson problem, while treating the superconductor and semiconductor on equal footing.
 
-\co{Other improvements include a better model for a proximitized superconductor and more accurate SOC with k.p.}
+\co{The superconducting order parameter is assumed to be constant, however, it is not clear if this assumption is valid.}
+In most studies~\cite{Antipov2018,Winkler2019,Vuik2016,Nijholt2016,Winkler2017}, the superconducting order parameter $\Delta$ is assumed to be constant inside of the superconductor, even though an applied magnetic field might cause a spatial variation in $\Delta$.
+One possible reason for this is the Meissner effect, for which the vector potential inside the superconductor (below its critical temperature $T_\textrm{c}$) expels the magnetic field.
+When the applied magnetic field $B$ is large, vortices appear, which in the center have $\Delta=0$ and allow magnetic flux to penetrate the superconductor.
+In turn, this alters the induced superconducting gap $\Delta_\textrm{ind}$ locally, which ultimately leads to unwanted additional subgap states in the superconductor.
+Using the Ginzburg-Landau theory, it is possible to simulate this vortex formation.
+Section~\ref{sec:spin_orbit_supplemental_theory} investigates this for a NbTiN superconductor where the superconducting penetration depth $\lambda$ is approximately three times smaller than the thickness of the superconductor and find that the vortices that appear do not have a substantial effect on the size of the induced gap.
+However, the epitaxially grown aluminum is much thinner (typically $\approx \SI{10}{\nm}$).
+In this case, $\lambda$ is much larger, resulting in a uniform magnetic field inside the superconductor.
 
+
+\co{Spin-orbit coupling is a crucial to create Majoranas, we can model it better by using with k.p methods.}
 
 \newpage
 The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
