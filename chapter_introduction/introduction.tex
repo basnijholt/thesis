@@ -146,7 +146,7 @@ $V_{\bm{kl}}$  & interaction potential.\tabularnewline
 \end{tabular}
 
 The interaction term includes only the Cooper pairs, which consist of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum that can be denoted as $(\bm{\bm{k}}\uparrow,-\bm{k}\uparrow)$.
-Finding the ground state of this so-called pairing Hamiltonian is impossible; therefore, we have to make an approximation.  % XXX: is it really impossible?
+Finding the ground state of this so-called pairing Hamiltonian is impossible due to the high degrees of freedom; therefore, we have to make an approximation.  % XXX: check if this is true
 
 \co{We use the mean-field approximation and get the Bogoliubov-de Gennes Hamiltonian and get its spectrum.}
 A classic approximation scheme that describes the behavior of conventional superconductors remarkably well is the mean-field approximation.
@@ -607,7 +607,7 @@ Research has shown that both disorder in the semiconductor and at the semiconduc
 However, semiconductor nanowire with epitaxially grown aluminium \cite{Lutchyn2018,Krogstrup2015} minimize the disorder effects and have high-quality semiconductors and semiconductor-superconductor interfaces; however, its outer surface is oxidized and therefore strongly disordered.
 Scattering of the disordered superconducting boundary randomizes the quasiparticle's motion inside the superconductor.
 Fortunately, because of the large difference in the effective masses and Fermi energies between the semiconductor and the superconductor, as argued by the authors of \cite{Sticlet2017,Lutchyn2012,Liu2018}, disorder in the superconductor is not detrimental to the manipulation and observation of Majoranas, however, a more systematic numerical study is required.
-This problem is complex to study numerically because of the aforementioned high density differences, which means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al,~$\SI{0.1}{\AA}$.
+This problem is complex to study numerically because of the aforementioned high density differences, which means that the discretization in the superconductor has to be smaller than the Fermi wavelength of Al, $\approx \SI{0.1}{\AA}$.
 A full-scale three-dimensional simulation is therefore beyond what is currently feasible.
 Nevertheless, \cite{Antipov2018} simulates a slice of the proximitized nanowire, and finds that disorder strongly affects important quantities such as the induced gap $\Delta_\textrm{ind}$, the critical field $B_\textrm{c}$, and their dependence on the external gate voltage.
 
@@ -616,21 +616,36 @@ The model Hamiltonian Eq.~\eqref{eq:3D_Ham} has a constant chemical potential $\
 Experimentally, $\mu$ is set by the external metal gates that, when applying a voltage, will change the electrostatic environment inside the device.
 Therefore, we replace the static chemical potential by a spatially dependent electrostatic potential $\mu \rightarrow -V(x, y, z)$ in the Hamiltonian.
 Recent proposals of scalable designs for topological quantum computing with Majoranas rely on a precise electrostatic control.
-An good understanding of how the metal gates influence the electrostatic potential, is therefore required to interpret both existing Majorana experiments and future improved Majorana devices.
+A good understanding of how the metal gates influence the electrostatic potential is therefore required to interpret both existing Majorana experiments and future improved Majorana devices.
 One of the challenges is that the metal gates have band offsets in the 1-eV range, while a typical semiconductor's Fermi energy lies in the 1-meV range, three orders of magnitude difference~\cite{Armagnat2019}.
+Additionally, as mentioned in Sec.~\ref{sec:braiding}, the BCS mean-field approximation breaks charge conservation.
 We can formulate the quantum-electrostatic problem as a solution of three equations solved self-consistently.
+We have the Schrödinger equation
+\begin{equation}
+H_\textrm{BdG} \psi = E \psi,\label{eq:schrodinger}
+\end{equation}
+the Poisson equation
+\begin{equation}
+\nabla^2 \varphi = -\frac{\rho }{\varepsilon},\label{eq:poisson}
+\end{equation}
+where $\varepsilon$ is the permittivity, and the density of states is
+\begin{equation}
+\rho = e \int dE \rho_i(E) f(E),\label{eq:DOS}
+\end{equation}
+where $f(E)$ is the Fermi distribution and $\rho_i(E) \equiv \frac{1}{2\pi} \sum_\alpha {\left| \psi_{\alpha E}(i) \right|}^2$ the local density of states.
+Using these equations, one can iterate the following steps until convergence has been reached:
 \begin{enumerate}
-\item Given the electronic density, solving the Poisson equation results in the electrostatic potential.
-\item Given the electrostatic potential, solving the Schrödinger equation results in the energy spectrum and wave functions.
-\item Finally, using that the bands fill according to the Fermi distribution, we get the electronic density.
+\item given the electronic density, solving the Poisson equation [Eq.~\eqref{eq:poisson}] results in the electrostatic potential,
+\item given the electrostatic potential $V(x, y, z)$, solving the Schrödinger equation [Eq.~\eqref{eq:schrodinger}] results in the energy spectrum $E$ and wave functions $\psi$,
+\item finally, using that the bands fill according to the Fermi distribution $f(E)$, we get the electronic density [Eq.~\eqref{eq:DOS}].
 \end{enumerate}
-% This 
-% The el
-% To find the electrostatic potential, a self-consistent problem needs to be solved, iterating between 
-% Initial studies Vuik2016: 10.1088/1367-2630/18/3/
+Several works have solved this problem using certain approximations of the full system.
+For example, \cite{Vuik2016} does this in the long junction or weakly coupled regime for a translationally invariant slice of the system.
+Other works try to solve this problem for the short junction or strongly coupled regime also only simulating the cross-section of the nanowire \cite{Antipov2018} and/or by employing the Thomas-Fermi approximation~\cite{Mikkelsen2018,Winkler2019} (with which one can replace step 2.~and 3.~by using a scalar equation that returns the density $\rho$,) or by using other approximantions~\cite{Escribano2017,Dominguez2017,Woods2018}.
+These works find that applying a voltage on external metal gates renormalizes several important physical parameters, such as the induced superconducting gap $\Delta_\textrm{ind}$ and the critical magnetic field $B_\textrm{c}$.
+Due to the extreme computational complexity, no one has solved the full three-dimensional Schrödinger-Poisson problem, while treating the superconductor and semiconductor on equal footing.
 
-
-
+\newpage
 The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
 
 \begin{figure}
