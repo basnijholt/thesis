@@ -12,8 +12,8 @@ import yaml
 from crossref.restful import Etiquette, Works
 from tqdm import tqdm
 
-CROSSREF_DATABASE = "crossref.pickle"
-DOI2BIB_DATABASE = "bibs.pickle"
+CROSSREF_DATABASE = "yaml2bib-crossref.db"
+DOI2BIB_DATABASE = "yaml2bib-doi2bib.db"
 
 works = Works(etiquette=Etiquette("publist", contact_email="basnijholt@gmail.com"))
 
