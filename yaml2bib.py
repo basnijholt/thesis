@@ -234,6 +234,21 @@ if __name__ == "__main__":
         help="static bib entries, may contain wildcards (*) (default: 'chapter_*/not_on_crossref.bib')",
     )
 
+    parser.add_argument(
+        "--doi2bib_database",
+        default="yaml2bib-doi2bib.db",
+        help="doi2bib database folder to not query doi.org more than needed",
+    )
+    parser.add_argument(
+        "--crossref_database",
+        default="yaml2bib-crossref.db",
+        help="crossref database folder to not query crossref.org more than needed",
+    )
+    parser.add_argument(
+        "--email",
+        default="basnijholt@gmail.com",
+        help="email for crossref.org, such that one can make more API calls without getting blocked",
+    )
     args = parser.parse_args()
 
     main(
@@ -241,7 +256,7 @@ if __name__ == "__main__":
         dois_yaml=args.dois_yaml,
         replacements_yaml=args.replacements_yaml,
         static_bib=args.static_bib,
-        doi2bib_database="yaml2bib-doi2bib.db",  # XXX: add to parser
-        crossref_database="yaml2bib-crossref.db",  # XXX: add to parser
-        email="basnijholt@gmail.com",  # XXX: add to parser
+        doi2bib_database=args.doi2bib_database,
+        crossref_database=args.crossref_database,
+        email=args.email,
     )
