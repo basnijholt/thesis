@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import inspect
 import operator
 import sys
@@ -277,7 +276,17 @@ def change_hopping_at_interface(syst, template, shape1, shape2):
 
 
 @memoize
-def make_lead(a, r1, r2, coverage_angle, angle, with_shell, which_lead, sc_inside_wire=False, wraparound=False):
+def make_lead(
+    a,
+    r1,
+    r2,
+    coverage_angle,
+    angle,
+    with_shell,
+    which_lead,
+    sc_inside_wire=False,
+    wraparound=False,
+):
     """Create an infinite cylindrical 3D wire partially covered with a
     superconducting (SC) shell.
 
@@ -484,7 +493,7 @@ def gap_from_modes(lead, params, tol=1e-6):
     return gap
 
 
-def phase_bounds_operator(lead, params, k_x=0, mu_param='mu'):
+def phase_bounds_operator(lead, params, k_x=0, mu_param="mu"):
     params = dict(params, k_x=k_x)
     params[mu_param] = 0
     h_k = lead.hamiltonian_submatrix(params=params, sparse=True)
@@ -493,7 +502,7 @@ def phase_bounds_operator(lead, params, k_x=0, mu_param='mu'):
     return _operator
 
 
-def find_phase_bounds(lead, params, k_x=0, num_bands=20, sigma=0, mu_param='mu'):
+def find_phase_bounds(lead, params, k_x=0, num_bands=20, sigma=0, mu_param="mu"):
     """Find the phase boundaries.
     Solve an eigenproblem that finds values of chemical potential at which the
     gap closes at momentum k=0. We are looking for all real solutions of the
