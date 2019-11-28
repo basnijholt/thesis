@@ -16,7 +16,7 @@ from tqdm import tqdm
 works = Works(etiquette=Etiquette("publist", contact_email="basnijholt@gmail.com"))
 
 
-def get_pages(data, works=works):
+def pages_from_crossref(data, works=works):
     try:
         page = data["article-number"]
     except KeyError:
@@ -27,7 +27,7 @@ def get_pages(data, works=works):
     return page
 
 
-def get_journal(data, works=works):
+def journal_from_crossref(data, works=works):
     return data["container-title"][0], data["short-container-title"][0]
 
 
@@ -45,9 +45,8 @@ def cached_crossref(doi: str) -> str:
 def replace_key(
     key: str, data, bib_entry: str, replacements: List[Tuple[str, str]]
 ) -> str:
-    bib_type, *_ = bib_entry.split("{")
-    _, *rest = bib_entry.split(",")
-    bib_context = ",".join(rest)
+    bib_type = bib_entry.split("{")[0]
+    bib_context = bib_entry.split(",", maxsplit=1)[1]
     # Now only modify `bib_context` because we don't want to touch the key.
 
     # XXX: I am not sure whether these substitutions are needed.
@@ -55,14 +54,14 @@ def replace_key(
     to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
 
     for old, new in to_replace:
+        bib_context = bib_context.replace(old, new)
         bib_context = bib_context.replace(old.upper(), new.upper())
-        bib_context = bib_context.replace(old.lower(), new.lower())
 
     to_replace += replacements
 
     with contextlib.suppress(Exception):
         # Use the journal abbrv. from crossref, not used if hard coded.
-        to_replace.append(get_journal(data))
+        to_replace.append(journal_from_crossref(data))
 
     for old, new in to_replace:
         bib_context = bib_context.replace(old, new)
@@ -72,7 +71,7 @@ def replace_key(
     if "pages = {" not in result:
         # Add the page number if it's missing
         with contextlib.suppress(Exception):
-            pages = get_pages(data)
+            pages = pages_from_crossref(data)
             lines = result.split("\n")
             lines.insert(2, f"\tpages = {{{pages}}},")
             result = "\n".join(lines)
@@ -120,11 +119,12 @@ def combine_yamls(pathname: str) -> Dict[str, str]:
     return dois
 
 
-def parse_yaml(pathname: str) -> Dict[str, str]:
-    if os.path.isfile(pathname):
-        return yaml.safe_load(pathname)
+def parse_doi_yaml(fname: str) -> Dict[str, str]:
+    if os.path.isfile(fname):
+        with open(fname) as f:
+            return yaml.safe_load(f)
     else:
-        return combine_yamls(pathname)
+        return combine_yamls(fname)
 
 
 def parse_replacements_yaml(fname: Optional[str]) -> List[Tuple[str, str]]:
@@ -163,7 +163,7 @@ def static_bib_entries(pathname: str) -> List[str]:
         return glob.glob(pathname)
 
 
-def get_bib_entries(dois, replacements: List[Tuple[str, str]]):
+def get_bib_entries(dois: Dict[str, str], replacements: List[Tuple[str, str]]):
     return [
         replace_key(
             key,
@@ -176,7 +176,7 @@ def get_bib_entries(dois, replacements: List[Tuple[str, str]]):
 
 
 if __name__ == "__main__":
-    dois = parse_yaml("*/*yaml")
+    dois = parse_doi_yaml("*/*.yaml")
     replacements = parse_replacements_yaml("replacements.yaml")
     entries = get_bib_entries(dois, replacements)
     bib_files = static_bib_entries("chapter_*/not_on_crossref.bib")
