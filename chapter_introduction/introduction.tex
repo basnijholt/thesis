@@ -646,15 +646,15 @@ These works find that applying a voltage on external metal gates renormalizes se
 Due to the extreme computational complexity, no one has solved the full three-dimensional Schrödinger-Poisson problem, while treating the superconductor and semiconductor on equal footing.
 
 \co{The superconducting order parameter is assumed to be constant, however, it is not clear if this assumption is valid.}
-In most studies~\cite{Antipov2018,Winkler2019,Vuik2016,Nijholt2016,Winkler2017}, the superconducting order parameter $\Delta$ is assumed to be constant inside of the superconductor, even though an applied magnetic field might cause a spatial variation in both $\Delta$'s phase $\phi$ and amplitude.
-One possible reason for this is the Meissner effect, for which the vector potential inside the superconductor (below its critical temperature $T_\textrm{c}$) expels the magnetic field.
+In most studies~\cite{Antipov2018,Winkler2019,Vuik2016,Nijholt2016,Winkler2017}, the superconducting order parameter $\Delta$ is assumed to be constant inside the superconductor, even though an applied magnetic field might cause a spatial variation in both $\Delta$'s phase $\phi$ and amplitude.
+One possible reason for this is the Meissner effect, where the superconductor (below its critical temperature $T_\textrm{c}$) develops a supercurrent and expels the magnetic field.
 When the applied magnetic field $B$ is large, vortices appear, which in the center have $\Delta=0$ and allow magnetic flux to penetrate the superconductor.
-In turn, this alters the induced superconducting gap $\Delta_\textrm{ind}$ locally, which ultimately leads to unwanted additional subgap states in the superconductor.
-Using the Ginzburg-Landau theory, it is possible to simulate this vortex formation.
+In turn, this suppresses the induced superconducting gap $\Delta_\textrm{ind}$ locally, which creates unwanted subgap states in the superconductor.
+Ginzburg-Landau theory captures vortex formation.
 Section~\ref{sec:spin_orbit_supplemental_theory} investigates this for a NbTiN superconductor where the superconducting penetration depth $\lambda$ is approximately three times smaller than the thickness of the superconductor and find that the vortices that appear do not have a substantial effect on the size of the induced gap.
 However, the epitaxially grown aluminum is much thinner (typically $\approx \SI{10}{\nm}$).
 In this case, $\lambda$ is much larger, resulting in a uniform magnetic field inside the superconductor.
-Here, the orbital effect of magnetic field has to be treated properly which is done by the authors of \cite{Winkler2019,Wojcik2018}, as discussed earlier.
+Here, the orbital effect of the magnetic field needs to be adequately treated, which is done by the authors of \cite{Winkler2019,Wojcik2018}, as discussed earlier.
 In principle, the amplitude $\left| \Delta \right|$ is also spatially dependent, and can be solved self-consistently as it often done in ferromagnetic chains on superconductors~\cite{Awoga2017,Sacramento2007}.
 However, in the case of hybrid semiconductor-superconductor systems, it is shown that this effect is less significant~\cite{Awoga2019}.
 
