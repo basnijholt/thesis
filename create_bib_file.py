@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Convert a yaml file to bib."""
 
 import contextlib
@@ -106,8 +107,10 @@ def cached_doi2bib(doi: str) -> str:
             return text
         text = doi2bib(doi)
         if text != "" and "<html>" not in text:
-            print(f"Succesfully got '{doi}'")
+            print(f"Succesfully got '{doi}' 🎉")
             cache[doi] = text
+        else:
+            print(f"Failed on '{doi}' 😢")
         return text
 
 
@@ -193,9 +196,36 @@ def main(bib_fname, dois_yaml, replacements_yaml, static_bib):
 
 
 if __name__ == "__main__":
+
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Process some integers.")
+    parser.add_argument(
+        "--bib_fname",
+        default="dissertation.bib",
+        help="output file (default: 'dissertation.bib')",
+    )
+    parser.add_argument(
+        "--dois_yaml",
+        default="*/*.yaml",
+        help="`key: doi` yaml, may contain wildcards (*) (default: '*/*.yaml')",
+    )
+    parser.add_argument(
+        "--replacements_yaml",
+        default="replacements.yaml",
+        help="replacements to perform, might be None (default: 'replacements.yaml')",
+    )
+    parser.add_argument(
+        "--static_bib",
+        default="chapter_*/not_on_crossref.bib",
+        help="static bib entries, may contain wildcards (*) (default: 'chapter_*/not_on_crossref.bib')",
+    )
+
+    args = parser.parse_args()
+
     main(
-        bib_fname="dissertation.bib",  # output file
-        dois_yaml="*/*.yaml",  # `key: doi` yaml, may contain wildcards (*)
-        replacements_yaml="replacements.yaml",  # replacements to perform
-        static_bib="chapter_*/not_on_crossref.bib",  # static bib entries, may contain wildcards (*)
+        bib_fname=args.bib_fname,
+        dois_yaml=args.dois_yaml,
+        replacements_yaml=args.replacements_yaml,
+        static_bib=args.static_bib,
     )
