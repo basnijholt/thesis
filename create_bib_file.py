@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a yaml file to bib."""
+"""Convert a yaml file to bib file with the correct journal abbreviations."""
 
 import contextlib
 import functools
@@ -199,7 +199,9 @@ if __name__ == "__main__":
 
     import argparse
 
-    parser = argparse.ArgumentParser(description="Process some integers.")
+    parser = argparse.ArgumentParser(
+        description="Convert a yaml file to bib file with the correct journal abbreviations."
+    )
     parser.add_argument(
         "--bib_fname",
         default="dissertation.bib",
