@@ -161,8 +161,10 @@ def write_output(entries: List[str], bib_files: List[str], bib_fname: str) -> No
             outfile.write("\n")
 
 
-def static_bib_entries(pathname: str) -> List[str]:
-    if os.path.isfile(pathname):
+def static_bib_entries(pathname: Optional[str]) -> List[str]:
+    if pathname is None:
+        return []
+    elif os.path.isfile(pathname):
         return [pathname]
     else:
         return glob.glob(pathname)
@@ -190,8 +192,8 @@ def get_bib_entries(
 def main(
     bib_fname: str,
     dois_yaml: str,
-    replacements_yaml: str,
-    static_bib: str,
+    replacements_yaml: Optional[str],
+    static_bib: Optional[str],
     doi2bib_database: str,
     crossref_database: str,
     email: str,
@@ -216,38 +218,38 @@ if __name__ == "__main__":
     parser.add_argument(
         "--bib_fname",
         default="dissertation.bib",
-        help="output file (default: 'dissertation.bib')",
+        help="Output file (default: 'dissertation.bib').",
     )
     parser.add_argument(
         "--dois_yaml",
         default="*/*.yaml",
-        help="`key: doi` yaml, may contain wildcards (*) (default: '*/*.yaml')",
+        help="The `key: doi` YAML file, may contain wildcards (*) (default: '*/*.yaml').",
     )
     parser.add_argument(
         "--replacements_yaml",
         default="replacements.yaml",
-        help="replacements to perform, might be None (default: 'replacements.yaml')",
+        help="Replacements to perform, might be None (default: 'replacements.yaml').",
     )
     parser.add_argument(
         "--static_bib",
         default="chapter_*/not_on_crossref.bib",
-        help="static bib entries, may contain wildcards (*) (default: 'chapter_*/not_on_crossref.bib')",
+        help="Static bib entries, might be None, may contain wildcards (*) (default: 'chapter_*/not_on_crossref.bib').",
     )
 
     parser.add_argument(
         "--doi2bib_database",
         default="yaml2bib-doi2bib.db",
-        help="doi2bib database folder to not query doi.org more than needed",
+        help="The doi2bib database folder 📁 to not query doi.org more than needed.",
     )
     parser.add_argument(
         "--crossref_database",
         default="yaml2bib-crossref.db",
-        help="crossref database folder to not query crossref.org more than needed",
+        help="The Crossref database folder 📁 to not query crossref.org more than needed.",
     )
     parser.add_argument(
         "--email",
         default="basnijholt@gmail.com",
-        help="email for crossref.org, such that one can make more API calls without getting blocked",
+        help="E-mail 📧 for crossref.org, such that one can make more API calls without getting blocked.",
     )
     args = parser.parse_args()
 
