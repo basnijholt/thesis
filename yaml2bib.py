@@ -6,14 +6,14 @@ import glob
 import os
 from typing import Dict, List, Optional, Tuple
 
+import crossref.restful
 import diskcache
 import requests
 import yaml
-from crossref.restful import Etiquette, Works
 from tqdm import tqdm
 
 
-def pages_from_crossref(data, works: Works) -> str:
+def pages_from_crossref(data, works: crossref.restful.Works) -> str:
     try:
         page = data["article-number"]
     except KeyError:
@@ -24,11 +24,11 @@ def pages_from_crossref(data, works: Works) -> str:
     return page
 
 
-def journal_from_crossref(data, works: Works) -> Tuple[str, str]:
+def journal_from_crossref(data, works: crossref.restful.Works) -> Tuple[str, str]:
     return data["container-title"][0], data["short-container-title"][0]
 
 
-def cached_crossref(doi: str, works: Works, database: str) -> str:
+def cached_crossref(doi: str, works: crossref.restful.Works, database: str) -> str:
     """Look up if this has previously been called."""
     with diskcache.Cache(database) as cache:
         info = cache.get(doi)
@@ -52,7 +52,11 @@ def replace_special_letters(x):
 
 
 def replace_key(
-    key: str, data, bib_entry: str, replacements: List[Tuple[str, str]], works: Works,
+    key: str,
+    data,
+    bib_entry: str,
+    replacements: List[Tuple[str, str]],
+    works: crossref.restful.Works,
 ) -> str:
     bib_type = bib_entry.split("{")[0]
     bib_context = bib_entry.split(",", maxsplit=1)[1]
@@ -175,7 +179,7 @@ def get_bib_entries(
     replacements: List[Tuple[str, str]],
     doi2bib_database: str,
     crossref_database: str,
-    works: Works,
+    works: crossref.restful.Works,
 ) -> List[str]:
     return [
         replace_key(
@@ -198,7 +202,8 @@ def main(
     crossref_database: str,
     email: str,
 ) -> None:
-    works = Works(etiquette=Etiquette("publist", contact_email=email))
+    etiquette = crossref.restful.Etiquette("publist", contact_email=email)
+    works = crossref.restful.Works(etiquette=etiquette)
     dois = parse_doi_yaml(dois_yaml)
     replacements = parse_replacements_yaml(replacements_yaml)
     entries = get_bib_entries(
