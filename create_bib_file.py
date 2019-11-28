@@ -2,10 +2,8 @@
 """Convert a yaml file to bib file with the correct journal abbreviations."""
 
 import contextlib
-import functools
 import glob
 import os
-from concurrent.futures import ThreadPoolExecutor
 from typing import Dict, List, Optional, Tuple
 
 import diskcache
