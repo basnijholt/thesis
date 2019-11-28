@@ -13,6 +13,9 @@ import yaml
 from crossref.restful import Etiquette, Works
 from tqdm import tqdm
 
+CROSSREF_DATABASE = "crossref.pickle"
+DOI2BIB_DATABASE = "bibs.pickle"
+
 works = Works(etiquette=Etiquette("publist", contact_email="basnijholt@gmail.com"))
 
 
@@ -33,13 +36,25 @@ def journal_from_crossref(data, works=works):
 
 def cached_crossref(doi: str) -> str:
     """Look up if this has previously been called."""
-    with diskcache.Cache("crossref.pickle") as cache:
+    with diskcache.Cache(CROSSREF_DATABASE) as cache:
         info = cache.get(doi)
         if info is not None:
             return info
         info = works.doi(doi)
         cache[doi] = info
         return info
+
+
+def replace_special_letters(x):
+    # XXX: I am not sure whether these substitutions are needed.
+    # the problem seemed to be the utf-8 `requests.get` encoding.
+    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
+
+    for old, new in to_replace:
+        x = x.replace(old, new)
+        x = x.replace(old.upper(), new.upper())
+
+    return x
 
 
 def replace_key(
@@ -49,15 +64,9 @@ def replace_key(
     bib_context = bib_entry.split(",", maxsplit=1)[1]
     # Now only modify `bib_context` because we don't want to touch the key.
 
-    # XXX: I am not sure whether these substitutions are needed.
-    # the problem seemed to be the utf-8 `requests.get` encoding.
-    to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
+    bib_context = replace_special_letters(bib_context)
 
-    for old, new in to_replace:
-        bib_context = bib_context.replace(old, new)
-        bib_context = bib_context.replace(old.upper(), new.upper())
-
-    to_replace += replacements
+    to_replace = replacements.copy()
 
     with contextlib.suppress(Exception):
         # Use the journal abbrv. from crossref, not used if hard coded.
@@ -91,12 +100,12 @@ def doi2bib(doi: str) -> str:
 
 def cached_doi2bib(doi: str) -> str:
     """Look up if this has previously been called."""
-    with diskcache.Cache("bibs.pickle") as cache:
+    with diskcache.Cache(DOI2BIB_DATABASE) as cache:
         text = cache.get(doi)
         if text is not None:
             return text
         text = doi2bib(doi)
-        if text is not "" and "<html>" not in text:
+        if text != "" and "<html>" not in text:
             print(f"Succesfully got '{doi}'")
             cache[doi] = text
         return text
@@ -150,7 +159,7 @@ def write_output(entries: List[str], bib_files: List[str], bib_fname: str) -> No
         outfile.write("\n% Below is from all `yaml` files.\n\n")
         for e in entries:
             for line in e.split("\n"):
-                # Remove the url line
+                # Remove the url line because LaTeX creates it from the DOI
                 if "url = {" not in line:
                     outfile.write(f"{line}\n")
             outfile.write("\n")
@@ -175,9 +184,18 @@ def get_bib_entries(dois: Dict[str, str], replacements: List[Tuple[str, str]]):
     ]
 
 
-if __name__ == "__main__":
-    dois = parse_doi_yaml("*/*.yaml")
-    replacements = parse_replacements_yaml("replacements.yaml")
+def main(bib_fname, dois_yaml, replacements_yaml, static_bib):
+    dois = parse_doi_yaml(dois_yaml)
+    replacements = parse_replacements_yaml(replacements_yaml)
     entries = get_bib_entries(dois, replacements)
-    bib_files = static_bib_entries("chapter_*/not_on_crossref.bib")
-    write_output(entries, bib_files, bib_fname="dissertation.bib")
+    bib_files = static_bib_entries(static_bib)
+    write_output(entries, bib_files, bib_fname)
+
+
+if __name__ == "__main__":
+    main(
+        bib_fname="dissertation.bib",  # output file
+        dois_yaml="*/*.yaml",  # `key: doi` yaml, may contain wildcards (*)
+        replacements_yaml="replacements.yaml",  # replacements to perform
+        static_bib="chapter_*/not_on_crossref.bib",  # static bib entries, may contain wildcards (*)
+    )
