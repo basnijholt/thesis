@@ -1,8 +1,11 @@
+"""Convert a yaml file to bib."""
+
 import contextlib
 import functools
 import glob
 import os
 from concurrent.futures import ThreadPoolExecutor
+from typing import Dict, List, Optional, Tuple
 
 import diskcache
 import requests
@@ -10,74 +13,7 @@ import yaml
 from crossref.restful import Etiquette, Works
 from tqdm import tqdm
 
-bibs = [f for f in glob.glob("*/*yaml") if "tmp.yaml" not in f]
-bib_files = glob.glob("chapter_*/not_on_crossref.bib")
-output = "dissertation.bib"
-
 works = Works(etiquette=Etiquette("publist", contact_email="basnijholt@gmail.com"))
-
-TO_REPLACE = [
-    (r"a{\r}", r"\r{a}"),  # "Nyga{\r}rd" -> "Nyg\r{a}rd", bug in doi.org
-    ("Josephson", "{J}osephson"),
-    ("Majorana", "{M}ajorana"),
-    ("Andreev", "{A}ndreev"),
-    ("Kramers", "{K}ramers"),
-    ("Kitaev", "{K}itaev"),
-    (
-        r"metastable0and$\uppi$states",
-        r"metastable $0$ and $\pi$ states",
-    ),  # fix for 10.1103/physrevb.63.214512
-    (
-        r"Land{\'{e}}{gFactors}",
-        r"Land{\'{e}} {$g$} Factors",
-    ),  # fix for PhysRevLett.96.026804
-    (
-        r"apx$\mathplus$ipysuperconductor",
-        r"a $p_x + i p_y$ superconductor",
-    ),  # fix for 10.1103/physrevb.73.220502
-    (
-        r"apx$\mathplus${ipySuperfluid}",
-        r"$p_x + i p_y$ superfluid",
-    ),  # fix for 10.1103/physrevlett.98.010506
-]
-
-
-JOURNALS = [
-    ("Advanced Materials", "Adv. Mater."),
-    ("Annals of Physics", "Ann. Phys."),
-    ("Applied Physics Letters", "Appl. Phys. Lett."),
-    ("JETP Lett", "JETP Lett."),
-    ("Journal de Physique", "J. Phys."),
-    ("Journal of Computational Physics", "J. Comput. Phys."),
-    ("Journal of Experimental and Theoretical Physics", "J. Exp. Theor. Phys."),
-    ("Journal of Low Temperature Physics", "J. Low Temp. Phys."),
-    ("Journal of Physics A: Mathematical and Theoretical", "J. Phys. A: Math. Theor."),
-    ("Journal of Physics: Condensed Matter", "J. Phys.: Condens. Matter"),
-    ("Nano Letters", "Nano Lett."),
-    ("Nature Communications", "Nat. Commun."),
-    ("Nature Materials", "Nat. Mater."),
-    ("Nature Nanotechnology", "Nat. Nanotechnol."),
-    ("Nature Physics", "Nat. Phys."),
-    ("New Journal of Physics", "New J. Phys."),
-    ("Physical Review B", "Phys. Rev. B"),
-    ("Physical Review Letters", "Phys. Rev. Lett."),
-    ("Physical Review X", "Phys. Rev. X"),
-    ("Physical Review", "Phys. Rev."),  # should be before the above subs
-    ("Physics-Uspekhi", "Phys. Usp."),
-    ("Reports on Progress in Physics", "Rep. Prog. Phys."),
-    ("Review of Scientific Instruments", "Rev. Sci. Instrum."),
-    ("Reviews of Modern Physics", "Rev. Mod. Phys."),
-    ("Science Advances", "Sci. Adv."),
-    ("Scientific Reports", "Sci. Rep."),
-    ("Semiconductor Science and Technology", "Semicond. Sci. Technol."),
-    ("Annual Review of Condensed Matter Physics", "Annu. Rev. Condens. Matter Phys."),
-    ("{EPL} (Europhysics Letters)", "{EPL}"),
-    ("Nature Reviews Materials", "Nat. Rev. Mater."),
-    ("Physics Letters", "Phys. Lett."),
-    ("The European Physical Journal B", "Eur. Phys. J. B"),
-    ("{SIAM} Journal on Numerical Analysis", "{SIAM} J. Numer. Anal."),
-    ("{AIP} Conference Proceedings", "{AIP} Conf. Proc."),
-]
 
 
 def get_pages(data, works=works):
@@ -95,7 +31,7 @@ def get_journal(data, works=works):
     return data["container-title"][0], data["short-container-title"][0]
 
 
-def cached_crossref(doi):
+def cached_crossref(doi: str) -> str:
     """Look up if this has previously been called."""
     with diskcache.Cache("crossref.pickle") as cache:
         info = cache.get(doi)
@@ -106,30 +42,32 @@ def cached_crossref(doi):
         return info
 
 
-def replace_key(key, data, bib_entry):
+def replace_key(
+    key: str, data, bib_entry: str, replacements: List[Tuple[str, str]]
+) -> str:
     bib_type, *_ = bib_entry.split("{")
     _, *rest = bib_entry.split(",")
-    rest = ",".join(rest)
-    # Now only modify `rest` because we don't want to touch the key.
+    bib_context = ",".join(rest)
+    # Now only modify `bib_context` because we don't want to touch the key.
 
     # XXX: I am not sure whether these substitutions are needed.
     # the problem seemed to be the utf-8 `requests.get` encoding.
     to_replace = [("ö", r"\"{o}"), ("ü", r"\"{u}"), ("ë", r"\"{e}"), ("ï", r"\"{i}")]
 
     for old, new in to_replace:
-        rest = rest.replace(old.upper(), new.upper())
-        rest = rest.replace(old.lower(), new.lower())
+        bib_context = bib_context.replace(old.upper(), new.upper())
+        bib_context = bib_context.replace(old.lower(), new.lower())
 
-    to_replace += TO_REPLACE + JOURNALS  # hard coded abbrvs
+    to_replace += replacements
 
     with contextlib.suppress(Exception):
         # Use the journal abbrv. from crossref, not used if hard coded.
         to_replace.append(get_journal(data))
 
     for old, new in to_replace:
-        rest = rest.replace(old, new)
+        bib_context = bib_context.replace(old, new)
 
-    result = bib_type + "{" + key + "," + rest
+    result = bib_type + "{" + key + "," + bib_context
 
     if "pages = {" not in result:
         # Add the page number if it's missing
@@ -142,7 +80,7 @@ def replace_key(key, data, bib_entry):
     return result
 
 
-def doi2bib(doi):
+def doi2bib(doi: str) -> str:
     """Return a bibTeX string of metadata for a given DOI."""
     print(f"Requesting {doi}")
     url = "http://dx.doi.org/" + doi
@@ -152,7 +90,7 @@ def doi2bib(doi):
     return r.text
 
 
-def cached_doi2bib(doi):
+def cached_doi2bib(doi: str) -> str:
     """Look up if this has previously been called."""
     with diskcache.Cache("bibs.pickle") as cache:
         text = cache.get(doi)
@@ -165,11 +103,9 @@ def cached_doi2bib(doi):
         return text
 
 
-if __name__ == "__main__":
-    print("Reading: ", bibs)
-
-    mapping = {}
-    for fname in bibs:
+def combine_yamls(pathname: str) -> Dict[str, str]:
+    mapping: Dict[str, str] = {}
+    for fname in glob.glob(pathname):
         with open(fname) as f:
             for k, v in yaml.safe_load(f).items():
                 # Check that there are no duplicate keys with different DOIs.
@@ -181,13 +117,31 @@ if __name__ == "__main__":
                     mapping[k] = v
 
     dois = dict(sorted(mapping.items()))
+    return dois
 
-    entries = [
-        replace_key(key, data=cached_crossref(doi), bib_entry=cached_doi2bib(doi))
-        for key, doi in tqdm(dois.items())
-    ]
 
-    with open(output, "w") as outfile:
+def parse_yaml(pathname: str) -> Dict[str, str]:
+    if os.path.isfile(pathname):
+        return yaml.safe_load(pathname)
+    else:
+        return combine_yamls(pathname)
+
+
+def parse_replacements_yaml(fname: Optional[str]) -> List[Tuple[str, str]]:
+    if fname is None:
+        return []
+
+    with open(fname) as f:
+        d = yaml.safe_load(f)
+    all_replacements = []
+    for replacements in d.values():
+        for k, v in replacements.items():
+            all_replacements.append((k, v))
+    return all_replacements
+
+
+def write_output(entries: List[str], bib_files: List[str], bib_fname: str) -> None:
+    with open(bib_fname, "w") as outfile:
         outfile.write("@preamble{ {\\providecommand{\\BIBYu}{Yu} } }\n\n")
         for fname in bib_files:
             outfile.write(f"\n% Below is from `{fname}`.\n\n")
@@ -200,3 +154,30 @@ if __name__ == "__main__":
                 if "url = {" not in line:
                     outfile.write(f"{line}\n")
             outfile.write("\n")
+
+
+def static_bib_entries(pathname: str) -> List[str]:
+    if os.path.isfile(pathname):
+        return [pathname]
+    else:
+        return glob.glob(pathname)
+
+
+def get_bib_entries(dois, replacements: List[Tuple[str, str]]):
+    return [
+        replace_key(
+            key,
+            data=cached_crossref(doi),
+            bib_entry=cached_doi2bib(doi),
+            replacements=replacements,
+        )
+        for key, doi in tqdm(dois.items())
+    ]
+
+
+if __name__ == "__main__":
+    dois = parse_yaml("*/*yaml")
+    replacements = parse_replacements_yaml("replacements.yaml")
+    entries = get_bib_entries(dois, replacements)
+    bib_files = static_bib_entries("chapter_*/not_on_crossref.bib")
+    write_output(entries, bib_files, bib_fname="dissertation.bib")
