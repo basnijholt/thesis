@@ -12,13 +12,8 @@ import yaml
 from crossref.restful import Etiquette, Works
 from tqdm import tqdm
 
-CROSSREF_DATABASE = "yaml2bib-crossref.db"
-DOI2BIB_DATABASE = "yaml2bib-doi2bib.db"
 
-works = Works(etiquette=Etiquette("publist", contact_email="basnijholt@gmail.com"))
-
-
-def pages_from_crossref(data, works=works):
+def pages_from_crossref(data, works: Works) -> str:
     try:
         page = data["article-number"]
     except KeyError:
@@ -29,13 +24,13 @@ def pages_from_crossref(data, works=works):
     return page
 
 
-def journal_from_crossref(data, works=works):
+def journal_from_crossref(data, works: Works) -> Tuple[str, str]:
     return data["container-title"][0], data["short-container-title"][0]
 
 
-def cached_crossref(doi: str) -> str:
+def cached_crossref(doi: str, works: Works, database: str) -> str:
     """Look up if this has previously been called."""
-    with diskcache.Cache(CROSSREF_DATABASE) as cache:
+    with diskcache.Cache(database) as cache:
         info = cache.get(doi)
         if info is not None:
             return info
@@ -57,7 +52,7 @@ def replace_special_letters(x):
 
 
 def replace_key(
-    key: str, data, bib_entry: str, replacements: List[Tuple[str, str]]
+    key: str, data, bib_entry: str, replacements: List[Tuple[str, str]], works: Works,
 ) -> str:
     bib_type = bib_entry.split("{")[0]
     bib_context = bib_entry.split(",", maxsplit=1)[1]
@@ -69,7 +64,7 @@ def replace_key(
 
     with contextlib.suppress(Exception):
         # Use the journal abbrv. from crossref, not used if hard coded.
-        to_replace.append(journal_from_crossref(data))
+        to_replace.append(journal_from_crossref(data, works))
 
     for old, new in to_replace:
         bib_context = bib_context.replace(old, new)
@@ -79,7 +74,7 @@ def replace_key(
     if "pages = {" not in result:
         # Add the page number if it's missing
         with contextlib.suppress(Exception):
-            pages = pages_from_crossref(data)
+            pages = pages_from_crossref(data, works)
             lines = result.split("\n")
             lines.insert(2, f"\tpages = {{{pages}}},")
             result = "\n".join(lines)
@@ -97,9 +92,9 @@ def doi2bib(doi: str) -> str:
     return r.text
 
 
-def cached_doi2bib(doi: str) -> str:
+def cached_doi2bib(doi: str, database: str) -> str:
     """Look up if this has previously been called."""
-    with diskcache.Cache(DOI2BIB_DATABASE) as cache:
+    with diskcache.Cache(database) as cache:
         text = cache.get(doi)
         if text is not None:
             return text
@@ -173,22 +168,40 @@ def static_bib_entries(pathname: str) -> List[str]:
         return glob.glob(pathname)
 
 
-def get_bib_entries(dois: Dict[str, str], replacements: List[Tuple[str, str]]):
+def get_bib_entries(
+    dois: Dict[str, str],
+    replacements: List[Tuple[str, str]],
+    doi2bib_database: str,
+    crossref_database: str,
+    works: Works,
+) -> List[str]:
     return [
         replace_key(
             key,
-            data=cached_crossref(doi),
-            bib_entry=cached_doi2bib(doi),
+            data=cached_crossref(doi, works, crossref_database),
+            bib_entry=cached_doi2bib(doi, doi2bib_database),
             replacements=replacements,
+            works=works,
         )
         for key, doi in tqdm(dois.items())
     ]
 
 
-def main(bib_fname, dois_yaml, replacements_yaml, static_bib):
+def main(
+    bib_fname: str,
+    dois_yaml: str,
+    replacements_yaml: str,
+    static_bib: str,
+    doi2bib_database: str,
+    crossref_database: str,
+    email: str,
+) -> None:
+    works = Works(etiquette=Etiquette("publist", contact_email=email))
     dois = parse_doi_yaml(dois_yaml)
     replacements = parse_replacements_yaml(replacements_yaml)
-    entries = get_bib_entries(dois, replacements)
+    entries = get_bib_entries(
+        dois, replacements, doi2bib_database, crossref_database, works
+    )
     bib_files = static_bib_entries(static_bib)
     write_output(entries, bib_files, bib_fname)
 
@@ -228,4 +241,7 @@ if __name__ == "__main__":
         dois_yaml=args.dois_yaml,
         replacements_yaml=args.replacements_yaml,
         static_bib=args.static_bib,
+        doi2bib_database="yaml2bib-doi2bib.db",  # XXX: add to parser
+        crossref_database="yaml2bib-crossref.db",  # XXX: add to parser
+        email="basnijholt@gmail.com",  # XXX: add to parser
     )
