@@ -659,6 +659,20 @@ In principle, the amplitude $\left| \Delta \right|$ is also spatially dependent,
 However, in the case of hybrid semiconductor-superconductor systems, it is shown that this effect is less significant~\cite{Awoga2019}.
 
 \co{Spin-orbit coupling is a crucial to create Majoranas, we can model it better by using with k.p methods.}
+Finally, the presence of a strong spin-orbit coupling is crucial to create Majoranas.
+The Rashba spin-orbit term $\alpha\left(p_{y}\sigma_{x}-p_{x}\sigma_{y}\right)$ in Eq.~\eqref{eq:3D_Ham} can be derived in the framework of the k$\cdot$p perturbation theory.
+Intuitively, it can be understood as an effective magnetic field that is the result of an inversion symmetry breaking electric field along the $z$ axis $H_E=-E_0 z$.
+An electron that moves through this electric field with velocity $v$, experiences an effective magnetic field $\bm{B} =-(\bm{v} \times \bm{E} )/c^{2}$ due to relativistic corrections.
+This effective magnetic field couples to the spin as $H_\textrm{SO} = \frac{1}{2} g \mu_\textrm{B} \bm{B} \cdot \bm{\sigma} = -\frac{g \mu_\textrm{B}}{2c^2} (\bm{v} \times \bm{E}) \cdot \bm{\sigma}$.
+Combining the constants into $\alpha = g \mu_\textrm{B} E_0 \hbar / 2 m c^2$ results in $H_\textrm{SO}$ that appears in Eq.~\eqref{eq:3D_Ham}.
+Therefore, this term assumes a homogeneous electric field, which is the case for a wire with a constant chemical potential $\mu$.
+However, as discussed earlier, this is not the case.
+The k$\cdot$p perturbation theory models the spin-orbit coupling more accurately.
+Here, the spin-orbit strength depends on the electric field resulting from the voltage that is applied to the external metal gates.
+In addition, k$\cdot$p theory also provides a better model for the effective mass in a semiconductor.
+However, describing k$\cdot$p theory is beyond the scope of this thesis.
+Finally, as Majorana device simulations start to include the spatially varying electric field into their models (as discussed earlier), it is crucial to understand how this affects the spin-orbit coupling, which can by using the k$\cdot$p theory.
+
 
 \newpage
 The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
