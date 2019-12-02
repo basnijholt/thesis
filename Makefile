@@ -18,6 +18,9 @@ pdf: force-build
 	pdflatex dissertation
 	pdflatex dissertation
 
+propositions: force-build
+	pdflatex propositions
+
 introduction: force-build
 	pdflatex dissertation
 	bibtex chapter_introduction/introduction

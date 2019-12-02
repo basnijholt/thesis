@@ -3,8 +3,9 @@ image: jbweston/tex
 job:
   script:
     - make clean
-    - make
+    - make pdf propositions
 
   artifacts:
     paths:
     - dissertation.pdf
+    - propositions.pdf
