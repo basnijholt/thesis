@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-setuptools \
     python3-pip
 
-RUN python3 -m pip install pyyaml
+RUN python3 -m pip install pyyaml jinja2
 
 WORKDIR /data
 VOLUME ["/data"]
