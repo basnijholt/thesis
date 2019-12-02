@@ -13,9 +13,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     inkscape \
     python3 \
     python3-dev \
+    python3-setuptools \
     python3-pip
 
-RUN pip install pyyaml
+RUN python3 -m pip install pyyaml
 
 WORKDIR /data
 VOLUME ["/data"]
