@@ -1,4 +1,4 @@
-image: jbweston/tex
+image: basnijholt/thesis
 
 job:
   script:
