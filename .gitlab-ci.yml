@@ -3,6 +3,7 @@ image: basnijholt/thesis
 job:
   script:
     - make clean
+    - python3 -m pip install jinja2
     - make pdf propositions
 
   artifacts:
