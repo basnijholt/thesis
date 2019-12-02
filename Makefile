@@ -19,7 +19,7 @@ pdf: force-build
 	pdflatex dissertation
 
 propositions: force-build
-	python create_propositions.py
+	python3 create_propositions.py
 	pdflatex propositions
 
 introduction: force-build
