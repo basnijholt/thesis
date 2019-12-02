@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
     inkscape \
     python3 \
-    python3-dev
+    python3-dev \
+    python3-pip
 
 RUN pip install pyyaml
 
