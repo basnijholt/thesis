@@ -3,6 +3,7 @@ image: jbweston/tex
 job:
   script:
     - make clean
+    - pip install pyyaml
     - make pdf propositions
 
   artifacts:
