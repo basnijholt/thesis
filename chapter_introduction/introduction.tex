@@ -695,8 +695,13 @@ The probability density and band structure of a 2D system are plotted in Fig.~\r
 
 \section{Numerical methods}\label{sec:numerical_methods}
 \co{Finite difference approximation solves the problem when analytical methods fail.}
+Section~\ref{sec:realistic_nanowire} shows that realistically modeling Majorana devices is complex and that it is impossible to solve these problems analytically without making simplifications that still capture all of the relevant physics.
+Therefore, to study Majorana devices, we must use numerical methods.
+Using the finite difference approximation, we can convert the linear ordinary differential equation, the continuous BdG Hamiltonian Eq.~\eqref{eq:3D_Ham}, into a system of equations described by a sparse matrix.
+With readily available standard sparse linear algebra techniques, such as the shift-invert diagonalization method, we can efficiently find low energy wavefunctions of our system.
 
 \co{Translationally invariant systems are described with a band structure.}
+
 
 \co{Discretization of a Hamiltonian}
 
@@ -707,8 +712,6 @@ The probability density and band structure of a 2D system are plotted in Fig.~\r
 
 
 \co{Numerical methods are required because the problem is hard to solve analytically.}
-Section~\ref{sec:realistic_nanowire} shows that realistically modeling Majorana devices is complex and that it is impossible to solve these problems analytically without making simplifications that still capture all of the relevant physics.
-Therefore, to study Majorana devices we must use numerical methods.
 
 \co{Band theory explains many physical properties of solids.}
 
@@ -741,9 +744,6 @@ Still three dimensional systems are prohibitivly computationally expensive.
 Here, we give a brief overview of the topics explored in the following chapters.
 \vspace{1mm}
 
-\subsection{Chapter~\ref{ch:introduction}: Introduction}
-Abstract here for introduction
-\vspace{1mm}
 
 \subsection{Chapter~\ref{ch:adaptive}: Title here for adaptive}
 Abstract here for adaptive
