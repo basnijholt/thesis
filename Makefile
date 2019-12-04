@@ -13,7 +13,6 @@ pdf: force-build
 	bibtex chapter_supercurrent/supercurrent
 	bibtex chapter_spinorbit/spinorbit
 	bibtex chapter_zigzag/zigzag
-	bibtex chapter_weakantilocalization/weakantilocalization
 	bibtex chapter_shortjunction/shortjunction
 	pdflatex dissertation
 	pdflatex dissertation
@@ -55,12 +54,6 @@ spinorbit: force-build
 zigzag: force-build
 	pdflatex dissertation
 	bibtex chapter_zigzag/zigzag
-	pdflatex dissertation
-	pdflatex dissertation
-
-weakantilocalization: force-build
-	pdflatex dissertation
-	bibtex chapter_weakantilocalization/weakantilocalization
 	pdflatex dissertation
 	pdflatex dissertation
 
