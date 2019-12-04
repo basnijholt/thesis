@@ -12,11 +12,11 @@ Automatic Docker builds [here](https://hub.docker.com/repository/docker/basnijho
 Create (or update) `dissertation.bib` using
 ```bash
 yaml2bib \
-  --bib_fname "zigzag.bib" \
-  --dois_yaml "zigzag.yaml" \
+  --bib_fname "dissertation.bib" \
+  --dois_yaml "*/*.yaml" \
   --replacements_yaml "replacements.yaml" \
-  --email "bas@nijho.lt" \
-  --static_bib "not_on_crossref.bib"
+  --static_bib "chapter_*/not_on_crossref.bib" \
+  --email "bas@nijho.lt"
 ```
 
 Create `propositions.bib` using:
