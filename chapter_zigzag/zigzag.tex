@@ -18,9 +18,9 @@ Two groups~\cite{Fornieri2019,Ren2019} have realized this system experimentally,
 
 \co{The gap is small because of long trajectories.}
 An important challenge in creating stable Majoranas is the appearance of a soft gap---a power law decay instead of an exponential decay of the density of states near zero energy.
-In clean systems soft gap arises due to the reduction of the induced gap for states with the momentum directed along the junction~\cite{Gennes1963,Beenakker2005}.
+In clean systems a soft gap arises due to the reduction of the induced gap for states with the momentum directed along the junction~\cite{Gennes1963,Beenakker2005}.
 From a semiclassical perspective, these momenta correspond to long paths through the semiconductor without interruption by the superconductor, shown in Fig.~\ref{fig:setup}(a).
-These long trajectories have long flight times $\tau_\textrm{f} \approx L_\textrm{t} / v_F$ (see Fig.~\ref{fig:setup}), where $L_\textrm{t}$ is the trajectory length.
+These long trajectories have long flight times $\tau_\textrm{f} \approx L_\textrm{t} / v_\textrm{F}$ (see Fig.~\ref{fig:setup}), where $L_\textrm{t}$ is the trajectory length and $v_\textrm{F}$ the Fermi velocity.
 Equivalently, the Thouless energy of these trajectories $E_{\textrm{Th}}=\hbar / \tau_\textrm{f}$ is small, resulting in a small gap $E_\textrm{gap} \ll \Delta$.
 This problem does not appear when the Fermi surface is small and the zero point motion dominates the transverse velocity, making a low filling of the bands a possible workaround\cite{Beenakker2005,Nijholt2016}.
 However, tuning the system to a low chemical potential requires a precise knowledge of the band positions and makes the device more sensitive to disorder or microscopic inhomogeneities.
@@ -33,9 +33,9 @@ On the other hand, disorder scatters these long trajectories and introduces a cu
 The zigzag pattern has a peak-to-peak amplitude $z_y$ and a period $z_x$.
 The yellow areas are superconductors with a phase difference of $\phi$ between the top and the bottom.
 The middle area is the semiconductor of width $W$.
-A magnetic field $B$ pointing in the $x$-direction causes a Zeeman splitting in the semiconductor
+A magnetic field $B$ pointing in the $x$-direction causes a Zeeman splitting in the semiconductor.
 A trajectory traveling at a grazing angle (red curve) has a very long flight time $\tau_\textrm{f}$ and a very small induced gap $E_\textrm{gap} \ll \Delta$.
-At the same time, the zigzag geometry limits the length of a trajectory therefore lowering $\tau_\textrm{f}$ and increasing $E_\textrm{gap}$.
+At the same time, the zigzag geometry limits the length of a trajectory, therefore lowering $\tau_\textrm{f}$ and increasing $E_\textrm{gap}$.
 \label{fig:setup}}
 \end{figure}
 
@@ -172,7 +172,7 @@ The remaining parameter values are written at the end of Sec.~\ref{sec:setup}, e
 
 \co{We calculate the topological phase diagram.}
 In Fig.~\ref{fig:phasediagrams} we compare the phase diagrams of the straight and the zigzag junction.
-We plot $E_\textrm{gap}$ as a function of magnetic field, chemical potential, $E_\textrm{gap}(B_x, \mu)$; and the superconducting phase difference $E_\textrm{gap}(B_x, \phi)$ for both a straight system [(c) and (e)] and a zigzag system [(d) and (f)].
+We plot $E_\textrm{gap}$ as a function of magnetic field and chemical potential ($E_\textrm{gap}(B_x, \mu)$), and of magnetic field and superconducting phase difference ($E_\textrm{gap}(B_x, \phi)$) for both a straight system [(c) and (e)] and a zigzag system [(d) and (f)].
 Additionally, we plot the first $\SI{1300}{\nm}$ (one zigzag period) of the wave functions [(a) and (b)] at the optimal point in parameter space for the straight system.
 For the straight system, we calculate $E_\textrm{gap}$ by performing a binary search in $E$ for the energy at which the propagating modes start to appear~\cite{Nijholt2016}.
 Additionally, in Fig.~\ref{fig:phasediagrams}(c) we plot the phase boundaries obtained by solving a generalized eigenvalue problem~\cite{Nijholt2016}.
@@ -198,13 +198,13 @@ The asymmetry of the phase diagram upon replacing $\phi \rightarrow -\phi$ is co
 \section{Discussion and Conclusions}
 
 \co{The zigzag geometry is a controllable tool in hardening the gap and decreasing Majorana size.}
-The zigzag geometry increases the topological gap in the high density regime by more than an order of magnitude, as well as substantially reducing of Majorana size.
+The zigzag geometry increases the topological gap in the high density regime by more than an order of magnitude, as well as substantially reduces Majorana size.
 The improvements occur in a broad range of parameter values, moreover, even using $B_x$ optimal for the straight system in the high density regime (Fig.~\ref{fig:phasediagrams}), the Majorana size $\xi_\textrm{M}$ and $E_\textrm{gap}$ are still more than an order of magnitude better for the zigzag system.
 We expect that the improvement of the device performance will significantly simplify the creation of Majorana devices and the detection of Majorana states.
 The zigzag geometry offers a controllable way to remove long trajectories, making it easier to rely on than disorder~\cite{Haim2019}, that otherwise has a similar effect.
 
 \co{Zigzag doesn't do anything against other mechanisms, and therefore it doesn't help to use it ignorantly}
-Soft gap may arise due to other mechanisms that do not involve ballistic trajectories: both interface disorder and pair breaking~\cite{Takei2013} or temperature and dissipation~\cite{Liu2017} may create a soft gap.
+A soft gap may arise due to other mechanisms that do not involve ballistic trajectories: both interface disorder and pair breaking~\cite{Takei2013} or temperature and dissipation~\cite{Liu2017} may create a soft gap.
 Further in a multimode junction the mode dependence of transmission~\cite{Stanescu2014} may produce subgap conductance similar to that in a device with a soft gap.
 The zigzag geometry has no impact on these alternative phenomena, and it may therefore serve as a tool in distinguishing different mechanisms.
 
@@ -215,7 +215,7 @@ We have demonstrated that the unavoidable variation in the experimental device g
 \co{Optimizing the geometry, more detailed modeling, and a simple analytical estimation are open questions for further research}
 Our work is the first demonstration of the impact of the Majorana device geometry on its performance, and it opens a much harder question of finding the optimal geometry.
 A promising approach to tackle this question would rely on constructing a quasiclassical model of the zigzag devices.
-Finally, we have excluded several important physical effects, such as: disorder, electrostatics, the orbital effect of magnetic field, and the finite thickness of the sample.
+Finally, we have neglected several important physical effects, such as: disorder, electrostatics, the orbital effect of magnetic field, and the finite thickness of the sample.
 While we expect these phenomena not to influence our qualitative findings, a more detailed simulation should provide better guidance to future experiments.
 
 
@@ -288,8 +288,11 @@ Comparison of the zigzag device's band structures with the magnetic field follow
 \label{fig:snaking_magnetic_field}}
 \end{figure}
 
-\co{In a realistic device the magnetic field might not be inhomogeneous, but zigzag doesn't care.}
-The change in the interface transparency alone is not sufficient to explain the increase of the topological gap.
+\section{Interface transparency vs. path length cut-off}
+
+The zigzag geometry both increases the interface transparency (as particles typically hit the superconductoer
+closer to normal incidence) as well as sets an upper limit to the trajectory length.
+Here we show that the change in the interface transparency alone is not sufficient to explain the increase of the topological gap.
 To verify this, we compute the dispersion of a system with $z_x = z_y = \SI{80}{\nm} \approx v_\textrm{F}$ and $W=\SI{400}{\nm}$, so that the angle of the boundaries is sufficiently large, but the boundary modulation is much smaller than the width.
 We observe that $E_\textrm{gap}$ becomes $\SI{6.1}{\mu \eV}$, a two-fold increase compared to the straight system, not the order of magnitude increase resulting from the cutting off of long trajectories.
 

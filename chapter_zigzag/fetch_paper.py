@@ -31,10 +31,11 @@ with open("zigzag_full.tex") as f:
     add = False
     text = []
     for line in f.readlines():
-        if add is False and start in line:
+        if not add and start in line:
             add = True
-        if add is True and end in line:
+        elif add and end in line:
             add = False
+
         if add:
             for old, new in to_replace:
                 line = line.replace(old, new)
