@@ -764,6 +764,46 @@ H_{\textrm{hop},y} = -t \tau_{z} - \frac{i \alpha \sigma_{x} \tau_{z}}{2 a},
 H_{\textrm{hop},z} = -t \tau_{z}.
 \end{equation}
 
+%% I got these matrices using:
+% import kwant.continuum
+% import sympy
+
+% ham = (
+%     "(0.5 * hbar**2 * (k_x**2 + k_y**2 + k_z**2) / m_eff - mu) * kron(sigma_0, tau_z) + "
+%     "alpha * (k_y * kron(sigma_x, tau_z) - k_x * kron(sigma_y, tau_z)) + "
+%     "0.5 * g * mu_B * (B_x * kron(sigma_x, tau_0)) + "
+%     #     "0.5 * g * mu_B * (B_y * kron(sigma_y, tau_0) + B_z * kron(sigma_z, tau_0)) + "
+%     "Delta * kron(sigma_0, tau_x)"
+% )
+% ham = ham.replace("hbar**2", "2 * t * m_eff * a**2")
+% ham = ham.replace("sigma_", "s_")
+% ham = ham.replace("tau_", "t_")
+% ham = kwant.continuum.sympify(ham)
+% dis = kwant.continuum.discretize_symbolic(ham, coords=list("xyz"))[0]
+% for k, v in dis.items():
+%     for x in "xyz":
+%         v = v.subs(f"a_{x}", "a")
+
+%     H = sympy.nsimplify(v.subs("m_eff", "m"))
+
+%     tex = (
+%         (sympy.latex(H).replace(r"{1}\otimes {1}", ""))
+%         .replace("s_", r"\sigma_")
+%         .replace("t_", r"\tau_")
+%         .replace(r"\tau_{0}", "")
+%         .replace(r"\sigma_{0}", "")
+%         .replace(r"\cdot", "")
+%     )
+    
+%     print(
+%         rf"""
+% \begin{{equation}}
+% H_{{{k}}} = {tex}
+% \end{{equation}}
+% """
+%     )
+
+
 In addition, due to the discretization the Brillouin zone is periodic, as the continuous model.
 Consequently, should be careful to not simulate effect from the corners because the band structure only correctly represents the continuum model near the band bottom.
 
