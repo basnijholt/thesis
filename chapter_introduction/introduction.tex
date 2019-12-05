@@ -727,28 +727,116 @@ H_{\textrm{BdG}}=\left(\frac{-\hbar^{2}\nabla^{2}}{2m}-\mu\right)\tau_{z}+\Delta
 We discretize the differential operators in $H_{\textrm{BdG}}$ on sites of a square lattice with lattice constant $a$.
 Every site is indexed by integer lattice coordinates $(i,j,k)$, which have real-space coordinates $(x,y,z)=(ai,aj,ak)$.
 
-\co{Discretization of a Hamiltonian}
+\newpage  % XXX: choose one!
+
+It is convinient to introduce creation $c^\dagger_{i,j,k}$ and annihilation $c_{i,j,k}$ operators that act on the sites, where
+\begin{equation}
+c_{i, j, k} \equiv c_{ai, aj, ak} = c_{x, y, z}.
+\end{equation}
+Using these, and assuming that $a$ is sufficiently small, we express the first order differential operator as
+\begin{equation}
+\partial_{x} = \frac{1}{a}\sum_{i,j,k}\left(c^\dagger_{i-1,j,k}c_{i,j,k}-c^\dagger_{i,j,k}c_{i,j,k}\right),
+\end{equation}
+and the second order differential operator as
+\begin{equation}
+\partial_{x}^{2} = \frac{1}{a^{2}}\sum_{i,j,k}\left(c^\dagger_{i-1,j,k}c_{i,j,k}+c^\dagger_{i,j,k}c_{i-1,j,k}-2c^\dagger_{i,j,k}c_{i,j,k}\right),
+\end{equation}
+and similar expressions for $\partial_{y}$, $\partial_{z}$, $\partial_{y}^2$, and $\partial_{z}^2$.
+Subsitituting all of these into the Hamiltonian and using $t = \frac{\hbar^2}{2 m a^2}$ gives
+\begin{align}
+\begin{aligned}
+H_{\textrm{BdG}}= & \sum_{i,j,k}\bm{c}_{i,j,k}^{\dagger}H_{\textrm{onsite}}\bm{c}_{i,j,k}  \\
+                  & +\sum_{i,j,k}\left(\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},x}\bm{c}_{i+1,j,k}+\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},y}\bm{c}_{i,j+1,k}+\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},z}\bm{c}_{i,j,k+1}+H.c.\right),
+\end{aligned}
+\end{align}
+where $\bm{c}$ is a vector of creation and annihilation operators that acts on the BdG degrees of freedom on the same site, and
+\begin{equation}
+H_{\textrm{onsite}} = \frac{B_{x} g \mu_{B} \sigma_{x}}{2} + \Delta \tau_{x} - \mu \tau_{z} + 6 t \tau_{z},
+\end{equation}
+
+\begin{equation}
+H_{\textrm{hop},x} = -t \tau_{z} + \frac{i \alpha \sigma_{y} \tau_{z}}{2 a},
+\end{equation}
+
+\begin{equation}
+H_{\textrm{hop},y} = -t \tau_{z} - \frac{i \alpha \sigma_{x} \tau_{z}}{2 a},
+\end{equation}
+
+\begin{equation}
+H_{\textrm{hop},z} = -t \tau_{z}.
+\end{equation}
+
+
+\newpage  % XXX: choose one!
+
+
+
+It is convinient to introduce discretized positional states
+\begin{equation}
+\ket{i, j, k} \equiv \ket{ai, aj, ak} = \ket{x, y, z}.
+\end{equation}
+Using these, and assuming that $a$ is sufficiently small, we express the first order differential operator as
+\begin{equation}
+\partial_{x}=\frac{1}{a}\sum_{i,j,k}\left(\ket{i-1,j,k}\bra{i,j,k}-\ket{i,j,k}\bra{i,j,k}\right),
+\end{equation}
+and the second order differential operator as
+\begin{equation}
+\partial_{x}^{2} = \frac{1}{a^{2}}\sum_{i,j,k}\left(\ket{i-1,j,k}\bra{i,j,k}+\ket{i,j,k}\bra{i-1,j,k}-2\ket{i,j,k}\bra{i,j,k}\right),
+\end{equation}
+
+and similar expressions for $\partial_{y}$, $\partial_{z}$, $\partial_{y}^2$, and $\partial_{z}^2$.
+Subsitituting all of these into the Hamiltonian and using $t = \frac{\hbar^2}{2 m a^2}$ gives
+\begin{align}
+\begin{aligned}
+H_{\textrm{BdG}}= & \sum_{i,j,k}H_{\textrm{onsite}}\ket{i,j,k}\bra{i,j,k}\\
+ & +\sum_{i,j,k}\left(H_{\textrm{hop},x}\ket{i,j,k}\bra{i+1,j,k}+H.c.\right)\\
+ & +\sum_{i,j,k}\left(H_{\textrm{hop},y}\ket{i,j,k}\bra{i,j+1,k}+H.c.\right)\\
+ & +\sum_{i,j,k}\left(H_{\textrm{hop},z}\ket{i,j,k}\bra{i,j,k+1}+H.c.\right),
+\end{aligned}
+\end{align}
+
+where $c$ is a vector of creation and annihilation operators that acts on the BdG degrees of freedom on the same site, and
+\begin{equation}
+H_{\textrm{onsite}} = \frac{B_{x} g \mu_{B} \sigma_{x}}{2} + \Delta \tau_{x} - \mu \tau_{z} + 6 t \tau_{z},
+\end{equation}
+
+\begin{equation}
+H_{\textrm{hop},x} = -t \tau_{z} + \frac{i \alpha \sigma_{y} \tau_{z}}{2 a},
+\end{equation}
+
+\begin{equation}
+H_{\textrm{hop},y} = -t \tau_{z} - \frac{i \alpha \sigma_{x} \tau_{z}}{2 a},
+\end{equation}
+
+\begin{equation}
+H_{\textrm{hop},z} = -t \tau_{z}.
+\end{equation}
+
+
+
+
+
+
+In addition, due to the discretization the Brillouin zone is periodic, as the continuous model.
+Consequently, should be careful to not simulate effect from the corners because the band structure only correctly represents the continuum model near the band bottom.
 
 \co{The lattice version of a vector potential is the Peierls substitution.}
 
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
 
+% \co{Numerical methods are required because the problem is hard to solve analytically.}
 
+% \co{Band theory explains many physical properties of solids.}
 
-\co{Numerical methods are required because the problem is hard to solve analytically.}
+% \co{In crystals we can use Bloch waves because of its periodic lattice structure.}
 
-\co{Band theory explains many physical properties of solids.}
-
-\co{In crystals we can use Bloch waves because of its periodic lattice structure.}
-
-\co{Bloch waves can be used in a tight binding model, which assumes that the time-independent single electron Schrödinger equation is approximated by a linear combination of localized atomic orbitals.}
+% \co{Bloch waves can be used in a tight binding model, which assumes that the time-independent single electron Schrödinger equation is approximated by a linear combination of localized atomic orbitals.}
 
 
 % https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1202&context=nanopub
 % http://edu.itp.phys.ethz.ch/fs14/sst/Lecture-Notes.pdf
-\co{We use the tight binding approximation and discretize the continuous BdG Hamiltonian on to a lattice.}
 
-\subsection{Band structures}
+% \subsection{Band structures}
 
 \subsection{Limits}
 \co{Works only for systems with limited interaction, tightly bound electrons, large number of electrons, perfect lattice structure}
