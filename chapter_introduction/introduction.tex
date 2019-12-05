@@ -39,7 +39,7 @@ These states along the edges are responsible for the conduction and are called `
 
 \begin{figure}[!htb]
 \begin{center}
-% \includegraphics{chapter_introduction/figures/knots.pdf}
+% \includegraphics{chapter_introduction/figures/knots.pdf}  % XXX: add this figure
 \caption{
 Topology in mathematics concerns itself with the properties of an object that are preserved under continuous deformations.
 For example, an unknot (left) cannot be continuously transformed into a trefoil knot (right) without cutting it; this means that they are not topologically equivalent.
@@ -52,7 +52,7 @@ Unlike a knot that can be visualized in space, the topology of the quantum Hall 
 
 \begin{figure}[!htb]
 \begin{center}
-% \includegraphics{chapter_introduction/figures/qhe.pdf}
+% \includegraphics{chapter_introduction/figures/qhe.pdf}  % XXX: add this figure
 \caption{
 The integer quantum Hall effect.
 The Hall resistance $R_H$ (reciprocal of the Hall conductance $G_H$) of a two-dimensional electron gas as a function of the perpendicular magnetic field $B_\perp$ at low-temperature.
@@ -557,6 +557,7 @@ Nearly all experiments \footnote{not arXiv:1710.10701} that measure this fail to
 Another effect that is not captured by the simple model is the superconducting density of states (DOS), which in theory predicts a vanishing DOS inside the gap ($|E|<\Delta$) but the experiment a non-zero DOS persists, this phenomenon is also called ``soft gap.''
 Because of these limitations, we will improve the simple model by adding relevant physical effects.
 
+\subsection{Multiple bands}
 \co{In 3D more orbitals are present, breaking the simple E_z²>µ²+Δ² requirement for Majoranas.}
 In 3D, the model Hamiltonian [Eq.~\eqref{eq:rashba}] is modified to
 \begin{equation}
@@ -578,6 +579,7 @@ The band structure (b) is trivial but near a phase transition, (c) is at the pha
 \end{center}
 \end{figure}
 
+\subsection{The orbital effect of the magnetic field}
 \co{Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
 Whenever a magnetic flux can penatrate a surface of the nanowire, the canonical momentum operator in Eq.~\eqref{eq:3D_Ham} is modified to include the vector potential
 \begin{equation}
@@ -599,6 +601,7 @@ This minimization results in the correct vector potential and the superconductin
 The inclusion of the orbital effect modifies the phase diagram shown in Fig.~\ref{fig:topo_bands}.
 Chapter ~\ref{ch:orbitalfield} discusses the weakly coupled superconductor case while Ch.~\ref{ch:shortjunction} discusses the strongly coupled superconductor case.
 
+\subsection{Disorder}
 \co{A real system's material is not perfectly smooth and has impurities, and we can model this disorder by random onsite energy.}
 Perfectly ordered crystalline solids are characterized by a faultlessly regular arrangement of their atoms in a crystal lattice, yet, these do not occur in nature~\cite{Nolting1970}.
 Real solid-state systems are not perfectly smooth and have impurities: they are disordered.
@@ -611,6 +614,7 @@ This problem is complex to study numerically because of the aforementioned high 
 A full-scale three-dimensional simulation is therefore beyond what is currently feasible.
 Nevertheless, \cite{Antipov2018} simulates a slice of the proximitized nanowire, and finds that disorder strongly affects important quantities such as the induced gap $\Delta_\textrm{ind}$, the critical field $B_\textrm{c}$, and their dependence on the external gate voltage.
 
+\subsection{Electrostatics}
 \co{Majorana device proposals rely on a fine control of the electrostatics and understanding what happens is complicated.}
 The model Hamiltonian Eq.~\eqref{eq:3D_Ham} has a constant chemical potential $\mu$ in the nanowire.
 Experimentally, $\mu$ is set by the external metal gates that, when applying a voltage, will change the electrostatic environment inside the device.
@@ -645,6 +649,7 @@ Other works try to solve this problem for the short junction or strongly coupled
 These works find that applying a voltage on external metal gates renormalizes several important physical parameters, such as the induced superconducting gap $\Delta_\textrm{ind}$ and the critical magnetic field $B_\textrm{c}$, and in turn, this means that the phase diagram changes.
 Due to the extreme computational complexity, no one has solved the full three-dimensional Schrödinger-Poisson problem, while treating the superconductor and semiconductor on equal footing.
 
+\subsection{Superconducting order parameter}
 \co{The superconducting order parameter is assumed to be constant, however, it is not clear if this assumption is valid.}
 In most studies~\cite{Antipov2018,Winkler2019,Vuik2016,Nijholt2016,Winkler2017}, the superconducting order parameter $\Delta$ is assumed to be constant inside the superconductor, even though an applied magnetic field might cause a spatial variation in both $\Delta$'s phase $\phi$ and amplitude.
 One possible reason for this is the Meissner effect, where the superconductor (below its critical temperature $T_\textrm{c}$) develops a supercurrent and expels the magnetic field.
@@ -658,6 +663,7 @@ Here, the orbital effect of the magnetic field needs to be adequately treated, w
 In principle, the amplitude $\left| \Delta \right|$ is also spatially dependent, and can be solved self-consistently as it often done in ferromagnetic chains on superconductors~\cite{Awoga2017,Sacramento2007}.
 However, in the case of hybrid semiconductor-superconductor systems, it is shown that this effect is less significant~\cite{Awoga2019}.
 
+\subsection{Spin-orbit coupling}
 \co{Spin-orbit coupling is a crucial to create Majoranas, we can model it better by using with k.p methods.}
 Finally, the presence of strong spin-orbit coupling is crucial to create Majoranas.
 The Rashba spin-orbit term $\alpha\left(p_{y}\sigma_{x}-p_{x}\sigma_{y}\right)$ in Eq.~\eqref{eq:3D_Ham} can be derived in the framework of the k$\cdot$p perturbation theory.
@@ -697,11 +703,29 @@ The probability density and band structure of a 2D system are plotted in Fig.~\r
 \co{Finite difference approximation solves the problem when analytical methods fail.}
 Section~\ref{sec:realistic_nanowire} shows that realistically modeling Majorana devices is complex and that it is impossible to solve these problems analytically without making simplifications that still capture all of the relevant physics.
 Therefore, to study Majorana devices, we must use numerical methods.
-Using the finite difference approximation, we can convert the linear ordinary differential equation, the continuous BdG Hamiltonian Eq.~\eqref{eq:3D_Ham}, into a system of equations described by a sparse matrix.
+Using the finite difference approximation, we can convert the linear ordinary differential equation, the continuous BdG Hamiltonian Eq.~\eqref{eq:3D_Ham}, into a system of equations described by a (potentially very large) sparse matrix.
 With readily available standard sparse linear algebra techniques, such as the shift-invert diagonalization method, we can efficiently find low energy wavefunctions of our system.
 
+\subsection{Band structure}
 \co{Translationally invariant systems are described with a band structure.}
+In principle, to correctly predict device properties, one needs to simulate a large nanowire that includes the edges of the wire.
+However, because topology is robust and insensitive to details, we can simulate just the band structure in the bulk of the wire.
+From this, we understand whether the system is topological or topologically trivial.
+To calculate a band structure $E(k)$, we use Bloch's theorem which states that the wave function in a crystal changes under translation only by a phase factor
+\begin{equation}
+\psi(\bm{r}+a) = e^{i a k}\psi(\bm{r}),
+\end{equation}
+where $k$ is the wave vector of the wave function and $a$ the size of the unit-cell.
+This implies that we only need to simulate a translationally invariant unit-cell to get $E(k)$.
 
+\subsection{Discretization of the Hamiltonian}
+\co{Discretization of the continuous BdG Hamiltonian on to a lattice}
+To turn Eq.~\eqref{eq:3D_Ham} into a discretized tight-binding model, we replace $\bm{p} \rightarrow -i\hbar \nabla$, where $\nabla \equiv \left( \frac{\partial}{\partial_x}, \frac{\partial}{\partial_y}, \frac{\partial}{\partial_z} \right) \equiv \left( \partial_x, \partial_y, \partial_z \right)$, to get
+\begin{equation}
+H_{\textrm{BdG}}=\left(\frac{-\hbar^{2}\nabla^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}+i\hbar\alpha\left(\partial_{x}\sigma_{y}-\partial_{y}\sigma_{x}\right)\tau_{z}.\label{eq:3D_Ham_again}
+\end{equation}
+We discretize the differential operators in $H_{\textrm{BdG}}$ on sites of a square lattice with lattice constant $a$.
+Every site is indexed by integer lattice coordinates $(i,j,k)$, which have real-space coordinates $(x,y,z)=(ai,aj,ak)$.
 
 \co{Discretization of a Hamiltonian}
 
