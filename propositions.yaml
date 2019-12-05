@@ -1,49 +1,26 @@
-# - english: "Computationally expensive low dimensional parameter sweeps of a smooth space always benefit from adaptively sampling its parameter space. (Chapter~\\ref{ch:adaptive})"
-#   dutch: "Computationeel dure laagdimensionale parameterzwaaien van een gladde ruimte profiteren altijd van adaptieve bemonstering van de parameterruimte. (Hoofdstuk~\\ref{ch:adaptieve})"
-
 - english: "The orbital effect of the magnetic field has a larger effect on the Majorana phase diagram than the Zeeman effect for experimentally relevant parameters. (Chapter~\\ref{ch:orbitalfield})"
   dutch: "Het orbitale effect van het magnetische veld heeft een groter effect op het Majorana-fasediagram dan het Zeeman-effect voor experimenteel relevante parameters. (Hoofdstuk~\\ref{ch:orbitalfield})"
-
-- english: "Josephson junctions formed in semiconducting nanowires are very sensitive to the microscopic details and therefore are an unreliable tool in studying Majorana bound states. (Chapter~\\ref{ch:supercurrent})"
-  dutch: "Josephson juncties in halfgeleidende nanodraden zijn erg gevoelig voor de microscopische details en zijn daarom een onbetrouwbaar hulpmiddel bij het bestuderen van Majorana-gebonden toestanden. (Hoofdstuk~\\ref{ch:superstroom})"
-
 - english: "Measuring the conductance in Majorana nanowires as a function of bias voltage and a magnetic field in different directions reveals the presence of spin-orbit coupling. (Chapter~\\ref{ch:spinorbit})"
   dutch: "Het meten van de geleidbaarheid in Majorana nanodraden als een functie van voorspanning en een magnetisch veld in verschillende richtingen onthult de aanwezigheid van spin-orbit koppeling. (Hoofdstuk~\\ref{ch:spinorbit})"
-
 - english: "Cutting off long trajectories using the device geometry in two-dimensional Majorana Josephson junctions improves the Majorana properties in a more controllable way than by doing the same using disorder. (Chapter~\\ref{ch:zigzag} and Haim et al.~in Phys. Rev. Lett. \\textbf{122}, 126801 (2019))"
   dutch: "Het afsnijden van lange trajecten met behulp van de apparaatgeometrie in tweedimensionale Majorana Josephson-knooppunten verbetert de Majorana-eigenschappen op een beter beheersbare manier dan door hetzelfde te doen met een stoornis. (Hoofdstuk~\\ref{ch:zigzag} en Haim et al.~In Phys.~Rev.~Lett.~\\textbf{122}, 126801 (2019))"
-
 - english: "The size of the Majorana bound states and the critical magnetic field required for creating them are both independent of the superconducting gap in a proximitized device. (Chapter~\\ref{ch:shortjunction})"
   dutch: "De grootte van de Majorana-gebonden toestanden en het kritische magnetische veld dat nodig is om ze te creëren, zijn beide onafhankelijk van de supergeleidende opening in een apparaat in de nabijheid. (Hoofdstuk~\\ref{ch:shortjunction})"
-
-- english: "Our best short term option to combat climate change and minimize our dependence on fossil fuels; is to build more nuclear reactors of the newest generations."
+- english: "Our best short term option to combat climate change and minimize our dependence on fossil fuels; is to build more nuclear reactors of the newest generations, despite the waste that is produced."
   dutch: "Onze beste optie op korte termijn om klimaatverandering te bestrijden en onze afhankelijkheid van fossiele brandstoffen te minimaliseren; is om meer kernreactoren van de nieuwste generaties te bouwen."
-  # seems not debatable due to the narrow formulation: you only consider CO2, which without doubt gets reduced by nuclear power. But you disregard the waste problem.
-
-
 - english: "Psychedelic drugs that have proven medicinal value, such as LSD or psilocybin mushrooms, should be legalized, and it should be possible to use them in therapy sessions as an alternative to conventional drugs."
   dutch: "Psychedelische medicijnen die geen gezondheidsrisico's inhouden, zoals LSD of psilocybine-paddenstoelen, moeten worden gelegaliseerd en het moet mogelijk zijn om ze in therapiesessies te gebruiken als alternatief voor conventionele medicijnen."
-
-# - english: "Psychological support should be offered to all Ph.D. students by default to minimize the risk of developing psychological disorders and, consequently, Ph.D. dropout rates."
-#   dutch: "Psychologische ondersteuning moet worden aangeboden aan alle Ph.D. studenten standaard om het risico op het ontwikkelen van psychische stoornissen en bijgevolg Ph.D. uitvalpercentages."
-
+- english: "Psychological support should be offered to all Ph.D. students by default to minimize the risk of developing psychological disorders and, consequently, Ph.D. dropout rates."
+  dutch: "Psychologische ondersteuning moet worden aangeboden aan alle Ph.D. studenten standaard om het risico op het ontwikkelen van psychische stoornissen en bijgevolg Ph.D. uitvalpercentages."
 - english: "Publishing the data and source code used in an article's figures or findings should become obligatory to benefit the advancement of science."
   dutch: "Het publiceren van de gegevens en broncode die worden gebruikt in de cijfers of bevindingen van een artikel zou verplicht moeten worden om de vooruitgang van de wetenschap te bevorderen."
-
 - english: "Theoretical physics departments should hire more women, even if a better qualifying man is available because it increases the number of female role models, which in turn inspires more women to stay in an academic career in physics."
   dutch: "Theoretische natuurkunde afdelingen zouden meer vrouwen moeten aannemen, zelfs als er een beter gekwalificeerde man beschikbaar is omdat dit het aantal vrouwelijke rolmodellen verhoogt, wat op zijn beurt meer vrouwen inspireert om in een academische carrière in de fysica te blijven."
-
 - english: "All research that is funded by the taxpayer's money should be available the public without paying for it again, with the exception of research that poses security or privacy risks."
   dutch: "Al het onderzoek dat wordt gefinancierd door het geld van de belastingbetaler moet beschikbaar zijn voor het publiek zonder opnieuw te betalen, met uitzondering van onderzoek dat veiligheids- of privacyrisico's met zich meebrengt."
-
 - english: "The Dutch government should increase taxes on meat products proportional to the greenhouse emissions of its production to stimulate people to deviate from the environmentally unsustainable meat-based diet."
   dutch: "De Nederlandse overheid moet de belastingen op vleesproducten verhogen in verhouding tot de broeikasgasemissies van haar productie om mensen te stimuleren af te wijken van het ecologisch niet-duurzame dieet op basis van vlees."
-
 - english: "All recreational drugs that have an addiction potential and health impact lower than drinking alcohol or smoking should be legalized."
   dutch: "Alle recreatieve drugs met een verslavingspotentieel en gezondheidseffecten die lager zijn dan het drinken van alcohol of roken moeten worden gelegaliseerd."
-
 - english: "The amount of success in one's Ph.D. depends more on one's ability to collaborate than intelligence."
   dutch: "De hoeveelheid succes in iemands Ph.D. hangt meer af van iemands vermogen om samen te werken dan van intelligentie."
-
-- english: "All scientific educational programs should focus more on teaching programming as a tool to conduct research."
-  dutch: "Alle wetenschappelijke onderwijsprogramma's moeten meer gericht zijn op onderwijsprogrammering als een hulpmiddel om onderzoek te verrichten."
