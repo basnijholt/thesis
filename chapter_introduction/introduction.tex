@@ -717,6 +717,8 @@ To calculate a band structure $E(k)$, we use Bloch's theorem which states that t
 \end{equation}
 where $k$ is the wave vector of the wave function and $a$ the size of the unit-cell.
 This implies that we only need to simulate a translationally invariant unit-cell to get $E(k)$.
+Finally, due to the discretization, the Brillouin zone is periodic.
+However, one should be careful to not simulate effects from the corners because the band structure only correctly represents the continuum model near the band bottom.
 
 \subsection{Discretization of the Hamiltonian}
 \co{Discretization of the continuous BdG Hamiltonian on to a lattice}
@@ -726,7 +728,6 @@ H_{\textrm{BdG}}=\left(\frac{-\hbar^{2}\nabla^{2}}{2m}-\mu\right)\tau_{z}+\Delta
 \end{equation}
 We discretize the differential operators in $H_{\textrm{BdG}}$ on sites of a square lattice with lattice constant $a$.
 Every site is indexed by integer lattice coordinates $(i,j,k)$, which have real-space coordinates $(x,y,z)=(ai,aj,ak)$.
-
 It is convinient to introduce creation $c^\dagger_{i,j,k}$ and annihilation $c_{i,j,k}$ operators that act on the sites, where
 \begin{equation}
 c_{i, j, k} \equiv c_{ai, aj, ak} = c_{x, y, z}.
@@ -802,10 +803,7 @@ H_{\textrm{hop},z} = -t \tau_{z}.
 % \end{{equation}}
 % """
 %     )
-
-
-In addition, due to the discretization the Brillouin zone is periodic, as the continuous model.
-Consequently, should be careful to not simulate effect from the corners because the band structure only correctly represents the continuum model near the band bottom.
+These matrices can easily be implemented in a numerical model.
 
 \co{The lattice version of a vector potential is the Peierls substitution.}
 
