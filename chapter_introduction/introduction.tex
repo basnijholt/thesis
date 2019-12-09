@@ -583,7 +583,7 @@ The band structure (b) is trivial but near a phase transition, (c) is at the pha
 \co{Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
 Whenever a magnetic flux can penatrate a surface of the nanowire, the canonical momentum operator in Eq.~\eqref{eq:3D_Ham} is modified to include the vector potential
 \begin{equation}
-\bm{p} \rightarrow -i \hbar \nabla + e \bm{A} \tau_z,
+\bm{p} \rightarrow -i \hbar \nabla + e \bm{A} \tau_z,\label{eq:continuum_kinetic_with_orbital}
 \end{equation}
 where $e$ is the electron charge.
 In the weak coupling regime---with a non transparent semiconductor/superconductor interface---and a wire that is symmetric with respect to the wire axis, the vector potential is $\mathbf{A}={\left[ B_y (z - z_0) - B_z (y - y_0), 0, B_x (y - y_0)\right]}^{T}$, which is chosen such that it does not depend on $x$.
@@ -728,25 +728,25 @@ To turn Eq.~\eqref{eq:3D_Ham} into a discretized tight-binding model, we replace
 H_{\textrm{BdG}}=\left(\frac{-\hbar^{2}\nabla^{2}}{2m}-\mu\right)\tau_{z}+\Delta\tau_{x}+\frac{1}{2}g\mu_{\textrm{B}}B\sigma_{x}+i\hbar\alpha\left(\partial_{x}\sigma_{y}-\partial_{y}\sigma_{x}\right)\tau_{z}.\label{eq:3D_Ham_again}
 \end{equation}
 We discretize the differential operators in $H_{\textrm{BdG}}$ on sites of a square lattice with lattice constant $a$.
-Every site is indexed by integer lattice coordinates $(i,j,k)$, which have real-space coordinates $(x,y,z)=(ai,aj,ak)$.
-It is convinient to introduce creation $c^\dagger_{i,j,k}$ and annihilation $c_{i,j,k}$ operators that act on the sites, where
+Every site is indexed by integer lattice coordinates $(i,j,k)$, which have real-space coordinates $(x,y,z)=(ai,aj,ak)=\bm{r}$.
+It is convinient to introduce creation $c^\dagger_{\bm{r}}$ and annihilation $c_{\bm{r}}$ operators that act on the sites, where
 \begin{equation}
-c_{i, j, k} \equiv c_{ai, aj, ak} = c_{x, y, z}.
+c_{\bm{r}} \equiv c_{ai, aj, ak} = c_{x, y, z}.
 \end{equation}
 Using these, and assuming that $a$ is sufficiently small, we express the first order differential operator as
 \begin{equation}
-\partial_{x} = \frac{1}{a}\sum_{i,j,k}\left(c^\dagger_{i-1,j,k}c_{i,j,k}-c^\dagger_{i,j,k}c_{i,j,k}\right),
+\partial_{x} = \frac{1}{a}\sum_{i,j,k}\left(c^\dagger_{\bm{r}}c_{\bm{r}-a\hat{x}}-c^\dagger_{\bm{r}}c_{\bm{r}}\right),
 \end{equation}
 and the second order differential operator as
 \begin{equation}
-\partial_{x}^{2} = \frac{1}{a^{2}}\sum_{i,j,k}\left(c^\dagger_{i-1,j,k}c_{i,j,k}+c^\dagger_{i,j,k}c_{i-1,j,k}-2c^\dagger_{i,j,k}c_{i,j,k}\right),
+\partial_{x}^{2} = \frac{1}{a^{2}}\sum_{i,j,k}\left( c^\dagger_{\bm{r}}c_{\bm{r}+a\hat{x}}+c^\dagger_{\bm{r}+a\hat{x}}c_{\bm{r}}-2c^\dagger_{\bm{r}}c_{\bm{r}}\right),
 \end{equation}
 and similar expressions for $\partial_{y}$, $\partial_{z}$, $\partial_{y}^2$, and $\partial_{z}^2$.
 Subsitituting all of these into the Hamiltonian and using $t = \frac{\hbar^2}{2 m a^2}$ gives
 \begin{align}
 \begin{aligned}
-H_{\textrm{BdG}}= & \sum_{i,j,k}\bm{c}_{i,j,k}^{\dagger}H_{\textrm{onsite}}\bm{c}_{i,j,k}  \\
-                  & +\sum_{i,j,k}\left(\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},x}\bm{c}_{i+1,j,k}+\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},y}\bm{c}_{i,j+1,k}+\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},z}\bm{c}_{i,j,k+1}+H.c.\right),
+H_{\textrm{BdG}}= & \sum_{i,j,k}\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{onsite}}\bm{c}_{\bm{r}}  \\
+                  & +\sum_{i,j,k}\left(\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{hop},x}\bm{c}_{\bm{r}+a\hat{x}}+\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{hop},y}\bm{c}_{\bm{r}+a\hat{y}}+\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{hop},z}\bm{c}_{\bm{r}+a\hat{z}}+H.c.\right),
 \end{aligned}
 \end{align}
 where $\bm{c}$ is a vector of creation and annihilation operators that acts on the BdG degrees of freedom on the same site, and
@@ -802,30 +802,30 @@ H_{\textrm{hop},z} = -t \tau_{z}.
 These matrices can easily be implemented in a numerical model, for example, using the Kwant package~\cite{Groth2014}.
 
 \co{The lattice version of a vector potential is the Peierls substitution.}
-In Sec.~\ref{sec:orbital_effect_of_magnetic_field}, we discussed the orbital effect of the magnetic field.
-To include this effect into a discretized Hamiltonian, we use the Peierls substitution, which is the lattice version of the vector potential.
-In the presence of an external magnetic vector potential $\mathbf{A}$ Using the second quantization notation introduced in the previous subsection, we redefine translation operators $\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},x}\bm{c}_{i+1,j,k}$ that appear in the kinetic and spin-orbit part of the Hamiltonian in the tight-binding model as
+In Sec.~\ref{sec:orbital_effect_of_magnetic_field}, we discussed the orbital effect of the magnetic field and included the vector potential as in Eq.~\eqref{eq:continuum_kinetic_with_orbital}.
+To include this into a discretized Hamiltonian, we use the Peierls substitution, which is the lattice version of the vector potential.
+In the presence of an external magnetic vector potential $\mathbf{A}$ (using the second quantization notation introduced in the previous subsection), we redefine translation operators $\bm{c}_{\bm{r}}^{\dagger}H\bm{c}_{\bm{r}+a\hat{x}}$ appearing in the kinetic and spin-orbit part of the Hamiltonian in the tight-binding model, as
 \begin{subequations}
 \begin{equation}
-\bm{T}_x = \bm{c}_{i+1,j,k}^{\dagger}H\bm{c}_{i,j,k} e^{i \theta_{i,j,k}^x},
+\bm{T}_x = \bm{c}_{\bm{r}+a\hat{x}}^{\dagger}H\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^x},
 \end{equation}
 \begin{equation}
-\bm{T}_y = \bm{c}_{i,j+1,k}^{\dagger}H\bm{c}_{i,j,k} e^{i \theta_{i,j,k}^y},
+\bm{T}_y = \bm{c}_{\bm{r}+a\hat{y}}^{\dagger}H\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^y},
 \end{equation}
 \begin{equation}
-\bm{T}_z = \bm{c}_{i,j,k+1}^{\dagger}H\bm{c}_{i,j,k} e^{i \theta_{i,j,k}^z},
+\bm{T}_z = \bm{c}_{\bm{r}+a\hat{z}}^{\dagger}H\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^z},
 \end{equation}
 \end{subequations}
 where the phases are defined as
 \begin{subequations}
 \begin{equation}
-\theta_{i,j,k}^{x}={\frac {q}{\hbar}} \int_{i}^{i+1}A_{x}(x,j,k){\text{d}}x,
+\theta_{\bm{r}}^{x}={\frac {q}{\hbar}} \int_{i}^{i+1}A_{x}(x,j,k){\text{d}}x,
 \end{equation}
 \begin{equation}
-\theta_{i,j,k}^{y}={\frac {q}{\hbar}} \int_{j}^{j+1}A_{y}(i,y,k){\text{d}}y,
+\theta_{\bm{r}}^{y}={\frac {q}{\hbar}} \int_{j}^{j+1}A_{y}(i,y,k){\text{d}}y,
 \end{equation}
 \begin{equation}
-\theta_{i,j,k}^{z}={\frac {q}{\hbar}} \int_{j}^{k+1}A_{z}(i,j,z){\text{d}}z.
+\theta_{\bm{r}}^{z}={\frac {q}{\hbar}} \int_{j}^{k+1}A_{z}(i,j,z){\text{d}}z.
 \end{equation}
 \end{subequations}
 
