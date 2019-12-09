@@ -579,7 +579,7 @@ The band structure (b) is trivial but near a phase transition, (c) is at the pha
 \end{center}
 \end{figure}
 
-\subsection{The orbital effect of the magnetic field}
+\subsection{The orbital effect of the magnetic field}\label{sec:orbital_effect_of_magnetic_field}
 \co{Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
 Whenever a magnetic flux can penatrate a surface of the nanowire, the canonical momentum operator in Eq.~\eqref{eq:3D_Ham} is modified to include the vector potential
 \begin{equation}
@@ -681,6 +681,7 @@ Finally, as Majorana device simulations become capable of correctly including th
 
 
 \newpage
+% XXX: remove this?!
 The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
 
 \begin{figure}
@@ -752,20 +753,16 @@ where $\bm{c}$ is a vector of creation and annihilation operators that acts on t
 \begin{equation}
 H_{\textrm{onsite}} = \frac{B_{x} g \mu_{B} \sigma_{x}}{2} + \Delta \tau_{x} - \mu \tau_{z} + 6 t \tau_{z},
 \end{equation}
-
 \begin{equation}
 H_{\textrm{hop},x} = -t \tau_{z} + \frac{i \alpha \sigma_{y} \tau_{z}}{2 a},
 \end{equation}
-
 \begin{equation}
 H_{\textrm{hop},y} = -t \tau_{z} - \frac{i \alpha \sigma_{x} \tau_{z}}{2 a},
 \end{equation}
-
 \begin{equation}
 H_{\textrm{hop},z} = -t \tau_{z}.
 \end{equation}
-
-%% I got these matrices using:
+%% I got these matrices using the following Python code:
 % import kwant.continuum
 % import sympy
 
@@ -795,7 +792,6 @@ H_{\textrm{hop},z} = -t \tau_{z}.
 %         .replace(r"\sigma_{0}", "")
 %         .replace(r"\cdot", "")
 %     )
-    
 %     print(
 %         rf"""
 % \begin{{equation}}
@@ -803,9 +799,10 @@ H_{\textrm{hop},z} = -t \tau_{z}.
 % \end{{equation}}
 % """
 %     )
-These matrices can easily be implemented in a numerical model.
+These matrices can easily be implemented in a numerical model, for example, using the Kwant package~\cite{Groth2014}.
 
 \co{The lattice version of a vector potential is the Peierls substitution.}
+In Sec.~\ref{sec:orbital_effect_of_magnetic_field}, we discussed the orbital effect of the magnetic field.
 
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
 
@@ -839,11 +836,6 @@ Still three dimensional systems are prohibitivly computationally expensive.
 \section{Structure of this thesis}
 
 Here, we give a brief overview of the topics explored in the following chapters.
-\vspace{1mm}
-
-
-\subsection{Chapter~\ref{ch:adaptive}: Title here for adaptive}
-Abstract here for adaptive
 \vspace{1mm}
 
 \subsection{Chapter~\ref{ch:orbitalfield}: Orbital effect of magnetic field on the Majorana phase diagram}
@@ -882,6 +874,8 @@ We find that the small superconducting gap does not have a strong detrimental ef
 Specifically, both the critical magnetic field required for creating a topological phase and the size of the Majorana bound states are independent of the superconducting gap.
 The critical magnetic field scales with the wire cross-section, while the relative importance of the orbital and Zeeman effects of the magnetic field is controlled by the material parameters only: $g$ factor, effective electron mass, and the semiconductor-superconductor interface transparency.
 
-
+\subsection{Chapter~\ref{ch:adaptive}: Title here for adaptive}
+Abstract here for adaptive
+\vspace{1mm}
 
 \references{dissertation}
