@@ -707,7 +707,7 @@ Therefore, to study Majorana devices, we must use numerical methods.
 Using the finite difference approximation, we can convert the linear ordinary differential equation, the continuous BdG Hamiltonian Eq.~\eqref{eq:3D_Ham}, into a system of equations described by a (potentially very large) sparse matrix.
 With readily available standard sparse linear algebra techniques, such as the shift-invert diagonalization method, we can efficiently find low energy wavefunctions of our system.
 
-\subsection{Band structure}
+\subsection{Band structure}\label{sec:band_structure_numerics}
 \co{Translationally invariant systems are described with a band structure.}
 In principle, to correctly predict device properties, one needs to simulate a large nanowire that includes the edges of the wire.
 However, because topology is robust and insensitive to details, we can simulate just the band structure in the bulk of the wire.
@@ -803,6 +803,31 @@ These matrices can easily be implemented in a numerical model, for example, usin
 
 \co{The lattice version of a vector potential is the Peierls substitution.}
 In Sec.~\ref{sec:orbital_effect_of_magnetic_field}, we discussed the orbital effect of the magnetic field.
+To include this effect into a discretized Hamiltonian, we use the Peierls substitution, which is the lattice version of the vector potential.
+In the presence of an external magnetic vector potential $\mathbf{A}$ Using the second quantization notation introduced in the previous subsection, we redefine translation operators $\bm{c}_{i,j,k}^{\dagger}H_{\textrm{hop},x}\bm{c}_{i+1,j,k}$ that appear in the kinetic and spin-orbit part of the Hamiltonian in the tight-binding model as
+\begin{subequations}
+\begin{equation}
+\bm{T}_x = \bm{c}_{i+1,j,k}^{\dagger}H\bm{c}_{i,j,k} e^{i \theta_{i,j,k}^x},
+\end{equation}
+\begin{equation}
+\bm{T}_y = \bm{c}_{i,j+1,k}^{\dagger}H\bm{c}_{i,j,k} e^{i \theta_{i,j,k}^y},
+\end{equation}
+\begin{equation}
+\bm{T}_z = \bm{c}_{i,j,k+1}^{\dagger}H\bm{c}_{i,j,k} e^{i \theta_{i,j,k}^z},
+\end{equation}
+\end{subequations}
+where the phases are defined as
+\begin{subequations}
+\begin{equation}
+\theta_{i,j,k}^{x}={\frac {q}{\hbar}} \int_{i}^{i+1}A_{x}(x,j,k){\text{d}}x,
+\end{equation}
+\begin{equation}
+\theta_{i,j,k}^{y}={\frac {q}{\hbar}} \int_{j}^{j+1}A_{y}(i,y,k){\text{d}}y,
+\end{equation}
+\begin{equation}
+\theta_{i,j,k}^{z}={\frac {q}{\hbar}} \int_{j}^{k+1}A_{z}(i,j,z){\text{d}}z.
+\end{equation}
+\end{subequations}
 
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
 
