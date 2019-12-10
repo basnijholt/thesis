@@ -788,16 +788,16 @@ These matrices can easily be implemented in a numerical model, for example, usin
 \co{The lattice version of a vector potential is the Peierls substitution.}
 In Sec.~\ref{sec:orbital_effect_of_magnetic_field}, we discussed the orbital effect of the magnetic field and included the vector potential as in Eq.~\eqref{eq:continuum_kinetic_with_orbital}.
 To include this into a discretized Hamiltonian, we use the Peierls substitution, which is the lattice version of the vector potential.
-In the presence of an external magnetic vector potential $\mathbf{A}$ (using the second quantization notation introduced in the previous subsection), we redefine translation operators $\bm{c}_{\bm{r}}^{\dagger}H\bm{c}_{\bm{r}+a\hat{x}}$ appearing in the kinetic and spin-orbit part of the Hamiltonian in the tight-binding model, as
+In the presence of an external magnetic vector potential $\mathbf{A}$ (using the second quantization notation introduced in the previous subsection), we redefine translation operators $\bm{c}_{\bm{r}}^{\dagger}H_\textrm{hop}\bm{c}_{\bm{r}+a\hat{x}}$ appearing in the kinetic and spin-orbit part of the Hamiltonian in the tight-binding model, as
 \begin{subequations}
 \begin{equation}
-\bm{T}_x = \bm{c}_{\bm{r}+a\hat{x}}^{\dagger}H\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^x},
+\bm{T}_x = \bm{c}_{\bm{r}+a\hat{x}}^{\dagger}H_\textrm{hop}\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^x},
 \end{equation}
 \begin{equation}
-\bm{T}_y = \bm{c}_{\bm{r}+a\hat{y}}^{\dagger}H\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^y},
+\bm{T}_y = \bm{c}_{\bm{r}+a\hat{y}}^{\dagger}H_\textrm{hop}\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^y},
 \end{equation}
 \begin{equation}
-\bm{T}_z = \bm{c}_{\bm{r}+a\hat{z}}^{\dagger}H\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^z},
+\bm{T}_z = \bm{c}_{\bm{r}+a\hat{z}}^{\dagger}H_\textrm{hop}\bm{c}_{\bm{r}} e^{i \theta_{\bm{r}}^z},
 \end{equation}
 \end{subequations}
 where the phases are defined as
@@ -812,6 +812,8 @@ where the phases are defined as
 \theta_{\bm{r}}^{z}={\frac {q}{\hbar}} \int_{j}^{k+1}A_{z}(i,j,z){\text{d}}z.
 \end{equation}
 \end{subequations}
+Here, the elementary charge`q`, is opposite for the electrons and the holes.
+Thus, adding a magnetic field $\bm{B}=\nabla \times \bm{A}$---including a choice for the vector potential $\bm{A}$---to the tight-binding model, thus amounts to adding the above phase terms to the hopping terms of the Hamiltonian.
 
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
 
