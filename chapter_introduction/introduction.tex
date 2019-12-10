@@ -20,8 +20,7 @@ This phase transition is an example of symmetry breaking because it reduces the 
 Another example is ferromagnets, where the spins of electrons are randomly oriented above a certain critical temperature $T_c$: having a continuous rotational symmetry; while for $T<T_c$ the spin align: resulting in a discrete rotational symmetry.
 
 \co{Symmetry-breaking theory works well but not for topologically ordered matter.}
-This symmetry-breaking theory introduced by Lev Landau in 1937 has been a very successful theory \cite{Landau1937}.  % XXX: Do not say "has been a very successful theory"
-It was long believed that the symmetry breaking theory explains all phases in materials and all (continuous) phase transitions.
+This symmetry-breaking theory introduced by Lev Landau in 1937~\cite{Landau1937}, which was long believed to explain all phases in materials and all (continuous) phase transitions.
 In 1987, in an attempt to describe high $T_c$ superconductors, the chiral spin state was introduced \cite{Kalmeyer1987}.
 However, it was soon realized that the symmetry breaking description was not sufficient to explain its phase.
 A new kind of phase called a ``topological phase'' was introduced \cite{Wen1989,XiaoGang1990}.
@@ -30,7 +29,7 @@ It is a zero-temperature phase of matter (i.e.~quantum matter) that is described
 \co{The QHE is an example that can be described using of the theory of topological order.}
 The quantum Hall effect is an example of a state that cannot be described by its symmetries alone; instead, it can be characterized by a distinct topology (see Fig.~\ref{fig:knots}).  %XXX: add ref
 Its signature, shown in Fig.~\ref{fig:qhe}, is robust does not depend on the specific geometry and does not vanish upon smooth changes in material parameters.
-This signature manifests in an exact quantization of the Hall conductance of an integer number of $e^2/h$, where $e$ is the elementary charge, and $h$ is the Planck constant, both fundamental constants in nature.
+This signature manifests in an exact quantization of the Hall conductance of an integer number of $e^2/h$, where $e$ is the elementary charge, and $h$ is the Planck constant, both fundamental constants.
 Because of its robustness---it is insensitive to specific experimental settings and purity of the material used---the quantum Hall effect is used to determine the standard for electrical resistance. % XXX: add ref
 The effect appears upon applying a large perpendicular magnetic field $B_\perp$ to two-dimensional electron gas at low temperatures.
 This opens a gap between the energy bands and localizes the electrons in the bulk.
@@ -43,8 +42,8 @@ These states along the edges are responsible for the conduction and are called `
 \caption{
 Topology in mathematics concerns itself with the properties of an object that are preserved under continuous deformations.
 For example, an unknot (left) cannot be continuously transformed into a trefoil knot (right) without cutting it; this means that they are not topologically equivalent.
-In condensed matter physics, the object that is studied is the Hamiltonian.
-Whenever the Hamiltonian can be continuously transformed into another Hamiltonian, they are topologically equivalent.
+The object that is studied in condensed matter physics, is the Hamiltonian.
+Two Hamiltonians are topologically equivalent whenever an Hamiltonian can be continuously transformed into another Hamiltonian.
 Unlike a knot that can be visualized in space, the topology of the quantum Hall state manifests itself in momentum space.
 \label{fig:knots}}
 \end{center}
@@ -65,7 +64,7 @@ It displays a stairlike quantized sequence of Hall conductances equal to $ne^2/h
 The field of topology in condensed matter has substantially grown over the past decades.
 Recently, in 2016, the Nobel prize was awarded to Thouless, Haldane, and Kosterlitz for the theoretical findings of topological states.
 One of these new states are ``topological insulators,'' which also exhibit edge or surface states and have similarities to the quantum Hall effect, but do not require extreme conditions such as the large magnetic field.
-Here, the effect of the magnetic field is replaced by spin-orbit coupling.
+Here, spin-orbit coupling replaces the effect of the magnetic field.
 This is a coupling between the electron's momentum and spin, effectively causing a momentum dependent magnetic field for electrons that move through a crystal lattice.
 The spin-orbit coupling effect is discussed in more detail in Sec.~\ref{sec:hamiltonian_term_by_term}.
 Due to the absence of a magnetic field (which breaks time-reversal symmetry in the quantum Hall effect), the edge states always come in counter-propagating pairs, shown in see Fig.~\ref{fig:qhe_example}.
@@ -84,14 +83,14 @@ Comparison of an insulator, quantum Hall effect, and a topological insulator.
 In addition to the exciting new physical insights into topological materials, topological states might be used to design novel new quantum devices.
 One of the most exciting applications is to use these states to build a topological quantum computer by exploiting their non-Abelian properties.
 It is predicted that a quantum computer is much faster than a classical computer in performing certain tasks, such as the simulation of quantum systems \cite{Feynman1982} and prime factorization \cite{Shor1994}.
-The fundamental building block of the quantum computer is the qubit (or quantum bit), the quantum equivalent of the classical transistor.
+The fundamental building block of the quantum computer is the qubit (or quantum bit), which is the quantum equivalent of the classical transistor.
 Because these qubits store quantum information, they are extremely fragile, and even a small interaction with its environment can destroy its state and result in computational errors.
 Physicists experiment with different approaches to create a qubit; for example, there are proposals (and some realizations of) qubits based on quantum optics, ultracold atoms, spin-based systems, and superconducting systems.  % XXX: add refs
 In general, one of the most significant problems is to limit and correct the computational errors, and therefore a large fraction of the research is focussed on error-correction \cite{Lidar2013}.
 Here, the advantage of using topological states becomes apparent because the topological qubit naturally protects its state against small perturbations in the environment \cite{Nayak2008}.
 
 \co{Majoranas can be used to create this topological quantum computer.}  % XXX: maybe mention that Majoranas are topologically protected
-The simplest non-Abelian excitation is the zero-energy Majorana bound state (MBS), which were first proposed to exist as quasiparticle excitations of the $\nu = 5/2$ quantum Hall effect \cite{Read2000,Moore1991}, which requires a high material purity and very low temperatures.
+The simplest non-Abelian excitation is the zero-energy Majorana bound state (MBS), which were first proposed to exist as quasiparticle excitations of the $\nu = 5/2$ quantum Hall effect \cite{Read2000,Moore1991}, which requires a high material purity and very low temperatures.  % XXX: change this sentence
 Other early proposals \cite{Gurarie2005,Sarma2006,Tewari2007} rely on rare and exotic $p$-wave superconductors and are extremely challenging to realize experimentally.
 In 2008, Fu and Kane suggested a new approach to create MBSs by using a hybrid structure of an ordinary $s$-wave superconductor coupled to a topological insulator to create a state that resembles a spinless $p$-wave superconductor \cite{Fu2008}.
 Inspired by this hybrid approach, in 2010, two works \cite{Lutchyn2010,Oreg2010} suggested using a simpler one-dimensional nanowire system coupled to a $s$-wave superconductor.
@@ -141,7 +140,7 @@ $\mu$          & chemical potential,\tabularnewline
 $E_{k}$        & kinetic energy ($\frac{\hbar^{2}k^{2}}{2m}$),\tabularnewline
 $m$            & mass,\tabularnewline
 $k$            & momentum,\tabularnewline
-$\sigma\uparrow,\sigma\downarrow$  & spin of electron,\tabularnewline
+$\sigma\uparrow,\sigma\downarrow$ & spin of electron,\tabularnewline
 $V_{\bm{kl}}$  & interaction potential.\tabularnewline
 \end{tabular}
 
@@ -303,7 +302,7 @@ vertical wires and then swapping the position of the other Majorana.
 The only thing that distinguishes Majoranas is their position in the network.
 That means that if we exchanged two Majoranas in space, the system would look exactly the same as it looked before the exchange.
 We now assume the energy spectrum is gapped for $|E|<\Delta$ with the Majorana ground state at $E=0$.
-If this ground state contains several Majoranas, there will be several states all at zero energy, forming a  ``ground state manifold.''
+If this ground state contains several Majoranas, there will be several states all at zero energy, forming a ``ground state manifold.''
 
 \co{We consider $N$ Majoranas and write down its state of fermionic modes.}
 From now on, we only consider the states corresponding to the Majoranas and neglect the states that live in the bulk ($E \geq \Delta$).
@@ -680,21 +679,6 @@ However, describing k$\cdot$p theory is beyond the scope of this thesis.
 Finally, as Majorana device simulations become capable of correctly including the spatially varying electric field into their models (as discussed earlier), it enables researchers to understand how this affects the spin-orbit coupling by using the k$\cdot$p theory.
 
 
-\newpage
-% XXX: remove this?!
-The probability density and band structure of a 2D system are plotted in Fig.~\ref{fig:wavefunction_2d}.
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/wavefunction_2d.pdf}
-\caption{Similar to Fig~\ref{fig:wavefunction_1d}, but for a 2D system.
-\label{fig:wavefunction_2d}}
-\end{center}
-\end{figure}
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NUMERICAL METHODS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -745,7 +729,7 @@ and similar expressions for $\partial_{y}$, $\partial_{z}$, $\partial_{y}^2$, an
 Subsitituting all of these into the Hamiltonian and using $t = \frac{\hbar^2}{2 m a^2}$ gives
 \begin{align}
 \begin{aligned}
-H_{\textrm{BdG}}= & \sum_{i,j,k}\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{onsite}}\bm{c}_{\bm{r}}  \\
+H_{\textrm{BdG}}= & \sum_{i,j,k}\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{onsite}}\bm{c}_{\bm{r}} \\
                   & +\sum_{i,j,k}\left(\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{hop},x}\bm{c}_{\bm{r}+a\hat{x}}+\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{hop},y}\bm{c}_{\bm{r}+a\hat{y}}+\bm{c}_{\bm{r}}^{\dagger}H_{\textrm{hop},z}\bm{c}_{\bm{r}+a\hat{z}}+H.c.\right),
 \end{aligned}
 \end{align}
