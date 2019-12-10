@@ -90,7 +90,8 @@ In general, one of the most significant problems is to limit and correct the com
 Here, the advantage of using topological states becomes apparent because the topological qubit naturally protects its state against small perturbations in the environment \cite{Nayak2008}.
 
 \co{Majoranas can be used to create this topological quantum computer.}  % XXX: maybe mention that Majoranas are topologically protected
-The simplest non-Abelian excitation is the zero-energy Majorana bound state (MBS), which were first proposed to exist as quasiparticle excitations of the $\nu = 5/2$ quantum Hall effect \cite{Read2000,Moore1991}, which requires a high material purity and very low temperatures.  % XXX: change this sentence
+The zero-energy Majorana bound state (MBS) is the simplest non-Abelian excitation.
+It was first proposed to exist as quasiparticle excitations of the $\nu = 5/2$ quantum Hall effect \cite{Read2000,Moore1991}, which requires a high material quality and very low temperatures.
 Other early proposals \cite{Gurarie2005,Sarma2006,Tewari2007} rely on rare and exotic $p$-wave superconductors and are extremely challenging to realize experimentally.
 In 2008, Fu and Kane suggested a new approach to create MBSs by using a hybrid structure of an ordinary $s$-wave superconductor coupled to a topological insulator to create a state that resembles a spinless $p$-wave superconductor \cite{Fu2008}.
 Inspired by this hybrid approach, in 2010, two works \cite{Lutchyn2010,Oreg2010} suggested using a simpler one-dimensional nanowire system coupled to a $s$-wave superconductor.
@@ -145,15 +146,16 @@ $V_{\bm{kl}}$  & interaction potential.\tabularnewline
 \end{tabular}
 
 The interaction term includes only the Cooper pairs, which consist of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum that can be denoted as $(\bm{\bm{k}}\uparrow,-\bm{k}\downarrow)$.
-Finding the ground state of this so-called pairing Hamiltonian is impossible due to the high degrees of freedom; therefore, we have to make an approximation.  % XXX: check if this is true
+Finding the ground state of many interacting electrons is a major problem in condensed matter physics, quantum chemistry, molecular biology, and many other fields.
+The BCS Hamiltonian approximates the Coulomb interaction in momentum space, however, it is still fundamentally difficult to solve; therefore, we have to make an approximation.
 
 \co{We use the mean-field approximation and get the Bogoliubov-de Gennes Hamiltonian and get its spectrum.}
-A classic approximation scheme that describes the behavior of conventional superconductors remarkably well is the mean-field approximation.
-First we define the quantity
+The mean-field approximation is a classic approximation scheme that describes the behavior of conventional superconductors remarkably well.
+To use it, we define the quantity
 \begin{equation}
 b_{\bm{k}}=\left\langle c_{\bm{k}\uparrow}c_{-\bm{k}\downarrow}\right\rangle ,
 \end{equation}
-which we use to define the so-called gap energy
+which in turn we use to define the so-called gap energy
 \begin{equation}
 \Delta_{\bm{k}}=-\sum_{\bm{k'}}V_{\bm{kk'}}b_{\bm{k'}}.
 \end{equation}
@@ -185,7 +187,7 @@ and write Eq.~\eqref{eq:BCS_MF} matrix form
 \Delta_{\bm{k}}^{*} & -\epsilon_{\bm{k}}
 \end{array}\right)}}\Psi_{\bm{k}}.
 \end{equation}
-To calculate the energy spectrum, we can diagonalize the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$ using the unitary Boguliubov transformation matrix $U_{\textrm{B}}$.  % XXX: should I mention this?
+To calculate the energy spectrum, we can diagonalize the Bogoliubov-de Gennes Hamiltonian $H_{\textrm{BdG}}$.
 Alternatively, we can square $H_{\textrm{BdG}}$ which gives a diagonal matrix
 \begin{equation}
 H_{\textrm{BdG}}^{2}=\left(\begin{array}{cc}
@@ -402,7 +404,7 @@ The four basis states in the ground state manifold are
 \left|00\right\rangle ,\left|01\right\rangle ,\left|10\right\rangle ,\left|11\right\rangle ,\label{eq:basis}
 \end{equation}
 where the first number is the occupation number of the fermionic mode $c_{1}^{\dagger}=\tfrac{1}{2}(\gamma_{1}+i\gamma_{2})$ and the second number the occupation number of $c_{2}^{\dagger}=\tfrac{1}{2}(\gamma_{3}+i\gamma_{4})$.
-For instance, if we start from the state $\left|00\right\rangle $ and we exchange $\gamma_{2}$ and $\gamma_{3}$ by applying $U_{23}=\tfrac{1}{\sqrt{2}}\left(1\pm\gamma_{2}\gamma_{3}\right)$, we obtain\footnote{See appendix \ref{chap:U_der} for derivations of $U_{nm}$.}  % XXX: add this to the appendix.
+For instance, if we start from the state $\left|00\right\rangle $ and we exchange $\gamma_{2}$ and $\gamma_{3}$ by applying $U_{23}=\tfrac{1}{\sqrt{2}}\left(1\pm\gamma_{2}\gamma_{3}\right)$, we obtain
 \begin{equation}
 \left|00\right\rangle \to U_{23}\left|00\right\rangle =\tfrac{1}{\sqrt{2}}\left(\left|00\right\rangle +i\left|11\right\rangle \right).
 \end{equation}
@@ -593,12 +595,13 @@ However, devices that have a thin Al shell are in the strong coupling regime.
 Because of the high density inside the superconductor (compared to the semiconductor), the wire can no longer be considered as symmetric with respect to the wire axis.
 To get correct physical observables from both the vector potential and the superconducting phase difference~\cite{Wojcik2018}, we have to ensure that the total supercurrent cancels out,
 \begin{equation}
-j_s = \frac{1}{2}\nabla \Phi - e \bm{A}=0.  % XXX: check units, from Georg's paper Eq. (9).
+\bm{J}_s = \frac{2e n_s}{m}\left(2e \bm{A} - \hbar \nabla \Phi \right)=0,
 \end{equation}
+where $n_s$ is the density in the superconductor.
 At zero temperature, this can be archived by minimizing the kinetic energy, which is proportional to $E_s \propto \int d \bm{x} J_s^2(\bm{x})$ ~\cite{Winkler2019}.
 This minimization results in the correct vector potential and the superconducting phase.
-The inclusion of the orbital effect modifies the phase diagram shown in Fig.~\ref{fig:topo_bands}.
-Chapter ~\ref{ch:orbitalfield} discusses the weakly coupled superconductor case while Ch.~\ref{ch:shortjunction} discusses the strongly coupled superconductor case.
+The inclusion of the orbital effect modifies the phase diagram.
+This is discussed in Ch.~\ref{ch:orbitalfield} which is in the weakly coupled superconductor limit, while Ch.~\ref{ch:shortjunction} discusses the strongly coupled superconductor limit.
 
 \subsection{Disorder}
 \co{A real system's material is not perfectly smooth and has impurities, and we can model this disorder by random onsite energy.}
