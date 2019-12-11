@@ -119,18 +119,18 @@ At that point, it should be evident that solving this problem requires numerical
 \co{To understand the topological protection of MBS in hybrid structures, we discuss superconductivity.}
 This section discusses superconductivity to understand the topological protection of Majorana bound states.
 Superconductivity is a phenomenon that occurs in certain materials.
-These materials become superconducting when they are cooled below a characteristic critical temperature of $T_{\mathrm{c}}$.
+These materials become superconducting when they are cooled below a characteristic critical temperature $T_{\mathrm{c}}$.
 Upon reaching this temperature, the material undergoes a phase transition that results in precisely zero electrical resistance and the expulsion of magnetic fields.
 Superconductivity was discovered by Heike Kamerlingh Onnes in 1911, and ever since, considerable efforts have been devoted to finding out how and why it works.
 The phenomenological Ginzburg-Landau theory and the microscopic BCS theory led to a good understanding of ``conventional'' superconductivity.
-Today's research focuses on exotic superconductors, high $T_{\mathrm{c}}$ superconductors, and hybrid structures that consist of a superconductor and another material.
+A lot of today's research focuses on exotic superconductors, high $T_{\mathrm{c}}$ superconductors, and hybrid structures that consist of a superconductor and another material.
 In this thesis, we study such hybrid structures.
 
 \subsection{BCS theory and the mean-field approximation}\label{sec:BCS-theory}
 \co{We can model superconductivity using BCS theory.}
 BCS theory describes superconductivity as a microscopic effect.
 It assumes that two electrons from a Cooper pair of two electrons, where the electrons effectively attract due to electron-phonon coupling~\cite{Cooper1956,Bardeen1957,Bardeen1957a}.
-It postulates that superconductivity is caused by a condensation of Cooper pairs at the Fermi energy\footnote{We assume zero temperature $\left(T=0\right)$, so $E_{\textrm{F}}=\mu$, where $\mu$ is the chemical potential.} $E_{\textrm{F}}$ into a boson-like state, a Bose Einstein condensate.  % XXX: change this sentence
+It postulates that superconductivity is caused by a condensation of these Cooper pairs at the Fermi energy\footnote{We assume zero temperature $\left(T=0\right)$, so $E_{\textrm{F}}=\mu$, where $\mu$ is the chemical potential.} $E_{\textrm{F}}$ into a boson-like state, a Bose Einstein condensate.
 The model Hamiltonian in the language of second quantization ~\cite{Gennes1999} is
 \begin{equation}
 \mathcal{H}_{\textrm{BCS}}=\sum_{\bm{k}\sigma}\epsilon_{\bm{k}}c_{\bm{k}\sigma}^{\dagger}c_{\bm{k}\sigma}+\sum_{\bm{k}\bm{l}}V_{\bm{k}\bm{l}}c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow},\label{eq:BCS}
@@ -147,8 +147,8 @@ $k$            & momentum,\tabularnewline
 $\sigma\uparrow,\sigma\downarrow$ & spin of electron,\tabularnewline
 $V_{\bm{kl}}$  & interaction potential.\tabularnewline
 \end{tabular}
-The interaction term includes only the Cooper pairs, which consist of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum that can be denoted as $(\bm{\bm{k}}\uparrow,-\bm{k}\downarrow)$.
-Finding the ground state of many interacting electrons is a major problem in condensed matter physics, quantum chemistry, molecular biology, and many other fields.
+The interaction term includes only the Cooper pairs consisting of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum, $(\bm{\bm{k}}\uparrow,-\bm{k}\downarrow)$.
+Finding the ground state of many interacting electrons is a major problem not only in condensed matter physics, but also in quantum chemistry, molecular biology, and many other fields.
 The BCS Hamiltonian approximates the Coulomb interaction in momentum space, however, it is still fundamentally difficult to solve; therefore, we have to make an approximation.
 
 \co{We use the mean-field approximation and get the Bogoliubov-de Gennes Hamiltonian and get its spectrum.}
@@ -204,9 +204,11 @@ E=\pm\sqrt{\epsilon_{\bm{k}}^{2}+\left|\Delta\right|^{2}}.\label{eq:SC_spectrum}
 \end{equation}
 
 \co{In the single-particle picture, we essentially double the degrees of freedom and introduce a symmetry.}
-The Bogoliubov-de Gennes Hamiltonian acts on the Nambu spinors [Eq.~\eqref{eq:Nambu}] whose first half is composed out of annihilation operators of electrons, and the second half out of creations operators of the same electrons.
-To go to a single-particle description (first quantization), we can view the latter creation operators as annihilation operators of an extra set of holes, which doubles the number of degrees of freedom in the system.
-Besides the Pauli matrices that act on spin ($\sigma_{i}$ where $i\in x,y,z$) we introduce $\tau_{i}$ to act on the electron-hole degree of freedom.
+The Bogoliubov-de Gennes Hamiltonian acts on the Nambu spinors [Eq.~\eqref{eq:Nambu}].
+These have annihilation operators of electrons (first half) and creations operators of the same electrons (second half).
+To go to a single-particle description (first quantization), we can view the latter creation operators as annihilation operators of an extra set of holes.
+In this way, we essentially double the number of degrees of freedom in the system.
+Besides the usual Pauli matrices that act on spin degree of freedom ($\sigma_{i}$ where $i\in x,y,z$,) we introduce $\tau_{i}$ to act on the electron-hole degree of freedom.
 The Hamiltonian becomes a $4\times4$ matrix\footnote{Here $\otimes$ denotes the Kronecker product and we usually omit $\sigma_{0}$ and $\tau_{0}$.}
 \begin{equation}
 H_{\textrm{BdG}}=\epsilon_{k}\tau_{z}\otimes\sigma_{0}+\Delta\tau_{x}\otimes\sigma_{0}=\left(\begin{array}{cccc}
@@ -221,26 +223,28 @@ which acts on the wavefunction
 \Psi=\left(\psi_{\textrm{e}\uparrow},\psi_{\textrm{e}\downarrow},\psi_{\textrm{h}\downarrow},-\psi_{\textrm{h}\uparrow}\right)^{T},\label{eq:4wf}
 \end{equation}
 where $\psi_{\textrm{e}}$, $\psi_{\textrm{h}}$ are the electron and hole components of the wave function, and $\psi_{\uparrow}$, $\psi_{\downarrow}$ are the spin-up and spin-down states.
-Because the holes are related to the electrons, $H_{\textrm{BdG}}$ has a particle-hole symmetry, and it determines the material's specific topology.
-Symmetry and its resulting topology is the topic of the next section, after which, we will discuss this particle-hole symmetry.
+Due to the holes being related to the electrons, the Hamiltonian $H_{\textrm{BdG}}$ has a particle-hole symmetry.
+A symmetry, or combination of symmetries, determines a material's specific topology.
+Symmetry and the topology that results from it, is the topic of the next section.
 
 \subsection{Topology and symmetry}\label{sec:topology}
 \co{Symmetry determines a system's topology.}
 Symmetry plays a fundamental part in physics.
 In condensed matter systems, only three discrete symmetries are important: time-reversal symmetry $\mathcal{T}$, particle-hole symmetry $\mathcal{P}$, and chiral symmetry $\mathcal{C}$.
-Wigner's theorem states that a symmetry must either be a unitary or an anti-unitary operator.
+Wigner's theorem states that a symmetry must either be a unitary or an anti-unitary operator.  % XXX: need citation?
 Both $\mathcal{T}$ and $\mathcal{P}$ have anti-unitary operators and may square either to $+1$ or $-1$ depending on the specifics of the system.
-Chiral symmetries have a unitary operator and always squares to $+1$.
-The combination of these three symmetries from ten symmetry classes~\cite{Altland1997}.
+Chiral symmetries have a unitary operator and always square to $+1$.
+The combination of these three symmetries form ten symmetry classes~\cite{Altland1997}.
 Each class is characterized by the absence or presence of these symmetries, and together with the dimensionality of a sytem determines the specific topological invariant it has.
 Topology studies whether objects can be continuously transformed into each other.
-The object that is studied in condensed matter is the Hamiltonian of a system.
-If two Hamiltonians can be continuously transformed\footnote{An example of a continuous transformation from $H_{1}$ to $H_{2}$: $H=\alpha H_{1}+(1-\alpha)H_{2}$ where $\alpha=0\rightarrow1$.} into each other without changing the topological invariant: the systems are said to be topologically equivalent.
+The object that is studied in condensed matter physics is the Hamiltonian of a system.
+If two Hamiltonians can be continuously transformed\footnote{An example of a continuous transformation from $H_{1}$ to $H_{2}$: $H=\alpha H_{1}+(1-\alpha)H_{2}$ where $\alpha=0\rightarrow1$.} into each other without changing the topological invariant, the systems are ``topologically equivalent.''
 How a topological invariant changes, varies for the different symmetry classes.
 
+% XXX: Proof-read the above
 \co{The PHS relates electrons to holes and this is obvious in its spectrum.}
 We ended Sec.~\ref{sec:BCS-theory} by noting that $H_{\textrm{BdG}}$ [Eq.~\eqref{eq:H_BdG_sc}] has a particle-hole symmetry $\mathcal{P}$.
-This Hamiltonian acts on a two-component wave function $\psi_{\textrm{BdG}}=\left(u,v\right)^{T}$ with $u$ electron component and $v$ the hole component.
+This Hamiltonian (neglecting spin) acts on a two-component wave function $\psi_{\textrm{BdG}}=\left(u,v\right)^{T}$ with $u$ electron component and $v$ the hole component.
 The symmetry of this Hamiltonian is most obvious in its dispersion relation, where each eigenstate $\psi_{E}=\left(u_{0},v_{0}\right)^{T}$ has a particle-hole symmetric partner at $\psi_{-E}=\left(\mathcal{P}u_{0},\mathcal{P}v_{0}\right)^{T}$.
 In constructing $H_{\textrm{BdG}}$, we artificially doubled the degrees of freedom by considering electrons and holes separately.
 Therefore, the creation operator $c^{\dagger}$ of the quasiparticle in the $\psi_{E}$ state is equal to the annihilation operator $c$ of the quasiparticle in the $\psi_{-E}$ state.
