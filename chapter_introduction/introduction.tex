@@ -303,16 +303,17 @@ If we can continuously transform a Hamiltonian $H_{1}$ into another Hamiltonian 
 
 \section{Non-Abelian statistics and braiding}\label{sec:braiding}
 \co{Majoranas have non-Abelian statistics which is the motivation to study them.}
-For many researchers, the ultimate motivation to study Majoranas is the fact that they have a fascinating property, non-Abelian quantum statistics.
+For many researchers, the ultimate motivation to study Majoranas is because of their fascinating property: non-Abelian quantum statistics.
 Quantum statistic studies what happens to wavefunctions describing identical particles when their positions are exchanged in space.
-In introductory quantum mechanics courses, we learned that particles are divided into two classes according to quantum statistics: bosons which stay the same under the exchange and fermions for which the wavefunction changes sign.
-However, Majorana bound states do not belong to either of these and are non-Abelian anyons.
+In introductory quantum mechanics courses, we learn that particles are divided into two classes according to quantum statistics: bosons which stay the same under the exchange and fermions for which the wavefunction changes sign.
+However, Majorana bound states do not belong to either of these classes.
+Instead, they are non-Abelian anyons.
 The operation of exchanging two Majoranas (called braiding) can send the system into a different state with the same particle configuration.
-Explaining how one could experimentally perform a braiding operation is beyond the scope of this thesis; therefore, we will focus on the mathematical operations that describe the braiding process.
-
+Explaining how to experimentally perform a braiding operation is beyond the scope of this thesis; therefore, we will focus on the mathematical operations that describe such a braiding process.
+% XXX: proof read until here
 \co{Multiple Majoranas form a ground state manifold.}
-Exchanging two Majoranas in 1D is ill-defined because it is impossible to swap them without having them collide, which would annihilate them.
-We can construct a network of nanowires to form T-junctions (see Fig.~\ref{fig:Majorana-T-junction}), which allows us to exchange positions of Majoranas.
+In one dimension, exchanging two Majoranas is ill-defined because it is impossible to swap them without colliding and consequently annihilating them.
+It is possible to construct a network of nanowires to form T-junctions (see Fig.~\ref{fig:Majorana-T-junction}), which allows to exchange the positions of Majoranas.
 Here, one can temporarily move a Majorana to one of the unoccupied wires and perform the exchange without the Majoranas ever becoming too close to each other.
 \begin{figure}
 \begin{center}
@@ -321,15 +322,14 @@ Here, one can temporarily move a Majorana to one of the unoccupied wires and per
 \caption{Majorana T-junction.
 The circles represent the Majoranas $\gamma_{1}...\gamma_{6}$.
 This network of nanowires allows for the exchange of two Majoranas without having them collide.
-This is possible by temporarily bringing a Majorana to one of the
-vertical wires and then swapping the position of the other Majorana.
+This is possible by temporarily bringing a Majorana to one of the vertical wires and then swapping the position of the other Majorana.
 \label{fig:Majorana-T-junction}}
 \end{center}
 \end{figure}
 The only thing that distinguishes Majoranas is their position in the network.
-That means that if we exchanged two Majoranas in space, the system would look exactly the same as it looked before the exchange.
+That means that after we exchange two Majoranas in space, the system looks exactly the same as it looked before the exchange.
 We now assume the energy spectrum is gapped for $|E|<\Delta$ with the Majorana ground state at $E=0$.
-If this ground state contains several Majoranas, there will be several states all at zero energy, forming a ``ground state manifold.''
+If this ground state contains several Majoranas, all at zero energy, they form a ``ground state manifold.''
 
 \co{We consider $N$ Majoranas and write down its state of fermionic modes.}
 From now on, we only consider the states corresponding to the Majoranas and neglect the states that live in the bulk ($E \geq \Delta$).
@@ -338,12 +338,12 @@ In Fig.~\ref{fig:Majorana-T-junction} we see six Majoranas (3 pairs), but for ge
 By pairing two Majoranas (two times half a degree of freedom), we can form fermionic modes that will give us two possible degenerate quantum states, either unoccupied $\ket 0$ or occupied $\ket 1$.
 By pairing up neighboring Majoranas $\gamma_{2n-1}$ and $\gamma_{2n}$ we get a creation operator that is its own complex conjugate $c_{n}^{\dagger}=\tfrac{1}{2}(\gamma_{2n-1}+i\gamma_{2n})$, where $c$ is a fermionic creation operator.
 Each pair gives two possible quantum states, so $N$ pairs will have $2^{N}$ possible states.
-We can represent every such state with a ket
+We can represent every state with a ket
 \begin{equation}
 \left|s_{1},s_{2},\dots,s_{N}\right\rangle,
 \end{equation}
 where $s_{n}$ is either unoccupied $0$ or occupied $1$.
-These states form a complete basis of the Hilbert space of the set of Majoranas.
+These states form a complete basis of the Hilbert space.
 
 \co{The parity of the groundstate is an observable.}
 We define the fermion parity operator
