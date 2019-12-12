@@ -241,18 +241,37 @@ The object that is studied in condensed matter physics is the Hamiltonian of a s
 If two Hamiltonians can be continuously transformed\footnote{An example of a continuous transformation from $H_{1}$ to $H_{2}$: $H=\alpha H_{1}+(1-\alpha)H_{2}$ where $\alpha=0\rightarrow1$.} into each other without changing the topological invariant, the systems are ``topologically equivalent.''
 How a topological invariant changes, varies for the different symmetry classes.
 
-% XXX: Proof-read the above
 \co{The PHS relates electrons to holes and this is obvious in its spectrum.}
-We ended Sec.~\ref{sec:BCS-theory} by noting that $H_{\textrm{BdG}}$ [Eq.~\eqref{eq:H_BdG_sc}] has a particle-hole symmetry $\mathcal{P}$.
-This Hamiltonian (neglecting spin) acts on a two-component wave function $\psi_{\textrm{BdG}}=\left(u,v\right)^{T}$ with $u$ electron component and $v$ the hole component.
-The symmetry of this Hamiltonian is most obvious in its dispersion relation, where each eigenstate $\psi_{E}=\left(u_{0},v_{0}\right)^{T}$ has a particle-hole symmetric partner at $\psi_{-E}=\left(\mathcal{P}u_{0},\mathcal{P}v_{0}\right)^{T}$.
+We ended Sec.~\ref{sec:BCS-theory} by noting that $H_{\textrm{BdG}}$ [Eq.~\eqref{eq:H_BdG_sc}] has a particle-hole symmetry which is of the form $\mathcal{P} = -i \sigma_y \tau_y \mathcal{K}$, where $\mathcal{K}$ is the complex conjugation operator.
+This Hamiltonian acts on a two-component (neglecting spin) wave function $\psi_{\textrm{BdG}}=\left(\psi_\textrm{e}, \psi_\textrm{h} \right)^{T}$.
+The symmetry of this Hamiltonian is most obvious in its dispersion relation, where each eigenstate $\psi_{E}=\left(\psi_{\textrm{e},0},\psi_{\textrm{h},0}\right)^{T}$ has a particle-hole symmetric partner at $\psi_{-E}=\mathcal{P}\left(\psi_{\textrm{e},0},\psi_{\textrm{h},0}\right)^{T}=\left(-\psi_{\textrm{h},0}^*, \psi_{\textrm{e},0}^*\right)^{T}$.
 In constructing $H_{\textrm{BdG}}$, we artificially doubled the degrees of freedom by considering electrons and holes separately.
 Therefore, the creation operator $c^{\dagger}$ of the quasiparticle in the $\psi_{E}$ state is equal to the annihilation operator $c$ of the quasiparticle in the $\psi_{-E}$ state.
-From this, it is clear that $\psi_{E}$ and $\psi_{-E}$ correspond to the same quasiparticle, and the creation of a quasiparticle with positive energy is identical to the annihilation of a quasiparticle with negative energy.
+From this, it is clear that $\psi_{E}$ and $\psi_{-E}$ correspond to the same quasiparticle.
 In a one or higher dimensional system, the operator $\mathcal{P}$ will not only send $E \rightarrow -E$ but will also send the momentum $k \rightarrow -k$ as
 \begin{equation}
-\mathcal{P^{\dagger}}H\left(k\right)\mathcal{P}=-H\left(-k\right).
+\mathcal{P^{\dagger}}H\left(k\right)\mathcal{P}=-H^*\left(-k\right).
 \end{equation}
+
+%% Checked the correct signs for the above ↑ section with this Python code
+% import numpy as np
+% σ_x = np.array([[0, 1], [1, 0]])
+% σ_y = np.array([[0, -1j], [1j, 0]])
+% σ_z = np.array([[1, 0], [0, -1]])
+% ϵ = Δ = 1
+% H = ϵ * σ_z + Δ * σ_x
+% (E0, E1), ψ = np.linalg.eigh(H)
+% ψ0, ψ1 = ψ.T  # ψ{-E}, ψ{E}
+% print(f"E0: {E0}, ψ0={ψ0}\nE1: {E1}, ψ0={ψ1}")
+% P = -1j * σ_y  # and complex conjugation!
+% a, b = ψ1
+% if np.allclose(ψ0, [-b.conj(), a.conj()]):
+%     print("ψ1 = [a, b] and ψ0 = [-b^*, a^*]")
+% if np.allclose(ψ1, -P @ ψ0.conj()):
+%     # minus sign because `P^2 = -1` and `P ψ0 = P^2 ψ1 =-1 ψ1`
+%     print("ψ1 = -P ψ0")
+% if np.allclose(ψ0, (P @ ψ1.conj())):
+%     print("ψ0 = P ψ1")
 
 \co{At E=0, we get a the Majorana condition.}
 At zero energy, something curious happens: here we have a state $\psi_{0}$ that upon applying $\mathcal{P}$ is transforms into itself $\mathcal{P}\psi_{0}=\psi_{0}$.
@@ -820,7 +839,7 @@ where the phases are defined as
 \theta_{\bm{r}}^{z}={\frac {q}{\hbar}} \int_{j}^{k+1}A_{z}(i,j,z){\text{d}}z.
 \end{equation}
 \end{subequations}
-Here, the elementary charge`q`, is opposite for the electrons and the holes.
+Here, the elementary charge $q$, is opposite for the electrons and the holes.
 Thus, adding a magnetic field $\bm{B}=\nabla \times \bm{A}$---including a choice for the vector potential $\bm{A}$---to the tight-binding model, thus amounts to adding the above phase terms to the hopping terms of the Hamiltonian.
 
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
