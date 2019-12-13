@@ -725,15 +725,21 @@ With readily available standard sparse linear algebra techniques, such as the sh
 In principle, to correctly predict device properties, one needs to simulate a large nanowire that includes the edges of the wire.
 However, because topology is robust and insensitive to details, we can simulate just the band structure in the bulk of the wire.
 From this, we understand whether the system is topological or topologically trivial.
-To calculate a band structure $E(k)$, we use Bloch's theorem which states that the wave function in a crystal changes under translation only by a phase factor
+To calculate a band structure $E(k)$, we use Bloch's theorem, which states that the wave function in a crystal changes under translation only by a phase factor
 \begin{equation}
 \psi(\bm{r}+a) = e^{i a k}\psi(\bm{r}),
 \end{equation}
 where $k$ is the wave vector of the wave function and $a$ the size of the unit-cell.
 This implies that we only need to simulate a translationally invariant unit-cell to get $E(k)$.
+The Hamiltonian equals  % XXX: the rest of the section isn't as smooth...
+\begin{equation}
+H\left(k\right) = h + t\exp(ik) + t^{\dagger}\exp(-ik),
+\end{equation}
+where $h$ is the Hamiltonian of the cross section of the tight-binding system and $t$ is the hopping matrix between the neighboring cross sections.
+Next section explains how to get the tight-binding model.
+Diagonalizing this Hamiltonian at $k$ results in the spectrum $E(k)$.
 Finally, due to the discretization, the Brillouin zone is periodic.
-However, one should be careful to not simulate effects from the corners because the band structure only correctly represents the continuum model near the band bottom.
-% XXX: maybe explain H(k) = H + e^ik t + e^-ik t^\dagger
+However, one should be careful to not simulate effects from its corners because the band structure only correctly represents the continuum model near the band bottom.
 
 \subsection{Discretization of the Hamiltonian}
 \co{Discretization of the continuous BdG Hamiltonian on to a lattice}
@@ -815,6 +821,7 @@ H_{\textrm{hop},z} = -t \tau_{z}.
 %     )
 These matrices can easily be implemented in a numerical model, for example, using the Kwant package~\cite{Groth2014}.
 
+\subsection{Peierls substitution}
 \co{The lattice version of a vector potential is the Peierls substitution.}
 In Sec.~\ref{sec:orbital_effect_of_magnetic_field}, we discussed the orbital effect of the magnetic field and included the vector potential as in Eq.~\eqref{eq:continuum_kinetic_with_orbital}.
 To include this into a discretized Hamiltonian, we use the Peierls substitution, which is the lattice version of the vector potential~\cite{Peierls1933}.
@@ -845,21 +852,12 @@ where the phases are defined as
 Here, the elementary charge $q$, is opposite for the electrons and the holes.
 Thus, adding a magnetic field $\bm{B}=\nabla \times \bm{A}$---including a choice for the vector potential $\bm{A}$---to the tight-binding model, thus amounts to adding the above phase terms to the hopping terms of the Hamiltonian.
 
+\subsection{Topological phase boundaries}
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
-
-% \co{Numerical methods are required because the problem is hard to solve analytically.}
-
-% \co{Band theory explains many physical properties of solids.}
-
-% \co{In crystals we can use Bloch waves because of its periodic lattice structure.}
-
-% \co{Bloch waves can be used in a tight binding model, which assumes that the time-independent single electron Schrödinger equation is approximated by a linear combination of localized atomic orbitals.}
 
 
 % https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1202&context=nanopub
 % http://edu.itp.phys.ethz.ch/fs14/sst/Lecture-Notes.pdf
-
-% \subsection{Band structures}
 
 \subsection{Limits}
 \co{Works only for systems with limited interaction, tightly bound electrons, large number of electrons, perfect lattice structure}
