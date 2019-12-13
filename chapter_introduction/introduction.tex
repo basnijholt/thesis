@@ -310,11 +310,11 @@ However, Majorana bound states do not belong to either of these classes.
 Instead, they are non-Abelian anyons.
 The operation of exchanging two Majoranas (called braiding) can send the system into a different state with the same particle configuration.
 Explaining how to experimentally perform a braiding operation is beyond the scope of this thesis; therefore, we will focus on the mathematical operations that describe such a braiding process.
-% XXX: proof read until here
+
 \co{Multiple Majoranas form a ground state manifold.}
 In one dimension, exchanging two Majoranas is ill-defined because it is impossible to swap them without colliding and consequently annihilating them.
 It is possible to construct a network of nanowires to form T-junctions (see Fig.~\ref{fig:Majorana-T-junction}), which allows to exchange the positions of Majoranas.
-Here, one can temporarily move a Majorana to one of the unoccupied wires and perform the exchange without the Majoranas ever becoming too close to each other.
+Here, one can temporarily move a Majorana to the unoccupied wire section and perform the exchange without the Majoranas ever becoming too close to each other.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.95\textwidth]{chapter_introduction/figures/T-junction-network.pdf}
@@ -731,6 +731,7 @@ where $k$ is the wave vector of the wave function and $a$ the size of the unit-c
 This implies that we only need to simulate a translationally invariant unit-cell to get $E(k)$.
 Finally, due to the discretization, the Brillouin zone is periodic.
 However, one should be careful to not simulate effects from the corners because the band structure only correctly represents the continuum model near the band bottom.
+% XXX: maybe explain H(k) = H + e^ik t + e^-ik t^\dagger
 
 \subsection{Discretization of the Hamiltonian}
 \co{Discretization of the continuous BdG Hamiltonian on to a lattice}
