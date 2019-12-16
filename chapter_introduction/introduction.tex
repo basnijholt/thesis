@@ -863,9 +863,9 @@ Section~\ref{sec:phase_diagram_1D_intro} showed a phase diagram of a one-dimensi
 In a three-dimensional nanowire this expression is no longer valid.
 Instead, we have to numerically find where the gap closes, so we need to find when $E_\textrm{gap}(B_x, \mu) = 0$.
 This is computationally expensive because for each value of $(B_x, \mu)$, we have to solve a minimization problem.
-We can also use the property that the gap always closes at either $k=0$ or $k=\pi$ ($E(k=\pi)=0$ does not occur in our model), however, we would still need to do many iterative solves of the eigenvalue problems to find where $E(k=0, B_x, \mu)=0$.
+We can also use the property that the gap always closes at either $k=0$ (or $k=\pi$)\footnote{Gap closings at $k=\pi$ do not occur in our model.}, however, we would still need to do many iterative solves of the eigenvalue problems to find where $E(k=0, B_x, \mu)=0$.
 Alternatively, we can use this property to define an optimized algorithm to simultaneously find all the values of $\mu$ that correspond to the topological phase transition.
-We essentially need to solve for the values of $\mu$ and $\psi$ in $H_\textrm{BdG}(\mu, k=0)\psi=0$.
+We can reformulate the problem as an eigenvalue problem, and solve for the values of $\mu$ and $\psi$ in $H_\textrm{BdG}(\mu, k=0)\psi=0$.
 We rewrite this equation as a generalized eigenvalue problem by using that $\mu$ enters $H_\textrm{BdG}$ only as a prefactor of a linear operator.
 This results in
 \begin{equation}
@@ -879,8 +879,10 @@ The difference between solving Eq.~\eqref{eq:mu_ev_problem} and finding $E(k=0)$
 \begin{center}
 \includegraphics{chapter_introduction/figures/generalized_ev_problem.pdf}
 \caption{Energy spectrum at $k=0$ of as a function of chemical potential $\mu$.
-The green circles are the solutions of $H_\textrm{BdG} \psi = E \psi$ at fixed $\mu$ marked by the green line.
 The orange circles are the real eigenvalues of Eq.~\eqref{eq:mu_ev_problem} lying at $E=0$ (the orange line).
+The green circles are the solutions of $H_\textrm{BdG} \psi = E \psi$ at fixed $\mu$ marked by the green line.
+To find the phase transitions with the latter approach, one needs to sweep over $\mu$ and find $E(k=0) < \epsilon$, where $\epsilon$ is the precision.
+Using the generalized eigenvalue problem, we find all phase transitions at once.
 \label{fig:mu_ev_problem}}
 \end{center}
 \end{figure}
