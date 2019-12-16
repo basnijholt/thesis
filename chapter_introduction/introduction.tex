@@ -229,7 +229,7 @@ Due to the holes being related to the electrons, the Hamiltonian $H_{\textrm{BdG
 A symmetry, or combination of symmetries, determines a material's specific topology.
 Symmetry and the topology that results from it, is the topic of the next section.
 
-\subsection{Topology and symmetry}\label{sec:topology}
+\subsection{Topology and symmetry}\label{sec:topology_intro}
 \co{Symmetry determines a system's topology.}
 Symmetry plays a fundamental part in physics.
 In condensed matter systems, only three discrete symmetries are important: time-reversal symmetry $\mathcal{T}$, particle-hole symmetry $\mathcal{P}$, and chiral symmetry $\mathcal{C}$.
@@ -335,7 +335,7 @@ If this ground state contains several Majoranas, all at zero energy, they form a
 
 \co{We consider $N$ Majoranas and write down its state of fermionic modes.}
 From now on, we only consider the states corresponding to the Majoranas and neglect the states that live in the bulk ($E \geq \Delta$).
-As mentioned in Sec.\ref{sec:topology}, a Majorana only has half a degree of freedom, and thus, they can only be assigned quantum states in pairs.
+As mentioned in Sec.\ref{sec:topology_intro}, a Majorana only has half a degree of freedom, and thus, they can only be assigned quantum states in pairs.
 In Fig.~\ref{fig:Majorana-T-junction} we see six Majoranas (3 pairs), but for generality lets consider $N$ pairs.
 By pairing two Majoranas (two times half a degree of freedom), we form fermionic modes that give two possible degenerate quantum states, either unoccupied $\ket 0$ or occupied $\ket 1$.
 By pairing up neighboring Majoranas $\gamma_{2n-1}$ and $\gamma_{2n}$, we get a creation operator that is its own complex conjugate $c_{n}^{\dagger}=\tfrac{1}{2}(\gamma_{2n-1}+i\gamma_{2n})$, where $c$ is a fermionic creation operator.
@@ -452,7 +452,7 @@ This reduces the amount of error-correction needed in comparison with a non-topo
 \co{Superconductivity, spin-orbit coupling, a Zeeman field, and tuned µ leads to the appearance of Majoranas near the edges of the wire.}
 The combined effect of superconductivity, spin-orbit coupling, and a Zeeman field can lead to the appearance of Majoranas near the edges of the wire~\cite{Lutchyn2010,Oreg2010}.
 To understand how this happens, we study the effects of the various terms in the Hamiltonian.
-As discussed in Sec.~\ref{sec:topology}, the appearance of Majoranas is a topological effect and is accompanied by the change of the topological invariant $Q$ of symmetry class $\mathcal{D}$.
+As discussed in Sec.~\ref{sec:topology_intro}, the appearance of Majoranas is a topological effect and is accompanied by the change of the topological invariant $Q$ of symmetry class $\mathcal{D}$.
 This invariant can only assume $Q=+1$ (no Majoranas) and $Q=-1$ (Majoranas present) and changes when the band gap closes and reopens.
 
 \begin{figure}
@@ -478,7 +478,7 @@ Finally, the electrons are at positive energy $E$ and the holes on $-E$.
 
 \co{We require a band gap, so we add superconductivity, resulting in a BdG Hamiltonian with a gapped spectrum.}
 Next, we raise $\mu$, which shifts the bands [see Fig.~\ref{fig:triv_topo_bandstructure} (middle)].
-In Sec.~\ref{sec:topology}, we explained that the topological invariant is only defined for a system with an energy gap.
+In Sec.~\ref{sec:topology_intro}, we explained that the topological invariant is only defined for a system with an energy gap.
 This band structure has no band gap, and therefore cannot be topological.
 Further, in Sec.~\ref{sec:superconductivity} we observed that a BdG Hamiltonian has a gapped spectrum [Eq.~\eqref{eq:SC_spectrum}], so we add $\Delta\tau_{x}$, which results in
 \begin{equation}
@@ -549,7 +549,7 @@ The Majorana length $\xi$---the decay length of the wavefunction---in the left p
 \end{center}
 \end{figure}
 
-\subsection{Phase diagram}
+\subsection{Phase diagram}\label{sec:phase_diagram_1D_intro}
 \co{With a phase diagram, we show for which tunable parameters the system is topological.}
 The Hamiltonian [Eq.~\eqref{eq:rashba}] contains a few fundamental constants and constants that are material dependent; however, the chemical potential $\mu$ and magnetic field $B$ can be adjusted in an experiment.
 A good question is, for which values of $B$ and $\mu$ the system is topological.
@@ -603,7 +603,7 @@ For example, Fig.~\ref{fig:topo_bands} shows a phase diagram (and band structure
 \begin{center}
 \includegraphics[width=0.8\textwidth]{chapter_introduction/figures/phase_diagram_with_bands.pdf}
 \caption{Topological phase diagram (a) of a 3D system where the dot indicate the parameter values of $B,\; \mu$ at which the surrounding band structures (b-d) are plotted.
-The color in the phase diagram (a) shows the size of the topological gap and the dashed lines are the topological phase boundaries.
+The color in the phase diagram (a) shows the size of the topological gap $E_\textrm{gap} \equiv \min_k E(k)$ and the dashed lines are the topological phase boundaries.
 The band structure (b) is trivial but near a phase transition, (c) is at the phase transition, and (d) is inside of the topological regime.
 \label{fig:topo_bands}}
 \end{center}
@@ -856,6 +856,34 @@ Thus, adding a magnetic field $\bm{B}=\nabla \times \bm{A}$---including a choice
 
 \subsection{Topological phase boundaries}
 \co{There are many problem specific methods, for example, to determine the phase boundaries.}
+There are many problem specific methods, for example, calculating the topological energy gap $E_\textrm{gap} \equiv \min_k E(k)$ from the band structure, calculating the topological invariant $\mathcal{Z}_2$, or determining the position of the phase boundaries in parameter space.
+This section, explains the latter for a nanowire that has a constant chemical potential $\mu$.
+As discussed in Sec.~\ref{sec:topology_intro}, whenever the topological energy gap $E_\textrm{gap}$ closes, the topological invariant $\mathcal{Z}_2$ changes.
+Section~\ref{sec:phase_diagram_1D_intro} showed a phase diagram of a one-dimensional nanowire as a function of $B_x$ and $\mu$, where the position of the topological phase boundaries are expressed through a simple analytical expression.
+In a three-dimensional nanowire this expression is no longer valid.
+Instead, we have to numerically find where the gap closes, so we need to find when $E_\textrm{gap}(B_x, \mu) = 0$.
+This is computationally expensive because for each value of $(B_x, \mu)$, we have to solve a minimization problem.
+We can also use the property that the gap always closes at either $k=0$ or $k=\pi$ ($E(k=\pi)=0$ does not occur in our model), however, we would still need to do many iterative solves of the eigenvalue problems to find where $E(k=0, B_x, \mu)=0$.
+Alternatively, we can use this property to define an optimized algorithm to simultaneously find all the values of $\mu$ that correspond to the topological phase transition.
+We essentially need to solve for the values of $\mu$ and $\psi$ in $H_\textrm{BdG}(\mu, k=0)\psi=0$.
+We rewrite this equation as a generalized eigenvalue problem by using that $\mu$ enters $H_\textrm{BdG}$ only as a prefactor of a linear operator.
+This results in
+\begin{equation}
+H_\textrm{BdG}(\mu=0, k=0)\psi = \mu \tau_z \psi.\label{eq:mu_ev_problem}
+\end{equation}
+Using standard generalized eigensolvers, we easily find its eigenvalues.
+The real eigenvalues are the values of $\mu$ where the gap closes at $k = 0$.
+The difference between solving Eq.~\eqref{eq:mu_ev_problem} and finding $E(k=0)$ is visualized in Fig.~\ref{fig:mu_ev_problem}.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{chapter_introduction/figures/generalized_ev_problem.pdf}
+\caption{Energy spectrum at $k=0$ of as a function of chemical potential $\mu$.
+The green circles are the solutions of $H_\textrm{BdG} \psi = E \psi$ at fixed $\mu$ marked by the green line.
+The orange circles are the real eigenvalues of Eq.~\eqref{eq:mu_ev_problem} lying at $E=0$ (the orange line).
+\label{fig:mu_ev_problem}}
+\end{center}
+\end{figure}
 
 
 % https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1202&context=nanopub
