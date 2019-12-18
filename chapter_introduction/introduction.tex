@@ -137,19 +137,8 @@ The model Hamiltonian in the language of second quantization ~\cite{Gennes1999} 
 \begin{equation}
 \mathcal{H}_{\textrm{BCS}}=\sum_{\bm{k}\sigma}\epsilon_{\bm{k}}c_{\bm{k}\sigma}^{\dagger}c_{\bm{k}\sigma}+\sum_{\bm{k}\bm{l}}V_{\bm{k}\bm{l}}c_{\bm{k}\uparrow}^{\dagger}c_{-\bm{k}\downarrow}^{\dagger}c_{-\bm{l}\downarrow}c_{\bm{l}\uparrow},\label{eq:BCS}
 \end{equation}
-where
-\begin{tabular}{ll}
-$c$            & annihilation operator electron,\tabularnewline
-$c^{\dagger}$  & creation operator electron,\tabularnewline
-$\epsilon_{k}$ & $E_{k}-\mu$,\tabularnewline
-$\mu$          & chemical potential,\tabularnewline
-$E_{k}$        & kinetic energy ($\frac{\hbar^{2}k^{2}}{2m}$),\tabularnewline
-$m$            & mass,\tabularnewline
-$k$            & momentum,\tabularnewline
-$\sigma\uparrow,\sigma\downarrow$ & spin of electron,\tabularnewline
-$V_{\bm{kl}}$  & interaction potential.\tabularnewline
-\end{tabular}
-The interaction term includes only the Cooper pairs consisting of two electrons with opposite spin ($s$-wave symmetry) and opposite momentum, $(\bm{\bm{k}}\uparrow,-\bm{k}\downarrow)$.
+where $c$ is the annihilation operator, $c^{\dagger}$ the creation operator, $\mu$ the chemical potential, $m$ the mass, and $\epsilon_{k} \equiv E_{k}-\mu$, where $E_{k}$ the kinetic energy ($\frac{\hbar^{2}k^{2}}{2m}$).
+The $s$-wave symmetry interaction potential $V_{\bm{kl}}$ includes only the Cooper pairs consisting of two electrons with opposite spin and opposite momentum $k$: $\bm{\bm{k}}\uparrow,-\bm{k}\downarrow$.
 Finding the ground state of many interacting electrons is a major problem not only in condensed matter physics, but also in quantum chemistry, molecular biology, and many other fields.
 The BCS Hamiltonian approximates the Coulomb interaction in momentum space, however, it is still fundamentally difficult to solve; therefore, we have to make an approximation.
 
@@ -892,11 +881,16 @@ The parameters used are the same as Fig.~\ref{fig:topo_bands_3D} at $B_x=\SI{1}{
 % https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1202&context=nanopub
 % http://edu.itp.phys.ethz.ch/fs14/sst/Lecture-Notes.pdf
 
-\subsection{Limits}
+\subsection{Limits and complexity}
 \co{Works only for systems with limited interaction, tightly bound electrons, large number of electrons, perfect lattice structure}
-What it does not include.
+Finally, this sections discussed many potential improvements to the Majorana nanowire model.
+Still, when including all the improvements we discussed, the model has its limitations, both physical and computational.
+For example, the length of the physical nanowires are on the order of micrometers with a typical diameter of $\SI{100}{nm}$.
+The Fermi wavelength $\lambda_\textrm{F}$ sets a lower limit on the lattice constant $a$, which is typically around $a=5-\SI{10}{nm}$ for the low density regime.
+This means that systems easily become larger than $1e6$ sites, and including the spin and electron-hole degrees orbitals results in matrices of $4e^6 \times 4e^6$.
 
-\subsection{Complexity}
+
+What it does not include.
 Still three dimensional systems are prohibitivly computationally expensive.
 
 
