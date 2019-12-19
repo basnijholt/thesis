@@ -885,13 +885,14 @@ The parameters used are the same as Fig.~\ref{fig:topo_bands_3D} at $B_x=\SI{1}{
 \co{Works only for systems with limited interaction, tightly bound electrons, large number of electrons, perfect lattice structure}
 Finally, this sections discussed many potential improvements to the Majorana nanowire model.
 Still, when including all the improvements we discussed, the model has its limitations, both physical and computational.
-For example, the length of the physical nanowires are on the order of micrometers with a typical diameter of $\SI{100}{nm}$.
-The Fermi wavelength $\lambda_\textrm{F}$ sets a lower limit on the lattice constant $a$, which is typically around $a=5-\SI{10}{nm}$ for the low density regime.
+For example, a computational limitation is large size of the matrices when simulating full three-dimensional nanowires.
+Here, the length of the physical nanowires are on the order of micrometers with a typical diameter of $\SI{100}{nm}$.
+The Fermi wavelength $\lambda_\textrm{F}$ sets a lower limit on the lattice constant $a$, which in the semiconductor is typically around $a=5-\SI{10}{nm}$ for the low density regime.
 This means that systems easily become larger than $1e6$ sites, and including the spin and electron-hole degrees orbitals results in matrices of $4e^6 \times 4e^6$.
-
-
-What it does not include.
-Still three dimensional systems are prohibitivly computationally expensive.
+As discussed earlier, in the case of strongly coupled superconductors, the wavefunction has most of its weight in the superconductor.
+Aluminium is typically used, and has a Fermi energy of $E_\textrm{F} \approx \SI{11.7}{eV}$, which translates into $\lambda_\textrm{F} \approx \SI{0.36}{nm}$.
+So, to properly simulate the even the thin layer of superconducting material on top of a nanowire, the lattice constant of that part has to be smaller then an ångström, resulting in matrix sizes that go far beyond the current capabilities of even the largest computers.
+An example of a physical limitation is ...
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
