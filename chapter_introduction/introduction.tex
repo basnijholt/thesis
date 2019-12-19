@@ -850,7 +850,7 @@ This section, explains the latter for a nanowire that has a constant chemical po
 As discussed in Sec.~\ref{sec:topology_intro}, whenever the topological energy gap $E_\textrm{gap}$ closes, the topological invariant $\mathcal{Z}_2$ changes.
 Section~\ref{sec:phase_diagram_1D_intro} showed a phase diagram of a one-dimensional nanowire as a function of $B_x$ and $\mu$, where the position of the topological phase boundaries are expressed through a simple analytical expression.
 In a three-dimensional nanowire this expression is no longer valid.
-Instead, we have to numerically find where the gap closes, so we need to find when $E_\textrm{gap}(B_x, \mu) = 0$.
+Instead, we have to numerically find where the gap closes: we need to find when $E_\textrm{gap}(B_x, \mu) = 0$.
 This is computationally expensive because for each value of $(B_x, \mu)$, we have to solve a minimization problem.
 We can also use the property that the gap always closes at either $k=0$ (or $k=\pi$)\footnote{Gap closings at $k=\pi$ do not occur in our model.}, however, we would still need to do many iterative solves of the eigenvalue problems to find where $E(k=0, B_x, \mu)=0$.
 Alternatively, we can use this property to define an optimized algorithm to simultaneously find all the values of $\mu$ that correspond to the topological phase transition.
@@ -883,17 +883,33 @@ The parameters used are the same as Fig.~\ref{fig:topo_bands_3D} at $B_x=\SI{1}{
 
 \subsection{Limits and complexity}
 \co{Works only for systems with limited interaction, tightly bound electrons, large number of electrons, perfect lattice structure}
-Finally, this sections discussed many potential improvements to the Majorana nanowire model.
-Still, when including all the improvements we discussed, the model has its limitations, both physical and computational.
-For example, a computational limitation is large size of the matrices when simulating full three-dimensional nanowires.
-Here, the length of the physical nanowires are on the order of micrometers with a typical diameter of $\SI{100}{nm}$.
-The Fermi wavelength $\lambda_\textrm{F}$ sets a lower limit on the lattice constant $a$, which in the semiconductor is typically around $a=5-\SI{10}{nm}$ for the low density regime.
+Section~\ref{sec:realistic_nanowire} discussed many potential improvements to the Majorana nanowire model.
+Even when including all the proposed improvements, the model still has its limitations, of both a physical and computational nature.
+In some cases, alleviating the physical limitation of the discretized model may turn into a computational limitation.
+For example, we started with a model that is an approximation of the continuum Hamiltonian (Eq.~\eqref{eq:eq:3D_Ham}), which is only valid in the low-energy limit.
+As an example, Fig.~\ref{fig:discretization-approximation} shows the band structure of both the discretized and continuum model for different lattice constants of the spin part of the one-dimensional Majorana Hamiltonian (Eq.~\eqref{eq:rashba}).
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{chapter_introduction/figures/discretization-approximation.pdf}
+\caption{
+The band structure of Eq.~\eqref{eq:rashba} (without superconductivity) for a lattice constant $a=\SI{10}{nm}$ (top) and $a=\SI{5}{nm}$ (bottom), where we plot the continuum (green) and the discretized (orange) spectrum.
+The dotted line indicates the Fermi energy.
+The tight-binding approximation remains valid whenever the two models result in approximately the same spectrum below the Fermi energy.
+\label{fig:discretization-approximation}}
+\end{center}
+\end{figure}
+Here, we observe that decreasing the lattice constant results in a better approximation to the continuum model at higher densities.
+The computational complexity arises when simulating full three-dimensional nanowires.
+Here, the typical length of the physical nanowires is on the order of micrometers with a typical diameter of $\SI{100}{nm}$.
+The Fermi wavelength $\lambda_\textrm{F}$ sets a lower limit on the lattice constant $a$, which in the semiconductor is typically around $a=5-\SI{10}{nm}$ for the low-density regime.
 This means that systems easily become larger than $1e6$ sites, and including the spin and electron-hole degrees orbitals results in matrices of $4e^6 \times 4e^6$.
-As discussed earlier, in the case of strongly coupled superconductors, the wavefunction has most of its weight in the superconductor.
-Aluminium is typically used, and has a Fermi energy of $E_\textrm{F} \approx \SI{11.7}{eV}$, which translates into $\lambda_\textrm{F} \approx \SI{0.36}{nm}$.
-So, to properly simulate the even the thin layer of superconducting material on top of a nanowire, the lattice constant of that part has to be smaller then an ångström, resulting in matrix sizes that go far beyond the current capabilities of even the largest computers.
-An example of a physical limitation is ...
+To calculate a phase diagram $E_\textrm{gap}(B_x,\mu)$ using this system, we need to diagonalize this large matrix---which is an expensive operation by itself---many times.
+In the case of strongly coupled superconductors, it becomes more problematic because the wavefunction has most of its weight in the superconductor, which means we have to simulate it on the level of its Fermi wavelength.
+Aluminium is typically used as the superconductor, and has a Fermi energy of $E_\textrm{F} \approx \SI{11.7}{eV}$, which translates into $\lambda_\textrm{F} \approx \SI{0.36}{nm}$.
+So, to properly simulate even the thin layer of superconducting material on top of a nanowire, the lattice constant has to be smaller then an ångström, resulting in matrix sizes that go far beyond the current capabilities of even the largest computers.
 
+\subsection{Adaptive sampling}
+As a partial solution to address the computational complexity is to sample the function we are evaluating in a smart way.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STRUCTURE OF THIS THESIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
