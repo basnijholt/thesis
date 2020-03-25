@@ -2,8 +2,48 @@
 \addcontentsline{toc}{chapter}{Summary}
 \setheader{Summary}
 
-English summary here.
+\co{Majoranas can be used to build a topological quantum computer and are the subject of this thesis}
+Quantum computers promise that a linear increase in the number of qubits (quantum bits) results in an exponential scaling in computing power.
+Many of the existing proposals to create a qubit suffer from problems resulting from quantum noise.
+Topological states might be used to build a topological quantum computer because they are fundamentally more robust against these small energy fluctuations through certain symmetries of the system.
+Majorana bound states---or simply Majoranas---are the simplest topological state and have non-Abelian statistics which enables using them to create this topological quantum computer.
 
+\co{A simple 1D model exists predicting Majoranas.}
+Using a theoretical model, Majoranas can be described by a one-dimensional nanowire with superconductivity, spin-orbit coupling, a chemical potential, and a Zeeman field.
+Whenever the tunable parameters are in the right regime, it leads to the appearance of Majoranas near the edges of the wire.
+The simple model can be studied analytically and makes predictions about its signatures.
+
+\co{We improve upon the model by including several important physical effects.}
+However, experimental results do not agree with these predictions.
+In the real world the nanowire is three-dimensional (3D) and in general can only be studied numerically.
+To model the 3D Majorana nanowires more realistically, we include previously neglected physical effects and to cope with the increasing computational complexity arising from the extra degrees of freedom, we developed adaptive parallel sampling algorithms.
+Using the improved models and efficient sampling, we unveil potential challenges that were not present in the simple model.
+Additionally, we propose a new Majorana device geometry to solve a problem that is particularly present in two-dimensional Josephson junction Majorana devices.
+
+\co{Including the orbital effect leads us to serveral important considerations.}
+For example, whenever a magnetic flux can penetrate the nanowire cross section, the momentum operator needs to include the vector potential.
+This effect, the orbital effect of the magnetic field, was frequently neglected in studies of Majoranas, however, systematically studying its role leads us to several conclusions for designing a system hosting Majoranas.
+Specifically, we show that for experimentally relevant parameter values this effect has a stronger impact on the dispersion relation than the Zeeman effect.
+While Majoranas do not require the presence of only one dispersion subband, we observe that the size of the Majoranas becomes unpractically large, and the band gap unpractically small when more than one subband is filled.
+Since the orbital effect of a magnetic field breaks several symmetries of the Hamiltonian, it leads to the appearance of large regions in parameter space with no band gap whenever the magnetic field is not aligned with the wire axis.
+This observation reveals a complication in realizing more sophisticated Majorana setups, such as a T-junction, which are required for braiding.
+
+\co{Studying Majorana Josephson junctions, essential for braiding, put more restrictions on the design of the system.}
+Another component essential for the braiding of Majoranas are Majorana Josephson junctions.
+We have studied these junctions experimentally and developed a numerical model that describes the dependence of the critical supercurrent on the magnetic field, which exhibits gate-tunable nodes.
+Based on our model, we conclude that the interference between the few occupied one-dimensional modes in the nanowire is the dominant mechanism responsible for this behavior.
+Additionally, we find that at fields at which the onset of topological superconductivity is reported, the supercurrent decreases by an order of magnitude.
+Therefore, to realize proposals for braiding Majoranas that rely on controlling the Josephson coupling, this interference effect should be taken into account.
+
+\co{Nanowires with epitaxially grown aluminium resulted in significantly clearer Majorana signatures but with a smaller gap, however, these are not detrimental to the Majoranas.}
+Significant improvements in nanowire growth using epitaxially grown aluminum instead of NbTiN, have led to advancements in detecting Majorana signatures.
+Here, the superconducting aluminum has a transparent interface with the semiconductor and a small superconducting gap, resulting in the quasiparticles having most weight in the superconductor.
+These nanowires are therefore in the ``short-junction'' limit, whereas nanowires with NbTiN are in the ``long-junction'' limit, where the superconductor can simply be integrated out of the model.
+We study the robustness of Majoranas in this short-junction limit and find that the small superconducting gap does not have a strong detrimental effect on the Majorana properties.
+Specifically, both the critical magnetic field required for creating a topological phase and the size of the Majorana bound states are independent of the superconducting gap.
+
+Later, in this thesis we go beyond the nanowire model and introduce a Majorana system.... 
+% More zigzag
 
 \chapter*{Samenvatting}
 \addcontentsline{toc}{chapter}{Samenvatting}
