@@ -599,8 +599,8 @@ The band structure (b) is trivial but near a phase transition, (c) is at the pha
 \end{figure}
 
 \subsection{The orbital effect of the magnetic field}\label{sec:orbital_effect_of_magnetic_field}
-\co{Whenever a magnetic flux can penatrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
-Whenever a magnetic flux can penatrate a surface of the nanowire, the canonical momentum operator in Eq.~\eqref{eq:3D_Ham} is modified to include the vector potential
+\co{Whenever a magnetic flux can penetrate the nanowire, the canonical momentum operator is modified to include the vector potential.}
+Whenever a magnetic flux can penetrate a surface of the nanowire, the canonical momentum operator in Eq.~\eqref{eq:3D_Ham} is modified to include the vector potential
 \begin{equation}
 \bm{p} \rightarrow -i \hbar \nabla - q \bm{A} \tau_z,\label{eq:continuum_kinetic_with_orbital}
 \end{equation}
@@ -905,12 +905,12 @@ The Fermi wavelength $\lambda_\textrm{F}$ sets a lower limit on the lattice cons
 This means that systems easily become larger than $1e6$ sites, and including the spin and electron-hole degrees orbitals results in matrices of $4e^6 \times 4e^6$.
 To calculate a phase diagram $E_\textrm{gap}(B_x,\mu)$ using this system, we need to diagonalize this large matrix---which is an expensive operation by itself---many times.
 In the case of strongly coupled superconductors, it becomes more problematic because the wavefunction has most of its weight in the superconductor, which means we have to simulate it on the level of its Fermi wavelength.
-Aluminium is typically used as the superconductor, and has a Fermi energy of $E_\textrm{F} \approx \SI{11.7}{eV}$, which translates into $\lambda_\textrm{F} \approx \SI{0.36}{nm}$.
+Aluminium is typically used as the superconductor and has a Fermi energy of $E_\textrm{F} \approx \SI{11.7}{eV}$, which translates into $\lambda_\textrm{F} \approx \SI{0.36}{nm}$.
 So, to properly simulate even the thin layer of superconducting material on top of a nanowire, the lattice constant has to be smaller then an ångström, resulting in matrix sizes that go far beyond the current capabilities of even the largest computers.
 
 \subsection{Adaptive sampling}
-As a partial solution to address the computational complexity is to sample the function we are evaluating in a smart way.
-
+As a partial solution to address the computational complexity is to sample the parameter space of the function we are evaluating adaptively.
+% XXX: FINISH OR DELETE THIS PARAGRAPH
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STRUCTURE OF THIS THESIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -947,16 +947,16 @@ Based on realistic simulations of our devices, we reveal SOI with a strength of 
 Our approach identifies the direction of the spin-orbit field, which is strongly affected by the superconductor geometry and electrostatic gates.
 \vspace{1mm}
 
-\subsection{Chapter~\ref{ch:zigzag}: Title here for zigzag}
-Abstract here for zigzag  % XXX: add this!
-\vspace{1mm}
-
 \subsection{Chapter~\ref{ch:shortjunction}: Robustness of Majorana bound states in the short-junction limit}
 We study the effects of strong coupling between a superconductor and a semiconductor nanowire on the creation of the Majorana bound states, when the quasiparticle dwell time in the normal part of the nanowire is much shorter than the inverse superconducting gap.
 This ``short-junction'' limit is relevant for the recent experiments using the epitaxially grown aluminum characterized by a transparent interface with the semiconductor and a small superconducting gap.
 We find that the small superconducting gap does not have a strong detrimental effect on the Majorana properties.
 Specifically, both the critical magnetic field required for creating a topological phase and the size of the Majorana bound states are independent of the superconducting gap.
 The critical magnetic field scales with the wire cross-section, while the relative importance of the orbital and Zeeman effects of the magnetic field is controlled by the material parameters only: $g$ factor, effective electron mass, and the semiconductor-superconductor interface transparency.
+
+\subsection{Chapter~\ref{ch:zigzag}: Title here for zigzag}
+Abstract here for zigzag  % XXX: add this!
+\vspace{1mm}
 
 \subsection{Chapter~\ref{ch:adaptive}: Title here for adaptive}
 Abstract here for adaptive  % XXX: add this!
