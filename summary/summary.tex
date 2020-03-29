@@ -3,20 +3,33 @@
 \setheader{Summary}
 
 \co{Majoranas can be used to build a topological quantum computer and are the subject of this thesis}
-Quantum computers promise that a linear increase in the number of qubits (quantum bits) results in an exponential scaling in computing power.
-Many of the existing proposals to create a qubit suffer from problems resulting from quantum noise.
-Topological states might be used to build a topological quantum computer because they are fundamentally more robust against these small energy fluctuations through certain symmetries of the system.
-Majorana bound states---or simply Majoranas---are the simplest topological state and have non-Abelian statistics which enables using them to create this topological quantum computer.
+By exploiting quantum mechanics in their operation, quantum computers are able to solve problems that are believed to be fast out of reach of classical computers, like quantum chemistry.
+% Quantum computers are exponentially faster for some problems.
+% There are superconducting qubits, which were used by Google recently, there are spin qubits, but all of them have the same property: noise is a problem and error correction is necessary.
+Conventional approaches to quantum computers use qubits (quantum bits) that can either be made out of superconducting circuits (used by Google recently) or store quantum information in the states of single electrons, however, all of them have the same property, where noise easily spoils the quantum states and therefore error correction is necessary.
+% A different way to make a quantum computer is to rely on topological qubits, these require new particles that do not exist in nature.
+A fundamentally different approach which does not include controlling noise in detail, is to rely on a exotic type of particle that does not exist in nature but was predicted to exist in a specifically engineered system: the Majorana bound state.
+That one has the advantage in that it is guaranteed to be resilient against small energy fluctuations or noise.
+There is an active search across many teams who try different combinations of systems to experimentally detect these particles.
 
+% Quantum computers promise that a linear increase in the number of qubits (quantum bits) results in an exponential scaling in computing power.
+% Many of the existing proposals to create a qubit suffer from problems resulting from quantum noise.
+% Topological states might be used to build a topological quantum computer because they are fundamentally more robust against these small energy fluctuations through certain symmetries of the system.
+% Majorana bound states---or simply Majoranas---are the simplest topological state and have non-Abelian statistics which enables using them to create this topological quantum computer.
+
+% 18:04
 \co{A simple 1D model exists predicting Majoranas.}
-Using a theoretical model, Majoranas can be described by a one-dimensional nanowire with superconductivity, spin-orbit coupling, a chemical potential, and a Zeeman field.
+The appearance of Majoranas was predicted using the model of a one-dimensional nanowire with superconductivity, spin-orbit coupling, a chemical potential, and a Zeeman field.
 Whenever the tunable parameters are in the right regime, it leads to the appearance of Majoranas near the edges of the wire.
 The simple model can be studied analytically and makes predictions about its signatures.
+However, the problem is that the experimental results do not agree with the predictions that the model makes.
+The reason for this disagreement is natural because many physical aspects are missing in the simple model.
 
 \co{We improve upon the model by including several important physical effects.}
-However, experimental results do not agree with these predictions.
 In the real world the nanowire is three-dimensional (3D) and in general can only be studied numerically.
-To model the 3D Majorana nanowires more realistically, we include previously neglected physical effects and to cope with the increasing computational complexity arising from the extra degrees of freedom, we developed adaptive parallel sampling algorithms.
+To model the 3D Majorana nanowires more realistically, we include previously neglected physical effects such as the effect of a magnetic field on moving electrons or the effect of having a superconductor with a very clean interface with the semiconductor.
+These problems requires intensive numerical calculations that need to be performed with a high precision.
+To cope with the increasing computational complexity, we developed adaptive parallel sampling algorithms (discussed in the last chapter), which in our research typically sped up simulations by at least an order of magnitude.
 Using the improved models and efficient sampling, we unveil potential challenges that were not present in the simple model.
 Additionally, we propose a new Majorana device geometry to solve a problem that is particularly present in two-dimensional Josephson junction Majorana devices.
 
@@ -42,7 +55,7 @@ These nanowires are therefore in the ``short-junction'' limit, whereas nanowires
 We study the robustness of Majoranas in this short-junction limit and find that the small superconducting gap does not have a strong detrimental effect on the Majorana properties.
 Specifically, both the critical magnetic field required for creating a topological phase and the size of the Majorana bound states are independent of the superconducting gap.
 
-Later, in this thesis we go beyond the nanowire model and introduce a Majorana system.... 
+Later, in this thesis we go beyond the nanowire model and introduce a Majorana system....
 % More zigzag
 
 \chapter*{Samenvatting}
