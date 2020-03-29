@@ -15,45 +15,32 @@ There is an active search across many groups worldwide trying different pathways
 One promising approach to create Majoranas relies on a theoretical prediction that a one-dimensional nanowire combining superconductivity, spin-orbit coupling, a tunable chemical potential, and a magnetic field should support Majoranas.
 Whenever the device parameters are in the right regime, the Majoranas should appear at the edges of the nanowire.
 
-\co{We improve the model by including several important physical effects.}
+\co{We fix the model by including several important physical effects, and use adaptive sampling to improve our results.}
 The experimental results diverge from the predictions of the minimal theoretical model due to it missing several physical phenomena.
 To model the Majorana nanowires more realistically, we include previously neglected physical effects by considering the full three-dimensional geometry of the nanowire.
-We consider electrons being influenced by the magnetic field as they move \emph{across} the nanowire as well as the consequences the electrons spending more time in the superconductor than in the nanowire---this regime is relevant in many devices.
 These more complex models exceed the reach of analytical theories and require intensive numerical calculations instead.
 To cope with the increasing computational complexity, we developed adaptive parallel sampling algorithms (discussed in the Ch.~\ref{ch:adaptive}), which in our research typically sped up simulations by at least an order of magnitude.
-The cover of this thesis shows an example of a simulation of a Majorana nanowire in a magnetic field, where the interesting regions, the quantity of interest (the conductance) is sampled with a higher resolution.
+Our approach is illustrated on the cover of this thesis, which shows conductance of a Majorana nanowire with the interesting regions sampled more accurately.
 Using the improved models and efficient sampling, allowed us to unveil potential challenges that were not present in the simple model.
-On the other hand, not being constrained to the devices that are easy to solve, we were able to design a new \emph{zigzag} device geometry, that improves the robustness of Majoranas by an order of magnitude.
-Our proposal is now the topic of active experimental investigations by several groups.
 
 \co{Including the orbital effect leads us to serveral important considerations.}
-In Ch.~\ref{ch:orbitalfield}, we study the effect of the interaction of the electrons with the magnetic field while moving perpendicular to the wire direction.
-In a 1D nanowire, this effect is not present because there is no dimensional perpendicular to the wire.
-This effect was frequently neglected in studies of Majoranas, however, systematically studying its role leads us to several conclusions for designing a system hosting Majoranas.
-Specifically, we show that for experimentally relevant parameter values this effect has a stronger impact on the dispersion relation than the only magnetic effect present in the simple model.
-Additionally, we observe that Majorana's protection nearly vanishes when more than one Majorana is present and find that the magnetic field has to be aligned with the nanowire to guarantee the presence of Majoranas.
-This latter observation reveals a complication in realizing more sophisticated Majorana setups, such as a T-junction, which are required for braiding (the fundamental operation of a Majorana qubit).
+In Ch.~\ref{ch:orbitalfield}, we study how the electrons are influenced by the magnetic field while moving across the nanowire---an effect completely neglected in the minimal model.
+We observe that this effect has a stronger impact on the Majoranas than what is included in the minimal model.
+Specifically, we observe that the protection of Majoranas nearly vanishes when the electron density in the nanowire is high, and find that the magnetic field has to be precisely aligned with the nanowire to guarantee the presence of Majoranas.
 
 \co{Studying Majorana Josephson junctions, essential for braiding, put more restrictions on the design of the system.}
-Another component that is essential for braiding is the Majorana Josephson junction.
-In Ch.~\ref{ch:supercurrent}, we study these junctions experimentally and develop an advanced numerical model that describes the dependence of the supercurrent on a magnetic field.
-Based on our numerical simulations, we conclude that the interference between the occupied modes in the nanowire is essential to describe the experimental observations.
-Additionally, we find that at magnetic fields at which Majoranas are expected to appear, the supercurrent decreases by an order of magnitude.
-Therefore, to realize a Majorana qubit that relies on controlling the supercurrent, this interference effect should be taken into account.
-
-\co{Nanowires with epitaxially grown aluminium resulted in significantly clearer Majorana signatures but with a smaller gap, however, these are not detrimental to the Majoranas.}
-Significant improvements in nanowire growth have led to advancements in detecting Majorana signatures.
-Here, the superconductor has a very clean interface with the semiconductor and a small superconducting gap, resulting in the quasiparticles having most weight in the superconductor.
-These systems are in a limit where the superconductor cannot be integrated out of the model, as is a common practice, and therefore require other approaches.
-In Ch.~\ref{ch:shortjunction}, we study the robustness of Majoranas in this limit and find that the small superconducting gap does not have a strong detrimental effect on the Majorana properties.
-Specifically, both the critical magnetic field required for creating Majoranas and its size are independent of the superconducting gap.
+Bringing two Majorana-carrying nanowires in contact and allowing a supercurrent flow beteween them is required for making a Majorana qubit.
+In Ch.~\ref{ch:supercurrent}, we apply our numerical model to analyze experimentally observed behavior of these nanowire junctions.
+While our results agree with the experimental observations, we observe that the supercurrent decreases by an order of magnitude when Majoranas appear.
+This suppression poses a new challenge in creating a Majorana qubit.
 
 \co{Using a zigzag geometry solves the problem of having a small gap.}
-Recently, a new Majorana device in a two-dimensional geometry has been proposed.
-This device has the major advantage that when tuned into the right regime it requires a very small magnetic field to create Majoranas.
-Unfortunately, it requires precise control over the electrostatic environment to make Majoranas with a decent energy gap, which provides the sought after topological protection.
-In Ch~\ref{ch:zigzag}, we show that using a zigzag device geometry (instead of a straight device) eliminates the trajectories that are responsible for the small energy gap and improve it by more than an order of magnitude for realistic parameters.
+Our findings may seem like bad news for the creation of Majoranas---unexpected pitfalls overlooked by the simplified models.
+The detailed simulations, however, bring new opportunities as well.
+Not being constrained to analyzing the devices that are easy to solve, we were able to design a new \emph{zigzag} device geometry, that improves the robustness of Majoranas by an order of magnitude.
+In Ch~\ref{ch:zigzag}, we show that using a zigzag device geometry (instead of a straight nanowire) eliminates the long electron trajectories that are responsible for the degradation of Majorana properties.
 In addition to the improved robustness of Majoranas, this new zigzag geometry is insensitive to the geometric details and device tuning.
+This proposal is now the topic of active experimental investigations by several groups.
 
 \chapter*{Samenvatting}
 \addcontentsline{toc}{chapter}{Samenvatting}
