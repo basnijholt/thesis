@@ -1,0 +1,26 @@
+name: compile-thesis
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: basnijholt/thesis
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile the thesis
+      run: make clean pdf propositions
+    - name: Upload thesis
+      uses: actions/upload-artifact@v1
+      with:
+        name: thesis
+        path: dissertation.pdf
+    - name: Upload thesis
+      uses: actions/upload-artifact@v1
+      with:
+        name: thesis
+        path: propositions.pdf
