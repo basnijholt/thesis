@@ -26,9 +26,9 @@ This problem does not appear when the Fermi surface is small and the zero point 
 However, tuning the system to a low chemical potential requires a precise knowledge of the band positions and makes the device more sensitive to disorder or microscopic inhomogeneities.
 On the other hand, disorder scatters these long trajectories and introduces a cutoff on the scale of the mean free path~\cite{Golubov1988,Belzig1996,Pilgram2000} which Ref.~\cite{Haim2019} proposes to use to improve Majorana properties; however, disorder is impossible to control to a required precision experimentally.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.9\columnwidth]{chapter_zigzag/figures/zigzag.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/zigzag.pdf}
 \caption{The straight (top) and the zigzag (bottom) SNS junction.
 The zigzag pattern has a peak-to-peak amplitude $z_y$ and a period $z_x$.
 The yellow areas are superconductors with a phase difference of $\phi$ between the top and the bottom.
@@ -37,6 +37,7 @@ A magnetic field $B$ pointing in the $x$-direction causes a Zeeman splitting in 
 A trajectory traveling at a grazing angle (red curve) has a very long flight time $\tau_\textrm{f}$ and a very small induced gap $E_\textrm{gap} \ll \Delta$.
 At the same time, the zigzag geometry limits the length of a trajectory, therefore lowering $\tau_\textrm{f}$ and increasing $E_\textrm{gap}$.
 \label{fig:setup}}
+\end{center}
 \end{figure}
 
 \co{We show that zigzag geometry solves this problem by eliminating the long trajectories.}
@@ -86,8 +87,9 @@ Our results only weakly depend on the material parameters.
 %%██████████████████████████████████████████████████████████████████████████
 \section{Band structures}\label{sec:band_structures}
 
-\begin{figure}[!htb]
-\includegraphics[width=\columnwidth]{chapter_zigzag/figures/bandstructures}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/bandstructures}
 \caption{Band structures of the system in Fig.~\ref{fig:setup}(b) with different zigzag amplitudes.
 The blue lines correspond to a trivial phase ($\phi=0$, $B_x = 0$) and the orange lines to a topological phase ($\phi=\pi$, $B_x = \SI{1}{T}$).
 The three subplots are for different amplitudes of the zigzag, with (a) a straight system $z_y=0$, (b) $z_y=W/2$, and (c) $z_y=W$, where $W=\SI{200}{\nm}$ is the junction width.
@@ -97,6 +99,7 @@ Once there are no more straight trajectories inside the junction (when $z_y=W$) 
 When the zigzag amplitude increases, the band gap $E_\textrm{gap}$ increases by an order of magnitude.
 The combination of these ensures a significant decrease of the Majorana size $\xi_\textrm{M} \propto v/E_\textrm{gap}$.
 The parameter values are listed at the end of Sec.~\ref{sec:setup}.\label{fig:band_structures}}
+\end{center}
 \end{figure}
 
 \co{We calculate the band structure for varying amount of zigzag.}
@@ -120,14 +123,16 @@ This provides another mechanism of the gap enhancement.
 %%██████████████████████████████████████████████████████████████████████████
 \section{Localization lengths and shape effects}\label{sec:shape_effects}
 
-\begin{figure}[!htb]
-\includegraphics[width=\columnwidth]{chapter_zigzag/figures/wavefunctions}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/wavefunctions}
 \caption{Density of Majorana wave functions $\left| \psi_\textrm{M} \right|^2$ for different geometries.
 With (a) a straight system, (b) a zigzag system, (c) a system where lines parallel to a sinusoid defines the normal region, and (d) similar to (c) but with disordered edges.
 Inside the figure, we indicate the Majorana length (or coherence length) $\xi_\textrm{M}$, the Majorana energy $E_\textrm{M}$ (the energy of the first excited state), and the topological energy gap $E_\textrm{gap}$.
 We observe that $\xi_\textrm{M}$ for the straight system is almost two orders of magnitude longer and $E_\textrm{gap}$ more than an order of magnitude smaller than for the zigzag systems.
 The robustness of $E_\textrm{gap}$ and $\xi_\textrm{M}$ across the zigzag geometries means that the details of the geometry do not matter for the improvements to occur.
 The length of the system is $3.5 z_x=\SI{4550}{\nm}$, the remaining parameter values are listed at the end of Sec.~\ref{sec:setup}.\label{fig:wave_functions}}
+\end{center}
 \end{figure}
 
 \co{We calculate the wave functions and find the Majorana lengths by fitting an exponential.}
@@ -159,8 +164,9 @@ Further, the topological gap $E_\textrm{gap}$ is an order of magnitude higher th
 %%██████████████████████████████████████████████████████████████████████████
 \section{Topological phase diagram}
 
-\begin{figure}[!htb]
-\includegraphics[width=\columnwidth]{chapter_zigzag/figures/phasediagrams}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/phasediagrams}
 \caption{A comparison of a straight device (left panels) and a zigzag one (right panels).
 The top panels show the Majorana wave functions, near the left edge of the system, at the value of $B_x$ for which $E_\textrm{gap}$ is maximized in a straight geometry for $\mu=\SI{10}{\meV}$ and $\phi=\pi$ as well as the values of the gap and the Majorana size.
 The other panels show gap as a function of $\mu$ and $B_x$ at $\phi=\pi$ (middle panels) and as a function of $\phi$ and $B_x$ at $\mu=\SI{10}{\meV}$ (bottom panels).
@@ -168,6 +174,7 @@ The dashed lines and the dot indicate the parameters used in the other panels.
 Additionally, in subplot (c) we overlay the phase boundaries.
 The remaining parameter values are listed at the end of Sec.~\ref{sec:setup}, except with $a=\SI{5}{\nm}$ and $L_\textrm{SC}=\SI{800}{\nm}$.
 \label{fig:phasediagrams}}
+\end{center}
 \end{figure}
 
 \co{We calculate the topological phase diagram.}
@@ -221,15 +228,6 @@ We therefore expect, that the new approach to controlling the proximity supercon
 We are grateful to  S. Goswami, A. Keselman, P. P. Piskunow, T. Ö. Rosdahl, D. Varjas, F. K. de Vries, Q. Wang, and J. B. Weston for useful discussions.
 This work was supported by the Netherlands Organization for Scientific Research (NWO/OCW), as part of the Frontiers of Nanoscience program, two NWO VIDI grants (016.Vidi.189.180 and 680-47-537), an ERC Starting Grant STATOPINS 638760, and the project Quantox of QuantERA ERA-NET Cofund in Quantum Technologies (Grant Agreement N. 731473) implemented within the European Union's Horizon 2020 Program.
 
-\section{Author contributions}
-T.L authored the idea of the zigzag geometry.
-B.N. wrote the code and it was extended by T.L.
-B.N. performed the writing of the manuscript with input of the other authors.
-All authors performed the analysis of the results and planning of the project.
-
-
-
-
 \section{Appendix}
 
 \section{Zigzag device with a single superconductor}\label{appendix:NS_junction}
@@ -239,12 +237,13 @@ A zigzag-shaped device with a single superconductor shows a similar enhancement 
 We demonstrate this by simulating a straight and a zigzag device and computing $E_\textrm{gap}(B_x, \; \mu)$ in Fig.~\ref{fig:ns_junction}.
 We observe that the order of magnitude increase of $E_\textrm{gap}$ also occurs upon the introduction of a zigzag geometry.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.9\columnwidth]{chapter_zigzag/figures/phasediagrams_NS.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/phasediagrams_NS.pdf}
 \caption{Same as Fig.~\ref{fig:phasediagrams} (c) and (d) but with one superconductor instead of two.
 We observe that the zigzag geometry also increases the gap in this case.
 \label{fig:ns_junction}}
+\end{center}
 \end{figure}
 
 \section{Direction of the magnetic field}\label{appendix:direction_B}
@@ -259,28 +258,31 @@ Strong screening of the magnetic field by the superconductors may distort the ma
 To determine whether this effect degrades the device quality, we simulate a device with the magnetic field parallel to the NS interface, shown in Fig.~\ref{fig:syst_snaking_magnetic_field}.
 We find that the resulting gap is comparable to that of a device with the magnetic field purely in the $x$-direction, as shown in Fig.~\ref{fig:snaking_magnetic_field}.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.9\columnwidth]{chapter_zigzag/figures/tilted_angle_phase_diagram.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/tilted_angle_phase_diagram.pdf}
 \caption{The topological gap as a function of the magnetic field magnitude $B$ and its angle $\theta=\arctan{B_y/B_x}$ for a straight device (a) and a zigzag device (b).
 Note that the colormaps and the $\theta$-axes differ between panels: the zigzag-shaped device becomes gapless at $\theta$ an order of magnitude larger compared to the straight device.
 \label{fig:tilted_angle_phase_diagram}}
+\end{center}
 \end{figure}
 
-\begin{figure}[!htb]
-\centering
-\includegraphics{chapter_zigzag/figures/syst_snaking_magnetic_field.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/syst_snaking_magnetic_field.pdf}
 \caption{
 The magnetic field pattern emulating strong screening by the superconductors.
 \label{fig:syst_snaking_magnetic_field}}
+\end{center}
 \end{figure}
 
-\begin{figure}[!htb]
-\centering
-\includegraphics{chapter_zigzag/figures/snaking_magnetic_field.pdf}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{chapter_zigzag/figures/snaking_magnetic_field.pdf}
 \caption{
 Comparison of the zigzag device's band structures with the magnetic field following the shape of the junction (orange) (see Fig.~\ref{fig:syst_snaking_magnetic_field}) and a magnetic field in the $x$-direction (blue) for different values of $z_y$.
 \label{fig:snaking_magnetic_field}}
+\end{center}
 \end{figure}
 
 \section{Interface transparency vs.~path length cut-off}
