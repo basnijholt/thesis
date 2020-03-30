@@ -1,5 +1,7 @@
 # Bas Nijholt's Ph.D. thesis
 
+[![compile-thesis](https://github.com/basnijholt/thesis/workflows/compile-thesis/badge.svg)](https://github.com/basnijholt/thesis/actions?query=workflow%3Acompile-thesis)
+
 See the compiled
 * latest [dissertation](https://gitlab.kwant-project.org/qt/basnijholt/thesis-bas-nijholt/builds/artifacts/master/raw/dissertation.pdf?job=job)
 * latest [propositions](https://gitlab.kwant-project.org/qt/basnijholt/thesis-bas-nijholt/builds/artifacts/master/file/propositions.pdf?job=job)
