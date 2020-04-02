@@ -42,6 +42,7 @@ $S$ labels the superconducting contacts while $B$ indicates the in-plane magneti
 \end{center}
 \end{figure}
 
+\section{Experimental setup}
 Figure \ref{fig:figure1}(a) presents a schematic of a few-mode nanowire Josephson junction.
 The inset of Fig.~\ref{fig:figure1}(b) shows a device similar to those used in this study and their fabrication process is described in Ref.~\cite{Mourik2012}.
 The junction consists of an InSb nanowire with a diameter of $100 \pm \SI{10}{nm}$ with 80 nm thick dc magnetron sputtered NbTiN contacts.
@@ -55,8 +56,8 @@ The voltage measurements are performed in the four-terminal geometry.
 
 We set all the gates underneath the nanowire to positive voltages, in the few-mode transparent regime in which no quantum dots are formed between the superconducting contacts, and the normal state conductance exceeds $2e^2/h$ (see the full gate trace of the supercurrent in the appendix).
 
+\section{Supercurrent measurements as a function of magnetic field}
 Figure \ref{fig:figure1}(b) shows a typical example of the differential resistance $\mathrm{d}V/\mathrm{d}I$ as a function of the magnitude of the magnetic field $B$ and the current bias $I_\mathrm{bias}$ in this few-mode regime, with low resistance supercurrent regions in dark blue around zero current bias.
-
 Note that the data at low field are asymmetric with respect to current reversal.
 Only one sweep direction is plotted for the rest of the figures.
 
@@ -76,6 +77,7 @@ Data from device 2; see the appendix for the scanning electron micrograph of the
 \end{center}
 \end{figure}
 
+\section{Possible mechanisms causing supercurrent oscillations}
 We now qualitatively discuss the possible explanations for the behavior observed in Fig.~\ref{fig:figure1}(b).
 Zeeman splitting can induce $0-\pi$-junction transitions which result in an oscillatory Josephson energy as a function of the magnetic field \cite{Bulaevskii1977,  Buzdin1982, Demler1997}.
 This alternating $0-\pi$ junction behavior is due to spin-up and spin-down channels acquiring different phases as they travel across the junction [Fig.~\ref{fig:figure1}(a)].
@@ -92,6 +94,7 @@ Transitions in and out of the topological superconducting phase in the nanowire 
 Although we used devices similar to those presented in recent Majorana experiments \cite{Mourik2012,Guel2018,Chen2017a}, here we did not gate tune the regions of the wire underneath the superconducting contacts into the topological regime.
 An accidental topological regime occurring on both sides of the junction in multiple devices is an unlikely explanation for the generic observations reported here.
 
+\section{Supercurrent evolution with magnetic field and gate potential}
 Figure~\ref{fig:figure2} shows a typical sequence of magnetic field dependences of the critical current, obtained by adjusting one of the narrow local gates.
 The critical current exhibits multiple nodes [Fig.~\ref{fig:figure2}(d)], just a single node [Fig.~\ref{fig:figure2}(c)], or no node [Fig.~\ref{fig:figure2}(a)] in the same field range.
 At some nodes the critical current goes to zero, while a nonzero supercurrent is observed at other nodes.
@@ -132,6 +135,7 @@ For plots of corresponding current-phase relationships, Josephson energies, and 
 \end{center}
 \end{figure}
 
+\section{Theoretical model}
 In order to understand the magnetic field evolution of the Josephson effect, we develop an effective low-energy model of a spin-orbit and Zeeman-coupled few-mode nanowire, covered by superconductors at both ends.
 We define $x$ as the direction along the wire, $y$ perpendicular to the wire in the plane of the substrate, and $z$ perpendicular to both wire and substrate.
 The corresponding Hamiltonian reads
@@ -152,6 +156,7 @@ We note that for moderately damped and overdamped Josephson junctions, such as t
 The source code and the specific parameter values are available in the appendix.
 The full set of materials, including computed raw data and experimental data, is available in Ref.~\cite{Zuo2017}.
 
+\section{Discussion}
 Numerical results are presented in Figs.~\ref{fig:critical_currents} and \ref{fig:figure5}(b).
 First, we discuss the case of only a single transverse mode occupied [Figs.~\ref{fig:critical_currents}(a) and ~\ref{fig:critical_currents}(b)], which is pedagogical but does not correspond to the experimental regime.
 When all field-related terms of Eq.~\eqref{eq:H} are included ($\mathbf{A}\neq 0$, $\alpha \neq 0$), we observe a monotonic decay of the critical current much more gradual than in the experiment, due to the absence of the intermode interference effect in the single-mode regime.
@@ -189,6 +194,7 @@ In particular, the experimentally observed magnetic field scale of initial super
 Furthermore, the gate-tunable maxima and minima of the critical current are recovered in our model; both in experiment and simulation these do not evolve in a regular fashion (a consequence of the complexly shaped interference trajectories).
 This qualitative agreement found additionally substantiates the applicability of our model to the experimental results.
 
+\section{Conclusions}
 Our results are instrumental for modeling Majorana setups.
 Specifically, the decrease of Josephson energy by an order of magnitude is observed at fields at which the onset of topological superconductivity is reported.
 This effect should, therefore, be taken into account in efforts to realize recent proposals for fusion and braiding of Majorana fermions \cite{Hyart2013,Aasen2016,Plugge2017,Karzig2017}, especially in those that rely on controlling the Josephson coupling \cite{Hyart2013,Aasen2016,Plugge2017}.
