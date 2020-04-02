@@ -34,33 +34,36 @@ This degenerate ground state has quantized non-Abelian geometric phases; we disc
 
 \co{The QHE is an example that can be described using of the theory of topological order.}
 The quantum Hall effect is an example of a state that cannot be described by its symmetries alone. Instead, it can be characterized by a distinct topology (see Fig.~\ref{fig:knots})~\cite{Avron2003}.
-Its signature, shown in Fig.~\ref{fig:qhe}, is robust and does not depend on the specific geometry and does not vanish upon smooth changes in the material's parameters.
+Its signature---shown in Fig.~\ref{fig:qhe_example}---is robust and does not depend on the specific geometry and does not vanish upon smooth changes in the material's parameters.
 Its signature is an exact quantization of the Hall conductance of an integer number of $e^2/h$, where $e$ is the elementary charge, and $h$ is the Planck constant, both fundamental constants.
 Because of its robustness---it is insensitive to specific experimental settings and purity of the material used---the quantum Hall effect is used to determine the standard for electrical resistance\cite{Jeckelmann2001}.
 The effect appears upon applying a large perpendicular magnetic field $B_\perp$ to a two-dimensional electron gas at low temperatures.
 This opens a gap between the energy bands and localizes the electrons in the bulk.
-Classically, we can visualize what happens, as electrons localizing in small cyclotron orbits; this leaves the electrons near the edges of the material to bounce along the edges.
+Classically, we can visualize what happens (see Fig.~\ref{fig:compare_insulators}), as electrons localizing in small cyclotron orbits; this leaves the electrons near the edges of the material to bounce along the edges~\cite{Hasan2010}.
 These states that propogate along the edges are responsible for the conduction and are called ``edge states.''
 
 \begin{figure}[!htb]
 \begin{center}
-% \includegraphics{chapter_introduction/figures/knots.pdf}  % XXX: add this figure
+\subfloat[An unknot.]{{\includegraphics[width=5cm]{chapter_introduction/figures/Orange_Unknot.png} }}%
+\qquad
+\subfloat[A trefoil knot.]{{\includegraphics[width=5cm]{chapter_introduction/figures/Orange_Trefoil_Knot.png} }}%
 \caption{
 Topology in mathematics studies the properties of an object that are preserved under continuous deformations.
-For example, an unknot (left) cannot be continuously transformed into a trefoil knot (right) without cutting it; this means that they are not topologically equivalent.
+For example, because an unknot (a) cannot be continuously transformed into a trefoil knot (b) without cutting it (not a continuous deformation) they are not topologically equivalent.
 The object that is studied in condensed matter physics, is the Hamiltonian.
 Two Hamiltonians are topologically equivalent whenever an Hamiltonian can be continuously transformed into another Hamiltonian.
 Unlike a knot that can be visualized in space, the topology of the quantum Hall state manifests itself in momentum space.
+Images adapted from \cite{wiki_trefoil_knot,wiki_unknot}.
 \label{fig:knots}}
 \end{center}
 \end{figure}
 
 \begin{figure}[!htb]
 \begin{center}
-% \includegraphics{chapter_introduction/figures/qhe.pdf}  % XXX: add this figure
+\includegraphics[width=0.6\textwidth]{chapter_introduction/figures/qhe.pdf}
 \caption{
 The integer quantum Hall effect.
-The Hall resistance $R_H$ (reciprocal of the Hall conductance $G_H$) of a two-dimensional electron gas as a function of the perpendicular magnetic field $B_\perp$ at low-temperature.
+The Hall conductance $G_H$ (reciprocal of the Hall resistance $R_H$) of a simulated two-dimensional electron gas as a function of the perpendicular magnetic field $B_\perp$ at 0 K.
 It displays a stairlike quantized sequence of Hall conductances equal to $ne^2/h$, where $n$ is an integer characterizing each plateau.
 \label{fig:qhe_example}}
 \end{center}
@@ -69,19 +72,23 @@ It displays a stairlike quantized sequence of Hall conductances equal to $ne^2/h
 \co{More topological states have been realized, one example is TIs.}
 The field of topology in condensed matter has substantially grown over the past decades.
 Recently, in 2016, the Nobel prize was awarded to Thouless, Haldane, and Kosterlitz for the theoretical findings of topological states.
-One of these new states are ``topological insulators,'' which also exhibit edge or surface states and have similarities to the quantum Hall effect, but do not require extreme conditions such as the large magnetic field.
-Here, spin-orbit coupling replaces the effect of the magnetic field.
+One of these new states are ``topological insulators,'' which also exhibit edge or surface states and have similarities to the quantum Hall effect, but do not require extreme conditions such as the large magnetic field~\cite{Hasan2010}.  % XXX: add canonical reference
+Here, spin-orbit coupling replaces the effect of the magnetic field (see Fig.~\ref{fig:compare_insulators}).
 This is a coupling between the electron's momentum and spin, effectively causing a momentum dependent magnetic field for electrons that move through a crystal lattice.
 The spin-orbit coupling effect is discussed in more detail in Sec.~\ref{sec:hamiltonian_term_by_term}.
 Due to the absence of a magnetic field (which breaks time-reversal symmetry in the quantum Hall effect), the edge states always come in counter-propagating pairs, shown in see Fig.~\ref{fig:qhe_example}.
 
 \begin{figure}[!htb]
 \begin{center}
-\includegraphics{chapter_introduction/figures/compare-insulators.pdf}
+\includegraphics[width=0.95\textwidth]{chapter_introduction/figures/compare-insulators.pdf}
 \caption{
-Comparison of an insulator, quantum Hall effect, and a topological insulator.
-% XXX: Rip Fig. 2 and 5 from 10.1103/RevModPhys.82.3045
-\label{fig:qhe}}
+Comparison of schematic representations and band structures of a normal insulator (left), quantum Hall effect (middle), and a topological insulator (right).
+Classically, the electrons in an insulator (left) are localized around the cores of the ions and therefore cannot flow freely to create a current.
+From its band structure (bottom), we observe that at the Fermi level there are no electronic states available that can contribute to a current through the material.
+In the quantum Hall regime (middle), the strong perpendicular magnetic field localizes the electrons in the bulk in cyclotron orbits, while the states at the boundary scatter along the edges.
+The localized orbitals open an energy gap in the band structure, with the conducting gapless edge states remaining due to the unique topologically of the system.
+The topological insulator (right) is similar to the quantum Hall state, however, it has two conducting edge channels of opposite spin.
+\label{fig:compare_insulators}}
 \end{center}
 \end{figure}
 
@@ -548,7 +555,7 @@ In the next section, we will extend this model to three dimensions and study how
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.7\textwidth]{chapter_introduction/figures/phase_diagram_1D.pdf}
+\includegraphics[width=0.5\textwidth]{chapter_introduction/figures/phase_diagram_1D.pdf}
 \caption{A phase diagram of a one-dimensional Majorana nanowire device as a function of magnetic field $B$ and chemical potential $\mu$.
 The color indicates whether the system is in the topological or trivial phase.
 This system becomes topological whenever $E_\textrm{Z}^{2}>\mu^{2}+\Delta^{2}$.
