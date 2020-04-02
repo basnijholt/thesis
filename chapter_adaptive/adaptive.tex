@@ -17,37 +17,34 @@ Even though it is suboptimal, one usually resorts to sampling $X$ on a homogeneo
 
 An alternative, which improves the simulation efficiency, is to choose new potentially interesting points in $X$, based on existing data \cite{Gramacy2004, Figueiredo1995, Castro2008, Chen2017}.
 Bayesian optimization works well for high-cost simulations where one needs to find a minimum (or maximum) \cite{Takhtaganov2018}.
-However, if the goal of the simulation is to approximate a continuous function using the fewest points, the continuity of the approximation is achieved by a greedy algorithm that samples mid-points of intervals with the largest distance or curvature \cite{Wolfram2011}.
+However, if the goal of the simulation is to approximate a continuous function using the fewest points, an alternative strategy is to use a greedy algorithm that samples mid-points of intervals with the largest length or curvature \cite{Wolfram2011}.
 Such a sampling strategy (i.e., in Fig.~\ref{fig:algo}) would trivially speedup many simulations.
-Here, the complexity arises when parallelizing this algorithm because this requires a lot of bookkeeping and planning.
+Another advantage of such an algorithm is that it may be parallelized cheaply (i.e.~more than one point may be sampled at a time), as we do not need to perform a global computation over all the data (as we would with Bayesian sampling) when determining which points to sample next.
 
 \begin{figure}
 \centering
 \includegraphics{chapter_adaptive/figures/algo.pdf}
-\caption{Visualization of a 1-D point choosing algorithm for a black-box function (grey).
+\caption{Visualization of a 1-D sampling strategy for a black-box function (grey).
 We start by calculating the two boundary points.
-Two consecutive existing data points (black) $\{x_i, y_i\}$ define an interval.
-Each interval has a loss $L_{i,i+1}$ associated with it that can be calculated from the points inside the interval $L_{i,i+1}(x_i, x_{i+1}, y_i, y_{i+1})$ and optionally of $N$ next nearest neighbouring intervals.
+Two adjacent existing data points (black) $\{x_i, y_i\}$ define an interval.
+Each interval has a loss $L_{i,i+1}$ associated with it that can be calculated from the points inside the interval $L_{i,i+1}(x_i, x_{i+1}, y_i, y_{i+1})$ and optionally of $N$ next nearest neighboring intervals.
 At each iteration the interval with the largest loss is indicated (red), with its corresponding candidate point (green) picked in the middle of the interval.
-The loss function in this example is the curvature loss.\label{fig:algo}}
+The loss function in this example is an approximation to the curvature, calculated using the data from an interval and its nearest neighbors.\label{fig:algo}}
 \end{figure}
 
 \co{We describe a class of algorithms relying on local criteria for sampling, which allow for easy parallelization and have a low overhead.}
 
-To handle many parallel workers that calculate the function values and request new points, the algorithm needs to have a low computational overhead.
-Requiring that, when a new point has been calculated, that the information updates are local (only in a region around the newly calculated point), will reduce the time complexity of the algorithm.
-A simple example is greedily optimizing continuity of the sampling by selecting points according to the distance to the largest gaps in the function values, as in Fig.~\ref{fig:algo}.
-For a one-dimensional function with three points known (its boundary points and a point in the center), such a simple algorithm consists of the following steps:
-(1) keep all points $x$ sorted, where two consecutive points define an interval,
-(2) calculate the distance for each interval $L_{i, i+1}=\sqrt{(x_{i+1}-x_{i})^{2}+(y_{i+1}-y_{i})^{2}}$,
-(3) pick a new point $x_\textrm{new}$ in the middle of the interval with the largest $L$, creating two new intervals around that point,
+The algorithm visualized in \ref{fig:algo} consists of the following steps:
+(1) evaluate the function at the boundaries $a$ and $b$, of the interval of interest,
+(2) calculate the loss for the interval $L_{a, b} = \sqrt{(b - a)^2 + (f(b) - f(a))^2}$,
+(3) pick a new point $x_\textrm{new}$ in the centre of the interval with the largest loss, $(x_i, x_j)$,
 (4) calculate $f(x_\textrm{new})$,
-(5) repeat the previous steps, without redoing calculations for unchanged intervals.
+(5) discard the interval $(x_i, x_j)$ and create two new intervals $(x_i, x_\textrm{new})$ and $(x_\textrm{new}, x_j)$, calculating their losses $L_{x_i, x_\textrm{new}}$ and $L_{x_\textrm{new}, x_j}$
+(6) repeat from step 3.
 
-In this chapter, we present a class of algorithms that rely on local criteria for sampling, such as in the above example.
-Here we associate a \emph{local loss} to each interval and pick a \emph{candidate point} inside the interval with the largest loss.
-For example, in the case of the integration algorithm, the loss is the error estimate.
-The advantage of these \emph{local} algorithms is that they allow for easy parallelization and have a low computational overhead.
+In this chapter we present a class of algorithms that generalizes the above example.
+This general class of algorithms is based on using a \emph{priority queue} of subdomains (intervals in 1-D), ordered by a \emph{loss} obtained from a \emph{local loss function} (which depends only on the data local to the subdomain), and greedily selecting points from subdomains at the top of the priority queue.
+The advantage of these \emph{local} algorithms is that they have a lower computational overhead than algorithms requiring \emph{global} data and updates (e.g.~Bayesian sampling), and are therefore more amenable to parallel evaluation of the function of interest.
 
 \begin{figure}
 \centering
@@ -105,7 +102,7 @@ Another application for adaptive sampling is numerical integration.
 It works by estimating the integration error of each interval and then minimizing the sum of these errors greedily.
 For example, the \passthrough{\lstinline!CQUAD!} algorithm \cite{Gonnet2010} in the GNU Scientific Library \cite{Galassi1996} implements a more sophisticated strategy and is a doubly-adaptive general-purpose integration routine which can handle most types of singularities.
 In general, it requires more function evaluations than the integration routines in \passthrough{\lstinline!QUADPACK!} \cite{Galassi1996}; however, it works more often for difficult integrands.
-It is doubly-adaptive because it can decide to either subdivide intervals into more intervals or refine an interval by adding more points---that do not lie on a regular grid---to each interval.
+It is doubly-adaptive because it can decide to either subdivide intervals into more intervals or refine an interval by using a polynomial approximation of higher degree, requiring more points.
 
 \co{PDE solvers and computer graphics use adaptive meshing.}
 
@@ -116,15 +113,17 @@ Therefore, mesh optimization does not fit our workflow because expensive global 
 Computer graphics uses similar adaptive methods where a smooth surface can represent a surface via a coarser piecewise linear polygon mesh, called a subdivision surface \cite{DeRose1998}.
 An example of such a polygonal remeshing method is one where the polygons align with the curvature of the space or field; this is called anisotropic meshing \cite{Alliez2003}.
 
-\section{Design constraints and the general algorithm}
+\hypertarget{sec:design}{%
+\section{Design constraints and the general algorithm}\label{sec:design}}
 
 \co{We aim to sample low to intermediate cost functions in parallel.}
 
 The general algorithm that we describe in this chapter works best for low to intermediate cost functions.
-The point suggestion step happens in a single sequential process while the function executions can be in parallel.
+Determining the next candidate points happens in a single sequential process while the function executions can be in parallel.
 This means that to benefit from an adaptive sampling algorithm, that the time it takes to suggest a new point $t_\textrm{suggest}$ must be much smaller than the average function execution time $t_f$ over the number of parallel workers $N$: $t_f / N \gg t_\textrm{suggest}$.
-Extremely fast functions can be calculated on a dense grid, and extremely slow functions might benefit from full-scale Bayesian optimization where $t_\textrm{suggest}$ is large.
-We are interested in an intermediate case, when one may not fully run a fitting of all available data at each step; still, a large class of functions is inside the right regime for adaptive sampling to be beneficial.
+Functions that are fast to evaluate can be calculated on a dense grid, and functions that are slow to evaluate might benefit from full-scale Bayesian optimization where $t_\textrm{suggest}$ is large.
+We are interested in the intermediate case, when one wishes to sample adaptively, but cannot afford the luxury of fitting of all available data at each step.
+While this may seem restrictive, we assert that a large class of functions is inside the right regime for local adaptive sampling to be beneficial.
 
 \co{We propose to use a local loss function as a criterion for choosing the next point.}
 
@@ -142,8 +141,7 @@ The algorithm, therefore, works best in low dimensional space; typically calcula
 
 \co{We summarize the algorithm with pseudocode}
 
-The algorithm descried above can be summarized by the following pseudocode.
-In the following \passthrough{\lstinline!queue!} is the priority queue of subdomains, \passthrough{\lstinline!domain!} is an object that allows to efficiently query the neighbors of a subdomain and all subdomains containing a point $x$, \passthrough{\lstinline!data!} is a hashmap storing the points and their values, and \passthrough{\lstinline!loss!} is the loss function, with \passthrough{\lstinline!loss.n\_neighbors!} being the degree of neighboring subdomains that the loss function uses.
+The algorithm described above can be made more precise by the following Python code:
 
 \begin{lstlisting}[language=Python]
 first_subdomain, = domain.subdomains()
@@ -172,6 +170,21 @@ while queue.max_priority() < target_loss:
       queue.update(subdomain, priority=loss(domain, subdomain, data))
 \end{lstlisting}
 
+where we have used the following definitions:
+
+\begin{description}
+\item[\texttt{f}]
+The function we wish to learn
+\item[\texttt{queue}]
+A priority queue of unique elements, supporting the following methods: \passthrough{\lstinline!max\_priority()!}, to get the priority of the top element; \passthrough{\lstinline!pop()!}, remove and return the top element and its priority; \passthrough{\lstinline!insert(element, priority)!}, insert the given element with the given priority into the queue;\passthrough{\lstinline!update(element, priority)!}, update the priority of the given element, which is already in the queue.
+\item[\texttt{domain}]
+An object representing the domain of \passthrough{\lstinline!f!} split into subdomains. Supports the following methods: \passthrough{\lstinline!subdomains()!}, returns all the subdomains; \passthrough{\lstinline!points(subdomain)!}, returns all the points contained in the provided subdomain; \passthrough{\lstinline!split(subdomain)!}, splits a subdomain into smaller subdomains, returning the new points and new subdomains produced as a result; \passthrough{\lstinline!neighbors(subdomain, n\_neighbors)!}, returns the subdomains neighboring the provided subdomain.
+\item[\texttt{data}]
+A hashmap storing the points \passthrough{\lstinline!x!} and their values \passthrough{\lstinline!f(x)!}.
+\item[\texttt{loss(domain,\ subdomain,\ data)}]
+The loss function, with \passthrough{\lstinline!loss.n\_neighbors!} being the degree of neighboring subdomains that the loss function uses.
+\end{description}
+
 \co{As an example, the interpoint distance is a good loss function in one dimension.}
 
 An example of such a local loss function for a one-dimensional function is the interpoint distance, i.e.~given a subdomain (interval) $(x_\textrm{a}, x_\textrm{b})$ with values $(y_\textrm{a}, y_\textrm{b})$ the loss is $\sqrt{(x_\textrm{a} - x_\textrm{b})^2 + (y_\textrm{a} - y_\textrm{b})^2}$.
@@ -180,13 +193,17 @@ Figure \ref{fig:Learner1D} shows a comparison between a result using this loss a
 
 \co{This algorithm has a logarithmic overhead when combined with an appropriate data structure}
 
-The key data structure in the above algorithm is the priority queue of subdomains.
-It must support efficiently finding and removing the maximum priority element, as well as updating the priority of arbitrary elements whose priority is unknown (when updating the loss of neighboring subdomains).
+The key data structures in the above algorithm are \passthrough{\lstinline!queue!} and \passthrough{\lstinline!domain!}.
+The priority queue must support efficiently finding and removing the maximum priority element, as well as updating the priority of arbitrary elements whose priority is unknown (when updating the loss of neighboring subdomains).
 Such a datastructure can be achieved with a combination of a hashmap (mapping elements to their priority) and a red--black tree or a skip list \cite{Cormen2009} that stores \passthrough{\lstinline!(priority, element)!}.
 This has average complexity of $\mathcal{O}(\log{n})$ for all the required operations.
 In the reference implementation, we use the SortedContainers Python package \cite{Jenks2014}, which provides an efficient implementation of such a data structure optimized for realistic sizes, rather than asymptotic complexity.
-Additionally, the algorithm requires efficient queries for subdomains that contain a point $x$, and the neighbors of a given subdomain.
-For the one-dimensional case this could be achieved by using a red--black tree to keep the points $x$ in ascending order.
+The \passthrough{\lstinline!domain!} object requires efficiently splitting a subdomain and querying the neighbors of a subdomain.
+For the one-dimensional case this can be achieved by using a red--black tree to keep the points $x$ in ascending order.
+In this case both operations have an average complexity of $\mathcal{O}(\log{n})$.
+In the reference implementation we again use SortedContainers.
+We thus see that by using the appropriate data structures the time required to suggest a new point is $t_\textrm{suggest} \propto \mathcal{O}(\log{n})$.
+The total time spent on suggesting points when sampling $N$ points in total is thus $\mathcal{O}(N \log{N})$.
 
 \co{With many points, due to the loss being local, parallel sampling incurs no additional cost.}
 
@@ -199,8 +216,7 @@ We then calculate the priority of these new subdomains, and insert them into the
 
 \co{We summarize the algorithm with pseudocode}
 
-The parallel version of the algorithm can be summarized by the following pseudocode.
-In the following \passthrough{\lstinline!queue!} is the priority queue of subdomains, \passthrough{\lstinline!domain!} is an object that allows to efficiently query the neighbors of a subdomain and create new subdomains by adding a point $x$, \passthrough{\lstinline!data!} is a hashmap storing the points and their values, \passthrough{\lstinline!executor!} allows to offload evaluation of a function \passthrough{\lstinline!f!} to external computing resources, and \passthrough{\lstinline!loss!} is the loss function, with \passthrough{\lstinline!loss.n\_neighbors!} being the degree of neighboring subdomains that the loss function uses.
+The parallel version of the algorithm can be described by the following Python code:
 
 \begin{lstlisting}[language=Python]
 def priority(domain, subdomain, data):
@@ -254,58 +270,46 @@ while executor.n_outstanding_points > 0:
     queue.insert(subdomain, priority(domain, subdomain, data))
 \end{lstlisting}
 
-\section{Loss function design}
+Where we have used identical definitions to the serial case for \passthrough{\lstinline!f!}, \passthrough{\lstinline!data!}, \passthrough{\lstinline!loss!} and the following additional definitions:
+
+\begin{description}
+\item[\texttt{queue}]
+As for the sequential case, but must additionally support: \passthrough{\lstinline!remove(element)!}, remove the provided element from the queue.
+\item[\texttt{domain}]
+As for the sequential case, but must additionally support: \passthrough{\lstinline!insert\_points(subdomain, n)!}, insert \passthrough{\lstinline!n!} (pending) points into the given subdomain without splitting the subdomain; \passthrough{\lstinline!subvolumes(subdomain)!}, return the volumes of all the sub-subdomains contained within the given subdomain; \passthrough{\lstinline!split\_at(x)!}, split the domain at a new (evaluated) point \passthrough{\lstinline!x!}, returning the old subdomains that were removed, and the new subdomains that were added as a result.
+\item[\texttt{executor}]
+An object that can submit function evaluations to computing resources and retrieve results.
+Supports the following methods: \passthrough{\lstinline!submit(f, x)!}, schedule the execution of \passthrough{\lstinline!f(x)!} and do not block ; \passthrough{\lstinline!get\_one\_result()!}, block waiting for a single result, returning the pair \passthrough{\lstinline!(x, y)!} as soon as it becomes available; \passthrough{\lstinline!ncores!}, the total number of parallel processing units; \passthrough{\lstinline!n\_outstanding\_points!}, the number of function evaluations that have been requested and not yet retrieved, incremented by \passthrough{\lstinline!submit!} and decremented by \passthrough{\lstinline!get\_one\_result!}.
+\end{description}
+
+\hypertarget{sec:loss}{%
+\section{Loss function design}\label{sec:loss}}
 
 \co{Sampling in different problems pursues different goals}
 
 Not all goals are achieved by using an identical sampling strategy; the specific problem determines the goal.
-For example, quadrature rules based integration requires a denser sampling of the sections where the uncertainty of the interpolation is highest, plotting (or function approximation) requires continuity of the approximation, maximization only cares about finding an optimum, and isoline or isosurface sampling aims to sample regions near the iso level denser.
+For example, quadrature rules requires a denser sampling of the subdomains where the interpolation error is highest, plotting (or function approximation) requires continuity of the approximation, maximization only cares about finding an optimum, and isoline or isosurface sampling aims to sample regions near a given function value more densely.
+These different sampling goals each require a loss function tailored to the specific case.
 
-\co{Different loss functions tailor sampling performance to different goals}
+\co{Different loss functions tailor sampling performance for different classes of functions}
 
-To plot a function, the interpoint distance minimizing loss function we mentioned previously, works on many functions; however, it is easy to write down a function where it will fail.
-For example, $1/x^2$ has a singularity at $x=0$ and will be sampled too densely around that singularity using a distance minimizing loss.
-We can avoid this by defining additional logic inside the loss function.
-
-\co{Adding loss functions allows for balancing between multiple priorities.}
-
-Different loss functions prioritize sampling different features.
-Adding loss functions allows for balancing between the multiple desired priorities.
-For example, combining a loss function that calculates the curvature with a distance loss function, will sample regions with high curvature more densely, while ensuring continuity.
+Additionally, it is important to take the class of functions being learned when selecting a loss function into account, even if the specific goal (e.g.~continuity of the approximation) remains unchanged.
+For example, if we wanted a smooth approximation to a function with a singularity, then the interpoint distance loss function would be a poor choice, even if it is generally a good choice for that specified goal.
+This is because the aforementioned loss function will ``lock on'' to the singularity, and will fail to sample the function elsewhere once it starts.
+This is an illustration of the following principle: for optimal sampling performance, loss functions should be tailored to the particular domain of interest.
 
 \co{Loss function regularization avoids singularities}
 
-To avoid indefinitely sampling the function based on a distance loss alone, we can regularize the loss.
-A simple (but not optimal) strategy is to limit the size of each interval in the $x$ direction using,
+One strategy for designing loss functions is to take existing loss functions and apply a regularization.
+For example, to limit the over-sampling of singularities inherent in the distance loss we can set the loss of subdomains that are smaller than a given threshold to zero, which will prevent them from being sampled further.
 
-\begin{equation*}
-L_{i, i+1}^\textrm{dist}=\sqrt{(x_{i+1}-x_{i})^{2}+(y_{i+1}-y_{i})^{2}},
-\end{equation*}
+\co{Adding loss functions allows for balancing between multiple priorities.}
 
-\begin{equation*}
-L_{i,i+1}^\textrm{reg}=\begin{cases}
-\begin{array}{c}
-0\\
-L_{i, i+1}^\textrm{dist}(x_i, x_{i+1}, y_i, y_{i+1})
-\end{array} & \begin{array}{c}
-\textrm{if} \; x_{i+1}-x_{i}<\epsilon,\\
-\textrm{else,}
-\end{array}\end{cases}
-\end{equation*}
-
-where $\epsilon$ is the smallest resolution we want to sample.
-
-\co{Asymptotically dense sampling is achieved by adding subdomain volume to the loss}
-
-In two-dimensions (2D), subdomains are triangles, where its vertices are the known data points.
-Losses are therefore calculated for each triangle but, unlike the 1D case, candidate points can be chosen at the center of the triangle or in the middle of the longest edge, if the triangulation becomes better as a result.
-A distance loss equivalent in 2D is the area spanned by the three-dimensional (3D) vectors of the vertices of the triangle.
-Using this loss function, some narrow features in otherwise flat regions might not be discovered initially.
-It is therefore beneficial if a loss function has a property that eventually, all points should be sampled.
-A loss functions that ensure this is a homogeneous loss function that returns the 2D area span by the $x, y$ coordinates.
-However, this loss function does not use the function-values and is, therefore, by itself is not an efficient solution.
-Ideally, interesting regions are sampled more densely, while simultaneously new potentially interesting regions are also discovered.
-By adding the two loss functions, we can combine the 3D area loss to exploit interesting regions, while the 2D area loss explores less densely sampled regions that might contain interesting features.
+Another general strategy for designing loss functions is to combine existing loss functions that optimize for particular features, and then combine them together.
+Typically one weights the different constituent losses to prioritize the different features.
+For example, combining a loss function that calculates the curvature with a distance loss function will sample regions with high curvature more densely, while ensuring continuity.
+Another important example is combining a loss function with the volume of the subdomain, which will ensure that the sampling is asymptotically dense everywhere (because large subdomains will have a correspondingly large loss).
+This is important if there are many distinct and narrow features that all need to be found, and densely sampled in the region around the feature.
 
 \section{Examples}
 
@@ -326,7 +330,7 @@ We can generalize this loss to $N$ dimensions, where the triangle is replaced by
 In this example, we start with 6 points (a) on the function (grey).
 Ignoring the endpoints, the effective area of each point is determined by its associated triangle (b).
 The loss of each interval can be computed by taking the average area of the adjacent triangles.
-Subplots (c), (d), and (e) show the subsequent interations following (b).\label{fig:line_loss}}
+Subplots (c), (d), and (e) show the subsequent iterations following (b).\label{fig:line_loss}}
 \end{figure}
 
 In order to compare sampling strategies, we need to define some error.
@@ -362,16 +366,27 @@ Here, we choose to always increase until $d=4$, after which the interval is spli
 
 \subsection{isoline and isosurface sampling}
 
-We can find isolines or isosurfaces using a loss function that prioritizes intervals that are closer to the function values that we are interested in.
-See Fig.~\ref{fig:isoline}.
+A judicious choice of loss function allows to sample the function close to an isoline (isosurface in 2D). Specifically, we prioritize subdomains that are bisected by the isoline or isosurface:
+
+\begin{lstlisting}[language=Python]
+def isoline_loss_function(level, priority):
+    def loss(simplex, values, value_scale):
+        values = np.array(values)
+        which_side = np.sign(level * value_scale - values)
+        crosses_isoline = np.any(np.diff(which_side))
+        return volume(simplex)* (1 + priority * crosses_isoline)
+    return loss
+\end{lstlisting}
+
+See Fig.~\ref{fig:isoline} for a comparison with uniform sampling.
 
 \begin{figure}
 \centering
 \includegraphics{chapter_adaptive/figures/isoline.pdf}
-\caption{Comparison of isoline sampling of $f(x,y)=x^2 + y^3$ at $f(x,y)=0.1$ using homogeneous sampling (left) and adaptive sampling (right) with the same amount of points $n=17^2=289$.
+\caption{Comparison of isoline sampling of $f(x,y)=x^2 + y^3$ at $f(x,y)=0.1$ using homogeneous sampling (left) and adaptive sampling (right) with the same amount of points $n=12^2=144$.
 We plot the function interpolated on a grid (color) with the triangulation on top (white) where the function is sampled on the vertices.
 The solid line (black) indicates the isoline at $f(x,y)=0.1$.
-The isoline in the homogeneous case consists of 62 line segments and the adaptive case consists of 147 line segments.\label{fig:isoline}}
+The isoline in the homogeneous case consists of 43 line segments and the adaptive case consists of 94 line segments.\label{fig:isoline}}
 \end{figure}
 
 \section{Implementation and benchmarks}
@@ -380,47 +395,35 @@ The isoline in the homogeneous case consists of 62 line segments and the adaptiv
 
 We will now introduce Adaptive's API.
 The object that can suggest points based on existing data is called a \emph{learner}.
-The learner abstracts a loss based priority queue.
-We can either \emph{ask} it for points or \emph{tell} the \emph{learner} new data points.
-We can define a \emph{learner} as follows
+The learner abstracts the sampling strategy based on a priority queue and local loss functions that we described in Sec.~\ref{sec:design}.
+We define a learner as follows:
 
 \begin{lstlisting}[language=Python]
 from adaptive import Learner1D
 
-def peak(x): # pretend this is a slow function
+def f(x):
     a = 0.01
     return x + a**2 / (a**2 + x**2)
 
-learner = Learner1D(peak, bounds=(-1, 1))
+learner = Learner1D(f, bounds=(-1, 1))
 \end{lstlisting}
 
-\co{The runner orchestrates the function evaluation.}
-
-To drive the learner manually (not recommended) and sequentially, we can do
+We provide the function to learn, the domain boundaries, and use a default loss function.
+We can then \emph{ask} the learner for points:
 
 \begin{lstlisting}[language=Python]
-def goal(learner):
-    # learner.loss() = max(learner.losses)
-    return learner.loss() < 0.01
-
-while not goal(learner):
-    points, loss_improvements = learner.ask(n=1)
-    for x in points:  # len(points) == 1
-        y = f(x)
-        learner.tell(x, y)
+points, priorities = learner.ask(4)
 \end{lstlisting}
 
-To do this automatically (recommended) and in parallel (by default on all cores available) use
+The learner gives us back the points that we should sample next, as well as the priorities of these points (the loss of the parent subdomains).
+We can then evaluate some of these points and \emph{tell} the learner about the results:
 
 \begin{lstlisting}[language=Python]
-from adaptive import Runner
-runner = Runner(learner, goal)
+data = [learner.function(x) for x in points]
+learner.tell_many(points, data)
 \end{lstlisting}
 
-This will return immediately because the calculation happens in the background.
-That also means that as the calculation is in progress, \passthrough{\lstinline!learner.data!} is accessible and can be plotted with \passthrough{\lstinline!learner.plot()!}.
-Additionally, in a Jupyter notebook environment, we can call \passthrough{\lstinline!runner.live\_info()!} to display useful information.
-To change the loss function for the \passthrough{\lstinline!Learner1D!} we pass a loss function, like
+To change the loss function we pass a function that takes points and values, like so:
 
 \begin{lstlisting}[language=Python]
 def distance_loss(xs, ys): # used by default
@@ -431,7 +434,7 @@ def distance_loss(xs, ys): # used by default
 learner = Learner1D(peak, bounds=(-1, 1), loss_per_interval=distance_loss)
 \end{lstlisting}
 
-Creating a homogeneous loss function is as simple as
+If we wanted to create the ``volume loss'' discussed in Sec.~\ref{sec:loss} we could simply write:
 
 \begin{lstlisting}[language=Python]
 def uniform_loss(xs, ys):
@@ -440,6 +443,44 @@ def uniform_loss(xs, ys):
 
 learner = Learner1D(peak, bounds=(-1, 1), loss_per_interval=uniform_loss)
 \end{lstlisting}
+
+\co{The runner orchestrates the function evaluation.}
+
+The previous example shows how we can drive the learner manually.
+For example, to run the learner until the loss is below \passthrough{\lstinline!0.01!} we could do the following:
+
+\begin{lstlisting}[language=Python]
+def goal(learner):
+    return learner.loss() < 0.01
+
+while not goal(learner):
+    (x,), _ = learner.ask(1)
+      y = f(x)
+      learner.tell(x, y)
+\end{lstlisting}
+
+This approach allows for the best \emph{adaptive} performance (i.e.~fewest number of points to reach the goal) because the learner has maximal information about \passthrough{\lstinline!f!} every time we ask it for the next point.
+However this does not allow to take advantage of multiple cores, which may enable better \emph{walltime} performance (i.e.~time to reach the goal).
+Adaptive abstracts the task of driving the learner and executing \passthrough{\lstinline!f!} in parallel to a \emph{Runner}:
+
+\begin{lstlisting}[language=Python]
+from adaptive import Runner
+runner = Runner(learner, goal)
+\end{lstlisting}
+
+The above code uses the default parallel execution context, which occupies all the cores on the machine.
+It is simple to use \emph{ipyparallel} to enable calculations on a cluster:
+
+\begin{lstlisting}[language=Python]
+import ipyparallel
+
+runner = Runner(learner, goal, executor=ipyparallel.Client())
+\end{lstlisting}
+
+If the above code is run in a Jupyter notebook it will not block.
+Adaptive takes advantage of the capabilities of the IPython to execute concurrently with the Python kernel.
+This means that as the calculation is in progress the data is accessible without race conditions via \passthrough{\lstinline!learner.data!}, and can be plotted with \passthrough{\lstinline!learner.plot()!}.
+Additionally, in a Jupyter notebook environment, we can call \passthrough{\lstinline!runner.live\_info()!} to display useful information about the ongoing calculation.
 
 We have also implemented a \passthrough{\lstinline!LearnerND!} with a similar API
 
@@ -460,7 +501,7 @@ Again, it is possible to specify a custom loss function using the \passthrough{\
 \co{The BalancingLearner can run many learners simultaneously.}
 
 Frequently, more than one function (learner) needs to run at once, to do this we have implemented the \passthrough{\lstinline!BalancingLearner!}, which does not take a function, but a list of learners.
-This learner internally asks all child learners for points and will choose the point of the learner that maximizes the loss improvement; thereby, it balances the resources over the different learners.
+This learner internally asks all child learners for points and will choose the point of the learner that maximizes the loss improvement; it balances the resources over the different learners.
 We can use it like
 
 \begin{lstlisting}[language=Python]
@@ -481,26 +522,31 @@ For more details on how to use Adaptive, we recommend reading the tutorial insid
 
 \co{Anisotropic triangulation would improve the algorithm.}
 
-The current implementation of choosing the candidate point inside a simplex (triangle in 2D) with the highest loss, for the \passthrough{\lstinline!LearnerND!}, works by either picking a point (1) in the center of the simplex or (2) by picking a point on the longest edge of the simplex.
-The choice depends on the shape of the simplex, where the algorithm tries to create regular simplices.
-Alternatively, a good strategy is choosing points somewhere on the edge of a triangle such that the simplex aligns with the gradient of the function; creating an anisotropic triangulation \cite{Dyn1990}.
+One of the fundamental operations in the adaptive algorithm is selecting a point from within a subdomain.
+The current implementation uses simplices for subdomains (triangles in 2D, tetrahedrons in 3D), and picks a point either (1) in the center of the simplex or (2) on the longest edge of the simplex.
+The choice depends on the shape of the simplex; the center is only used if using the longest edge would produce unacceptably thin simplices.
+A better strategy may be to choose points on the edge of a simplex such that the simplex aligns with the gradient of the function, creating an anisotropic triangulation \cite{Dyn1990}.
 This is a similar approach to the anisotropic meshing techniques mentioned in the literature review.
 
 \co{Learning stochastic functions is a promising direction.}
 
-Stochastic functions frequently appear in numerical sciences.
-Currently, Adaptive has a \passthrough{\lstinline!AverageLearner!} that samples a stochastic function with no degrees of freedom until a certain standard error of the mean is reached.
+Stochastic processes frequently appear in numerical sciences.
+Currently, Adaptive has an \passthrough{\lstinline!AverageLearner!} that samples a random variable (modelled as a function that takes no parameters and returns a different value each time it is called) until the mean is known to within a certain standard error.
 This is advantageous because no predetermined number of samples has to be set before starting the simulation.
-Extending this learner to be able to deal with more dimensions would be a useful addition.
+Extending this learner to be able to deal with stochastic functions in arbitrary dimensions would be a useful addition.
 
 \co{Experimental control needs to deal with noise, hysteresis, and the cost for changing parameters.}
 
 Finally, there is the potential to use Adaptive for experimental control.
-Experiments often deal with noise, which could be solved by taking multiple measurements and averaging over the outcomes, such as the (not yet existing) \passthrough{\lstinline!AverageLearnerND!} will do.
-Another challenge in experiments is that changing parameters can be slow.
-Sweeping over one dimension might be faster than in others; for example, in condensed matter physics experiments, sweeping the magnetic field is much slower than sweeping frequencies.
-Additionally, some experiments exhibit hysteresis, which means that the sampling direction has to be restricted to certain paths.
-All these factors have to be taken into account to create a general-purpose sampler that can be used for experiments.
-However, Adaptive can already be used in experiments that are not restricted by the former effects.
+There are a number of challenges associated with this use case.
+Firstly, experimental results are typically stochastic (due to noise), and would require sampling the same point in parameter space several times.
+This aspect is closely associated with sampling stochastic functions discussed in the preceding paragraph.
+Secondly, in an experiment one typically cannot jump around arbitrary quickly in parameter space.
+It may be faster to sweep one parameter compared to another; for example, in condensed matter physics experiments, sweeping magnetic field is much slower than sweeping voltage source frequency.
+Lastly, some experiments exhibit hysteresis.
+This means that results may not be reproducible if a different path is taken through parameter space.
+In such a case one would need to restrict the sampling to only occur along a certain path in parameter space.
+Incorporating such extensions into Adaptive would require adding a significant amount of extra logic, as learners would need to take into account not only the data available, but the order in which the data was obtained, and the timing statistics at different points in parameter space.
+Despite these challenges, however, Adaptive can already be used in experiments that are not restricted in these ways.
 
 \references{dissertation}
