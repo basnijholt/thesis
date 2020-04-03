@@ -430,7 +430,7 @@ where the first number is the occupation number of the fermionic mode $c_{1}^{\d
 For instance, if we start from the state $\left|00\right\rangle $ and we exchange $\gamma_{2}$ and $\gamma_{3}$ by applying $U_{23}=\tfrac{1}{\sqrt{2}}\left(1\pm\gamma_{2}\gamma_{3}\right)$, we obtain
 \begin{equation}
 \left|00\right\rangle \to U_{23}\left|00\right\rangle =\tfrac{1}{\sqrt{2}}\left(\left|00\right\rangle +i\left|11\right\rangle \right).
-\end{equation}  % XXX: check how this exactly works, and maybe add more details?
+\end{equation}
 Here we see a superposition of states, which is not like bosons or fermions, where the exchange only changes the sign.
 Because of this property, Majoranas are non-Abelian anyons.
 As noted before, exchanging two non-Abelian anyons is called braiding.
@@ -729,7 +729,7 @@ To calculate a band structure $E(k)$, we use Bloch's theorem, which states that 
 \end{equation}
 where $k$ is the wave vector of the wave function and $a$ the size of the unit-cell.
 This implies that we only need to simulate a translationally invariant unit-cell to get $E(k)$.
-The Hamiltonian equals  % XXX: the rest of the section isn't as smooth...
+The Hamiltonian equals
 \begin{equation}
 H\left(k\right) = h + t\exp(ik) + t^{\dagger}\exp(-ik),
 \end{equation}
@@ -916,8 +916,10 @@ Aluminum is typically used as the superconductor and has a Fermi energy of $E_\t
 So, to properly simulate even the thin layer of superconducting material on top of a nanowire, the lattice constant has to be smaller then an ångström, resulting in matrix sizes that go far beyond the current capabilities of even the largest computers.
 
 \subsection{Adaptive sampling}
-As a partial solution to address the computational complexity is to sample the parameter space of the function we are evaluating adaptively.
-% XXX: FINISH OR DELETE THIS PARAGRAPH
+Finally, a partial solution to address the computational complexity, is to sample the parameter space of the function we are evaluating adaptively.
+In Ch.~\ref{ch:adaptive}, we develop adaptive parallel sampling algorithms for low-dimensional ($d\lessapprox 4$) parameter sweeps, adaptive integration, and averaging stochastic functions.
+In our research, this typically sped up the simulations by at least an order of magnitude in comparison with sampling on a homogeneous grid.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STRUCTURE OF THIS THESIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
