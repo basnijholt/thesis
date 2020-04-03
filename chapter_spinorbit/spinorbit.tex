@@ -1,4 +1,3 @@
-% XXX: Fix {Note1} and references to "Supplemental Material".
 \chapter[Spin-orbit protection of induced SC in Majorana nanowires]{Spin-orbit protection of induced superconductivity in Majorana nanowires}
 \label{ch:spinorbit}
 
@@ -25,7 +24,7 @@ However, the SOI strength relevant to the topological protection is affected by 
 Here, we reveal SOI in an InSb nanowire coupled to a NbTiN superconductor through the dependence of the superconducting gap on the magnetic field, both strength and orientation.
 We find that the geometry of the superconductor on the nanowire strongly modifies the direction of the spin-orbit field, which is further tunable by electrostatic gating, in line with the expected modifications of the electric field due to work function difference and electrostatic screening at the nanowire-superconductor interface.
 
-\section{Experimental setup and gap closing anisotropy}
+\section{Device characterisation}
 Figure~\ref{fig:fig1}(a) shows the device image.
 An InSb nanowire (blue) is covered by a NbTi/NbTiN superconducting contact (purple) and a Cr/Au normal metal contact (yellow).
 The barrier gate underneath the uncovered wire (red) can deplete the nanowire, locally creating a tunnel barrier.
@@ -54,6 +53,7 @@ The white dashed lines indicate a fit to the gap closing corresponding to $\alph
 \end{center}
 \end{figure}
 
+\section{Spin-orbit protection of superconductivity}
 The magnetic field ($B$) dependence of the induced gap of device $A$, with $B$ along three different directions, is shown in Fig.~\ref{fig:fig1}(e).
 The coordinate system is illustrated in Fig.~\ref{fig:fig1}(c).
 The $x$ axis is along the nanowire, parallel to the electron momentum ($k$).
@@ -64,10 +64,7 @@ On the contrary, when $B$ is aligned with the $y$ axis (middle panel), parallel 
 Figure~\ref{fig:fig1}(f) shows the line cuts at $|B|$ $=$ 0.25 T along the three axes: for $B$ $\perp$ $B_{\mathrm{SO}}$, the gap is almost the same as when $B$ $=$ 0 T, while the gap is closed for $B$ $\parallel$ $B_{\mathrm{SO}}$.
 This observation matches the predictions of the Majorana nanowire model, as illustrated in Fig.~\ref{fig:fig1}(d): when $B$ $\perp$ $B_{\mathrm{SO}}$, SOI counteracts the Zeeman-induced gap closing by rotating the spin eigenstate towards $B_{\mathrm{SO}}$, which reduces the component of the Zeeman field along the direction of the spin eigenstate.
 In contrast, when $B$ $\parallel$ $B_{\mathrm{SO}}$, the spin eigenstate is always parallel to $B$, which prevents spin-orbit protection and results in a fast gap closing \cite{Osca2014,Rex2014}.
-This pronounced anisotropy of the gap closing with respect to different $B$ directions is universally observed in over ten devices (four shown in this chapter) for all gate settings
-\footnote{See Supplemental Material, which includes Refs.
- \cite{Car2014,Floehr2011,Suyatin2007,Guel2017,Liu2017a,Danon2017,Hofstadter1976,Gropp1996,Du1999,Prada2012,Pientka2012,Stanescu2012}, for experimental details, theoretical details, and additional experimental data}, which is a direct consequence of SOI in Majorana nanowires.
-\nocite{Car2014,Floehr2011,Suyatin2007,Guel2017,Liu2017a,Danon2017,Hofstadter1976,Gropp1996,Du1999,Prada2012,Pientka2012,Stanescu2012}
+This pronounced anisotropy of the gap closing with respect to different $B$ directions is universally observed in over ten devices (four shown in this chapter) for all gate settings (see Fig.~\ref{fig:BsweepsReproduced}), which is a direct consequence of SOI in Majorana nanowires.
 
 \section{Interpretation of the anisotropy}
 Before we discuss the SOI in more detail, we rule out alternative mechanisms for the anisotropy which can originate in the bulk superconductor, or the InSb nanowire.
@@ -134,10 +131,10 @@ Dashed lines indicate the $z$ axis ($\Theta$ $=$ \ang{0}).
 \end{center}
 \end{figure}
 
-\section{Direction of the spin-orbit field}
+\section{Orientation of the spin-orbit field}
 To resolve the direction of the spin-orbit field, we fix the $B$ amplitude and continuously rotate the $B$ direction, parametrized by the angle $\Theta$ in the $zy$ plane [inset Fig.~\ref{fig:fig3}(a)].
 Figure \ref{fig:fig3}(a) shows the dependence of the gap on $\Theta$, where we adjust the electric field strength in the nanowire with a voltage $V_{\mathrm{SG}}$ on the super gate (SG) underneath the superconductor [green in Fig.~\ref{fig:fig1}(a)].
-We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and find $\Theta_{\mathrm{max}}$ $=$ 3 $\pm$ \ang{2} ($z$ axis) for all $V_{\mathrm{SG}}$ and in multiple devices (Fig.~\ref{fig:fig3} and Fig.~\ref{fig:YZrotRep} \cite{Note1}) (error due to uncertainty in the extraction procedure).  % XXX: fix Note1
+We define the angle at which the gap is hardest as $\Theta_{\mathrm{max}}$ and find $\Theta_{\mathrm{max}}$ $=$ 3 $\pm$ \ang{2} ($z$ axis) for all $V_{\mathrm{SG}}$ and in multiple devices (Fig.~\ref{fig:fig3} and Fig.~\ref{fig:YZrotRep}) (error due to uncertainty in the extraction procedure).
 This is illustrated in Fig.~\ref{fig:fig3}(c), which shows horizontal line cuts for subgap bias.
 The largest gap for a given $B$ amplitude is expected for $B$ $\perp$ $B_{\mathrm{SO}}$, indicating that $B_{\mathrm{SO}}$ $\parallel$ $y$, in agreement with the $E$-field direction dictated by the device geometry.
 
@@ -165,17 +162,16 @@ We note that, at $\Delta V_G$ $=$ 2 meV (bottom panel) the wave function is move
 Experimentally, we also observe this in Fig.~\ref{fig:fig3}(a), with line cuts in Fig.~\ref{fig:fig3}(c), where the gap is closed over a significantly longer angle range with increasing $V_{\mathrm{SG}}$.
 We note that we use small values of $\Delta V_G$ in the simulations, because we expect a weak gate response due to effective electrostatic screening by the superconductor, which covers five of the six nanowire facets \cite{Zhang2017}.
 
-\section{Partially covered device}
 Finally, we turn to a second type of device in which the superconducting film only partially covers the nanowire facets [Fig.~\ref{fig:fig4}(a)].
 This partial superconductor coverage can modify the orientation of $B_{\mathrm{SO}}$ by changing the associated electric field direction \cite{Vuik2016}, as sketched in the inset of Fig.~\ref{fig:fig4}(a).
 The electric field in the wire has two main origins.
 The first one originates from the work function difference between the superconductor and nanowire, which leads to charge redistribution.
 The resulting electric field is expected to rotate away from the $z$ axis due to the partial superconductor coverage which breaks the spatial symmetry.
-In Fig.~\ref{fig:fig4}(b) we rotate $B$ in the $zy$ plane, perpendicular to the nanowire axis, and find that $\Theta_{\mathrm{max}}$ is, indeed, no longer at zero, but at 32 $\pm$ \ang{2}.
+In Fig.~\ref{fig:fig4}(b), we rotate $B$ in the $zy$ plane, perpendicular to the nanowire axis, and find that $\Theta_{\mathrm{max}}$ is, indeed, no longer at zero, but at 32 $\pm$ \ang{2}.
 The second contribution to the electric field arises from the applied $V_{\mathrm{SG}}$ and the electrostatic screening due to the grounded superconductor.
 Changing $V_{\mathrm{SG}}$ should, therefore, rotate the electric field for partial coverage.
 Indeed, we find that $\Theta_{\mathrm{max}}$ shifts by \ang{10} by adjusting $V_{\mathrm{SG}}$ by 7.5 V [Fig.~\ref{fig:fig4}(c)].
-Field rotation at intermediate $V_{\mathrm{SG}}$ and magnetic field sweeps confirming the change of $\Theta_{\mathrm{max}}$ are shown in the Supplemental Material \cite{Note1}.  % XXX: fix Note1
+Field rotation at intermediate $V_{\mathrm{SG}}$ and magnetic field sweeps confirming the change of $\Theta_{\mathrm{max}}$ are shown in Fig.~\ref{fig:SGdep}.
 Our theory simulations confirm that $\Theta_{\mathrm{max}}$ is still given by the direction orthogonal to $B_{\mathrm{SO}}$ when the electric field is not necessarily along a \mbox{spatial} symmetry axis of the partially covered device [Fig.~\ref{fig:fig4}(d) and ~\ref{fig:fig4}(e)].
 While the orbital effect does not change $\Theta_{\mathrm{max}}$ [Fig.~\ref{fig:fig4}(e) and ~\ref{fig:fig4}(f)], it can induce asymmetry in the energy spectrum around $\Theta_{\mathrm{max}}$ resulting from wave function asymmetry when the electric field is not along the mirror plane of the device [Fig.~\ref{fig:fig4}(b) and ~\ref{fig:fig4}(e)].
 The significance of the orbital effect in our devices underlines the importance of including it in realistic simulations of Majorana nanowires.
@@ -208,7 +204,7 @@ The superconducting proximity effect is implemented using the weak coupling appr
 The potential in the wire is given by $V(y,z)= \frac{\Delta V_G}{R} (z\cos(\Phi)+y\sin(\Phi))$, where $\Delta V_G$ is the potential difference between the middle and outer points of the wire, $R$ is the radius of the nanowire, and $\Phi$ parametrizes the direction of the electric field $\mathbf{\hat{E}}$, which is set to $\Phi$ = \ang{0} in all simulations, except for Fig.~\ref{fig:fig4}(d), where $\Phi$ = \ang{45}.
 The vector potential $\mathbf{A} = \left[B_y(z-z_0)-B_z(y-y_0),0,B_x(y-y_0)\right]^T$ is chosen such that it does not depend on $x$ and the offsets $x_0$, $y_0$, $z_0$ are chosen such that the vector potential averages to zero inside the superconductor, implying a total supercurrent of zero in the superconductor.
 This choice is supported by the negligible screening currents we observe in our Ginzburg-Landau simulations [Fig.~\ref{fig:GL}].
-$\mathbf{A}$ is implemented in the tight-binding model by Peierls substitution in the hopping amplitudes \cite{Hofstadter1976}.
+$\mathbf{A}$ is implemented in the tight-binding model using Peierls substitution in the hopping amplitudes \cite{Hofstadter1976}.
 
 \subsubsection{Details of the Ginzburg-Landau simulations}
 To calculate the stray fields in the nanowire due to Meissner screening and vortex entry in the superconducting contact (results shown in Fig.~\ref{fig:GL}), we have performed simulations on the Ginzburg-Landau model \cite{Gropp1996} in a realistic three-dimensional geometry using the dimensions of device A.
