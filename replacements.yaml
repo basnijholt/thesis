@@ -14,6 +14,7 @@ replacements:
   'Nijholt, Bas and Weston, Joseph and {JornHoofwijk} and Akhmerov, Anton and Antipov, Andrey E.': Nijholt, Bas and Weston, Joseph and Hoofwijk, Jorn and Akhmerov, Anton  # fix for 10.5281/ZENODO.1182437
   NIRA DYN and DAVID LEVIN and SAMUEL RIPPA: Nira Dyn and David Levin and Samuel Rippa  # fix for 10.1093/imanum/10.1.137
   Vieweg$\mathplus$Teubner Verlag: Vieweg+Teubner Verlag
+  ofNSnanowire: of NS nanowire
 
 
 journals:
