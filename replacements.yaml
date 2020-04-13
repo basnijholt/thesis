@@ -5,6 +5,8 @@ replacements:
   Josephson: '{J}osephson'
   Kitaev: '{K}itaev'
   Kramers: '{K}ramers'
+  Zeeman: '{Z}eeman'
+  Abelian: '{A}belian'
   Land{\'{e}}{gFactors}: Land{\'{e}} {$g$} Factors  # fix for PhysRevLett.96.026804
   Majorana: '{M}ajorana'
   apx$\mathplus$ipysuperconductor: a $p_x + i p_y$ superconductor  # fix for 10.1103/physrevb.73.220502
@@ -15,7 +17,23 @@ replacements:
   NIRA DYN and DAVID LEVIN and SAMUEL RIPPA: Nira Dyn and David Levin and Samuel Rippa  # fix for 10.1093/imanum/10.1.137
   Vieweg$\mathplus$Teubner Verlag: Vieweg+Teubner Verlag
   ofNSnanowire: of NS nanowire
-
+  Hamiltionian: '{H}amiltionian'
+  Poisson: '{P}oisson'
+  'Schr\"{o}dinger': '{S}chr\"{o}dinger'
+  '-Al': '-{A}l'
+  'Al-': '{A}l-'
+  '-Nb': '-{N}b'
+  'Nb-': '{N}b-'
+  '1D': '{1D}'
+  '2D': '{2D}'
+  Fraunhofer: '{Fraunhofer}'
+  Fermi: '{Fermi}'
+  '{TOPOLOGICAL} {ORDERS} {IN} {RIGID} {STATES}': Topological orders in rigid states
+  Hall: '{Hall}'
+  inp-Wave: in $p$-Wave
+  S-N-S: '{S-N-S}'
+  p-Wave: '$p$-wave'
+  Feshbach: '{F}eshbach'
 
 journals:
   Advanced Materials: Adv. Mater.
