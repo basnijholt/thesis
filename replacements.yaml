@@ -22,18 +22,22 @@ replacements:
   'Schr\"{o}dinger': '{S}chr\"{o}dinger'
   '-Al': '-{A}l'
   'Al-': '{A}l-'
+  'Al{\textendash}': '{Al}{\textendash}'
   '-Nb': '-{N}b'
   'Nb-': '{N}b-'
   '1D': '{1D}'
   '2D': '{2D}'
   Fraunhofer: '{Fraunhofer}'
   Fermi: '{Fermi}'
+  Rashba: '{Rashba}'
   '{TOPOLOGICAL} {ORDERS} {IN} {RIGID} {STATES}': Topological orders in rigid states
   Hall: '{Hall}'
   inp-Wave: in $p$-Wave
   S-N-S: '{S-N-S}'
   p-Wave: '$p$-wave'
   Feshbach: '{F}eshbach'
+  'the0-$\uppi$Crossover': 'the $0-\uppi$ crossover'
+  'Nb{\textendash}{InSb} Nanowire{\textendash}Nb': '{Nb}{\textendash}{InSb} Nanowire{\textendash}{Nb}'
 
 journals:
   Advanced Materials: Adv. Mater.
