@@ -30,6 +30,7 @@ replacements:
   Fraunhofer: '{Fraunhofer}'
   Fermi: '{Fermi}'
   Rashba: '{Rashba}'
+  Ginzburg--Landau: '{Ginzburg--Landau}'
   '{TOPOLOGICAL} {ORDERS} {IN} {RIGID} {STATES}': Topological orders in rigid states
   Hall: '{Hall}'
   inp-Wave: in $p$-Wave
