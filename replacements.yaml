@@ -39,6 +39,8 @@ replacements:
   Feshbach: '{F}eshbach'
   'the0-$\uppi$Crossover': 'the $0-\uppi$ crossover'
   'Nb{\textendash}{InSb} Nanowire{\textendash}Nb': '{Nb}{\textendash}{InSb} Nanowire{\textendash}{Nb}'
+  '$\upphi$0-junction': '$\upphi_0$-junction'
+  Bayesian: '{Bayesian}'
 
 journals:
   Advanced Materials: Adv. Mater.
