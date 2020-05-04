@@ -365,7 +365,7 @@ Either (1) the degree of the rule is increased or (2) the interval is split if e
 All points inside the intervals can be trivially calculated in parallel; however, when there are more resources available than points, Adaptive needs to guess whether an (1) interval's should degree of the rule should be increased or (2) or the interval is split.
 Here, we choose to always increase until $d=4$, after which the interval is split.
 
-\subsection{isoline and isosurface sampling}
+\subsection{Isoline and isosurface sampling}
 
 A judicious choice of loss function allows to sample the function close to an isoline (isosurface in 2D). Specifically, we prioritize subdomains that are bisected by the isoline or isosurface:
 
