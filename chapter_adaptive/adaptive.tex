@@ -177,7 +177,7 @@ where we have used the following definitions:
 \item[\texttt{f}]
 The function we wish to learn
 \item[\texttt{queue}]
-A priority queue of unique elements, supporting the following methods:\\ \passthrough{\lstinline!max\_priority()!}, to get the priority of the top element; \passthrough{\lstinline!pop()!}, remove and return the top element and its priority; \passthrough{\lstinline!insert(element, priority)!}, insert the given element with the given priority into the queue;\passthrough{\lstinline!update(element, priority)!}, update the priority of the given element, which is already in the queue.
+A priority queue of unique elements, supporting the following methods:\\ \passthrough{\lstinline!max\_priority()!}, to get the priority of the top element; \passthrough{\lstinline!pop()!}, remove and return the top element and its priority; \passthrough{\lstinline!insert(element, priority)!}, insert the given element with the given priority into the queue; \passthrough{\lstinline!update(element, priority)!}, update the priority of the given element, which is already in the queue.
 \item[\texttt{domain}]
 An object representing the domain of \passthrough{\lstinline!f!} split into subdomains. Supports the following methods: \passthrough{\lstinline!subdomains()!}, returns all the subdomains; \passthrough{\lstinline!points(subdomain)!}, returns all the points contained in the provided subdomain; \passthrough{\lstinline!split(subdomain)!}, splits a subdomain into smaller subdomains, returning the new points and new subdomains produced as a result; \passthrough{\lstinline!neighbors(subdomain, n\_neighbors)!}, returns the subdomains neighboring the provided subdomain.
 \item[\texttt{data}]
