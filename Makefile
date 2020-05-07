@@ -5,6 +5,11 @@ all: pdf
 .PHONY: force-build
 force-build:
 
+upload: clean pdf propositions
+	cp dissertation.pdf thesis.pdf
+	fu -t=0 thesis.pdf
+	fu -t=0 propositions.pdf
+
 pdf: force-build
 	pdflatex dissertation
 	bibtex chapter_introduction/introduction
