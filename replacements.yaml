@@ -41,6 +41,7 @@ replacements:
   'Nb{\textendash}{InSb} Nanowire{\textendash}Nb': '{Nb}{\textendash}{InSb} Nanowire{\textendash}{Nb}'
   '$\upphi$0-junction': '$\upphi_0$-junction'
   Bayesian: '{Bayesian}'
+  WEN: Wen
 
 journals:
   Advanced Materials: Adv. Mater.
