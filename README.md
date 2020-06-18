@@ -2,9 +2,11 @@
 
 [![compile-thesis](https://github.com/basnijholt/thesis/workflows/compile-thesis/badge.svg)](https://github.com/basnijholt/thesis/actions?query=workflow%3Acompile-thesis)
 
+For the source of of the cover design, see [this repository: basnijholt/thesis-cover](https://github.com/basnijholt/thesis-cover).
+
 See the compiled
-* latest [dissertation](https://gitlab.kwant-project.org/qt/basnijholt/thesis-bas-nijholt/builds/artifacts/master/raw/dissertation.pdf?job=job)
-* latest [propositions](https://gitlab.kwant-project.org/qt/basnijholt/thesis-bas-nijholt/builds/artifacts/master/file/propositions.pdf?job=job)
+* latest [`dissertation.pdf`](https://gitlab.kwant-project.org/qt/basnijholt/thesis-bas-nijholt/builds/artifacts/master/raw/dissertation.pdf?job=job)
+* latest [`propositions.pdf`](https://gitlab.kwant-project.org/qt/basnijholt/thesis-bas-nijholt/builds/artifacts/master/file/propositions.pdf?job=job)
 
 
 Automatic Docker builds [here](https://hub.docker.com/repository/docker/basnijholt/thesis).
