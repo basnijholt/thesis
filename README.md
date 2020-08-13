@@ -1,4 +1,5 @@
 # Bas Nijholt's Ph.D. thesis
+> *Towards realistic numerical simulations of Majorana devices*
 
 ![](https://github.com/basnijholt/thesis-cover/raw/master/images/close-up.jpg)
 
