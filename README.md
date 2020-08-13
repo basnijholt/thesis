@@ -1,5 +1,7 @@
 # Bas Nijholt's Ph.D. thesis
 
+![](https://github.com/basnijholt/thesis-cover/raw/master/images/close-up.jpg)
+
 [![compile-thesis](https://github.com/basnijholt/thesis/workflows/compile-thesis/badge.svg)](https://github.com/basnijholt/thesis/actions?query=workflow%3Acompile-thesis)
 
 For the source of of the cover design, see [this repository: basnijholt/thesis-cover](https://github.com/basnijholt/thesis-cover).
